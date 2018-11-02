@@ -4,9 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "storybook:html": "start-storybook -p 9001 -c .storybook-html",
-    "storybook:vue": "start-storybook -p 9002 -c .storybook-vue",
-    "storybook:react": "start-storybook -p 9003 -c .storybook-react"
+    "storybook:html": "start-storybook -p 9005 -c .storybook/html",
+    "storybook:vue": "start-storybook -p 9006 -c .storybook/vue",
+    "storybook:react": "start-storybook -p 9007 -c .storybook/react"
   },
   "keywords": [],
   "author": "",

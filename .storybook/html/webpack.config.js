@@ -9,7 +9,7 @@ module.exports = (storybookBaseConfig, configType, defaultConfig) => {
       enforce: "pre"
     },
     {
-      test: /\.scss$/,
+      test: /\.s?css$/,
       loaders: ["style-loader", "css-loader", "sass-loader"],
       include: path.resolve(__dirname, "./../../components")
     }

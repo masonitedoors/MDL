@@ -11,7 +11,10 @@ module.exports = (storybookBaseConfig, configType, defaultConfig) => {
     {
       test: /\.s?css$/,
       loaders: ["style-loader", "css-loader", "sass-loader"],
-      include: path.resolve(__dirname, "./../../components")
+      include: [
+        path.resolve(__dirname, "./../../components"),
+        path.resolve(__dirname, "./../../styles")
+      ]
     }
   );
 

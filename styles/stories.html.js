@@ -1,12 +1,20 @@
 import { storiesOf } from "@storybook/html";
-import "./colors.css";
+import "./stories.scss";
 import colors from "./colors";
+import tinycolor from "tinycolor2";
 
-console.log(colors);
-
-storiesOf("Colors", module).add(
-  "main",
-  () => `
-        <div style="height: 30px; width: 30px" class="color-m-primary-green"></div>
-    `
-);
+storiesOf("Colors", module).add("main", () => {
+  const colorsMarkup = colors
+    .map(
+      ({ name, value }) => `<article class="color">
+          <div class="color__swatch" style="background-color: ${value}">
+            <div class="color__value" style="color: ${tinycolor
+              .mostReadable(value, ["#000", "#fff"])
+              .toHexString()}">${value}</div>
+          </div>
+          <div class="color__label">${name.slice(8)}</div>
+        </article>`
+    )
+    .join("");
+  return `<div class="colors">${colorsMarkup}</div>`;
+});

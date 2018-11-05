@@ -3,18 +3,9 @@ const path = require("path");
 
 function createCssClassesFromColors() {
   const colors = getCssColors();
-  const newFile = colors
-    .map(({ name, value }) => {
-      return `.${name} { background-color: ${value}; }`;
-    })
-    .join("");
   fs.writeFileSync("./styles/colors.json", JSON.stringify(colors));
-  console.log(colors);
-  console.log("Wrote $colors colors.json");
-  fs.writeFileSync("./styles/colors.css", newFile);
-  console.log(newFile);
-  console.log("Wrote to colors.css");
-  return false;
+  console.log("Wrote colors.json");
+  return true;
 }
 
 function getCssColors() {
@@ -40,5 +31,4 @@ function getArrayOfVariableObjects(str) {
     .filter(v => v);
 }
 
-module.exports.getCssColors = getCssColors;
 module.exports.createCssClassesFromColors = createCssClassesFromColors;

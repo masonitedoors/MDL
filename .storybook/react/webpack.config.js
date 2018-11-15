@@ -10,10 +10,16 @@ module.exports = (storybookBaseConfig, configType, defaultConfig) => {
     },
     {
       test: /\.scss$/,
-      loaders: ["style-loader", "css-loader", "sass-loader"],
-      include: path.resolve(__dirname, "./../../components")
+      loaders: ["style-loader", "css-loader?modules", "sass-loader"],
+      include: [path.resolve(__dirname, "./../../components")]
     }
   );
+
+  defaultConfig.resolve.modules.push(path.resolve(__dirname, "../../"));
+
+  defaultConfig.resolve.extensions = defaultConfig.resolve.extensions.concat([
+    ".scss"
+  ]);
 
   return defaultConfig;
 };

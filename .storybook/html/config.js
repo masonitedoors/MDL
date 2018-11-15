@@ -1,4 +1,7 @@
-import { configure } from "@storybook/html";
+import { addDecorator, configure } from "@storybook/html";
+import options from "./../addon-options";
+
+addDecorator(withOptions(options));
 
 import "styles/global.scss";
 

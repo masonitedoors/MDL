@@ -8,8 +8,8 @@
   position: relative;
   height: $size;
   width: $size;
-  border-radius: 1px;
-  border: solid 0.5px $color-m-secondary-slate;
+  border-radius: 2px;
+  border: solid 1px $color-m-secondary-slate;
   overflow: hidden;
 }
 
@@ -23,6 +23,17 @@
   opacity: 0;
 }
 
+.Checkbox__svg-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.Checkbox__checkbox:checked ~ .Checkbox__svg-wrapper {
+  background: $color-m-primary-charcoal;
+}
+
 .Checkbox__svg-icon {
   position: absolute;
   left: 0;
@@ -31,12 +42,13 @@
   align-items: center;
   pointer-events: none;
   fill: white;
-  background: $color-m-primary-charcoal;
   width: 100%;
   height: 100%;
   transform: scaleY(-1);
+}
 
-  .Checkbox__checkbox:checked ~ &--checked {
-    display: flex;
-  }
+.Checkbox__checkbox:checked
+  ~ .Checkbox__svg-wrapper
+  .Checkbox__svg-icon--checked {
+  display: flex;
 }

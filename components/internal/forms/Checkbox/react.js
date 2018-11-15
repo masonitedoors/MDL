@@ -7,13 +7,15 @@ const Checkbox = props => {
   return (
     <div className={s.Checkbox}>
       <input className={s.Checkbox__checkbox} type="checkbox" />
-      <svg
-        className={[
-          s["Checkbox__svg-icon"],
-          s["Checkbox__svg-icon--checked"]
-        ].join(" ")}
-        dangerouslySetInnerHTML={{ __html: useTag }}
-      />
+      <div className={s["Checkbox__svg-wrapper"]}>
+        <svg
+          className={[
+            s["Checkbox__svg-icon"],
+            s["Checkbox__svg-icon--checked"]
+          ].join(" ")}
+          dangerouslySetInnerHTML={{ __html: useTag }}
+        />
+      </div>
     </div>
   );
 };

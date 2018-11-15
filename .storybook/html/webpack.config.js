@@ -18,5 +18,9 @@ module.exports = (storybookBaseConfig, configType, defaultConfig) => {
     }
   );
 
+  defaultConfig.resolve.extensions = defaultConfig.resolve.extensions.concat([
+    ".scss"
+  ]);
+
   return defaultConfig;
 };

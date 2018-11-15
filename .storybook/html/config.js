@@ -1,5 +1,7 @@
 import { configure } from "@storybook/html";
 
+import "styles/global.scss";
+
 const req = require.context("./../../components", true, /stories\.html\.js$/);
 
 function loadStories() {

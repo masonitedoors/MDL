@@ -1,4 +1,5 @@
 import { addDecorator, configure } from "@storybook/html";
+import { withOptions } from "@storybook/addon-options";
 import options from "./../addon-options";
 
 addDecorator(withOptions(options));

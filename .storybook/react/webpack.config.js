@@ -10,7 +10,17 @@ module.exports = (storybookBaseConfig, configType, defaultConfig) => {
     },
     {
       test: /\.scss$/,
-      loaders: ["style-loader", "css-loader?modules", "sass-loader"],
+      loaders: [
+        "style-loader",
+        {
+          loader: "css-loader",
+          options: {
+            modules: true,
+            localIdentName: "[name]__[local]--[hash:base64:5]"
+          }
+        },
+        "sass-loader"
+      ],
       include: [path.resolve(__dirname, "./../../components")]
     }
   );

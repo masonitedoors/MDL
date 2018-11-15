@@ -18,6 +18,8 @@ module.exports = (storybookBaseConfig, configType, defaultConfig) => {
     }
   );
 
+  defaultConfig.resolve.modules.push(path.resolve(__dirname, "../../"));
+
   defaultConfig.resolve.extensions = defaultConfig.resolve.extensions.concat([
     ".scss"
   ]);

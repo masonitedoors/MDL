@@ -1,0 +1,13 @@
+.btn {
+  padding: 5px;
+  font-weight: 500;
+  border-radius: 1px;
+  text-align: center;
+
+  &--light {
+    box-shadow: 0 0.5px 0.5px 0 rgba(0, 0, 0, 0.15);
+  }
+
+  &--dark {
+  }
+}

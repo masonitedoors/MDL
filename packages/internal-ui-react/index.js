@@ -1,5 +1,2 @@
-const Checkbox = require("./../../components/forms/Checkbox").React;
-
-module.exports = {
-  Checkbox
-};
+export const Checkbox = require("external/components/components/forms/Checkbox")
+  .React;

@@ -1,0 +1,42 @@
+@import "~styles/colors";
+
+.Checkbox {
+  $size: 14px;
+  display: flex;
+  align-items: center;
+  align-content: center;
+  position: relative;
+  height: $size;
+  width: $size;
+  border-radius: 1px;
+  border: solid 0.5px $color-m-secondary-slate;
+  overflow: hidden;
+}
+
+.Checkbox__checkbox {
+  position: absolute;
+  left: 0;
+  top: 0;
+  margin: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+}
+
+.Checkbox__svg-icon {
+  position: absolute;
+  left: 0;
+  top: -1px;
+  display: none;
+  align-items: center;
+  pointer-events: none;
+  fill: white;
+  background: $color-m-primary-charcoal;
+  width: 100%;
+  height: 100%;
+  transform: scaleY(-1);
+
+  .Checkbox__checkbox:checked ~ &--checked {
+    display: flex;
+  }
+}

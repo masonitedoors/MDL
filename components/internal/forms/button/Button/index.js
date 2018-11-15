@@ -1,4 +1,4 @@
 module.exports = {
-  React: require("./react"),
-  Vue: require("./vue")
+  React: require("./react")
+  // Vue: require("./vue")
 };

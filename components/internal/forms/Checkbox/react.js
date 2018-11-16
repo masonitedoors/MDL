@@ -1,10 +1,9 @@
 import React from "react";
 import s from "./style.module.scss";
-import svg from "lib/micons/MIcons.svg";
+import svg from "./../../../../lib/_micons/check.svg";
 
 const Checkbox = props => {
   const { checked, onChange } = props;
-  const useTag = `<use xlink:href="${svg}#check" />`;
   return (
     <div className={s.Checkbox} onClick={onChange}>
       <input
@@ -19,7 +18,7 @@ const Checkbox = props => {
             s["Checkbox__svg-icon"],
             s["Checkbox__svg-icon--checked"]
           ].join(" ")}
-          dangerouslySetInnerHTML={{ __html: useTag }}
+          dangerouslySetInnerHTML={{ __html: svg }}
         />
       </div>
     </div>

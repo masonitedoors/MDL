@@ -3,7 +3,7 @@
  */
 const path = require("path");
 
-module.exports.webpackConfig = {
+module.exports = {
   mode: "production",
   entry: "./src/index.js",
   output: {
@@ -12,6 +12,18 @@ module.exports.webpackConfig = {
   },
   module: {
     rules: [
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        use: [
+          {
+            loader: "babel-loader",
+            options: {
+              presets: ["@babel/preset-react"]
+            }
+          }
+        ]
+      },
       {
         test: /\.scss$/,
         loaders: [
@@ -49,32 +61,9 @@ module.exports.webpackConfig = {
   externals: ["react", "react-dom"],
   resolve: {
     alias: {
-      lib: path.resolve(__dirname, "../lib")
+      lib: path.resolve(__dirname, "../lib"),
+      components: path.resolve(__dirname, "../components"),
+      config: path.resolve(__dirname, "../components")
     }
   }
-};
-
-module.exports.reactRule = function reactRule(include) {
-  return {
-    test: /\.js$/,
-    include,
-    exclude: /node_modules/,
-    use: [
-      {
-        loader: "babel-loader",
-        options: {
-          presets: ["@babel/preset-react"]
-        }
-      }
-    ]
-  };
-};
-
-module.exports.svgRule = function svgRule(include) {
-  return {
-    test: /\.svg$/,
-    include,
-    exclude: /node_modules/,
-    loader: "inline-svg-loader"
-  };
 };

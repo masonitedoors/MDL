@@ -4,7 +4,7 @@
   "description": "",
   "main": "dist/index.js",
   "scripts": {
-    "build": "webpack --mode production"
+    "build": "npm i && NODE_PATH=./../../ webpack --mode production"
   },
   "keywords": [],
   "author": "Tarik Hamilton",

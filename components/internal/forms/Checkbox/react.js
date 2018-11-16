@@ -1,6 +1,6 @@
 import React from "react";
 import s from "./style.module.scss";
-import svg from "./../../../../lib/_micons/check.svg";
+import svg from "lib/_micons/check.svg";
 
 const Checkbox = props => {
   const { checked, onChange } = props;

@@ -1,7 +1,6 @@
 /*
  * This is for the module builds in /packages.
  */
-
 const path = require("path");
 
 module.exports.webpackConfig = {
@@ -47,7 +46,12 @@ module.exports.webpackConfig = {
       // }
     ]
   },
-  externals: ["react", "react-dom"]
+  externals: ["react", "react-dom"],
+  resolve: {
+    alias: {
+      lib: path.resolve(__dirname, "../lib")
+    }
+  }
 };
 
 module.exports.reactRule = function reactRule(include) {

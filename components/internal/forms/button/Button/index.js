@@ -1,4 +1,1 @@
-module.exports = {
-  React: require("./react")
-  // Vue: require("./vue")
-};
+export { default as React } from "./react";

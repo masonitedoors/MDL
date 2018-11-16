@@ -3,7 +3,7 @@ import { storiesOf } from "@storybook/react";
 import { withKnobs, select } from "@storybook/addon-knobs";
 import Button from "./react";
 
-storiesOf("Forms/Button/Button", module)
+storiesOf("Internal/Forms/Button/Button", module)
   .addDecorator(withKnobs)
   .add("default", () => {
     const variant = select("Variant", {

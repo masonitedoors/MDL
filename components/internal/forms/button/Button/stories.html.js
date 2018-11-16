@@ -1,8 +1,6 @@
 import { storiesOf } from "@storybook/html";
-import html from "./html";
 import "./style.module.scss";
-
-const { BaseButton, LightButton, DarkButton } = html;
+import { BaseButton, LightButton, DarkButton } from "./html";
 
 storiesOf("Forms/Button/Button", module)
   .add("base", () => BaseButton)

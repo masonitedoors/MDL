@@ -1,9 +1,3 @@
-import BaseButton from "./base.html";
-import LightButton from "./light.html";
-import DarkButton from "./dark.html";
-
-export default {
-  BaseButton,
-  LightButton,
-  DarkButton
-};
+export { default as BaseButton } from "./base.html";
+export { default as LightButton } from "./light.html";
+export { default as DarkButton } from "./dark.html";

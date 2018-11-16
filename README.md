@@ -6,20 +6,7 @@
 
 ## Usage
 
-Install one of the UI kits.
-
-```
-npm i @masonite/internal-ui-react
-npm i @masonite/external-ui-react
-```
-
-and then import the desired available components. Full list isn't available at the moment.
-
-```
-import { Checkbox, Button, Heading } from "@masonite/internal-ui-react"
-```
-
-Since these are not published yet, you will have to use `npm link`. Go to the project where you want to use these and do the following:
+Since these are not published yet, you will have to use clone this repo and use `npm link` on one of the packages. Go to the project where you want to use these and do the following:
 
 `npm link /<PathToThisRepo>/packages/<DesiredUiKit>`
 
@@ -28,6 +15,19 @@ Example:
 ```
 cd ~/Code/rps-ui-v2-dev
 npm link ~/Code/ui-components/packages/internal-ui-react
+```
+
+That simulates the installation of one of the UI kits, listed below.
+
+```
+npm i @masonite/internal-ui-react
+npm i @masonite/external-ui-react
+```
+
+Import the desired available components and you're good to go. Full list isn't available at the moment.
+
+```
+import { Checkbox, Button, Heading } from "@masonite/internal-ui-react"
 ```
 
 ## Storybook

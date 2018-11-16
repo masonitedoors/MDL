@@ -2,7 +2,7 @@ import React from "react";
 import s from "./style.module.scss";
 
 const Button = props => {
-  const { children, variant = null } = props;
+  const { children, onClick = null, variant = null } = props;
 
   const classes = [
     s.btn,
@@ -11,7 +11,11 @@ const Button = props => {
   ]
     .filter(v => v)
     .join(" ");
-  return <button className={classes}>{children}</button>;
+  return (
+    <button className={classes} onClick={onClick}>
+      {children}
+    </button>
+  );
 };
 
 export default Button;

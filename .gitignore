@@ -23,3 +23,6 @@ yarn-error.log*
 .vscode/settings.json
 __image_snapshots__
 .cache
+
+# builds
+dist

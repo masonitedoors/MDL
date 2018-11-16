@@ -9,7 +9,8 @@
     "storybook:react": "NODE_PATH=styles:components start-storybook -p 9007 -c .storybook/react",
     "generate-colors-css": "node -e 'require(\"./styles/generate-style-stories\").createCssClassesFromColors()'",
     "build-external-ui": "cd packages/external-ui-react && npm run build",
-    "build-internal-ui": "cd packages/internal-ui-react && npm run build"
+    "build-internal-ui": "cd packages/internal-ui-react && npm run build",
+    "build-all": "npm run build-external-ui && npm run build-internal-ui"
   },
   "keywords": [],
   "author": "",

@@ -4,3 +4,4 @@ export {
   ReactHeading as Heading,
   ReactP as P
 } from "components/internal/typography";
+export { default as globalStyles } from "styles/global.scss";

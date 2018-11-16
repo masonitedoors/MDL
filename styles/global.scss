@@ -1,7 +1,7 @@
 @import "typography";
 
 body {
-  font-family: $font-family;
+  @include typography-p;
 }
 
 h1 {

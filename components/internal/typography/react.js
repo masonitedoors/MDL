@@ -3,9 +3,12 @@ import ReactDOM, { render } from "react-dom";
 import s from "./style.module.scss";
 
 export const Heading = props => {
-  const { level, children } = props;
+  const { level, children, noMargin } = props;
   const tag = `h${level}`;
-  return createElement(tag, { className: s[tag] }, children);
+  const style = noMargin && {
+    marginBottom: "0"
+  };
+  return createElement(tag, { className: s[tag], style }, children);
 };
 
 export const P = props => {

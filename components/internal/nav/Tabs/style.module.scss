@@ -1,0 +1,19 @@
+@import "styles/index";
+
+.tabs {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  padding: 0;
+  margin: 0;
+}
+
+.tab {
+  display: inline-block;
+  padding: $size-md;
+  box-shadow: inset 0 -3px 0 0 white;
+  text-align: center;
+}
+
+.tab--active {
+  box-shadow: inset 0 -3px 0 0 $color-limerick;
+}

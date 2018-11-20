@@ -10,10 +10,12 @@
 .tab {
   display: inline-block;
   padding: $size-md;
-  box-shadow: inset 0 -3px 0 0 white;
+  border-bottom: 1px solid $color-pastelgray;
   text-align: center;
+  background: white;
 }
 
 .tab--active {
-  box-shadow: inset 0 -3px 0 0 $color-limerick;
+  box-shadow: inset 0 -3px $color-limerick;
+  background: #f3f3f3;
 }

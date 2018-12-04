@@ -67,3 +67,21 @@ $font-family: "Gotham SSm A", "Gotham SSm B", -apple-system, BlinkMacSystemFont,
   font-size: 14px;
   line-height: 1.57;
 }
+
+@mixin darkBgTypography() {
+  .h2,
+  .h3,
+  .h4,
+  .h5,
+  .h6,
+  .p,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  li {
+    color: white;
+  }
+}

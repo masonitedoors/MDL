@@ -2,6 +2,7 @@
  * This is for the module builds in /packages.
  */
 const path = require("path");
+const CopyWebpackPlugin = require("copy-webpack-plugin");
 
 module.exports = {
   mode: "production",
@@ -67,5 +68,10 @@ module.exports = {
       config: path.resolve(__dirname, "../components"),
       styles: path.resolve(__dirname, "../styles")
     }
-  }
+  },
+  plugins: [
+    new CopyWebpackPlugin([
+      { from: "./../../styles", to: "styles", ignore: "**/*.js" }
+    ])
+  ]
 };

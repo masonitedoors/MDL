@@ -30,6 +30,7 @@
     "@storybook/vue": "^4.0.7",
     "babel-loader": "^8.0.4",
     "babel-preset-react-app": "^6.1.0",
+    "copy-webpack-plugin": "^4.6.0",
     "lerna": "^3.4.3",
     "node-sass": "^4.10.0",
     "sass-loader": "^7.1.0",

@@ -25,8 +25,22 @@ module.exports = (storybookBaseConfig, configType, defaultConfig) => {
         path.resolve(__dirname, "./../../components"),
         path.resolve(__dirname, "./../../styles")
       ]
+    },
+    {
+      test: /\.svg$/,
+      exclude: /node_modules/,
+      loader: "svg-inline-loader"
     }
   );
+
+  defaultConfig.module.rules = defaultConfig.module.rules.map(rule => {
+    const oldPattern = /\.(svg|ico|jpg|jpeg|png|gif|eot|otf|webp|ttf|woff|woff2|cur|ani)(\?.*)?$/;
+    const newPattern = /\.(ico|jpg|jpeg|png|gif|eot|otf|webp|ttf|woff|woff2|cur|ani)(\?.*)?$/;
+
+    return String(rule.test) === String(oldPattern)
+      ? { ...rule, test: newPattern }
+      : rule;
+  });
 
   defaultConfig.resolve.modules.push(path.resolve(__dirname, "../../"));
 

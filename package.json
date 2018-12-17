@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "storybook:html": "start-storybook -s ./lib/micons -p 9005 -c .storybook/html",
+    "storybook:html": "start-storybook -s ./vendor -p 9005 -c .storybook/html",
     "storybook:vue": "start-storybook -p 9006 -c .storybook/vue",
     "storybook:react": "NODE_PATH=styles:components start-storybook -p 9007 -c .storybook/react",
     "generate-colors-css": "node -e 'require(\"./styles/generate-style-stories\").createCssClassesFromColors()'",

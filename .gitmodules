@@ -1,0 +1,3 @@
+[submodule "vendor/micons"]
+	path = vendor/micons
+	url = git@bitbucket.org:digitalbusinessteam/micons.git

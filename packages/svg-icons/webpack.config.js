@@ -6,8 +6,7 @@ module.exports = {
   entry: "./src/index.js",
   output: {
     path: path.resolve(__dirname, "dist"),
-    filename: "index.js",
-    libraryTarget: "commonjs2"
+    filename: "index.js"
   },
   module: {
     rules: [
@@ -30,15 +29,6 @@ module.exports = {
         loader: "svg-inline-loader"
       }
     ]
-  },
-  externals: ["react", "react-dom"],
-  resolve: {
-    alias: {
-      lib: path.resolve(__dirname, "../lib"),
-      components: path.resolve(__dirname, "../components"),
-      config: path.resolve(__dirname, "../config"),
-      styles: path.resolve(__dirname, "../styles")
-    }
   },
   plugins: [
     new CopyWebpackPlugin([

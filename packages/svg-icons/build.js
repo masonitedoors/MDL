@@ -4,17 +4,24 @@ const svgFiles = fs
   .readdirSync("./../../vendor/micons/svg/SVG")
   .filter(file => file.match(/\.svg$/));
 
+try {
+  fs.mkdirSync("./src/svg");
+} catch (e) {}
+
 const exportStatements = svgFiles
-  .map(icon => {
-    const camelcaseName = icon
-      .slice(0, -4)
-      .replace(/-([a-z0-9])/g, g =>
-        g.match(/[a-z]/) ? g[1].toUpperCase() : g[1]
-      );
-    const exportName = `m${camelcaseName[0].toUpperCase()}${camelcaseName.slice(
+  .map(iconFilename => {
+    const hyphenatedName = iconFilename.slice(0, -4);
+    const camelcaseName = hyphenatedName.replace(/-([a-z0-9])/g, g =>
+      g.match(/[a-z]/) ? g[1].toUpperCase() : g[1]
+    );
+    const exportName = `${camelcaseName[0].toUpperCase()}${camelcaseName.slice(
       1
     )}`;
-    return `export { default as ${exportName} } from "./../../../vendor/micons/svg/SVG/${icon}"`;
+
+    const inlineSvgExport = `export { default as m${exportName} } from "./../../../vendor/micons/svg/SVG/${hyphenatedName}.svg"`;
+    const craExport = `export { default as M${exportName} } from "./../../../vendor/micons/svg/SVG/${hyphenatedName}.svg"`;
+
+    return [inlineSvgExport, craExport].join("\n");
   })
   .join("\n");
 

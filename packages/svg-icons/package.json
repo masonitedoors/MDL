@@ -6,6 +6,7 @@
   "scripts": {
     "build": "npm i && NODE_PATH=./../../ node build.js && NODE_PATH=./../../ webpack --mode production"
   },
+  "sideEffects": false,
   "keywords": [],
   "publishConfig": {
     "access": "public"

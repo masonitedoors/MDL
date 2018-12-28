@@ -28,6 +28,10 @@ h6 {
   @include typography-h6;
 }
 
+li {
+  @include typography-p;
+}
+
 p {
   @include typography-p;
   margin: 0 0 1rem;

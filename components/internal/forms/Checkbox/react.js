@@ -1,28 +1,57 @@
-import React from "react";
+import React, { PureComponent } from "react";
 import s from "./style.module.scss";
 import svg from "vendor/micons/svg/SVG/check.svg";
+import classNames from "classnames/bind";
 
-const Checkbox = props => {
-  const { checked, onChange, disabled } = props;
-  return (
-    <div className={s.Checkbox} onClick={onChange}>
-      <input
-        className={s.Checkbox__checkbox}
-        type="checkbox"
-        checked={checked}
-        readOnly
-      />
-      <div className={s["Checkbox__svg-wrapper"]}>
-        <svg
-          className={[
-            s["Checkbox__svg-icon"],
-            s["Checkbox__svg-icon--checked"]
-          ].join(" ")}
-          dangerouslySetInnerHTML={{ __html: svg }}
+const cx = classNames.bind(s);
+
+class Checkbox extends PureComponent {
+  constructor(props) {
+    super(props);
+
+    const checked =
+      typeof props.checked !== "undefined" ? props.checked : false;
+
+    this.state = { checked };
+  }
+
+  onChange = () => {
+    const { stateful } = this.props;
+    const isStateful = typeof stateful !== "undefined" ? stateful : true;
+    if (isStateful) this.setState({ checked: !this.state.checked });
+    if (typeof this.props.onChange === "function") this.props.onChange();
+  };
+
+  componentDidUpdate(prevProps) {
+    if (prevProps.checked !== this.props.checked)
+      this.setState({ checked: this.props.checked });
+  }
+
+  render() {
+    const { onChange } = this;
+    const { disabled } = this.props;
+    const { checked } = this.state;
+
+    return (
+      <div className={s.Checkbox} onClick={onChange}>
+        <input
+          className={s.Checkbox__checkbox}
+          type="checkbox"
+          checked={checked}
+          readOnly
         />
+        <div className={s["Checkbox__svg-wrapper"]}>
+          <svg
+            className={cx(
+              ["Checkbox__svg-icon"],
+              ["Checkbox__svg-icon--checked"]
+            )}
+            dangerouslySetInnerHTML={{ __html: svg }}
+          />
+        </div>
       </div>
-    </div>
-  );
-};
+    );
+  }
+}
 
 export default Checkbox;

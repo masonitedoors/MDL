@@ -15,15 +15,19 @@ $color-m-primary-blue: #5188f3;
 $color-m-primary-lighter-gray: #fafafa;
 $color-m-primary-accent-blue: #4d82e9;
 
-$color-limerick: #99c221; // Primary Green
-$color-taupegrey: #938b82; // Beige
+$color-blackolive: #393c40; // Dark Grey
+$color-blue: #5188f3;
+$color-blueberry: #4d82e9;
+$color-deepgrey: #53565a; // Primary Charcoal
 $color-khaki: #b8b298; // Secondary Beige
+$color-limerick: #99c221; // Primary Green
 $color-night: #000; // Black
 $color-onyx: #343639; // Darker Grey
-$color-blackolive: #393c40; // Dark Grey
 $color-pastelgray: #ccc; // Secondary Silver
 $color-pastelgrey: $color-pastelgray;
-$color-deepgrey: #53565a; // Primary Charcoal
+$color-taupegrey: #938b82; // Beige
+$color-rust: #d11818;
+$color-snow: #fafafa;
 
 @mixin gradient-dark() {
   background-image: linear-gradient($color-deepgrey, $color-blackolive);

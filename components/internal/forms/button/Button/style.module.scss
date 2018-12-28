@@ -9,15 +9,19 @@
   border: 1px solid transparent;
   border-radius: 2px;
   text-align: center;
-  text-transform: uppercase;
   cursor: pointer;
 
+  &--uppercase {
+    text-transform: uppercase;
+  }
+
   &--light {
+    background: $color-snow;
     box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.15);
   }
 
   &--dark {
-    background: $color-m-primary-charcoal;
+    background: $color-deepgrey;
     color: white;
   }
 }

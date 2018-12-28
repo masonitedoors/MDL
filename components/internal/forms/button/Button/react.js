@@ -1,16 +1,18 @@
 import React from "react";
 import s from "./style.module.scss";
+import classNames from "classnames/bind";
+
+const cx = classNames.bind(s);
 
 const Button = props => {
-  const { children, onClick = null, variant = null } = props;
+  const { children, onClick = null, variant = null, uppercase = false } = props;
 
-  const classes = [
-    s.btn,
-    variant === "light" && s["btn--light"],
-    variant === "dark" && s["btn--dark"]
-  ]
-    .filter(v => v)
-    .join(" ");
+  const classes = cx(["btn"], {
+    "btn--light": variant === "light",
+    "btn--dark": variant === "dark",
+    "btn--uppercase": uppercase
+  });
+
   return (
     <button className={classes} onClick={onClick}>
       {children}

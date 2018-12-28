@@ -6,19 +6,21 @@ import Checkbox from "./react";
 
 storiesOf("Internal/Forms/Checkbox", module)
   .addDecorator(withKnobs)
-  .add("checked from parent state", () => {
+  .add("checkable from parent state only", () => {
+    const checked = boolean("Checked", true);
+    return <Checkbox checked={checked} stateful={false} />;
+  })
+  .add(
+    "checkable with a click event",
+    withState({ checked: false })(({ store }) => (
+      <Checkbox
+        checked={store.state.checked}
+        onChange={() => store.set({ checked: !store.state.checked })}
+      />
+    ))
+  )
+  .add("maintains state and can be updated by props", () => {
     const checked = boolean("Checked", true);
     return <Checkbox checked={checked} />;
   })
-  .add(
-    "checked by its click event",
-    withState({ checked: false })(({ store }) => {
-      console.log("store", store);
-      return (
-        <Checkbox
-          checked={store.state.checked}
-          onChange={() => store.set({ checked: !store.state.checked })}
-        />
-      );
-    })
-  );
+  .add("checkable without props", () => <Checkbox />);

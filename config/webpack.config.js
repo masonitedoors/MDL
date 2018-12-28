@@ -66,7 +66,8 @@ module.exports = {
       lib: path.resolve(__dirname, "../lib"),
       components: path.resolve(__dirname, "../components"),
       config: path.resolve(__dirname, "../config"),
-      styles: path.resolve(__dirname, "../styles")
+      styles: path.resolve(__dirname, "../styles"),
+      vendor: path.resolve(__dirname, "../vendor")
     }
   },
   plugins: [

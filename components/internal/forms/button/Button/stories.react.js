@@ -15,9 +15,17 @@ storiesOf("Internal/Forms/Button/Button", module)
       },
       "light"
     );
+    const size = select(
+      "Size",
+      {
+        Small: "small",
+        Base: ""
+      },
+      ""
+    );
     const uppercase = boolean("Uppercase", false);
     return (
-      <Button variant={variant} uppercase={uppercase}>
+      <Button variant={variant} size={size} uppercase={uppercase}>
         Lorem Button
       </Button>
     );

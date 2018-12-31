@@ -18,6 +18,7 @@ Props noted with an asterisk are required. Not always by necessity, but by lack 
 | --------- | ---------- | --------------------- |
 | onClick   | `() => {}` | function              |
 | uppercase | boolean    | false                 |
+| size      | null       | null, 'small'         |
 | variant   | null       | null, 'light', 'dark' |
 
 ### Checkbox

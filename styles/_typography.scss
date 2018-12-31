@@ -68,7 +68,7 @@ $font-family: "Gotham SSm A", "Gotham SSm B", -apple-system, BlinkMacSystemFont,
   line-height: 1.57;
 }
 
-@mixin dark-bg-typography() {
+@mixin dark-bg-typography {
   .h2,
   .h3,
   .h4,
@@ -86,7 +86,7 @@ $font-family: "Gotham SSm A", "Gotham SSm B", -apple-system, BlinkMacSystemFont,
   }
 }
 
-@mixin element-tag-typography() {
+@mixin element-tag-typography {
   h1 {
     @include typography-h1;
   }
@@ -112,10 +112,15 @@ $font-family: "Gotham SSm A", "Gotham SSm B", -apple-system, BlinkMacSystemFont,
   }
 
   a,
+  label,
+  span {
+    @include typography-p;
+    margin: 0;
+  }
+
   blockquote,
   li,
-  p,
-  span {
+  p {
     @include typography-p;
   }
 

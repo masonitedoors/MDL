@@ -5,6 +5,16 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.4.0] - 2018-12-31
+
+### Remove
+
+- SCSS exports. No one was using these probably, so keeping it as a minor update.
+
+### Fixed
+
+- `span`, `label` and `a` having a `margin-bottom` in `element-tag-typography` mixin.
+
 ## [1.3.1] - 2018-12-31
 
 ### Added

@@ -6,7 +6,7 @@ $font-family: "Gotham SSm A", "Gotham SSm B", -apple-system, BlinkMacSystemFont,
 
 @mixin typography-h1 {
   margin: 0 0 1rem;
-  color: $color-m-primary-green;
+  color: $color-limerick;
   font-family: $font-family;
   font-size: 36px;
   font-weight: 500;
@@ -119,9 +119,13 @@ $font-family: "Gotham SSm A", "Gotham SSm B", -apple-system, BlinkMacSystemFont,
   }
 
   blockquote,
-  li,
   p {
     @include typography-p;
+  }
+
+  ul li,
+  ol li {
+    margin: 0 0 1rem;
   }
 
   em {

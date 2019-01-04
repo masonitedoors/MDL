@@ -37,5 +37,8 @@
     "sass-loader": "^7.1.0",
     "svg-inline-loader": "^0.8.0",
     "tinycolor2": "^1.4.1"
+  },
+  "dependencies": {
+    "@masonite/svg-icons": "^1.0.2"
   }
 }

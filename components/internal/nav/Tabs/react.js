@@ -13,7 +13,7 @@ export const Tab = ({ active, children, id, onTabClick = () => false }) => {
   );
 };
 
-export const Tabs = props => {
+export default function Tabs(props) {
   const { activeTab, onTabClick } = props;
   const tabs = () =>
     props.tabs.map(({ id, children }) => (
@@ -23,6 +23,4 @@ export const Tabs = props => {
     ));
 
   return <ul className={s.tabs}>{tabs()}</ul>;
-};
-
-export default Tabs;
+}

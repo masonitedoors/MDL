@@ -9,7 +9,7 @@
 If you are using a Create React App application
 
 ```
-import { ReactComponent as mBifold } from "@masonite/svg-icons/dist/svg/bifold.svg";
+import { ReactComponent as MBifold } from "@masonite/svg-icons/dist/svg/bifold.svg";
 ```
 
 or you can import the SVG as a string and implement per your use case or preference.

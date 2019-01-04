@@ -1,6 +1,6 @@
 import React, { PureComponent } from "react";
 import s from "./style.module.scss";
-import svg from "vendor/micons/svg/SVG/check.svg";
+import { mCheck } from "@masonite/svg-icons";
 import classNames from "classnames/bind";
 
 const cx = classNames.bind(s);
@@ -46,7 +46,7 @@ class Checkbox extends PureComponent {
               ["Checkbox__svg-icon"],
               ["Checkbox__svg-icon--checked"]
             )}
-            dangerouslySetInnerHTML={{ __html: svg }}
+            dangerouslySetInnerHTML={{ __html: mCheck }}
           />
         </div>
       </div>

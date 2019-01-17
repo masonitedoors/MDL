@@ -12,12 +12,12 @@ storiesOf("Internal/Nav/Tabs", module)
       const tabs = [
         {
           id: "0",
-          children: <strong>Using JSX</strong>
+          children: "Lorem Ipsum"
         },
         {
           id: "1",
-          children: "Lorem Ipsum"
-        }
+          children: <span>Using JSX</span>
+        },
       ];
       return (
         <Tabs

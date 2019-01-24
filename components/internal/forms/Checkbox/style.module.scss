@@ -2,7 +2,6 @@
 
 .Checkbox {
   $size: 14px;
-  display: flex;
   align-items: center;
   align-content: center;
   position: relative;
@@ -11,6 +10,7 @@
   border-radius: 2px;
   border: solid 1px $color-m-secondary-slate;
   overflow: hidden;
+  flex-shrink: 0;
 }
 
 .Checkbox__checkbox {

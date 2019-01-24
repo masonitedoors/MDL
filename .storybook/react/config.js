@@ -1,7 +1,7 @@
 import { addDecorator, configure } from "@storybook/react";
 import { withOptions } from "@storybook/addon-options";
 import options from "./../addon-options";
-import "styles/global";
+import "styles/storybook";
 
 addDecorator(withOptions(options));
 

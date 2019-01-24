@@ -24,10 +24,14 @@ $color-limerick: #99c221; // Primary Green
 $color-night: #000; // Black
 $color-onyx: #343639; // Darker Grey
 $color-pastelgray: #ccc; // Secondary Silver
+$color-silver: #ddd;
 $color-pastelgrey: $color-pastelgray;
+$color-slategray: #7c878e;
 $color-taupegrey: #938b82; // Beige
 $color-rust: #d11818;
 $color-snow: #fafafa;
+$color-white: #fff;
+$color-gray: #f3f3f3;
 
 @mixin gradient-dark() {
   background-image: linear-gradient($color-deepgrey, $color-blackolive);

@@ -1,0 +1,8 @@
+@import url("https://cloud.typography.com/7038756/6738972/css/fonts.css");
+@import "./index";
+
+body {
+  font-family: $font-family;
+}
+
+@include element-tag-typography();

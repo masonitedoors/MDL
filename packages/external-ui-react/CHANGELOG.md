@@ -9,11 +9,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-- Text input
+- TextInput component with error state
+- `margin: 0` to Tabs to prevent global `li` margins applying
+- `flex-shrink: 0` added to Checkbox to prevent warpping of size in flex layouts
+- Storybook specific stylesheet
+- Helper mixin file with `square` mixin
 
 ### Changed
 
 - Button small variant text size
+- Color variables
 
 ### Fixed
 

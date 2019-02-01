@@ -4,7 +4,7 @@ import { withKnobs, boolean } from "@storybook/addon-knobs";
 import { withState } from "@dump247/storybook-state";
 import Checkbox from "./react";
 
-storiesOf("Internal/Forms/Checkbox", module)
+storiesOf("Forms/Checkbox", module)
   .addDecorator(withKnobs)
   .add("checkable from parent state only", () => {
     const checked = boolean("Checked", true);

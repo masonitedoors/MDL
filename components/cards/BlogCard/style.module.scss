@@ -1,0 +1,9 @@
+@import "styles/index";
+
+.blog-card {
+  box-shadow: 0 2px 22px 0 rgba(0, 0, 0, 0.15);
+
+  &__content {
+    padding: $size-lg;
+  }
+}

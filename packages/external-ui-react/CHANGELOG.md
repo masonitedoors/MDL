@@ -9,6 +9,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- TrendCard component
+- BlogCard component
+- ProductCard component
 - TextInput component with error state
 - `margin: 0` to Tabs to prevent global `li` margins applying
 - `flex-shrink: 0` added to Checkbox to prevent warpping of size in flex layouts

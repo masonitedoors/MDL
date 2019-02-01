@@ -4,7 +4,7 @@ import { withKnobs, boolean } from "@storybook/addon-knobs";
 import { withState } from "@dump247/storybook-state";
 import Tabs from "./react";
 
-storiesOf("Internal/Nav/Tabs", module)
+storiesOf("Nav/Tabs", module)
   .addDecorator(withKnobs)
   .add(
     "Default",
@@ -17,7 +17,7 @@ storiesOf("Internal/Nav/Tabs", module)
         {
           id: "1",
           children: <span>Using JSX</span>
-        },
+        }
       ];
       return (
         <Tabs

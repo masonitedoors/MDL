@@ -11,12 +11,28 @@ npm install --save @masonite/external-ui-react
 Import a component as shown below and you're good to go.
 
 ```js
-import { Button } from "@masonite/external-ui-react"
+import { Button } from "@masonite/external-ui-react";
 ```
 
 ## Components
 
 Props noted with an asterisk are required. Not always by necessity, but by lack of defaults or fallback options. These components can be improved.
+
+### BlogCard
+
+| Prop    | Default    | Accepted Values |
+| ------- | ---------- | --------------- |
+| onClick | `() => {}` | function        |
+| title   | ''         | string          |
+| content | null       | string          |
+
+### TrendCard
+
+| Prop    | Default    | Accepted Values |
+| ------- | ---------- | --------------- |
+| onClick | `() => {}` | function        |
+| title   | ''         | string          |
+| content | null       | string          |
 
 ### Button
 

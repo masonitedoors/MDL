@@ -1,0 +1,82 @@
+@import "styles/index";
+
+.product-card {
+  width: 100%;
+  max-width: 320px;
+  max-height: 480px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.card-link {
+  display: block;
+  box-sizing: border-box;
+  padding: 1rem;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.image-wrapper {
+  position: relative;
+  // background: #ccc;
+  width: 100%;
+  margin: 0 0 $size-sm;
+  overflow: hidden;
+}
+
+.image {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+}
+
+.separator {
+  height: 3px;
+  width: 50%;
+  margin: 0 auto $size-md;
+  background-color: $color-limerick;
+}
+
+.icons {
+  text-align: center;
+}
+
+.icons-label {
+  color: #000;
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.icon-label {
+  color: #000;
+  font-size: 10px;
+  font-weight: 300;
+  text-transform: uppercase;
+}
+
+.icon-wrapper {
+  text-align: center;
+}
+
+.icon-image {
+  width: 100%;
+  height: 100%;
+}
+
+.icon-image-wrapper {
+  $size: 2rem; // make 24px
+  width: $size;
+  height: $size;
+  margin: auto;
+  font-size: 0;
+  fill: #000;
+}
+
+.title {
+  font-size: 14px;
+  font-weight: 600;
+  margin: 0 0 $size-sm;
+  color: $color-deepgrey;
+}

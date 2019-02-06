@@ -5,11 +5,32 @@
   max-width: 320px;
 
   &__title {
+    display: flex;
+    align-items: center;
+    font-size: 18px;
     color: $color-night;
     text-transform: uppercase;
   }
 
+  &__title-chevron {
+    @include square($size-lg);
+    fill: $color-limerick;
+    margin-left: $size-sm;
+
+    svg {
+      @include square(100%);
+    }
+  }
+
   &__content {
     padding: $size-lg;
+  }
+
+  &__image-wrapper {
+    font-size: 0;
+  }
+
+  &__image {
+    width: 100%;
   }
 }

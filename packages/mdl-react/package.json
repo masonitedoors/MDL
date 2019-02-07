@@ -1,7 +1,7 @@
 {
-  "name": "@masonite/external-ui-react",
+  "name": "@masonite/mdl-react",
   "version": "1.4.0",
-  "description": "Masonite External UI Kit for Reactjs",
+  "description": "Masonite Design Language for React",
   "main": "dist/index.js",
   "scripts": {
     "build": "npm i && NODE_PATH=./../../ webpack --mode production"

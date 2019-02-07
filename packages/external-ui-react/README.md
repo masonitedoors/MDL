@@ -55,8 +55,8 @@ Props noted with an asterisk are required. Not always by necessity, but by lack 
 
 Documentation incomplete.
 
-| Prop         | Default   | Accepted Values                          | Description                                     |
-| ------------ | --------- | ---------------------------------------- | ----------------------------------------------- |
-| activeTab\*  | undefined | number, string                           | Unique identifier                               |
-| onTabClick\* | undefined | function                                 | On tab click callback                           |
-| tabs         | Object[]  | `[{ id: number|string, children: jsx }]` | Tabs use `{children}` for ultimate flexibility. |
+| Prop         | Default   | Accepted Values                           | Description                                     |
+| ------------ | --------- | ----------------------------------------- | ----------------------------------------------- |
+| activeTab\*  | undefined | number, string                            | Unique identifier                               |
+| onTabClick\* | undefined | function                                  | On tab click callback                           |
+| tabs         | Object[]  | `[{ id: number\|string, children: jsx }]` | Tabs use `{children}` for ultimate flexibility. |

@@ -12,7 +12,9 @@
     "build:storybook": "build-storybook -c .storybook/react -o gh-pages",
     "build-external-ui": "cd packages/external-ui-react && npm run build",
     "build-internal-ui": "cd packages/internal-ui-react && npm run build",
-    "build-all": "npm run build-external-ui && npm run build-internal-ui"
+    "build-all": "npm run build-external-ui && npm run build-internal-ui",
+    "lint:js": "npx eslint './**/*.js'",
+    "test": "npm run lint:js"
   },
   "keywords": [],
   "author": "",
@@ -20,6 +22,9 @@
   "eslintConfig": {
     "extends": "@masonite/eslint-config"
   },
+  "eslintIgnore": [
+    "**/node_modules"
+  ],
   "devDependencies": {
     "@babel/core": "^7.1.6",
     "@babel/plugin-proposal-class-properties": "^7.1.0",

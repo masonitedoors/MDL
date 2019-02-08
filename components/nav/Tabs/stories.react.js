@@ -1,30 +1,30 @@
-import React, { Fragment } from "react";
-import { storiesOf } from "@storybook/react";
-import { withKnobs, boolean } from "@storybook/addon-knobs";
-import { withState } from "@dump247/storybook-state";
-import Tabs from "./react";
+import React, { Fragment } from 'react'
+import { storiesOf } from '@storybook/react'
+import { withKnobs, boolean } from '@storybook/addon-knobs'
+import { withState } from '@dump247/storybook-state'
+import Tabs from './react'
 
-storiesOf("Nav/Tabs", module)
+storiesOf('Nav/Tabs', module)
   .addDecorator(withKnobs)
   .add(
-    "Default",
+    'Default',
     withState({ activeTab: 1 })(({ store }) => {
       const tabs = [
         {
-          id: "0",
-          children: "Lorem Ipsum"
+          id: '0',
+          children: 'Lorem Ipsum',
         },
         {
-          id: "1",
-          children: <span>Using JSX</span>
-        }
-      ];
+          id: '1',
+          children: <span>Using JSX</span>,
+        },
+      ]
       return (
         <Tabs
           tabs={tabs}
           activeTab={store.state.activeTab}
           onTabClick={id => store.set({ activeTab: id })}
         />
-      );
-    })
-  );
+      )
+    }),
+  )

@@ -1,13 +1,13 @@
-const path = require("path");
-const CopyWebpackPlugin = require("copy-webpack-plugin");
+const path = require('path')
+const CopyWebpackPlugin = require('copy-webpack-plugin')
 
 module.exports = {
-  mode: "production",
-  entry: "./src/index.js",
+  mode: 'production',
+  entry: './src/index.js',
   output: {
-    path: path.resolve(__dirname, "dist"),
-    filename: "index.js",
-    libraryTarget: "commonjs2"
+    path: path.resolve(__dirname, 'dist'),
+    filename: 'index.js',
+    libraryTarget: 'commonjs2',
   },
   module: {
     rules: [
@@ -16,24 +16,24 @@ module.exports = {
         exclude: /node_modules/,
         use: [
           {
-            loader: "babel-loader",
+            loader: 'babel-loader',
             options: {
-              presets: ["@babel/preset-react"],
-              plugins: ["@babel/plugin-proposal-class-properties"]
-            }
-          }
-        ]
+              presets: ['@babel/preset-react'],
+              plugins: ['@babel/plugin-proposal-class-properties'],
+            },
+          },
+        ],
       },
       {
         test: /\.svg$/,
         exclude: /node_modules/,
-        loader: "svg-inline-loader"
-      }
-    ]
+        loader: 'svg-inline-loader',
+      },
+    ],
   },
   plugins: [
     new CopyWebpackPlugin([
-      { from: "./../../vendor/micons/svg/SVG", to: "svg", ignore: "**/*.js" }
-    ])
-  ]
-};
+      { from: './../../vendor/micons/svg/SVG', to: 'svg', ignore: '**/*.js' },
+    ]),
+  ],
+}

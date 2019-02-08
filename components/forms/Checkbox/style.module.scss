@@ -2,6 +2,7 @@
 
 .Checkbox {
   $size: 14px;
+
   align-items: center;
   align-content: center;
   position: relative;
@@ -46,8 +47,6 @@
   height: 100%;
 }
 
-.Checkbox__checkbox:checked
-  ~ .Checkbox__svg-wrapper
-  .Checkbox__svg-icon--checked {
+.Checkbox__checkbox:checked ~ .Checkbox__svg-wrapper .Checkbox__svg-icon--checked {
   display: flex;
 }

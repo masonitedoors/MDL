@@ -25,11 +25,15 @@
   "eslintIgnore": [
     "**/node_modules"
   ],
+  "stylelint": {
+    "extends": "@masonite/stylelint-config"
+  },
   "devDependencies": {
     "@babel/core": "^7.1.6",
     "@babel/plugin-proposal-class-properties": "^7.1.0",
     "@babel/preset-env": "^7.1.6",
     "@masonite/eslint-config": "0.0.12",
+    "@masonite/stylelint-config": "0.0.7",
     "babel-eslint": "^9.0.0",
     "babel-loader": "^8.0.4",
     "babel-preset-react-app": "^6.1.0",
@@ -41,6 +45,8 @@
     "lerna": "^3.4.3",
     "node-sass": "^4.10.0",
     "sass-loader": "^7.1.0",
+    "stylelint": "^9.0.0",
+    "stylelint-config-recommended": "^2.1.0",
     "svg-inline-loader": "^0.8.0"
   },
   "dependencies": {

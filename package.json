@@ -24,8 +24,23 @@
     "@babel/core": "^7.1.6",
     "@babel/plugin-proposal-class-properties": "^7.1.0",
     "@babel/preset-env": "^7.1.6",
-    "@dump247/storybook-state": "^1.5.1",
     "@masonite/eslint-config": "0.0.12",
+    "babel-eslint": "^9.0.0",
+    "babel-loader": "^8.0.4",
+    "babel-preset-react-app": "^6.1.0",
+    "copy-webpack-plugin": "^4.6.0",
+    "eslint": "^5.13.0",
+    "eslint-plugin-import": "^2.16.0",
+    "eslint-plugin-jsx-a11y": "^6.2.1",
+    "eslint-plugin-react": "^7.12.4",
+    "lerna": "^3.4.3",
+    "node-sass": "^4.10.0",
+    "sass-loader": "^7.1.0",
+    "svg-inline-loader": "^0.8.0"
+  },
+  "dependencies": {
+    "@dump247/storybook-state": "^1.5.1",
+    "@masonite/svg-icons": "^1.0.2",
     "@storybook/addon-actions": "^4.0.7",
     "@storybook/addon-knobs": "^4.0.7",
     "@storybook/addon-options": "^4.0.7",
@@ -35,22 +50,8 @@
     "@storybook/react": "^4.0.7",
     "@storybook/storybook-deployer": "^2.8.1",
     "@storybook/vue": "^4.0.7",
-    "babel-eslint": "^9.0.0",
-    "babel-loader": "^8.0.4",
-    "babel-preset-react-app": "^6.1.0",
     "classnames": "^2.2.6",
-    "copy-webpack-plugin": "^4.6.0",
-    "eslint": "^5.13.0",
-    "eslint-plugin-import": "^2.16.0",
-    "eslint-plugin-jsx-a11y": "^6.2.1",
-    "eslint-plugin-react": "^7.12.4",
-    "lerna": "^3.4.3",
-    "node-sass": "^4.10.0",
-    "sass-loader": "^7.1.0",
-    "svg-inline-loader": "^0.8.0",
+    "react": "^16.8.1",
     "tinycolor2": "^1.4.1"
-  },
-  "dependencies": {
-    "@masonite/svg-icons": "^1.0.2"
   }
 }

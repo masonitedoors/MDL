@@ -1,32 +1,32 @@
-import React from "react";
-import { storiesOf } from "@storybook/react";
-import { withKnobs, boolean, select } from "@storybook/addon-knobs";
-import Button from "./react";
+import React from 'react'
+import { storiesOf } from '@storybook/react'
+import { withKnobs, boolean, select } from '@storybook/addon-knobs'
+import Button from './react'
 
-storiesOf("Forms/Button/Button", module)
+storiesOf('Forms/Button/Button', module)
   .addDecorator(withKnobs)
-  .add("default", () => {
+  .add('default', () => {
     const variant = select(
-      "Variant",
+      'Variant',
       {
-        Light: "light",
-        Base: "",
-        Dark: "dark"
+        Light: 'light',
+        Base: '',
+        Dark: 'dark',
       },
-      "light"
-    );
+      'light',
+    )
     const size = select(
-      "Size",
+      'Size',
       {
-        Small: "small",
-        Base: ""
+        Small: 'small',
+        Base: '',
       },
-      ""
-    );
-    const uppercase = boolean("Uppercase", false);
+      '',
+    )
+    const uppercase = boolean('Uppercase', false)
     return (
       <Button variant={variant} size={size} uppercase={uppercase}>
         Lorem Button
       </Button>
-    );
-  });
+    )
+  })

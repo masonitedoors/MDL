@@ -8,39 +8,78 @@
     "storybook:vue": "start-storybook -p 9006 -c .storybook/vue",
     "storybook:react": "NODE_PATH=styles:components start-storybook -p 9007 -c .storybook/react",
     "generate-colors-css": "node -e 'require(\"./styles/generate-style-stories\").createCssClassesFromColors()'",
-    "build:storybook": "storybook-to-ghpages -s .storybook/react",
+    "deploy-storybook": "storybook-to-ghpages -s build:storybook -o gh-pages",
+    "build:storybook": "build-storybook -c .storybook/react -o gh-pages",
     "build-external-ui": "cd packages/external-ui-react && npm run build",
     "build-internal-ui": "cd packages/internal-ui-react && npm run build",
-    "build-all": "npm run build-external-ui && npm run build-internal-ui"
+    "build-all": "npm run build-external-ui && npm run build-internal-ui",
+    "lint:scripts": "npx eslint './**/*.js'",
+    "lint:styles": "npx stylelint **/*.scss --syntax scss",
+    "lint": "npm run lint:scripts; npm run lint:styles",
+    "test": "npm run lint"
   },
   "keywords": [],
   "author": "",
   "license": "MIT",
+  "eslintConfig": {
+    "extends": "@masonite/eslint-config"
+  },
+  "eslintIgnore": [
+    "**/node_modules"
+  ],
+  "stylelint": {
+    "extends": "@masonite/stylelint-config",
+    "rules": {
+      "at-rule-no-unknown": [
+        true,
+        {
+          "ignoreAtRules": [
+            "function",
+            "if",
+            "each",
+            "include",
+            "mixin"
+          ]
+        }
+      ]
+    }
+  },
   "devDependencies": {
-    "@babel/core": "^7.1.6",
-    "@babel/plugin-proposal-class-properties": "^7.1.0",
-    "@babel/preset-env": "^7.1.6",
-    "@dump247/storybook-state": "^1.5.1",
-    "@storybook/addon-actions": "^4.0.7",
-    "@storybook/addon-knobs": "^4.0.7",
-    "@storybook/addon-options": "^4.0.7",
-    "@storybook/addon-storysource": "^4.0.7",
-    "@storybook/addon-viewport": "^4.0.7",
-    "@storybook/html": "^4.0.7",
-    "@storybook/react": "^4.0.7",
-    "@storybook/storybook-deployer": "^2.8.1",
-    "@storybook/vue": "^4.0.7",
-    "babel-loader": "^8.0.4",
+    "@babel/core": "^7.2.2",
+    "@babel/plugin-proposal-class-properties": "^7.3.0",
+    "@babel/preset-env": "^7.3.1",
+    "@masonite/eslint-config": "0.0.12",
+    "@masonite/stylelint-config": "0.0.7",
+    "babel-eslint": "^9.0.0",
+    "babel-loader": "^8.0.5",
     "babel-preset-react-app": "^6.1.0",
-    "classnames": "^2.2.6",
     "copy-webpack-plugin": "^4.6.0",
-    "lerna": "^3.4.3",
-    "node-sass": "^4.10.0",
+    "eslint": "^5.13.0",
+    "eslint-plugin-import": "^2.16.0",
+    "eslint-plugin-jsx-a11y": "^6.2.1",
+    "eslint-plugin-react": "^7.12.4",
+    "lerna": "^3.11.0",
+    "node-sass": "^4.11.0",
     "sass-loader": "^7.1.0",
-    "svg-inline-loader": "^0.8.0",
-    "tinycolor2": "^1.4.1"
+    "stylelint": "^9.10.1",
+    "stylelint-config-recommended": "^2.1.0",
+    "svg-inline-loader": "^0.8.0"
   },
   "dependencies": {
-    "@masonite/svg-icons": "^1.0.2"
+    "@dump247/storybook-state": "^1.5.2",
+    "@masonite/svg-icons": "^1.0.2",
+    "@storybook/addon-actions": "^4.1.11",
+    "@storybook/addon-knobs": "^4.1.11",
+    "@storybook/addon-options": "^4.1.11",
+    "@storybook/addon-storysource": "^4.1.11",
+    "@storybook/addon-viewport": "^4.1.11",
+    "@storybook/html": "^4.1.11",
+    "@storybook/react": "^4.1.11",
+    "@storybook/storybook-deployer": "^2.8.1",
+    "@storybook/vue": "^4.1.11",
+    "classnames": "^2.2.6",
+    "prop-types": "^15.7.1",
+    "react": "^16.8.1",
+    "tinycolor2": "^1.4.1"
   }
 }

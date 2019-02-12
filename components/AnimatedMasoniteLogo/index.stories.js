@@ -1,7 +1,7 @@
-import React from "react";
-import { storiesOf } from "@storybook/react";
-import AnimatedMasoniteLogo from "./index.js";
+import React from 'react'
+import { storiesOf } from '@storybook/react'
+import AnimatedMasoniteLogo from './index'
 
-const stories = storiesOf("AnimatedMasoniteLogo", module);
+const stories = storiesOf('AnimatedMasoniteLogo', module)
 
-stories.add("Default", () => <AnimatedMasoniteLogo />);
+stories.add('Default', () => <AnimatedMasoniteLogo />)

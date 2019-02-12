@@ -114,6 +114,7 @@ $font-family: "Gotham SSm A", "Gotham SSm B", -apple-system, BlinkMacSystemFont,
   label,
   span {
     @include typography-p;
+
     margin: 0;
   }
 
@@ -125,6 +126,7 @@ $font-family: "Gotham SSm A", "Gotham SSm B", -apple-system, BlinkMacSystemFont,
   ul li,
   ol li {
     @include typography-p;
+
     margin: 0 0 1rem;
   }
 

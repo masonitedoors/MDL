@@ -10,50 +10,70 @@ const cx = classNames.bind(style)
 
 export default function FilterableSearch(props) {
   const [showFilters, toggleFilters] = useState(false)
+  const {
+    handleFilterChange, handleSearch, filterChoices = [], placeholder,
+  } = props
 
-  const { handleFilterChange = null, filterChoices = [] } = props
+  const SearchButton = () => (
+    <button type="button" onClick={handleSearch} className={cx(['FilterableSearch__btn'])}>
+      Search
+    </button>
+  )
+
+  const DropdownToggle = () => (
+    <button
+      type="button"
+      className={cx(['FilterableSearch__dropdown-toggle'])}
+      onClick={() => toggleFilters(!showFilters)}
+    >
+      <div
+        className={cx(['FilterableSearch__dropdown-toggle-icon'])}
+        dangerouslySetInnerHTML={{ __html: mChevronDown }}
+      />
+    </button>
+  )
 
   return (
     <div className={cx(['FilterableSearch'])}>
-      <Input />
+      <Input
+        placeholder={placeholder}
+        onKeyDown={ev => {
+          if (ev.keyCode === 13) {
+            handleSearch(ev.value)
+          }
+        }}
+      />
       <SearchButton />
-      <button
-        type="button"
-        className={cx(['FilterableSearch__dropdown-toggle'])}
-        onClick={() => toggleFilters(!showFilters)}
-      >
-        <div
-          className={cx(['FilterableSearch__dropdown-toggle-icon'])}
-          dangerouslySetInnerHTML={{ __html: mChevronDown }}
-        />
-      </button>
+      <DropdownToggle />
       {showFilters && filterChoices.length > 0 && (
-        <div className={cx(['FilterableSearch__dropdown-menu'])}>
+        <ul className={cx(['FilterableSearch__dropdown-menu'])}>
           {filterChoices.map(({ label, value, checked }, index) => (
-            // eslint-disable-next-line
-            <label htmlFor={`filterItem${index}`} key={index}>
-              <Checkbox
-                name={`filterItem${index}`}
-                checked={checked}
-                onChange={() => handleFilterChange(value)}
-              />
-              <span>{label}</span>
-            </label>
+            <li className={cx(['FilterableSearch__dropdown-menu-item'])} key={value}>
+              {/* eslint-disable-next-line */}
+              <label
+                className={cx(['FilterableSearch__dropdown-menu-item-label'])}
+                htmlFor={`${value}${index}`}
+              >
+                <Checkbox
+                  name={`${value}${index}`}
+                  checked={checked}
+                  onChange={() => handleFilterChange(value)}
+                />
+                <span className={cx(['FilterableSearch__dropdown-menu-item-label-text'])}>
+                  {label}
+                </span>
+              </label>
+            </li>
           ))}
-        </div>
+        </ul>
       )}
     </div>
   )
 }
 
-const SearchButton = () => (
-  <button type="button" className={cx(['FilterableSearch__btn'])}>
-    Search
-  </button>
-)
-
 FilterableSearch.propTypes = {
   handleFilterChange: PropTypes.func.isRequired,
+  handleSearch: PropTypes.func.isRequired,
   filterChoices: PropTypes.arrayOf(
     PropTypes.shape({
       label: PropTypes.string,
@@ -61,4 +81,9 @@ FilterableSearch.propTypes = {
       checked: PropTypes.bool,
     }),
   ).isRequired,
+  placeholder: PropTypes.string,
+}
+
+FilterableSearch.defaultProps = {
+  placeholder: 'Search',
 }

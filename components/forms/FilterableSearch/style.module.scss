@@ -18,6 +18,7 @@
     color: $color-white;
     padding: $size-md;
     background: $color-blue;
+    cursor: pointer;
   }
 
   &__dropdown-toggle {
@@ -27,6 +28,7 @@
     align-items: center;
     background: $color-blueberry;
     border-radius: 0 2px 2px 0;
+    cursor: pointer;
   }
 
   &__dropdown-toggle-icon {
@@ -39,8 +41,23 @@
     position: absolute;
     top: 100%;
     right: 0;
+    margin: 0;
     padding: $size-lg;
     background: $color-white;
     box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.15);
+    list-style: none;
+  }
+
+  &__dropdown-menu-item {
+    margin: 0;
+    padding: 0;
+  }
+
+  &__dropdown-menu-item-label {
+    display: flex;
+  }
+
+  &__dropdown-menu-item-label-text {
+    margin-left: $size-md;
   }
 }

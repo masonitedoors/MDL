@@ -6,7 +6,25 @@ import FilterableSearch from './react'
 
 storiesOf('Forms/FilterableSearch', module)
   .addDecorator(withKnobs)
-  .add('default', () => {
-    const checked = boolean('Checked', true)
-    return <FilterableSearch filterChoices={[{ label: 'Label', value: 'idk', selected: true }]} />
-  })
+  .add(
+    'default',
+    withState({
+      filterChoices: [
+        { label: 'Filter 1', value: 'FILTER1', checked: true },
+        { label: 'Filter 2', value: 'FILTER2', checked: false },
+      ],
+    })(({ store }) => (
+      <FilterableSearch
+        handleFilterChange={checkedChoice => {
+          store.set({
+            ...store.state,
+            filterChoices: store.state.filterChoices.map(choice => (choice.value === checkedChoice ? { ...choice, checked: !choice.checked } : choice)),
+          })
+        }}
+        handleSearch={() => {
+          console.log(store)
+        }}
+        filterChoices={store.state.filterChoices}
+      />
+    )),
+  )

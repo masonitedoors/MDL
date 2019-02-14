@@ -37,6 +37,9 @@
     },
     "setupFiles": [
       "<rootDir>/config/setupTests.js"
+    ],
+    "snapshotSerializers": [
+      "enzyme-to-json/serializer"
     ]
   },
   "stylelint": {
@@ -68,6 +71,7 @@
     "copy-webpack-plugin": "^4.6.0",
     "enzyme": "^3.8.0",
     "enzyme-adapter-react-16": "^1.9.1",
+    "enzyme-to-json": "^3.3.5",
     "eslint": "^5.13.0",
     "eslint-plugin-import": "^2.16.0",
     "eslint-plugin-jsx-a11y": "^6.2.1",

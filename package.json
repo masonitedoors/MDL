@@ -16,7 +16,8 @@
     "lint:scripts": "npx eslint './**/*.js'",
     "lint:styles": "npx stylelint **/*.scss --syntax scss",
     "lint": "npm run lint:scripts; npm run lint:styles",
-    "test": "npm run lint"
+    "test": "npm run lint",
+    "test:watch": "npx jest --watch"
   },
   "keywords": [],
   "author": "",
@@ -27,6 +28,17 @@
   "eslintIgnore": [
     "**/node_modules"
   ],
+  "jest": {
+    "modulePaths": [
+      "<rootDir>"
+    ],
+    "moduleNameMapper": {
+      "(\\.css|\\.scss)$": "identity-obj-proxy"
+    },
+    "setupFiles": [
+      "<rootDir>/config/setupTests.js"
+    ]
+  },
   "stylelint": {
     "extends": "@masonite/stylelint-config",
     "rules": {
@@ -54,12 +66,17 @@
     "babel-loader": "^8.0.5",
     "babel-preset-react-app": "^6.1.0",
     "copy-webpack-plugin": "^4.6.0",
+    "enzyme": "^3.8.0",
+    "enzyme-adapter-react-16": "^1.9.1",
     "eslint": "^5.13.0",
     "eslint-plugin-import": "^2.16.0",
     "eslint-plugin-jsx-a11y": "^6.2.1",
     "eslint-plugin-react": "^7.12.4",
-    "lerna": "^3.11.0",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^24.1.0",
+    "lerna": "^3.11.1",
     "node-sass": "^4.11.0",
+    "react-dom": "^16.8.1",
     "sass-loader": "^7.1.0",
     "stylelint": "^9.10.1",
     "stylelint-config-recommended": "^2.1.0",

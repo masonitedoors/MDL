@@ -5,17 +5,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased]
+## [1.5.0] - 2019-02-15
 
 ### Added
 
-- TrendCard component
-- BlogCard component
-- ProductCard component
-- TextInput component with error state
+- FilterableSearch component
 - `margin: 0` to Tabs to prevent global `li` margins applying
 - `flex-shrink: 0` added to Checkbox to prevent warpping of size in flex layouts
-- Storybook specific stylesheet
 - Helper mixin file with `square` mixin
 
 ### Changed

@@ -1,6 +1,6 @@
 {
-  "name": "@masonite/mdl-react",
-  "version": "1.4.0",
+  "name": "@masonite/external-ui-react",
+  "version": "1.5.2",
   "description": "Masonite Design Language for React",
   "main": "dist/index.js",
   "scripts": {

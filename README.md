@@ -1,6 +1,6 @@
 # MDL - Masonite Design Language
 
-[![lerna](https://img.shields.io/badge/maintained%20with-lerna-cc00ff.svg)](https://lernajs.io/)
+[![lerna](https://img.shields.io/badge/maintained%20with-lerna-cc00ff.svg)](https://lernajs.io/) [![Build Status](https://travis-ci.org/masonitedoors/MDL.svg?branch=master)](https://travis-ci.org/masonitedoors/MDL)
 
 A monorepo for Masonite Design Language.
 

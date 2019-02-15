@@ -4,13 +4,14 @@ module.exports = (storybookBaseConfig, configType, defaultConfig) => {
   defaultConfig.module.rules.push(
     {
       test: /\/react\.js$/,
+      enforce: 'pre',
+      exclude: /node_modules/,
       loaders: [
         {
           loader: 'eslint-loader',
           options: {
-            fix: false,
-            emitError: true,
-            failOnError: true,
+            fix: true,
+            emitWarning: true,
           },
         },
       ],
@@ -18,12 +19,14 @@ module.exports = (storybookBaseConfig, configType, defaultConfig) => {
     },
     {
       test: /stories\.react\.js$/,
+      exclude: /node_modules/,
       loaders: [require.resolve('@storybook/addon-storysource/loader')],
       include: [path.resolve(__dirname, '../../components')],
       enforce: 'pre',
     },
     {
       test: /\.scss$/,
+      exclude: /node_modules/,
       loaders: [
         'style-loader',
         {

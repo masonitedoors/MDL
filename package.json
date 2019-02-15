@@ -22,12 +22,6 @@
   "keywords": [],
   "author": "",
   "license": "MIT",
-  "eslintConfig": {
-    "extends": "@masonite/eslint-config"
-  },
-  "eslintIgnore": [
-    "**/node_modules"
-  ],
   "jest": {
     "modulePaths": [
       "<rootDir>"
@@ -41,23 +35,6 @@
     "snapshotSerializers": [
       "enzyme-to-json/serializer"
     ]
-  },
-  "stylelint": {
-    "extends": "@masonite/stylelint-config",
-    "rules": {
-      "at-rule-no-unknown": [
-        true,
-        {
-          "ignoreAtRules": [
-            "function",
-            "if",
-            "each",
-            "include",
-            "mixin"
-          ]
-        }
-      ]
-    }
   },
   "devDependencies": {
     "@babel/core": "^7.2.2",
@@ -73,6 +50,7 @@
     "enzyme-adapter-react-16": "^1.9.1",
     "enzyme-to-json": "^3.3.5",
     "eslint": "^5.13.0",
+    "eslint-loader": "^2.1.2",
     "eslint-plugin-import": "^2.16.0",
     "eslint-plugin-jsx-a11y": "^6.2.1",
     "eslint-plugin-react": "^7.12.4",

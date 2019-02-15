@@ -3,20 +3,14 @@ const path = require('path')
 module.exports = (storybookBaseConfig, configType, defaultConfig) => {
   defaultConfig.module.rules.push(
     {
-      test: /react\.js$/,
+      test: /\/react\.js$/,
       loaders: [
         {
           loader: 'eslint-loader',
           options: {
-            emitError: false,
+            fix: false,
+            emitError: true,
             failOnError: true,
-          },
-        },
-        {
-          loader: 'babel-loader',
-          options: {
-            presets: ['@babel/preset-react'],
-            plugins: ['@babel/plugin-proposal-class-properties'],
           },
         },
       ],

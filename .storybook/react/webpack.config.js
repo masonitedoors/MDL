@@ -3,6 +3,26 @@ const path = require('path')
 module.exports = (storybookBaseConfig, configType, defaultConfig) => {
   defaultConfig.module.rules.push(
     {
+      test: /react\.js$/,
+      loaders: [
+        {
+          loader: 'eslint-loader',
+          options: {
+            emitError: false,
+            failOnError: true,
+          },
+        },
+        {
+          loader: 'babel-loader',
+          options: {
+            presets: ['@babel/preset-react'],
+            plugins: ['@babel/plugin-proposal-class-properties'],
+          },
+        },
+      ],
+      include: path.resolve(__dirname, '../../components'),
+    },
+    {
       test: /stories\.react\.js$/,
       loaders: [require.resolve('@storybook/addon-storysource/loader')],
       include: [path.resolve(__dirname, '../../components')],

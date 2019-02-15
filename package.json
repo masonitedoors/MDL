@@ -16,8 +16,8 @@
     "lint:scripts": "npx eslint './**/*.js'",
     "lint:styles": "npx stylelint **/*.scss --syntax scss",
     "lint": "npm run lint:styles && npm run lint:scripts",
-    "test": "npm run lint",
-    "test:watch": "npx jest --watch"
+    "test:watch": "npx jest --watch",
+    "test": "npm run lint && npx jest"
   },
   "keywords": [],
   "author": "",

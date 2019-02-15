@@ -78,6 +78,7 @@
     "eslint-plugin-react": "^7.12.4",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^24.1.0",
+    "jsdom": "^13.2.0",
     "lerna": "^3.11.1",
     "node-sass": "^4.11.0",
     "react-dom": "^16.8.1",

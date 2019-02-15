@@ -16,7 +16,7 @@ export default class Input extends Component {
   }
 
   onChange = ev => {
-    this.setState({ value: ev.value })
+    this.setState({ value: ev.target.value })
   }
 
   render() {
@@ -48,11 +48,11 @@ export default class Input extends Component {
 }
 
 Input.propTypes = {
-  handleSubmit: PropTypes.func,
+  error: PropTypes.bool,
   placeholder: PropTypes.string,
 }
 
 Input.defaultProps = {
-  handleSubmit: null,
+  error: false,
   placeholder: '',
 }

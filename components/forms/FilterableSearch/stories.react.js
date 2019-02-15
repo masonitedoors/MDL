@@ -18,7 +18,9 @@ storiesOf('Forms/FilterableSearch', module)
         handleFilterChange={checkedChoice => {
           store.set({
             ...store.state,
-            filterChoices: store.state.filterChoices.map(choice => (choice.value === checkedChoice ? { ...choice, checked: !choice.checked } : choice)),
+            filterChoices: store.state.filterChoices.map(choice => (choice.value === checkedChoice
+              ? { ...choice, checked: !choice.checked }
+              : choice)),
           })
         }}
         handleSearch={() => {

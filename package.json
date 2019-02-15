@@ -15,7 +15,7 @@
     "build-all": "npm run build-external-ui && npm run build-internal-ui",
     "lint:scripts": "npx eslint './**/*.js'",
     "lint:styles": "npx stylelint **/*.scss --syntax scss",
-    "lint": "npm run lint:scripts; npm run lint:styles",
+    "lint": "npm run lint:styles && npm run lint:scripts",
     "test": "npm run lint",
     "test:watch": "npx jest --watch"
   },

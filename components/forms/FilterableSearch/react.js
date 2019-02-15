@@ -9,18 +9,21 @@ import style from './style.module.scss'
 const cx = classNames.bind(style)
 
 export default class FilterableSearch extends Component {
-  state = {
-    showFilters: false,
+  constructor(props) {
+    super(props)
+    this.state = {
+      showFilters: false,
+    }
+
+    this.dropdownMenuRef = React.createRef()
   }
 
-  dropdownMenuRef = React.createRef()
-
   componentWillMount() {
-    document.addEventListener('click', this.handleClick)
+    document.body.addEventListener('click', this.handleClick)
   }
 
   componentWillUnmount() {
-    document.removeEventListener('click', this.handleClick)
+    document.body.removeEventListener('click', this.handleClick)
   }
 
   handleClick = ({ target }) => {

@@ -23,8 +23,8 @@ storiesOf('Forms/FilterableSearch', module)
               : choice)),
           })
         }}
-        handleSearch={() => {
-          console.log('handleSearch callback invoked')
+        handleSearch={value => {
+          console.log('handleSearch callback invoked, returns:', value)
         }}
         filterChoices={store.state.filterChoices}
       />

@@ -15,8 +15,10 @@ export default class Input extends Component {
     }
   }
 
-  onChange = ev => {
+  _onChange = ev => {
+    const { onChange } = this.props
     this.setState({ value: ev.target.value })
+    onChange(ev.target.value)
   }
 
   render() {
@@ -35,7 +37,7 @@ export default class Input extends Component {
           type="text"
           placeholder={placeholder}
           onKeyDown={onKeyDown}
-          onChange={this.onChange}
+          onChange={this._onChange}
           value={value}
         />
         <div

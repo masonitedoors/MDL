@@ -13,6 +13,7 @@ export default class FilterableSearch extends Component {
     super(props)
     this.state = {
       showFilters: false,
+      value: '',
     }
 
     this.dropdownMenuRef = React.createRef()
@@ -46,11 +47,12 @@ export default class FilterableSearch extends Component {
     const { showFilters } = this.state
 
     const SearchButton = () => {
-      const { handleSearch } = this.props
+      const { value } = this.state
+
       return (
         <button
           type="button"
-          onClick={handleSearch}
+          onClick={() => handleSearch(value)}
           className={cx(['FilterableSearch__btn'])}
         >
           Search
@@ -113,9 +115,10 @@ export default class FilterableSearch extends Component {
       <div className={cx(['FilterableSearch'])}>
         <Input
           placeholder={placeholder}
+          onChange={value => this.setState({ value })}
           onKeyDown={ev => {
             if (ev.keyCode === 13) {
-              handleSearch(ev.value)
+              handleSearch(ev.target.value)
             }
           }}
         />

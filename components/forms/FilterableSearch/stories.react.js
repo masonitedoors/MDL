@@ -9,6 +9,7 @@ storiesOf('Forms/FilterableSearch', module)
   .add(
     'default',
     withState({
+      value: '',
       filterChoices: [
         { label: 'Filter 1', value: 'FILTER1', checked: true },
         { label: 'Filter 2', value: 'FILTER2', checked: false },
@@ -18,10 +19,15 @@ storiesOf('Forms/FilterableSearch', module)
         handleFilterChange={checkedChoice => {
           store.set({
             ...store.state,
-            filterChoices: store.state.filterChoices.map(choice => (choice.value === checkedChoice
+            filterChoices: store.state.filterChoices.map(choice => (choice.value === checkedChoice.value
               ? { ...choice, checked: !choice.checked }
               : choice)),
           })
+        }}
+        value={store.state.value}
+        handleInputChange={value => {
+          console.log('handleInputChange invoked, returns: ', value)
+          store.set({ value })
         }}
         handleSearch={value => {
           console.log('handleSearch callback invoked, returns:', value)

@@ -49,6 +49,7 @@
     list-style: none;
     pointer-events: none;
     opacity: 0;
+    z-index: 10;
 
     &--open {
       opacity: 1;

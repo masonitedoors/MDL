@@ -13,7 +13,6 @@ export default class FilterableSearch extends Component {
     super(props)
     this.state = {
       showFilters: false,
-      value: '',
     }
 
     this.dropdownMenuRef = React.createRef()
@@ -39,26 +38,24 @@ export default class FilterableSearch extends Component {
   render() {
     const {
       handleFilterChange,
+      handleInputChange,
       handleSearch,
       filterChoices = [],
       placeholder,
+      value,
     } = this.props
 
     const { showFilters } = this.state
 
-    const SearchButton = () => {
-      const { value } = this.state
-
-      return (
-        <button
-          type="button"
-          onClick={() => handleSearch(value)}
-          className={cx(['FilterableSearch__btn'])}
-        >
-          Search
-        </button>
-      )
-    }
+    const SearchButton = () => (
+      <button
+        type="button"
+        onClick={() => handleSearch(value)}
+        className={cx(['FilterableSearch__btn'])}
+      >
+        Search
+      </button>
+    )
 
     const DropdownToggle = () => (
       <button
@@ -84,10 +81,7 @@ export default class FilterableSearch extends Component {
         ])}
       >
         {filterChoices.map(({ label, value, checked }, index) => (
-          <li
-            className={cx(['FilterableSearch__dropdown-menu-item'])}
-            key={value}
-          >
+          <li className={cx(['FilterableSearch__dropdown-menu-item'])} key={value}>
             {/* eslint-disable-next-line */}
             <label
               className={cx(['FilterableSearch__dropdown-menu-item-label'])}
@@ -96,13 +90,9 @@ export default class FilterableSearch extends Component {
               <Checkbox
                 name={`${value}${index}`}
                 checked={checked}
-                onChange={() => handleFilterChange(value)}
+                onChange={() => handleFilterChange({ label, value, checked })}
               />
-              <span
-                className={cx([
-                  'FilterableSearch__dropdown-menu-item-label-text',
-                ])}
-              >
+              <span className={cx(['FilterableSearch__dropdown-menu-item-label-text'])}>
                 {label}
               </span>
             </label>
@@ -115,12 +105,13 @@ export default class FilterableSearch extends Component {
       <div className={cx(['FilterableSearch'])}>
         <Input
           placeholder={placeholder}
-          onChange={value => this.setState({ value })}
+          onChange={value => handleInputChange(value)}
           onKeyDown={ev => {
             if (ev.keyCode === 13) {
               handleSearch(ev.target.value)
             }
           }}
+          value={value}
         />
         <SearchButton />
         <div ref={this.dropdownMenuRef}>
@@ -134,7 +125,9 @@ export default class FilterableSearch extends Component {
 
 FilterableSearch.propTypes = {
   handleFilterChange: PropTypes.func.isRequired,
+  handleInputChange: PropTypes.func,
   handleSearch: PropTypes.func.isRequired,
+  value: PropTypes.string.isRequired,
   filterChoices: PropTypes.arrayOf(
     PropTypes.shape({
       label: PropTypes.string,
@@ -147,4 +140,5 @@ FilterableSearch.propTypes = {
 
 FilterableSearch.defaultProps = {
   placeholder: 'Search',
+  handleInputChange: null,
 }

@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component, PureComponent } from 'react'
 import classNames from 'classnames/bind'
 import { mX } from '@masonite/svg-icons'
 import PropTypes from 'prop-types'
@@ -6,38 +6,24 @@ import s from './style.module.scss'
 
 const cx = classNames.bind(s)
 
-export default class Input extends Component {
-  constructor(props) {
-    super(props)
-
-    this.state = {
-      value: '',
-    }
-  }
-
-  _onChange = ev => {
-    const { onChange } = this.props
-    this.setState({ value: ev.target.value })
-    onChange(ev.target.value)
-  }
-
+export default class Input extends PureComponent {
   render() {
     const {
-      error, onKeyDown, placeholder, variant,
+      error, onChange, onKeyDown, placeholder, value, variant,
     } = this.props
-    const { value } = this.state
 
     return (
       <div className={cx('input-wrapper')}>
         <input
           className={cx('input', {
+            'input--light': variant === 'light',
             'input--dark': variant === 'dark',
             'input--error': error,
           })}
           type="text"
           placeholder={placeholder}
           onKeyDown={onKeyDown}
-          onChange={this._onChange}
+          onChange={ev => onChange(ev.target.value)}
           value={value}
         />
         <div
@@ -50,11 +36,19 @@ export default class Input extends Component {
 }
 
 Input.propTypes = {
+  onChange: PropTypes.func,
   error: PropTypes.bool,
+  onKeyDown: PropTypes.func,
   placeholder: PropTypes.string,
+  value: PropTypes.string,
+  variant: PropTypes.oneOf(['dark', 'light']),
 }
 
 Input.defaultProps = {
+  onChange: null,
   error: false,
+  onKeyDown: null,
   placeholder: '',
+  value: '',
+  variant: 'light',
 }

@@ -1,5 +1,4 @@
 import React, { createElement } from 'react'
-import ReactDOM, { render } from 'react-dom'
 import s from './style.module.scss'
 
 export const Heading = props => {

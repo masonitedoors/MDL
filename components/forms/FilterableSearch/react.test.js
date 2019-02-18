@@ -1,16 +1,13 @@
 import React from 'react'
-import { shallow, mount } from 'enzyme'
+import { mount } from 'enzyme'
 import { JSDOM } from 'jsdom'
 import FilterableSearch from './react'
 
-const jsdom = new JSDOM(
-  '<!doctype html><html><body><div id="app">Mount here</div></body></html>',
-)
+const jsdom = new JSDOM('<!doctype html><html><body><div id="app">Mount here</div></body></html>')
 const { window } = jsdom
 
 describe('FilterableSearch', () => {
   let props
-  let instance
   let wrapper
 
   beforeEach(() => {

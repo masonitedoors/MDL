@@ -1,6 +1,6 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
-import { withKnobs, boolean } from '@storybook/addon-knobs'
+import { withKnobs } from '@storybook/addon-knobs'
 import { withState } from '@dump247/storybook-state'
 import FilterableSearch from './react'
 
@@ -18,9 +18,7 @@ storiesOf('Forms/FilterableSearch', module)
         handleFilterChange={checkedChoice => {
           store.set({
             ...store.state,
-            filterChoices: store.state.filterChoices.map(choice => (choice.value === checkedChoice
-              ? { ...choice, checked: !choice.checked }
-              : choice)),
+            filterChoices: store.state.filterChoices.map(choice => (choice.value === checkedChoice ? { ...choice, checked: !choice.checked } : choice)),
           })
         }}
         handleSearch={value => {

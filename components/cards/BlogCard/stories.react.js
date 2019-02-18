@@ -1,7 +1,6 @@
-import React, { Fragment } from 'react'
+import React from 'react'
 import { storiesOf } from '@storybook/react'
-import { withKnobs, boolean } from '@storybook/addon-knobs'
-import { withState } from '@dump247/storybook-state'
+import { withKnobs } from '@storybook/addon-knobs'
 import BlogCard from './react'
 
 storiesOf('Cards/BlogCard', module)
@@ -10,6 +9,5 @@ storiesOf('Cards/BlogCard', module)
     <BlogCard
       title="Lorem Ipsum"
       content="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-      image={null}
     />
   ))

@@ -23,7 +23,9 @@
 
   &__dropdown-toggle {
     display: inline-flex;
+
     @include square($height);
+
     border: 0;
     align-items: center;
     background: $color-blueberry;
@@ -33,6 +35,7 @@
 
   &__dropdown-toggle-icon {
     @include square($size-lg);
+
     fill: white;
     margin: auto;
     pointer-events: none;

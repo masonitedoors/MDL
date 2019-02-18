@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { mChevronRight } from '@masonite/svg-icons'
 import classNames from 'classnames/bind'
 import style from './style.module.scss'
@@ -7,7 +7,7 @@ const cx = classNames.bind(style)
 
 export default function TrendCard(props) {
   const {
-    title, content, image, squareImages = false, to,
+    title, content, image, to,
   } = props
 
   return (

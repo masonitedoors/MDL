@@ -15,19 +15,19 @@ class Checkbox extends PureComponent {
   }
 
   componentDidUpdate(prevProps) {
-    if (prevProps.checked !== this.props.checked) this.setState({ checked: this.props.checked })
+    const { checked } = this.props
+    if (prevProps.checked !== checked) this.setState({ checked })
   }
 
   onChange = () => {
-    const { stateful } = this.props
+    const { stateful, onChange, checked } = this.props
     const isStateful = typeof stateful !== 'undefined' ? stateful : true
-    if (isStateful) this.setState({ checked: !this.state.checked })
-    if (typeof this.props.onChange === 'function') this.props.onChange()
+    if (isStateful) this.setState({ checked: !checked })
+    if (typeof onChange === 'function') onChange()
   }
 
   render() {
     const { onChange } = this
-    const { disabled } = this.props
     const { checked } = this.state
 
     return (

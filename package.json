@@ -44,9 +44,6 @@
     "babel-loader": "^8.0.5",
     "babel-preset-react-app": "^6.1.0",
     "copy-webpack-plugin": "^4.6.0",
-    "enzyme": "^3.8.0",
-    "enzyme-adapter-react-16": "^1.9.1",
-    "enzyme-to-json": "^3.3.5",
     "eslint": "^5.13.0",
     "eslint-loader": "^2.1.2",
     "eslint-plugin-import": "^2.16.0",
@@ -76,8 +73,12 @@
     "@storybook/storybook-deployer": "^2.8.1",
     "@storybook/vue": "^4.1.11",
     "classnames": "^2.2.6",
+    "enzyme": "^3.8.0",
+    "enzyme-adapter-react-16": "^1.9.1",
+    "enzyme-to-json": "^3.3.5",
     "prop-types": "^15.7.1",
     "react": "^16.8.1",
+    "react-lottie": "^1.2.3",
     "tinycolor2": "^1.4.1"
   }
 }

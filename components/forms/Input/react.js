@@ -52,9 +52,18 @@ export default class Input extends Component {
 Input.propTypes = {
   error: PropTypes.bool,
   placeholder: PropTypes.string,
+  variant: PropTypes.string,
+  onChange: PropTypes.func,
+  onKeyDown: PropTypes.func,
 }
 
 Input.defaultProps = {
-  error: false,
+  onChange: null,
+  onKeyDown: null,
+}
+
+Input.defaultProps = {
+  variant: 'light',
   placeholder: '',
+  error: false,
 }

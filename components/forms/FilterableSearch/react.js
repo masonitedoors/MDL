@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react'
 import classNames from 'classnames/bind'
-import { mChevronDown } from '@masonite/svg-icons'
+import { mFilter, mChevronDown } from '@masonite/svg-icons'
 import { React as Input } from 'components/forms/Input'
 import { React as Checkbox } from 'components/forms/Checkbox'
 import PropTypes from 'prop-types'
@@ -9,14 +9,16 @@ import style from './style.module.scss'
 const cx = classNames.bind(style)
 
 export default class FilterableSearch extends PureComponent {
-  constructor(props) {
-    super(props)
-    this.state = {
-      showFilters: false,
-    }
-
-    this.dropdownMenuRef = React.createRef()
+  state = {
+    showFilters: false,
   }
+
+  dropdownIcons = {
+    chevronDown: mChevronDown,
+    filter: mFilter,
+  }
+
+  dropdownMenuRef = React.createRef()
 
   componentDidMount() {
     document.body.addEventListener('click', this.handleClick)
@@ -38,6 +40,7 @@ export default class FilterableSearch extends PureComponent {
   render() {
     const {
       buttonLabel,
+      dropdownIcon,
       onFilterChange,
       onInputChange,
       onSubmit,
@@ -47,6 +50,8 @@ export default class FilterableSearch extends PureComponent {
     } = this.props
 
     const { showFilters } = this.state
+
+    const selectedDropdownIcon = this.dropdownIcons[dropdownIcon]
 
     const SearchButton = () => (
       <button
@@ -69,7 +74,7 @@ export default class FilterableSearch extends PureComponent {
       >
         <div
           className={cx(['FilterableSearch__dropdown-toggle-icon'])}
-          dangerouslySetInnerHTML={{ __html: mChevronDown }}
+          dangerouslySetInnerHTML={{ __html: selectedDropdownIcon }}
         />
       </button>
     )
@@ -124,6 +129,7 @@ export default class FilterableSearch extends PureComponent {
 
 FilterableSearch.propTypes = {
   buttonLabel: PropTypes.string,
+  dropdownIcon: PropTypes.oneOf(['chevronDown', 'filter']),
   onFilterChange: PropTypes.func.isRequired,
   onInputChange: PropTypes.func,
   onSubmit: PropTypes.func,
@@ -140,6 +146,7 @@ FilterableSearch.propTypes = {
 
 FilterableSearch.defaultProps = {
   buttonLabel: 'Search',
+  dropdownIcon: 'chevronDown',
   placeholder: 'Search',
   onSubmit: undefined,
   onInputChange: undefined,

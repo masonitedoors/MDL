@@ -55,11 +55,13 @@ Props noted with an asterisk are required. Not always by necessity, but by lack 
 
 | Prop             | Default   | Accepted Values                                      | Description                                |
 | ---------------- | --------- | ---------------------------------------------------- | ------------------------------------------ |
+| buttonLabel      | 'Search'  | string                                               |                                            |
+| dropdownIcon     | 'chevron' | 'chevron', 'filter'                                  |                                            |
 | filterChoices    | ---       | { label: string, value: string, checked: boolean }[] |                                            |
 | onFilterChange\* | ---       | function                                             |                                            |
 | onInputChange    | undefined | function                                             |                                            |
 | onSubmit         | undefined | function                                             | Called when button is pressed or Enter key |
-| placeholder      | string    | string                                               |                                            |
+| placeholder      | 'Search'  | string                                               |                                            |
 | value\*          | ---       | string                                               |                                            |
 
 ### forms/Input

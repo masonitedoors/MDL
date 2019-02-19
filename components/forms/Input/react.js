@@ -1,39 +1,35 @@
-import React, { Component, PureComponent } from 'react'
+import React, { memo } from 'react'
 import classNames from 'classnames/bind'
 import { mX } from '@masonite/svg-icons'
 import PropTypes from 'prop-types'
-import s from './style.module.scss'
+import style from './style.module.scss'
 
-const cx = classNames.bind(s)
+const cx = classNames.bind(style)
 
-export default class Input extends PureComponent {
-  render() {
-    const {
-      error, onChange, onKeyDown, placeholder, value, variant,
-    } = this.props
+const Input = ({
+  error, onChange, onKeyDown, placeholder, value, variant,
+}) => (
+  <div className={cx('input-wrapper')}>
+    <input
+      className={cx('input', {
+        'input--light': variant === 'light',
+        'input--dark': variant === 'dark',
+        'input--error': error,
+      })}
+      type="text"
+      placeholder={placeholder}
+      onKeyDown={onKeyDown}
+      onChange={ev => onChange(ev.target.value)}
+      value={value}
+    />
+    <div
+      className={cx(['input-icon', { 'input-icon--error': error }])}
+      dangerouslySetInnerHTML={{ __html: mX }}
+    />
+  </div>
+)
 
-    return (
-      <div className={cx('input-wrapper')}>
-        <input
-          className={cx('input', {
-            'input--light': variant === 'light',
-            'input--dark': variant === 'dark',
-            'input--error': error,
-          })}
-          type="text"
-          placeholder={placeholder}
-          onKeyDown={onKeyDown}
-          onChange={ev => onChange(ev.target.value)}
-          value={value}
-        />
-        <div
-          className={cx(['input-icon', { 'input-icon--error': error }])}
-          dangerouslySetInnerHTML={{ __html: mX }}
-        />
-      </div>
-    )
-  }
-}
+export default memo(Input)
 
 Input.propTypes = {
   onChange: PropTypes.func,

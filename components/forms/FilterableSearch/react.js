@@ -37,9 +37,10 @@ export default class FilterableSearch extends PureComponent {
 
   render() {
     const {
+      buttonLabel,
       onFilterChange,
       onInputChange,
-      onSearch,
+      onSubmit,
       filterChoices = [],
       placeholder,
       value,
@@ -50,10 +51,10 @@ export default class FilterableSearch extends PureComponent {
     const SearchButton = () => (
       <button
         type="button"
-        onClick={() => onSearch(value)}
+        onClick={() => onSubmit && onSubmit(value)}
         className={cx(['FilterableSearch__btn'])}
       >
-        Search
+        {buttonLabel}
       </button>
     )
 
@@ -107,13 +108,11 @@ export default class FilterableSearch extends PureComponent {
           placeholder={placeholder}
           onChange={value => onInputChange(value)}
           onKeyDown={ev => {
-            if (ev.keyCode === 13) {
-              onSearch(ev.target.value)
-            }
+            if (ev.keyCode === 13 && onSubmit) onSubmit(ev.target.value)
           }}
           value={value}
         />
-        <SearchButton />
+        {onSubmit && <SearchButton />}
         <div ref={this.dropdownMenuRef}>
           <DropdownToggle />
           <DropdownMenu show={showFilters} />
@@ -124,9 +123,10 @@ export default class FilterableSearch extends PureComponent {
 }
 
 FilterableSearch.propTypes = {
+  buttonLabel: PropTypes.string,
   onFilterChange: PropTypes.func.isRequired,
   onInputChange: PropTypes.func,
-  onSearch: PropTypes.func.isRequired,
+  onSubmit: PropTypes.func,
   value: PropTypes.string.isRequired,
   filterChoices: PropTypes.arrayOf(
     PropTypes.shape({
@@ -139,6 +139,8 @@ FilterableSearch.propTypes = {
 }
 
 FilterableSearch.defaultProps = {
+  buttonLabel: 'Search',
   placeholder: 'Search',
-  onInputChange: () => {},
+  onSubmit: undefined,
+  onInputChange: undefined,
 }

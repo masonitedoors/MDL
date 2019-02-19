@@ -5,6 +5,17 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.5.6] - 2019-02-19
+
+### Added
+
+- Add `buttonLabel` prop
+
+### Changed
+
+- FilterableSearch method names: `onSearch` is now `onSubmit`
+- FilterableSearch's button only appears when there is an `onSubmit` method provided
+
 ## [1.5.5] - 2019-02-19
 
 ### Fixed

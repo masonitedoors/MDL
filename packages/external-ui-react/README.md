@@ -53,14 +53,14 @@ Props noted with an asterisk are required. Not always by necessity, but by lack 
 
 ### forms/FilterableSearch
 
-| Prop             | Default | Accepted Values                                      | Description |
-| ---------------- | ------- | ---------------------------------------------------- | ----------- |
-| filterChoices    | ---     | { label: string, value: string, checked: boolean }[] |             |
-| onFilterChange\* | ---     | function                                             |             |
-| onInputChange    | null    | function                                             |             |
-| onSearch\*       | ---     | function                                             |             |
-| placeholder      | string  | string                                               |             |
-| value\*          | ---     | string                                               |             |
+| Prop             | Default   | Accepted Values                                      | Description                                |
+| ---------------- | --------- | ---------------------------------------------------- | ------------------------------------------ |
+| filterChoices    | ---       | { label: string, value: string, checked: boolean }[] |                                            |
+| onFilterChange\* | ---       | function                                             |                                            |
+| onInputChange    | undefined | function                                             |                                            |
+| onSubmit         | undefined | function                                             | Called when button is pressed or Enter key |
+| placeholder      | string    | string                                               |                                            |
+| value\*          | ---       | string                                               |                                            |
 
 ### forms/Input
 

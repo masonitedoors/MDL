@@ -11,6 +11,7 @@
     "deploy-storybook": "storybook-to-ghpages -s build:storybook -o gh-pages",
     "build:storybook": "build-storybook -c .storybook/react -o gh-pages",
     "build-package:external-ui-react": "cd packages/external-ui-react && npm run build",
+    "publish": "npm run build-package:external-ui-react && lerna publish",
     "lint:scripts": "npx eslint './**/*.js'",
     "lint:styles": "npx stylelint **/*.scss --syntax scss",
     "lint": "npm run lint:styles && npm run lint:scripts",

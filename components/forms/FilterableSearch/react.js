@@ -140,5 +140,5 @@ FilterableSearch.propTypes = {
 
 FilterableSearch.defaultProps = {
   placeholder: 'Search',
-  onInputChange: null,
+  onInputChange: () => {},
 }

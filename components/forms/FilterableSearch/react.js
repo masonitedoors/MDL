@@ -37,9 +37,9 @@ export default class FilterableSearch extends PureComponent {
 
   render() {
     const {
-      handleFilterChange,
-      handleInputChange,
-      handleSearch,
+      onFilterChange,
+      onInputChange,
+      onSearch,
       filterChoices = [],
       placeholder,
       value,
@@ -50,7 +50,7 @@ export default class FilterableSearch extends PureComponent {
     const SearchButton = () => (
       <button
         type="button"
-        onClick={() => handleSearch(value)}
+        onClick={() => onSearch(value)}
         className={cx(['FilterableSearch__btn'])}
       >
         Search
@@ -90,7 +90,7 @@ export default class FilterableSearch extends PureComponent {
               <Checkbox
                 name={`${value}${index}`}
                 checked={checked}
-                onChange={() => handleFilterChange({ label, value, checked })}
+                onChange={() => onFilterChange({ label, value, checked })}
               />
               <span className={cx(['FilterableSearch__dropdown-menu-item-label-text'])}>
                 {label}
@@ -105,10 +105,10 @@ export default class FilterableSearch extends PureComponent {
       <div className={cx(['FilterableSearch'])}>
         <Input
           placeholder={placeholder}
-          onChange={value => handleInputChange(value)}
+          onChange={value => onInputChange(value)}
           onKeyDown={ev => {
             if (ev.keyCode === 13) {
-              handleSearch(ev.target.value)
+              onSearch(ev.target.value)
             }
           }}
           value={value}
@@ -124,9 +124,9 @@ export default class FilterableSearch extends PureComponent {
 }
 
 FilterableSearch.propTypes = {
-  handleFilterChange: PropTypes.func.isRequired,
-  handleInputChange: PropTypes.func,
-  handleSearch: PropTypes.func.isRequired,
+  onFilterChange: PropTypes.func.isRequired,
+  onInputChange: PropTypes.func,
+  onSearch: PropTypes.func.isRequired,
   value: PropTypes.string.isRequired,
   filterChoices: PropTypes.arrayOf(
     PropTypes.shape({
@@ -140,5 +140,5 @@ FilterableSearch.propTypes = {
 
 FilterableSearch.defaultProps = {
   placeholder: 'Search',
-  handleInputChange: null,
+  onInputChange: null,
 }

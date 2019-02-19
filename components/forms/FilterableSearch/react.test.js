@@ -3,9 +3,7 @@ import { shallow, mount } from 'enzyme'
 import { JSDOM } from 'jsdom'
 import FilterableSearch from './react'
 
-const jsdom = new JSDOM(
-  '<!doctype html><html><body><div id="app">Mount here</div></body></html>',
-)
+const jsdom = new JSDOM('<!doctype html><html><body><div id="app">Mount here</div></body></html>')
 const { window } = jsdom
 
 describe('FilterableSearch', () => {
@@ -15,8 +13,10 @@ describe('FilterableSearch', () => {
 
   beforeEach(() => {
     props = {
-      handleFilterChange: jest.fn(),
-      handleSearch: jest.fn(),
+      onFilterChange: jest.fn(),
+      onInputChange: jest.fn(),
+      onSearch: jest.fn(),
+      value: '',
       filterChoices: [
         { label: 'Filter 1', value: 'FILTER1', checked: false },
         { label: 'Filter 2', value: 'FILTER2', checked: false },
@@ -50,12 +50,12 @@ describe('FilterableSearch', () => {
       expect(wrapper.find('DropdownMenu').prop('show')).toEqual(false)
     })
     it('should trigger search action when the user hits enter in input or clicks SearchButton', () => {
-      expect(props.handleSearch).toBeCalledTimes(0)
+      expect(props.onSearch).toBeCalledTimes(0)
       wrapper.find('SearchButton').simulate('click')
-      expect(props.handleSearch).toBeCalledTimes(1)
+      expect(props.onSearch).toBeCalledTimes(1)
       wrapper.find('.input').simulate('keyDown', { keyCode: 1 }) // not Enter key
       wrapper.find('.input').simulate('keyDown', { keyCode: 13 }) // Enter key
-      expect(props.handleSearch).toBeCalledTimes(2)
+      expect(props.onSearch).toBeCalledTimes(2)
     })
   })
 })

@@ -16,7 +16,7 @@ storiesOf('Forms/FilterableSearch', module)
       ],
     })(({ store }) => (
       <FilterableSearch
-        handleFilterChange={checkedChoice => {
+        onFilterChange={checkedChoice => {
           store.set({
             ...store.state,
             filterChoices: store.state.filterChoices.map(choice => (choice.value === checkedChoice.value
@@ -25,11 +25,11 @@ storiesOf('Forms/FilterableSearch', module)
           })
         }}
         value={store.state.value}
-        handleInputChange={value => {
+        onInputChange={value => {
           console.log('handleInputChange invoked, returns: ', value)
           store.set({ value })
         }}
-        handleSearch={value => {
+        onSearch={value => {
           console.log('handleSearch callback invoked, returns:', value)
         }}
         filterChoices={store.state.filterChoices}

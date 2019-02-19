@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { PureComponent } from 'react'
 import classNames from 'classnames/bind'
 import { mChevronDown } from '@masonite/svg-icons'
 import { React as Input } from 'components/forms/Input'
@@ -8,7 +8,7 @@ import style from './style.module.scss'
 
 const cx = classNames.bind(style)
 
-export default class FilterableSearch extends Component {
+export default class FilterableSearch extends PureComponent {
   constructor(props) {
     super(props)
     this.state = {
@@ -18,7 +18,7 @@ export default class FilterableSearch extends Component {
     this.dropdownMenuRef = React.createRef()
   }
 
-  componentWillMount() {
+  componentDidMount() {
     document.body.addEventListener('click', this.handleClick)
   }
 

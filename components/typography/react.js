@@ -21,10 +21,12 @@ Heading.defaultProps = {
   noMargin: null,
 }
 
+export { Heading }
+
 const P = ({ children }) => <p className={s.p}>{children}</p>
 
 P.propTypes = {
   children: PropTypes.node.isRequired,
 }
 
-export { Heading, P }
+export { P }

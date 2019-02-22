@@ -18,7 +18,7 @@ import { Button } from "@masonite/external-ui-react";
 
 Props noted with an asterisk are required. Not always by necessity, but by lack of defaults or fallback options. These components can be improved.
 
-### BlogCard
+### cards/BlogCard
 
 | Prop    | Default    | Accepted Values |
 | ------- | ---------- | --------------- |
@@ -26,7 +26,7 @@ Props noted with an asterisk are required. Not always by necessity, but by lack 
 | title   | ''         | string          |
 | content | null       | string          |
 
-### TrendCard
+### cards/TrendCard
 
 | Prop    | Default    | Accepted Values |
 | ------- | ---------- | --------------- |
@@ -34,7 +34,7 @@ Props noted with an asterisk are required. Not always by necessity, but by lack 
 | title   | ''         | string          |
 | content | null       | string          |
 
-### Button
+### forms/Button
 
 | Prop      | Default    | Accepted Values       |
 | --------- | ---------- | --------------------- |
@@ -45,11 +45,10 @@ Props noted with an asterisk are required. Not always by necessity, but by lack 
 
 ### forms/Checkbox
 
-| Prop     | Default   | Accepted Values | Description                                                                                       |
-| -------- | --------- | --------------- | ------------------------------------------------------------------------------------------------- |
-| onChange | undefined | function        |                                                                                                   |
-| checked  | false     | boolean         |                                                                                                   |
-| stateful | true      | boolean         | The checkbox maintains state. It can still receive props for updates or setting an initial value. |
+| Prop     | Default   | Accepted Values | Description |
+| -------- | --------- | --------------- | ----------- |
+| onChange | undefined | function        |             |
+| checked  | false     | boolean         |             |
 
 ### forms/FilterableSearch
 
@@ -73,7 +72,7 @@ Props noted with an asterisk are required. Not always by necessity, but by lack 
 | value\*    | ---     | string          |                     |
 | variant\*  | ---     | 'dark', null    |                     |
 
-### Tabs
+### nav/Tabs
 
 Documentation incomplete.
 

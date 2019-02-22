@@ -9,13 +9,7 @@ storiesOf('Typography/Content', module)
     // const darkMode = boolean("Dark Mode", false);
     const headings = [...Array(6).keys()].map(level => {
       const lvl = level + 1
-      return (
-        <Heading level={lvl}>
-          Lorem Ipsum (h
-          {lvl}
-)
-        </Heading>
-      )
+      return <Heading level={lvl}>Lorem Ipsum (h{lvl})</Heading>
     })
 
     return (

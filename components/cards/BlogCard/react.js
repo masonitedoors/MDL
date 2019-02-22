@@ -5,9 +5,9 @@ import style from './style.module.scss'
 
 const cx = classNames.bind(style)
 
-function BlogCard(props) {
-  const { title, content, to } = props
-
+function BlogCard({
+  title, content, to, action,
+}) {
   return (
     <article className={cx('blog-card')}>
       <a
@@ -30,12 +30,14 @@ BlogCard.propTypes = {
   title: PropTypes.string,
   content: PropTypes.string,
   to: PropTypes.string,
+  action: PropTypes.func,
 }
 
 BlogCard.defaultProps = {
   title: null,
   content: null,
   to: null,
+  action: null,
 }
 
 export default BlogCard

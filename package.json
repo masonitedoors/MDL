@@ -21,12 +21,6 @@
   "keywords": [],
   "author": "",
   "license": "MIT",
-  "eslintConfig": {
-    "extends": "@masonite/eslint-config"
-  },
-  "eslintIgnore": [
-    "**/node_modules"
-  ],
   "jest": {
     "modulePaths": [
       "<rootDir>"
@@ -41,23 +35,6 @@
       "enzyme-to-json/serializer"
     ]
   },
-  "stylelint": {
-    "extends": "@masonite/stylelint-config",
-    "rules": {
-      "at-rule-no-unknown": [
-        true,
-        {
-          "ignoreAtRules": [
-            "function",
-            "if",
-            "each",
-            "include",
-            "mixin"
-          ]
-        }
-      ]
-    }
-  },
   "devDependencies": {
     "@babel/core": "^7.2.2",
     "@babel/plugin-proposal-class-properties": "^7.3.0",
@@ -68,10 +45,8 @@
     "babel-loader": "^8.0.5",
     "babel-preset-react-app": "^6.1.0",
     "copy-webpack-plugin": "^4.6.0",
-    "enzyme": "^3.8.0",
-    "enzyme-adapter-react-16": "^1.9.1",
-    "enzyme-to-json": "^3.3.5",
     "eslint": "^5.13.0",
+    "eslint-loader": "^2.1.2",
     "eslint-plugin-import": "^2.16.0",
     "eslint-plugin-jsx-a11y": "^6.2.1",
     "eslint-plugin-react": "^7.12.4",
@@ -99,8 +74,12 @@
     "@storybook/storybook-deployer": "^2.8.1",
     "@storybook/vue": "^4.1.11",
     "classnames": "^2.2.6",
+    "enzyme": "^3.8.0",
+    "enzyme-adapter-react-16": "^1.9.1",
+    "enzyme-to-json": "^3.3.5",
     "prop-types": "^15.7.1",
     "react": "^16.8.1",
+    "react-lottie": "^1.2.3",
     "tinycolor2": "^1.4.1"
   }
 }

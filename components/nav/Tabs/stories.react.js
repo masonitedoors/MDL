@@ -1,6 +1,6 @@
-import React, { Fragment } from 'react'
+import React from 'react'
 import { storiesOf } from '@storybook/react'
-import { withKnobs, boolean } from '@storybook/addon-knobs'
+import { withKnobs } from '@storybook/addon-knobs'
 import { withState } from '@dump247/storybook-state'
 import Tabs from './react'
 
@@ -11,11 +11,11 @@ storiesOf('Nav/Tabs', module)
     withState({ activeTab: 1 })(({ store }) => {
       const tabs = [
         {
-          id: '0',
+          id: 0,
           children: 'Lorem Ipsum',
         },
         {
-          id: '1',
+          id: 1,
           children: <span>Using JSX</span>,
         },
       ]

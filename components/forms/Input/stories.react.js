@@ -1,7 +1,7 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
-import { withKnobs, boolean, select } from '@storybook/addon-knobs'
 import { withState } from '@dump247/storybook-state'
+import { withKnobs, boolean, select } from '@storybook/addon-knobs'
 import Input from './react'
 
 storiesOf('Forms/Input', module)

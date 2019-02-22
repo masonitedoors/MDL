@@ -1,14 +1,13 @@
-import React, { Component } from 'react'
+import React from 'react'
 import classNames from 'classnames/bind'
+import PropTypes from 'prop-types'
 import style from './style.module.scss'
 
 const cx = classNames.bind(style)
 
-export default function BlogCard(props) {
-  const {
-    title, content, image, to,
-  } = props
-
+function BlogCard({
+  title, content, to, action,
+}) {
   return (
     <article className={cx('blog-card')}>
       <a
@@ -26,3 +25,19 @@ export default function BlogCard(props) {
     </article>
   )
 }
+
+BlogCard.propTypes = {
+  title: PropTypes.string,
+  content: PropTypes.string,
+  to: PropTypes.string,
+  action: PropTypes.func,
+}
+
+BlogCard.defaultProps = {
+  title: null,
+  content: null,
+  to: null,
+  action: null,
+}
+
+export default BlogCard

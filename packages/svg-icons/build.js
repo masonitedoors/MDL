@@ -6,7 +6,9 @@ const svgFiles = fs
 
 try {
   fs.mkdirSync('./src/svg')
-} catch (e) {}
+} catch (e) {
+  // ...
+}
 
 const exportStatements = svgFiles
   .map(iconFilename => {

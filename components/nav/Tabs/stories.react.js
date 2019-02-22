@@ -11,11 +11,11 @@ storiesOf('Nav/Tabs', module)
     withState({ activeTab: 1 })(({ store }) => {
       const tabs = [
         {
-          id: '0',
+          id: 0,
           children: 'Lorem Ipsum',
         },
         {
-          id: '1',
+          id: 1,
           children: <span>Using JSX</span>,
         },
       ]

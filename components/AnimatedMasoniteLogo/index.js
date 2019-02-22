@@ -7,9 +7,7 @@ import styles from './index.module.scss'
 
 const cx = classNames.bind(styles)
 
-function AnimatedMasoniteLogo(props) {
-  const { centered } = props
-  console.log(centered)
+function AnimatedMasoniteLogo({ centered }) {
   const defaultOptions = {
     loop: true,
     autoplay: true,

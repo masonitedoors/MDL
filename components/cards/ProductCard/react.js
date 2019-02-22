@@ -1,9 +1,10 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import s from './style.module.scss'
 
 const ProductCard = props => {
   const {
-    title = 'Unnamed Door', image, to, action,
+    title, image, to, action,
   } = props
 
   return (
@@ -23,6 +24,20 @@ const ProductCard = props => {
       </a>
     </article>
   )
+}
+
+ProductCard.propTypes = {
+  title: PropTypes.string,
+  image: PropTypes.string,
+  to: PropTypes.string,
+  action: PropTypes.string,
+}
+
+ProductCard.defaultProps = {
+  title: 'Unnamed Door',
+  image: null,
+  to: null,
+  action: null,
 }
 
 export default ProductCard

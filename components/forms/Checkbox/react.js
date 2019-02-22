@@ -11,7 +11,7 @@ class Checkbox extends PureComponent {
     super(props)
 
     const checked = typeof props.checked !== 'undefined' ? props.checked : false
-    console.log(`inside constructor: ${props.checked}`)
+
     this.state = { checked }
   }
 

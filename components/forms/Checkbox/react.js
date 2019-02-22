@@ -7,18 +7,23 @@ import s from './style.module.scss'
 const cx = classNames.bind(s)
 
 const Checkbox = ({ checked, disabled, onChange }) => (
-  <div className={s.Checkbox} onClick={onChange}>
-    <input className={s.Checkbox__checkbox} type="checkbox" checked={checked} readOnly />
-    <div className={s['Checkbox__svg-wrapper']}>
+  <div
+    role="checkbox"
+    aria-checked={checked}
+    tabIndex={0}
+    className={s.checkbox}
+    onClick={onChange}
+    onKeyPress={onChange}
+  >
+    <input className={s['checkbox-input']} type="checkbox" checked={checked} readOnly />
+    <div className={s['checkbox-svg-wrapper']}>
       <svg
-        className={cx(['Checkbox__svg-icon'], { 'Checkbox__svg-icon--checked': checked })}
+        className={cx(['checkbox-svg-icon'], { 'checkbox-svg-icon--checked': checked })}
         dangerouslySetInnerHTML={{ __html: mCheck }}
       />
     </div>
   </div>
 )
-
-export default memo(Checkbox)
 
 Checkbox.propTypes = {
   checked: propTypes.bool.isRequired,
@@ -30,3 +35,5 @@ Checkbox.defaultProps = {
   disabled: false,
   onChange: null,
 }
+
+export default memo(Checkbox)

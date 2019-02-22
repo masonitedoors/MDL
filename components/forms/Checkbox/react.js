@@ -1,6 +1,7 @@
 import React, { PureComponent } from 'react'
 import { mCheck } from '@masonite/svg-icons'
 import classNames from 'classnames/bind'
+import PropTypes from 'prop-types'
 import s from './style.module.scss'
 
 const cx = classNames.bind(s)
@@ -10,7 +11,7 @@ class Checkbox extends PureComponent {
     super(props)
 
     const checked = typeof props.checked !== 'undefined' ? props.checked : false
-
+    console.log(`inside constructor: ${props.checked}`)
     this.state = { checked }
   }
 
@@ -31,17 +32,36 @@ class Checkbox extends PureComponent {
     const { checked } = this.state
 
     return (
-      <div className={s.Checkbox} onClick={onChange}>
-        <input className={s.Checkbox__checkbox} type="checkbox" checked={checked} readOnly />
-        <div className={s['Checkbox__svg-wrapper']}>
+      <div
+        role="checkbox"
+        aria-checked={checked}
+        tabIndex={0}
+        className={s.Checkbox}
+        onClick={onChange}
+        onKeyPress={onChange}
+      >
+        <input className={s['checkbox-input']} type="checkbox" checked={checked} readOnly />
+        <div className={s['checkbox-svg-wrapper']}>
           <svg
-            className={cx(['Checkbox__svg-icon'], ['Checkbox__svg-icon--checked'])}
+            className={cx(['checkbox-svg-icon'], ['checkbox-svg-icon--checked'])}
             dangerouslySetInnerHTML={{ __html: mCheck }}
           />
         </div>
       </div>
     )
   }
+}
+
+Checkbox.propTypes = {
+  checked: PropTypes.bool,
+  stateful: PropTypes.bool,
+  onChange: PropTypes.func,
+}
+
+Checkbox.defaultProps = {
+  checked: null,
+  stateful: null,
+  onChange: null,
 }
 
 export default Checkbox

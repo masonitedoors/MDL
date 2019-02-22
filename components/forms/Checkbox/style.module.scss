@@ -14,7 +14,7 @@
   flex-shrink: 0;
 }
 
-.Checkbox__checkbox {
+.checkbox-input {
   position: absolute;
   left: 0;
   top: 0;
@@ -25,18 +25,18 @@
   cursor: pointer;
 }
 
-.Checkbox__svg-wrapper {
+.checkbox-svg-wrapper {
   position: relative;
   width: 100%;
   height: 100%;
   pointer-events: none;
 }
 
-.Checkbox__checkbox:checked ~ .Checkbox__svg-wrapper {
+.checkbox-input:checked ~ .checkbox-svg-wrapper {
   background: $color-m-primary-charcoal;
 }
 
-.Checkbox__svg-icon {
+.checkbox-svg-icon {
   position: absolute;
   left: 0;
   display: none;
@@ -47,6 +47,6 @@
   height: 100%;
 }
 
-.Checkbox__checkbox:checked ~ .Checkbox__svg-wrapper .Checkbox__svg-icon--checked {
+.checkbox-input:checked ~ .checkbox-svg-wrapper .checkbox-svg-icon--checked {
   display: flex;
 }

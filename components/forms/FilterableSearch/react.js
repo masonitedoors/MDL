@@ -8,7 +8,7 @@ import style from './style.module.scss'
 
 const cx = classNames.bind(style)
 
-export default class FilterableSearch extends PureComponent {
+class FilterableSearch extends PureComponent {
   state = {
     showFilters: false,
   }
@@ -67,9 +67,10 @@ export default class FilterableSearch extends PureComponent {
       <button
         type="button"
         className={cx(['FilterableSearch__dropdown-toggle'])}
-        onClick={() => this.setState(prevState => ({
-          showFilters: !prevState.showFilters,
-        }))
+        onClick={() =>
+          this.setState(prevState => ({
+            showFilters: !prevState.showFilters,
+          }))
         }
       >
         <div
@@ -151,3 +152,5 @@ FilterableSearch.defaultProps = {
   onSubmit: undefined,
   onInputChange: undefined,
 }
+
+export default FilterableSearch

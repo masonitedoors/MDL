@@ -1,6 +1,6 @@
-import React, { Component } from 'react'
+import React, { PureComponent } from 'react'
 import classNames from 'classnames/bind'
-import { mChevronDown } from '@masonite/svg-icons'
+import { mFilter, mChevronDown } from '@masonite/svg-icons'
 import { React as Input } from 'components/forms/Input'
 import { React as Checkbox } from 'components/forms/Checkbox'
 import PropTypes from 'prop-types'
@@ -8,18 +8,19 @@ import style from './style.module.scss'
 
 const cx = classNames.bind(style)
 
-export default class FilterableSearch extends Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      showFilters: false,
-      value: '',
-    }
-
-    this.dropdownMenuRef = React.createRef()
+export default class FilterableSearch extends PureComponent {
+  state = {
+    showFilters: false,
   }
 
-  componentWillMount() {
+  dropdownIcons = {
+    chevronDown: mChevronDown,
+    filter: mFilter,
+  }
+
+  dropdownMenuRef = React.createRef()
+
+  componentDidMount() {
     document.body.addEventListener('click', this.handleClick)
   }
 
@@ -38,27 +39,29 @@ export default class FilterableSearch extends Component {
 
   render() {
     const {
-      handleFilterChange,
-      handleSearch,
+      buttonLabel,
+      dropdownIcon,
+      onFilterChange,
+      onInputChange,
+      onSubmit,
       filterChoices = [],
       placeholder,
+      value,
     } = this.props
 
     const { showFilters } = this.state
 
-    const SearchButton = () => {
-      const { value } = this.state
+    const selectedDropdownIcon = this.dropdownIcons[dropdownIcon]
 
-      return (
-        <button
-          type="button"
-          onClick={() => handleSearch(value)}
-          className={cx(['FilterableSearch__btn'])}
-        >
-          Search
-        </button>
-      )
-    }
+    const SearchButton = () => (
+      <button
+        type="button"
+        onClick={() => onSubmit && onSubmit(value)}
+        className={cx(['FilterableSearch__btn'])}
+      >
+        {buttonLabel}
+      </button>
+    )
 
     const DropdownToggle = () => (
       <button
@@ -71,7 +74,7 @@ export default class FilterableSearch extends Component {
       >
         <div
           className={cx(['FilterableSearch__dropdown-toggle-icon'])}
-          dangerouslySetInnerHTML={{ __html: mChevronDown }}
+          dangerouslySetInnerHTML={{ __html: selectedDropdownIcon }}
         />
       </button>
     )
@@ -84,10 +87,7 @@ export default class FilterableSearch extends Component {
         ])}
       >
         {filterChoices.map(({ label, value, checked }, index) => (
-          <li
-            className={cx(['FilterableSearch__dropdown-menu-item'])}
-            key={value}
-          >
+          <li className={cx(['FilterableSearch__dropdown-menu-item'])} key={value}>
             {/* eslint-disable-next-line */}
             <label
               className={cx(['FilterableSearch__dropdown-menu-item-label'])}
@@ -96,13 +96,9 @@ export default class FilterableSearch extends Component {
               <Checkbox
                 name={`${value}${index}`}
                 checked={checked}
-                onChange={() => handleFilterChange(value)}
+                onChange={() => onFilterChange({ label, value, checked })}
               />
-              <span
-                className={cx([
-                  'FilterableSearch__dropdown-menu-item-label-text',
-                ])}
-              >
+              <span className={cx(['FilterableSearch__dropdown-menu-item-label-text'])}>
                 {label}
               </span>
             </label>
@@ -115,14 +111,13 @@ export default class FilterableSearch extends Component {
       <div className={cx(['FilterableSearch'])}>
         <Input
           placeholder={placeholder}
-          onChange={value => this.setState({ value })}
+          onChange={value => onInputChange(value)}
           onKeyDown={ev => {
-            if (ev.keyCode === 13) {
-              handleSearch(ev.target.value)
-            }
+            if (ev.keyCode === 13 && onSubmit) onSubmit(ev.target.value)
           }}
+          value={value}
         />
-        <SearchButton />
+        {onSubmit && <SearchButton />}
         <div ref={this.dropdownMenuRef}>
           <DropdownToggle />
           <DropdownMenu show={showFilters} />
@@ -133,8 +128,12 @@ export default class FilterableSearch extends Component {
 }
 
 FilterableSearch.propTypes = {
-  handleFilterChange: PropTypes.func.isRequired,
-  handleSearch: PropTypes.func.isRequired,
+  buttonLabel: PropTypes.string,
+  dropdownIcon: PropTypes.oneOf(['chevronDown', 'filter']),
+  onFilterChange: PropTypes.func.isRequired,
+  onInputChange: PropTypes.func,
+  onSubmit: PropTypes.func,
+  value: PropTypes.string.isRequired,
   filterChoices: PropTypes.arrayOf(
     PropTypes.shape({
       label: PropTypes.string,
@@ -146,5 +145,9 @@ FilterableSearch.propTypes = {
 }
 
 FilterableSearch.defaultProps = {
+  buttonLabel: 'Search',
+  dropdownIcon: 'chevronDown',
   placeholder: 'Search',
+  onSubmit: undefined,
+  onInputChange: undefined,
 }

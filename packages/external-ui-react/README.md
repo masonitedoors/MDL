@@ -43,13 +43,35 @@ Props noted with an asterisk are required. Not always by necessity, but by lack 
 | size      | null       | null, 'small'         |
 | variant   | null       | null, 'light', 'dark' |
 
-### Checkbox
+### forms/Checkbox
 
 | Prop     | Default   | Accepted Values | Description                                                                                       |
 | -------- | --------- | --------------- | ------------------------------------------------------------------------------------------------- |
 | onChange | undefined | function        |                                                                                                   |
 | checked  | false     | boolean         |                                                                                                   |
 | stateful | true      | boolean         | The checkbox maintains state. It can still receive props for updates or setting an initial value. |
+
+### forms/FilterableSearch
+
+| Prop             | Default   | Accepted Values                                      | Description                                |
+| ---------------- | --------- | ---------------------------------------------------- | ------------------------------------------ |
+| buttonLabel      | 'Search'  | string                                               |                                            |
+| dropdownIcon     | 'chevron' | 'chevron', 'filter'                                  |                                            |
+| filterChoices    | ---       | { label: string, value: string, checked: boolean }[] |                                            |
+| onFilterChange\* | ---       | function                                             |                                            |
+| onInputChange    | undefined | function                                             |                                            |
+| onSubmit         | undefined | function                                             | Called when button is pressed or Enter key |
+| placeholder      | 'Search'  | string                                               |                                            |
+| value\*          | ---       | string                                               |                                            |
+
+### forms/Input
+
+| Prop       | Default | Accepted Values | Description         |
+| ---------- | ------- | --------------- | ------------------- |
+| error      | ---     | boolean         | Error state         |
+| onChange\* | ---     | function        | Returns input value |
+| value\*    | ---     | string          |                     |
+| variant\*  | ---     | 'dark', null    |                     |
 
 ### Tabs
 

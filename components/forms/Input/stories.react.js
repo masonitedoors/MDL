@@ -5,8 +5,18 @@ import Input from './react'
 
 storiesOf('Forms/Input', module)
   .addDecorator(withKnobs)
-  .add('default', () => {
-    const variant = select('Variant', { Light: 'light', Dark: 'dark' }, 'light')
-    const error = boolean('Error State', false)
-    return <Input variant={variant} error={error} />
-  })
+  .add(
+    'default',
+    withState({ value: '' })(({ store }) => {
+      const variant = select('Variant', { Light: 'light', Dark: 'dark' }, 'light')
+      const error = boolean('Error State', false)
+      return (
+        <Input
+          variant={variant}
+          error={error}
+          onChange={value => store.set({ value })}
+          value={store.state.value}
+        />
+      )
+    }),
+  )

@@ -14,23 +14,17 @@ const Input = ({
 
   return (
     <Label
-      className={cx('input-wrapper', {
-        'input-wrapper--with-label': label,
+      className={cx('text-field', {
+        'text-field--with-label': label,
+        'text-field--light': variant === 'light',
+        'text-field--dark': variant === 'dark',
+        'text-field--error': error,
+        'text-field--active': isActive || value.length,
       })}
     >
-      <div
-        className={cx('input-label', {
-          'input-label--active': isActive || value.length,
-        })}
-      >
-        {label}
-      </div>
+      <div className={cx('text-field__label')}>{label}</div>
       <input
-        className={cx('input', {
-          'input--light': variant === 'light',
-          'input--dark': variant === 'dark',
-          'input--error': error,
-        })}
+        className={cx('text-field__input')}
         type="text"
         placeholder={isActive ? placeholder : ''}
         onKeyDown={onKeyDown}
@@ -40,10 +34,7 @@ const Input = ({
         onClick={() => {}}
         value={value}
       />
-      <div
-        className={cx(['input-icon', { 'input-icon--error': error }])}
-        dangerouslySetInnerHTML={{ __html: mX }}
-      />
+      <div className={cx('text-field__icon')} dangerouslySetInnerHTML={{ __html: mX }} />
     </Label>
   )
 }

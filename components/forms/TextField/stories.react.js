@@ -4,22 +4,22 @@ import {
   withKnobs, boolean, select, text,
 } from '@storybook/addon-knobs'
 import { withState } from '@dump247/storybook-state'
-import Input from './react'
+import TextField from './react'
 
-storiesOf('Forms/Input', module)
+storiesOf('Forms/TextField', module)
   .addDecorator(withKnobs)
   .add(
     'default',
     withState({ value: '' })(({ store }) => {
       const variant = select('Variant', { Light: 'light', Dark: 'dark' }, 'light')
-      const label = text('Label', 'Input Label')
+      const label = text('Label', 'Label')
       const error = boolean('Error State', false)
       return (
-        <Input
+        <TextField
           variant={variant}
           error={error}
           label={label}
-          placeholder="Type something?"
+          placeholder="Placeholder"
           onChange={value => store.set({ value })}
           value={store.state.value}
         />

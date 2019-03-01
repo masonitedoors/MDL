@@ -26,7 +26,7 @@ const Input = ({
       <input
         className={cx('text-field__input')}
         type="text"
-        placeholder={isActive ? placeholder : ''}
+        placeholder={isActive || !label ? placeholder : ''}
         onKeyDown={onKeyDown}
         onBlur={() => setActive(false)}
         onFocus={() => setActive(true)}

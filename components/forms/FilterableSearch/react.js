@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react'
 import classNames from 'classnames/bind'
 import { mFilter, mChevronDown } from '@masonite/svg-icons'
-import { React as Input } from 'components/forms/Input'
+import { React as Input } from 'components/forms/TextField'
 import { React as Checkbox } from 'components/forms/Checkbox'
 import PropTypes from 'prop-types'
 import style from './style.module.scss'

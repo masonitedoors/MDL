@@ -6,7 +6,7 @@
   "scripts": {
     "storybook:html": "start-storybook -s ./vendor -p 9005 -c .storybook/html",
     "storybook:vue": "start-storybook -p 9006 -c .storybook/vue",
-    "storybook:react": "NODE_PATH=styles:components start-storybook -p 9007 -c .storybook/react",
+    "storybook:react": "cross-env NODE_PATH=styles:components start-storybook -p 9007 -c .storybook/react",
     "generate-colors-css": "node -e 'require(\"./styles/generate-style-stories\").createCssClassesFromColors()'",
     "deploy-storybook": "storybook-to-ghpages -s build:storybook -o gh-pages",
     "build:storybook": "build-storybook -c .storybook/react -o gh-pages",
@@ -74,6 +74,7 @@
     "@storybook/storybook-deployer": "^2.8.1",
     "@storybook/vue": "^4.1.11",
     "classnames": "^2.2.6",
+    "cross-env": "^5.2.0",
     "enzyme": "^3.8.0",
     "enzyme-adapter-react-16": "^1.9.1",
     "enzyme-to-json": "^3.3.5",

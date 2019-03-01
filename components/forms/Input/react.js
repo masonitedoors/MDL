@@ -1,4 +1,4 @@
-import React, { memo } from 'react'
+import React, { memo, useState } from 'react'
 import classNames from 'classnames/bind'
 import { mX } from '@masonite/svg-icons'
 import PropTypes from 'prop-types'
@@ -7,33 +7,44 @@ import style from './style.module.scss'
 const cx = classNames.bind(style)
 
 const Input = ({
-  error, onChange, onKeyDown, placeholder, value, variant,
-}) => (
-  <div className={cx('input-wrapper')}>
-    <input
-      className={cx('input', {
-        'input--light': variant === 'light',
-        'input--dark': variant === 'dark',
-        'input--error': error,
+  error, label, onChange, onKeyDown, placeholder, value, variant,
+}) => {
+  const [isActive, setActive] = useState(false)
+  const Label = label ? 'label' : 'div'
+
+  return (
+    <Label
+      className={cx('text-field', {
+        'text-field--with-label': label,
+        'text-field--light': variant === 'light',
+        'text-field--dark': variant === 'dark',
+        'text-field--error': error,
+        'text-field--active': isActive || value.length,
       })}
-      type="text"
-      placeholder={placeholder}
-      onKeyDown={onKeyDown}
-      onChange={ev => onChange(ev.target.value)}
-      value={value}
-    />
-    <div
-      className={cx(['input-icon', { 'input-icon--error': error }])}
-      dangerouslySetInnerHTML={{ __html: mX }}
-    />
-  </div>
-)
+    >
+      <div className={cx('text-field__label')}>{label}</div>
+      <input
+        className={cx('text-field__input')}
+        type="text"
+        placeholder={isActive ? placeholder : ''}
+        onKeyDown={onKeyDown}
+        onBlur={() => setActive(false)}
+        onFocus={() => setActive(true)}
+        onChange={ev => onChange(ev.target.value)}
+        onClick={() => {}}
+        value={value}
+      />
+      <div className={cx('text-field__icon')} dangerouslySetInnerHTML={{ __html: mX }} />
+    </Label>
+  )
+}
 
 export default memo(Input)
 
 Input.propTypes = {
   onChange: PropTypes.func,
   error: PropTypes.bool,
+  label: PropTypes.string,
   onKeyDown: PropTypes.func,
   placeholder: PropTypes.string,
   value: PropTypes.string,
@@ -41,9 +52,10 @@ Input.propTypes = {
 }
 
 Input.defaultProps = {
-  onChange: null,
+  onChange: undefined,
   error: false,
-  onKeyDown: null,
+  label: undefined,
+  onKeyDown: undefined,
   placeholder: '',
   value: '',
   variant: 'light',

@@ -20,7 +20,7 @@ exports[`FilterableSearch with snapshots should render correctly 1`] = `
   }
   onFilterChange={[MockFunction]}
   onInputChange={[MockFunction]}
-  onSearch={[MockFunction]}
+  onSubmit={[MockFunction]}
   placeholder="Search"
   value=""
 >
@@ -36,18 +36,24 @@ exports[`FilterableSearch with snapshots should render correctly 1`] = `
       variant="light"
     >
       <div
-        className="input-wrapper"
+        className="text-field text-field--light"
       >
+        <div
+          className="text-field__label"
+        />
         <input
-          className="input input--light"
+          className="text-field__input"
+          onBlur={[Function]}
           onChange={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
           onKeyDown={[Function]}
           placeholder="Search"
           type="text"
           value=""
         />
         <div
-          className="input-icon"
+          className="text-field__icon"
           dangerouslySetInnerHTML={
             Object {
               "__html": "<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 24 24\\"><title>x</title><path d=\\"M13.4 12l5.3-5.3c0.4-0.4 0.4-1 0-1.4s-1-0.4-1.4 0l-5.3 5.3-5.3-5.3c-0.4-0.4-1-0.4-1.4 0s-0.4 1 0 1.4l5.3 5.3-5.3 5.3c-0.4 0.4-0.4 1 0 1.4 0.2 0.2 0.4 0.3 0.7 0.3s0.5-0.1 0.7-0.3l5.3-5.3 5.3 5.3c0.2 0.2 0.5 0.3 0.7 0.3s0.5-0.1 0.7-0.3c0.4-0.4 0.4-1 0-1.4l-5.3-5.3z\\"></path></svg>",
@@ -56,6 +62,15 @@ exports[`FilterableSearch with snapshots should render correctly 1`] = `
         />
       </div>
     </Input>
+    <SearchButton>
+      <button
+        className="FilterableSearch__btn"
+        onClick={[Function]}
+        type="button"
+      >
+        Search
+      </button>
+    </SearchButton>
     <div>
       <DropdownToggle>
         <button

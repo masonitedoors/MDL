@@ -55,7 +55,7 @@ Input.defaultProps = {
   onChange: undefined,
   error: false,
   label: undefined,
-  onKeyDown: null,
+  onKeyDown: undefined,
   placeholder: '',
   value: '',
   variant: 'light',

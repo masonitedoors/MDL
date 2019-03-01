@@ -63,14 +63,16 @@ Props noted with an asterisk are required. Not always by necessity, but by lack 
 | placeholder      | 'Search'  | string                                               |                                            |
 | value\*          | ---       | string                                               |                                            |
 
-### forms/Input
+### forms/TextField
 
-| Prop       | Default | Accepted Values | Description         |
-| ---------- | ------- | --------------- | ------------------- |
-| error      | ---     | boolean         | Error state         |
-| onChange\* | ---     | function        | Returns input value |
-| value\*    | ---     | string          |                     |
-| variant\*  | ---     | 'dark', null    |                     |
+| Prop        | Default | Accepted Values | Description         |
+| ----------- | ------- | --------------- | ------------------- |
+| error       | ---     | boolean         | Error state         |
+| label       | ---     | string          |                     |
+| onChange\*  | ---     | function        | Returns input value |
+| placeholder | ---     | string          |                     |
+| value\*     | ---     | string          |                     |
+| variant\*   | ---     | 'dark', null    |                     |
 
 ### nav/Tabs
 

@@ -42,21 +42,19 @@ const Input = ({
 export default memo(Input)
 
 Input.propTypes = {
-  onChange: PropTypes.func,
+  onChange: PropTypes.func.isRequired,
   error: PropTypes.bool,
   label: PropTypes.string,
   onKeyDown: PropTypes.func,
   placeholder: PropTypes.string,
-  value: PropTypes.string,
+  value: PropTypes.string.isRequired,
   variant: PropTypes.oneOf(['dark', 'light']),
 }
 
 Input.defaultProps = {
-  onChange: undefined,
   error: false,
   label: undefined,
   onKeyDown: undefined,
   placeholder: '',
-  value: '',
   variant: 'light',
 }

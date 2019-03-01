@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react'
 import { storiesOf } from '@storybook/react'
-import { withKnobs, boolean } from '@storybook/addon-knobs'
+import { withKnobs } from '@storybook/addon-knobs'
 import { Heading, P } from './react'
 
 storiesOf('Typography/Content', module)
@@ -9,13 +9,7 @@ storiesOf('Typography/Content', module)
     // const darkMode = boolean("Dark Mode", false);
     const headings = [...Array(6).keys()].map(level => {
       const lvl = level + 1
-      return (
-        <Heading level={lvl}>
-Lorem Ipsum (h
-          {lvl}
-)
-        </Heading>
-      )
+      return <Heading level={lvl}>Lorem Ipsum (h{lvl})</Heading>
     })
 
     return (

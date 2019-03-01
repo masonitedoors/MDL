@@ -1,14 +1,13 @@
 import React from 'react'
 import Lottie from 'react-lottie'
 import classNames from 'classnames/bind'
+import PropTypes from 'prop-types'
 import animationData from './data.json'
 import styles from './index.module.scss'
 
 const cx = classNames.bind(styles)
 
-export default props => {
-  const { centered } = props
-
+function AnimatedMasoniteLogo({ centered }) {
   const defaultOptions = {
     loop: true,
     autoplay: true,
@@ -24,3 +23,13 @@ export default props => {
     </div>
   )
 }
+
+AnimatedMasoniteLogo.propTypes = {
+  centered: PropTypes.bool,
+}
+
+AnimatedMasoniteLogo.defaultProps = {
+  centered: true,
+}
+
+export default AnimatedMasoniteLogo

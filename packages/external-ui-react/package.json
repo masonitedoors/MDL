@@ -1,6 +1,6 @@
 {
   "name": "@masonite/external-ui-react",
-  "version": "1.5.7",
+  "version": "1.6.0",
   "description": "Masonite Design Language for React",
   "main": "dist/index.js",
   "scripts": {
@@ -12,9 +12,6 @@
   },
   "author": "Tarik Hamilton",
   "license": "MIT",
-  "eslintConfig": {
-    "extends": "@masonite/eslint-config"
-  },
   "devDependencies": {
     "@babel/preset-env": "^7.1.6",
     "@babel/preset-react": "^7.0.0",
@@ -23,5 +20,5 @@
     "webpack": "^4.25.1",
     "webpack-cli": "^3.1.2"
   },
-  "gitHead": "3ff009a1ea4ef2ba915b254e2a51798598587343"
+  "gitHead": "f298be21f0b1d4e5e92456922c3985b2b04ea6ae"
 }

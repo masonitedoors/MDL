@@ -1,0 +1,52 @@
+@import "styles/colors.scss";
+
+radio {
+  $size: 14px;
+
+  align-items: center;
+  align-content: center;
+  position: relative;
+  height: $size;
+  width: $size;
+  border-radius: 2px;
+  border: solid 1px $color-m-secondary-slate;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+radio-input {
+  position: absolute;
+  left: 0;
+  top: 0;
+  margin: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
+
+radio-svg-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+radio-input:checked ~ radio-svg-wrapper {
+  background: $color-m-primary-charcoal;
+}
+
+radio-svg-icon {
+  position: absolute;
+  left: 0;
+  display: none;
+  align-items: center;
+  pointer-events: none;
+  fill: white;
+  width: 100%;
+  height: 100%;
+}
+
+radio-input:checked ~ radio-svg-wrapper radio-svg-icon--checked {
+  display: flex;
+}

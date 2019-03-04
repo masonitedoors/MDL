@@ -16,7 +16,8 @@
     "lint:styles": "npx stylelint **/*.scss --syntax scss",
     "lint": "npm run lint:styles && npm run lint:scripts",
     "test:watch": "npx jest --watch",
-    "test": "npm run lint && npx jest"
+    "test": "npm run lint && npx jest",
+    "storybook:react-windows": "cross-env NODE_PATH=styles:components start-storybook -p 9007 -c .storybook/react"
   },
   "keywords": [],
   "author": "",
@@ -74,6 +75,7 @@
     "@storybook/storybook-deployer": "^2.8.1",
     "@storybook/vue": "^4.1.11",
     "classnames": "^2.2.6",
+    "cross-env": "^5.2.0",
     "enzyme": "^3.8.0",
     "enzyme-adapter-react-16": "^1.9.1",
     "enzyme-to-json": "^3.3.5",

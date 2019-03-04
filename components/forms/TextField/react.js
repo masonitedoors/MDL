@@ -1,6 +1,6 @@
 import React, { memo, useState } from 'react'
 import classNames from 'classnames/bind'
-import { mX } from '@masonite/svg-icons'
+import { mAlertTriangle } from '@masonite/svg-icons'
 import PropTypes from 'prop-types'
 import style from './style.module.scss'
 
@@ -34,7 +34,10 @@ const Input = ({
         onClick={() => {}}
         value={value}
       />
-      <div className={cx('text-field__icon')} dangerouslySetInnerHTML={{ __html: mX }} />
+      <div
+        className={cx('text-field__icon')}
+        dangerouslySetInnerHTML={{ __html: mAlertTriangle }}
+      />
     </Label>
   )
 }

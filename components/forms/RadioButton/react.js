@@ -1,5 +1,5 @@
 import React, { memo } from 'react'
-import propTypes from 'prop-types'
+import PropTypes from 'prop-types'
 import s from './style.module.scss'
 
 
@@ -16,10 +16,10 @@ const Radio = ({ checked, onChange }) => (
   </div>
 )
 
-Radio.propTypes = {
-  checked: propTypes.bool.isRequired,
-  disabled: propTypes.bool,
-  onChange: propTypes.func,
+Radio.PropTypes = {
+  checked: PropTypes.bool.isRequired,
+  disabled: PropTypes.bool,
+  onChange: PropTypes.func,
 }
 
 Radio.defaultProps = {

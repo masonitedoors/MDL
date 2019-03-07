@@ -20,6 +20,7 @@ storiesOf('Forms/TextField', module)
           error={error}
           label={label}
           placeholder="Placeholder"
+          onBlur={value => console.log('onBlur called, value: ', value)}
           onChange={value => store.set({ value })}
           value={store.state.value}
         />

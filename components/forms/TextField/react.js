@@ -6,8 +6,8 @@ import style from './style.module.scss'
 
 const cx = classNames.bind(style)
 
-const Input = ({
-  error, label, onChange, onKeyDown, placeholder, value, variant,
+const TextField = ({
+  error, label, onBlur, onChange, onKeyDown, placeholder, value, variant,
 }) => {
   const [isActive, setActive] = useState(false)
   const Label = label ? 'label' : 'div'
@@ -28,9 +28,12 @@ const Input = ({
         type="text"
         placeholder={isActive || !label ? placeholder : ''}
         onKeyDown={onKeyDown}
-        onBlur={() => setActive(false)}
+        onBlur={event => {
+          setActive(false)
+          onBlur(event.target.value)
+        }}
         onFocus={() => setActive(true)}
-        onChange={ev => onChange(ev.target.value)}
+        onChange={event => onChange(event.target.value)}
         onClick={() => {}}
         value={value}
       />
@@ -42,9 +45,10 @@ const Input = ({
   )
 }
 
-export default memo(Input)
+export default memo(TextField)
 
-Input.propTypes = {
+TextField.propTypes = {
+  onBlur: PropTypes.func,
   onChange: PropTypes.func.isRequired,
   error: PropTypes.bool,
   label: PropTypes.string,
@@ -54,7 +58,8 @@ Input.propTypes = {
   variant: PropTypes.oneOf(['dark', 'light']),
 }
 
-Input.defaultProps = {
+TextField.defaultProps = {
+  onBlur: undefined,
   error: false,
   label: undefined,
   onKeyDown: undefined,

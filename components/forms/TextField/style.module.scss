@@ -4,6 +4,7 @@
   position: relative;
   display: inline-block;
   width: 100%;
+  margin-bottom: 16px;
 
   &--with-label {
     margin-top: 30px;
@@ -54,6 +55,19 @@
   &--active &__label {
     top: -12px;
     font-size: 10px;
+  }
+
+  /* Helper */
+
+  &__helper {
+    position: absolute;
+    left: $size-md;
+    bottom: -20px;
+    font-size: 10px;
+  }
+
+  &--error &__helper {
+    color: $color-rust;
   }
 
   /* Icon */

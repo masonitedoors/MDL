@@ -65,14 +65,16 @@ Props noted with an asterisk are required. Not always by necessity, but by lack 
 
 ### forms/TextField
 
-| Prop        | Default | Accepted Values | Description         |
-| ----------- | ------- | --------------- | ------------------- |
-| error       | ---     | boolean         | Error state         |
-| label       | ---     | string          |                     |
-| onChange\*  | ---     | function        | Returns input value |
-| placeholder | ---     | string          |                     |
-| value\*     | ---     | string          |                     |
-| variant\*   | ---     | 'dark', null    |                     |
+| Prop        | Default | Accepted Values | Description                   |
+| ----------- | ------- | --------------- | ----------------------------- |
+| error       | ---     | boolean         | Error state                   |
+| helper      | --      | string          | Text that appears below input |
+| label       | ---     | string          |                               |
+| onBlur      | --      | function        |                               |
+| onChange\*  | ---     | function        | Returns input value           |
+| placeholder | ---     | string          |                               |
+| value\*     | ---     | string          |                               |
+| variant\*   | ---     | 'dark', null    |                               |
 
 ### nav/Tabs
 

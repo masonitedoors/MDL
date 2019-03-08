@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react'
 import OverflowMenu from './react'
 import Button from '../../forms/button/Button/react'
 
-storiesOf('ActionMenu/ActionMenu', module)
+storiesOf('Menu/Overflow Menu', module)
   .add(
     'default',
     () => (
@@ -11,9 +11,9 @@ storiesOf('ActionMenu/ActionMenu', module)
         <p>SAVED ON: 05/30/18<br />
           EDITED BY: LOREM IPSUM
         </p>
-        <Button variant="light" onClick={() => console.log('hello')} fullWidth uppercase>My Button</Button>
-        <Button variant="light" onClick={() => console.log('hello')} fullWidth uppercase>My Button</Button>
-        <Button variant="light" onClick={() => console.log('hello')} fullWidth uppercase>My Button</Button>
+        <Button variant="light" fullWidth uppercase>My First Button</Button>
+        <Button variant="light" fullWidth uppercase>My Second Button</Button>
+        <Button variant="light" fullWidth uppercase>My Third Button</Button>
       </OverflowMenu>
     ),
   )

@@ -7,7 +7,7 @@ import style from './style.module.scss'
 
 const cx = classNames.bind(style)
 
-class OverflowMenu extends Component {
+export class OverflowMenu extends Component {
   state = {
     displayOverflowMenuActions: false,
   }
@@ -18,6 +18,12 @@ class OverflowMenu extends Component {
     this.setState({
       displayOverflowMenuActions: !displayOverflowMenuActions,
     })
+  }
+
+  checkToCloseOverflowMenu = e => {
+    if (e.target.matches('button')) {
+      this.toggleOverflowMenu()
+    }
   }
 
   handleClickOutside = () => {
@@ -38,7 +44,7 @@ class OverflowMenu extends Component {
 
         {displayOverflowMenuActions
           && (
-          <div className={cx('overflow-menu__actions')}>
+          <div className={cx('overflow-menu__actions')} onClick={e => this.checkToCloseOverflowMenu(e)}>
             {children}
           </div>
           )

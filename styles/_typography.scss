@@ -1,69 +1,70 @@
 @import "colors";
+@import "helpers";
 
 $font-family: "Gotham SSm A", "Gotham SSm B", -apple-system, BlinkMacSystemFont,
   "Segoe UI", Helvetica, Arial, sans-serif;
 
 @mixin typography-h1 {
+  @include fontSize(36px);
   margin: 0 0 1rem;
   color: $color-limerick;
   font-family: $font-family;
-  font-size: 36px;
   font-weight: 500;
   line-height: 1.33;
 }
 
 @mixin typography-h2 {
+  @include fontSize(24px);
   margin: 0 0 1rem;
   color: $color-m-primary-charcoal;
   font-family: $font-family;
-  font-size: 24px;
   font-weight: 700;
   line-height: 1.33;
 }
 
 @mixin typography-h3 {
+  @include fontSize(18px);
   margin: 0 0 1rem;
   color: $color-m-primary-charcoal;
   font-family: $font-family;
-  font-size: 18px;
   font-weight: 700;
   line-height: 1.39;
 }
 
 @mixin typography-h4 {
+  @include fontSize(16px);
   margin: 0 0 1rem;
   color: $color-m-primary-charcoal;
   font-family: $font-family;
-  font-size: 16px;
   font-weight: 700;
   line-height: 1.38;
 }
 
 @mixin typography-h5 {
+  @include fontSize(16px);
   margin: 0 0 1rem;
   color: $color-m-primary-charcoal;
   font-family: $font-family;
-  font-size: 16px;
   font-weight: 400;
   line-height: 1.38;
   text-transform: uppercase;
 }
 
 @mixin typography-h6 {
+  @include fontSize(12px);
   margin: 0 0 1rem;
   color: $color-m-primary-charcoal;
   font-family: $font-family;
-  font-size: 12px;
   font-weight: 400;
   line-height: 1.42;
   text-transform: uppercase;
 }
 
 @mixin typography-p {
+  @include fontSize(14px);
   margin: 0 0 1rem;
   color: $color-m-primary-charcoal;
   font-family: $font-family;
-  font-size: 14px;
   line-height: 1.57;
 }
 

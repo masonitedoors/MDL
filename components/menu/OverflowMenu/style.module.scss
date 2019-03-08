@@ -38,6 +38,11 @@
   z-index: 9;
 }
 
+.overflow-menu__actions p {
+  @include fontSize(12px);
+  color: $color-darkgrey;
+}
+
 .overflow-menu__actions button {
   margin-bottom: $size-md;
 }

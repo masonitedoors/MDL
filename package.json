@@ -81,6 +81,7 @@
     "prop-types": "^15.7.1",
     "react": "^16.8.1",
     "react-lottie": "^1.2.3",
+    "react-onclickoutside": "^6.8.0",
     "tinycolor2": "^1.4.1"
   }
 }

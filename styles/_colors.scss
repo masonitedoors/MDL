@@ -33,6 +33,8 @@ $color-snow: #fafafa;
 $color-white: #fff;
 $color-gray: #f3f3f3;
 
+$box-shadow: 0 12px 15px 0 rgba(0, 0, 0, 0.14);
+
 @mixin gradient-dark() {
   background-image: linear-gradient($color-deepgrey, $color-blackolive);
 }

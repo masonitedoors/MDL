@@ -7,7 +7,15 @@ import style from './style.module.scss'
 const cx = classNames.bind(style)
 
 const TextField = ({
-  error, label, onBlur, onChange, onKeyDown, placeholder, value, variant,
+  error,
+  helper,
+  label,
+  onBlur,
+  onChange,
+  onKeyDown,
+  placeholder,
+  value,
+  variant,
 }) => {
   const [isActive, setActive] = useState(false)
   const Label = label ? 'label' : 'div'
@@ -23,6 +31,7 @@ const TextField = ({
       })}
     >
       <div className={cx('text-field__label')}>{label}</div>
+      <div className={cx('text-field__helper')}>{helper}</div>
       <input
         className={cx('text-field__input')}
         type="text"
@@ -51,6 +60,7 @@ TextField.propTypes = {
   onBlur: PropTypes.func,
   onChange: PropTypes.func.isRequired,
   error: PropTypes.bool,
+  helper: PropTypes.string,
   label: PropTypes.string,
   onKeyDown: PropTypes.func,
   placeholder: PropTypes.string,
@@ -61,6 +71,7 @@ TextField.propTypes = {
 TextField.defaultProps = {
   onBlur: undefined,
   error: false,
+  helper: '',
   label: undefined,
   onKeyDown: undefined,
   placeholder: '',

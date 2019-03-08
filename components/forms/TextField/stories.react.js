@@ -14,12 +14,15 @@ storiesOf('Forms/TextField', module)
       const variant = select('Variant', { Light: 'light', Dark: 'dark' }, 'light')
       const label = text('Label', 'Label')
       const error = boolean('Error State', false)
+      const helper = error ? 'Something is wrong.' : ''
       return (
         <TextField
           variant={variant}
           error={error}
+          helper={helper}
           label={label}
           placeholder="Placeholder"
+          onBlur={value => console.log('onBlur called, value: ', value)}
           onChange={value => store.set({ value })}
           value={store.state.value}
         />

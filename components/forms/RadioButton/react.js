@@ -3,7 +3,8 @@ import PropTypes from 'prop-types'
 import s from './style.module.scss'
 
 
-const Radio = ({ checked, onChange }) => (
+
+const Radio = ({ checked, onChange,value }) => (
   <div
     role="radio"
     aria-checked={checked}
@@ -12,7 +13,7 @@ const Radio = ({ checked, onChange }) => (
     onClick={onChange}
     onKeyPress={onChange}
   >
-    <input className={s['radio-input']} type="radio" checked={checked} readOnly />
+    <input className={s['radio__input']} type="radio" checked={checked} value = {value}readOnly />
   </div>
 )
 
@@ -20,6 +21,7 @@ Radio.PropTypes = {
   checked: PropTypes.bool.isRequired,
   disabled: PropTypes.bool,
   onChange: PropTypes.func,
+  value: PropTypes.string
 }
 
 Radio.defaultProps = {

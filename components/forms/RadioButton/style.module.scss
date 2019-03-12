@@ -9,16 +9,27 @@
   width: $size;
 
   &__input {
+    position: absolute;
+    top: 0;
+    left: 0;
     margin: 0;
     cursor: pointer;
+    opacity: 0;
   }
 
-  &__input:checked ~ &__svg-wrapper {
-    background: $color-night;
+  &__icon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: "";
+    background: blue;
+    width: 16px;
+    height: 16px;
+    pointer-events: none;
+  }
 
-    &__svg-icon--checked {
-      display: flex;
-    }
+  &__input:checked ~ &__icon {
+    background: red;
   }
 
   &__svg-wrapper {

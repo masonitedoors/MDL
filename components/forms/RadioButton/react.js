@@ -2,21 +2,26 @@ import React, { memo } from 'react'
 import PropTypes from 'prop-types'
 import s from './style.module.scss'
 
-
-
-const Radio = ({ checked, onChange ,value,name }) => (
-  <div
-    role="radio"
-    aria-checked={checked}
-    tabIndex={0}
-    className={s.radio}
-  >
-    <input  onClick={onChange}
-    onKeyPress={onChange} name ={name} key={value} className={s['radio__input']} type="radio" checked={checked} value = {value} readOnly />
+const Radio = ({
+  checked, onChange, value, name,
+}) => (
+  <div role="radio" aria-checked={checked} tabIndex={0} className={s.radio}>
+    <input
+      onClick={event => onChange(event.target.value)}
+      // TODO: Add onKeyPress
+      name={name}
+      key={value}
+      className={s.radio__input}
+      type="radio"
+      checked={checked}
+      value={value}
+      readOnly
+    />
+    <div className={s.radio__icon} />
   </div>
 )
 
-Radio.PropTypes = {
+Radio.propTypes = {
   checked: PropTypes.bool.isRequired,
   disabled: PropTypes.bool,
   onChange: PropTypes.func,
@@ -27,7 +32,7 @@ Radio.PropTypes = {
 Radio.defaultProps = {
   disabled: false,
   onChange: null,
-  name:'radio'
+  name: 'radio',
 }
 
 export default memo(Radio)

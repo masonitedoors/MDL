@@ -6,17 +6,18 @@ import s from './style.module.scss'
 const cx = classNames.bind(s)
 
 const Button = ({
-  children, onClick, variant, size, uppercase,
+  children, disabled, onClick, variant, size, uppercase,
 }) => {
   const classes = cx(['btn'], {
     'btn--light': variant === 'light',
     'btn--dark': variant === 'dark',
     'btn--uppercase': uppercase,
     'btn--sm': size === 'small' || size === 'sm',
+    'btn--disabled': disabled,
   })
 
   return (
-    <button type="button" className={classes} onClick={onClick}>
+    <button type="button" className={classes} onClick={onClick} disabled={disabled}>
       {children}
     </button>
   )
@@ -25,12 +26,14 @@ const Button = ({
 Button.propTypes = {
   children: PropTypes.string.isRequired,
   onClick: PropTypes.func,
+  disabled: PropTypes.bool,
   variant: PropTypes.oneOf(['light', 'dark']),
   size: PropTypes.oneOf(['small', 'sm']),
   uppercase: PropTypes.bool,
 }
 
 Button.defaultProps = {
+  disabled: false,
   onClick: null,
   variant: null,
   size: null,

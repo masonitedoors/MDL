@@ -4,8 +4,8 @@ Contributions to UI Components are welcome, and they are greatly appreciated!
 
 ## Contribution Prerequisites
 
-+ You have [Node](https://nodejs.org/en/) installed at v8.0.0+.
-+ You are familiar with Git.
+- You have [Node](https://nodejs.org/en/) installed at v8.0.0+.
+- You are familiar with Git.
 
 ## Pull Requests
 
@@ -28,5 +28,4 @@ To view and interact with the available components, run one (or more) of the fol
 ```shell
 npm run storybook:html
 npm run storybook:react
-npm run storybook:vue
 ```

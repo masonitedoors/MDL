@@ -4,7 +4,7 @@ import s from './style.module.scss'
 import { React as Radio } from 'components/forms/RadioButton'
 
 const RadioGroup = ({ choices = [], direction }) => {
-  const radios = choices.map(props => <li className={direction === 'column' ? 'radio-group--column':''}><Radio {...props} /></li>)
+  const radios = choices.map(props => <li key={props.value} className={direction === 'column' ? 'radio-group--column':''}><Radio onChange = {() => props.value } {...props} /></li>)
   return <ul>{radios}</ul>
 }
 
@@ -20,9 +20,11 @@ RadioGroup.PropTypes = {
 }
 
 RadioGroup.defaultProps = {
-  choices: [ { label: 'Choice1', value: 'choice1', checked: true },
-  { label: 'Choice2', value: 'choice2', checked: false }],
+  choices: [ { label: 'Choice1', value: 'choice1', checked: false },
+  { label: 'Choice2', value: 'choice2', checked: true }],
   direction: null
 }
 
 export default memo(RadioGroup)
+
+//click events which will update my state - it will go under <Radio > Ln7

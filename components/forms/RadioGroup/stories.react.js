@@ -22,7 +22,7 @@ storiesOf('Forms/RadioGroup', module)
     ], direction: 'column'  })(({ store }) => (
       <React.Fragment>
        <RadioGroup
-          choices
+          choices = {store.state.choices}
           direction 
         />
       </React.Fragment>

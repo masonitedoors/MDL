@@ -7,8 +7,6 @@
   position: relative;
   height: $size;
   width: $size;
-  overflow: hidden;
-  flex-shrink: 0;
 
   &__input {
     margin: 0;
@@ -16,7 +14,7 @@
   }
 
   &__input:checked ~ &__svg-wrapper {
-    background: $color-deepgrey;
+    background: $color-night;
 
     &__svg-icon--checked {
       display: flex;

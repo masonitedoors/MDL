@@ -4,16 +4,15 @@ import s from './style.module.scss'
 
 
 
-const Radio = ({ checked, onChange,value }) => (
+const Radio = ({ checked, onChange ,value,name }) => (
   <div
     role="radio"
     aria-checked={checked}
     tabIndex={0}
     className={s.radio}
-    onClick={onChange}
-    onKeyPress={onChange}
   >
-    <input className={s['radio__input']} type="radio" checked={checked} value = {value}readOnly />
+    <input  onClick={onChange}
+    onKeyPress={onChange} name ={name} key={value} className={s['radio__input']} type="radio" checked={checked} value = {value} readOnly />
   </div>
 )
 
@@ -21,12 +20,14 @@ Radio.PropTypes = {
   checked: PropTypes.bool.isRequired,
   disabled: PropTypes.bool,
   onChange: PropTypes.func,
-  value: PropTypes.string
+  value: PropTypes.string,
+  name: PropTypes.string,
 }
 
 Radio.defaultProps = {
   disabled: false,
   onChange: null,
+  name:'radio'
 }
 
 export default memo(Radio)

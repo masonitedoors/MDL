@@ -20,12 +20,12 @@ $rootFontSize: 16px;
   transform: translate(-50%, -50%);
 }
 
-@function calculateRem($size) {
+@function calculate-rem($size) {
   $remSize: $size/$rootFontSize;
   @return #{$remSize}rem;
 }
 
 @mixin fontSize($size) {
   font-size: $size;
-  font-size: calculateRem($size);
+  font-size: calculate-rem($size);
 }

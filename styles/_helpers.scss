@@ -12,20 +12,10 @@ $rootFontSize: 16px;
   border-radius: 50%;
 }
 
-@mixin completelyCenter() {
+@mixin completely-center() {
   position: absolute;
   display: inline-block;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-}
-
-@function calculate-rem($size) {
-  $remSize: $size / $rootFontSize;
-  @return #{$remSize}rem;
-}
-
-@mixin fontSize($size) {
-  font-size: $size;
-  font-size: calculate-rem($size);
 }

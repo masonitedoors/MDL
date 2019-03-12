@@ -57,7 +57,7 @@ class FilterableSearch extends PureComponent {
       <button
         type="button"
         onClick={() => onSubmit && onSubmit(value)}
-        className={cx(['FilterableSearch__btn'])}
+        className={cx(['filterable-search__btn'])}
       >
         {buttonLabel}
       </button>
@@ -66,7 +66,7 @@ class FilterableSearch extends PureComponent {
     const DropdownToggle = () => (
       <button
         type="button"
-        className={cx(['FilterableSearch__dropdown-toggle'])}
+        className={cx(['filterable-search__dropdown-toggle'])}
         onClick={() =>
           this.setState(prevState => ({
             showFilters: !prevState.showFilters,
@@ -74,7 +74,7 @@ class FilterableSearch extends PureComponent {
         }
       >
         <div
-          className={cx(['FilterableSearch__dropdown-toggle-icon'])}
+          className={cx(['filterable-search__dropdown-toggle-icon'])}
           dangerouslySetInnerHTML={{ __html: selectedDropdownIcon }}
         />
       </button>
@@ -83,15 +83,15 @@ class FilterableSearch extends PureComponent {
     const DropdownMenu = ({ show }) => (
       <ul
         className={cx([
-          'FilterableSearch__dropdown-menu',
-          { 'FilterableSearch__dropdown-menu--open': show },
+          'filterable-search__dropdown-menu',
+          { 'filterable-search__dropdown-menu--open': show },
         ])}
       >
         {filterChoices.map(({ label, value, checked }, index) => (
-          <li className={cx(['FilterableSearch__dropdown-menu-item'])} key={value}>
+          <li className={cx(['filterable-search__dropdown-menu-item'])} key={value}>
             {/* eslint-disable-next-line */}
             <label
-              className={cx(['FilterableSearch__dropdown-menu-item-label'])}
+              className={cx(['filterable-search__dropdown-menu-item-label'])}
               htmlFor={`${value}${index}`}
             >
               <Checkbox
@@ -99,7 +99,7 @@ class FilterableSearch extends PureComponent {
                 checked={checked}
                 onChange={() => onFilterChange({ label, value, checked })}
               />
-              <span className={cx(['FilterableSearch__dropdown-menu-item-label-text'])}>
+              <span className={cx(['filterable-search__dropdown-menu-item-label-text'])}>
                 {label}
               </span>
             </label>
@@ -109,7 +109,7 @@ class FilterableSearch extends PureComponent {
     )
 
     return (
-      <div className={cx(['FilterableSearch'])}>
+      <div className={cx(['filterable-search'])}>
         <TextField
           placeholder={placeholder}
           onChange={value => onInputChange(value)}

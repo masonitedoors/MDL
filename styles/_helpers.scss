@@ -21,7 +21,7 @@ $rootFontSize: 16px;
 }
 
 @function calculate-rem($size) {
-  $remSize: $size/$rootFontSize;
+  $remSize: $size / $rootFontSize;
   @return #{$remSize}rem;
 }
 

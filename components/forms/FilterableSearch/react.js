@@ -47,6 +47,7 @@ class FilterableSearch extends PureComponent {
       filterChoices = [],
       placeholder,
       value,
+      variant,
     } = this.props
 
     const { showFilters } = this.state
@@ -117,6 +118,7 @@ class FilterableSearch extends PureComponent {
             if (ev.keyCode === 13 && onSubmit) onSubmit(ev.target.value)
           }}
           value={value}
+          variant={variant}
         />
         {onSubmit && <SearchButton />}
         <div ref={this.dropdownMenuRef}>
@@ -143,6 +145,7 @@ FilterableSearch.propTypes = {
     }),
   ).isRequired,
   placeholder: PropTypes.string,
+  variant: PropTypes.oneOf(['dark', 'light']),
 }
 
 FilterableSearch.defaultProps = {
@@ -151,6 +154,7 @@ FilterableSearch.defaultProps = {
   placeholder: 'Search',
   onSubmit: undefined,
   onInputChange: undefined,
+  variant: 'dark',
 }
 
 export default FilterableSearch

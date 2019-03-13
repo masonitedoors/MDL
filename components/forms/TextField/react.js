@@ -75,5 +75,5 @@ TextField.defaultProps = {
   label: undefined,
   onKeyDown: undefined,
   placeholder: '',
-  variant: 'light',
+  variant: 'dark',
 }

@@ -38,6 +38,8 @@ Props noted with an asterisk are required. Not always by necessity, but by lack 
 
 | Prop      | Default    | Accepted Values       |
 | --------- | ---------- | --------------------- |
+| disabled  | false      | boolean               |
+| fullWidth | false      | boolean               |
 | onClick   | `() => {}` | function              |
 | uppercase | boolean    | false                 |
 | size      | null       | null, 'small'         |
@@ -63,14 +65,24 @@ Props noted with an asterisk are required. Not always by necessity, but by lack 
 | placeholder      | 'Search'  | string                                               |                                            |
 | value\*          | ---       | string                                               |                                            |
 
-### forms/Input
+### forms/TextField
 
-| Prop       | Default | Accepted Values | Description         |
-| ---------- | ------- | --------------- | ------------------- |
-| error      | ---     | boolean         | Error state         |
-| onChange\* | ---     | function        | Returns input value |
-| value\*    | ---     | string          |                     |
-| variant\*  | ---     | 'dark', null    |                     |
+| Prop        | Default | Accepted Values | Description                   |
+| ----------- | ------- | --------------- | ----------------------------- |
+| error       | ---     | boolean         | Error state                   |
+| helper      | --      | string          | Text that appears below input |
+| label       | ---     | string          |                               |
+| onBlur      | --      | function        |                               |
+| onChange\*  | ---     | function        | Returns input value           |
+| placeholder | ---     | string          |                               |
+| value\*     | ---     | string          |                               |
+| variant\*   | ---     | 'dark', null    |                               |
+
+### menu/OverflowMenu
+
+| Prop     | Default | Accepted Values  | Description |
+| -------- | ------- | ---------------- | ----------- |
+| children | --      | function, string |             |
 
 ### nav/Tabs
 

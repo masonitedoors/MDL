@@ -1,0 +1,90 @@
+@import "styles/index";
+
+.text-field {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  margin-bottom: 16px;
+
+  &--with-label {
+    margin-top: 30px;
+  }
+
+  /* Input */
+
+  &__input {
+    font-family: $font-family;
+    border-radius: 2px;
+    border: 0;
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.15); // should be moved to pseudo-element http://tobiasahlin.com/blog/how-to-animate-box-shadow/
+    font-size: 14px;
+    height: 36px;
+    padding: $size-sm $size-md;
+    box-sizing: border-box;
+    transition: box-shadow 200ms ease-in;
+    width: 100%;
+  }
+
+  &--light &__input {
+    background: white;
+  }
+
+  &--dark &__input {
+    background: $color-snow;
+  }
+
+  &--error &__input {
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.15), inset 0 -3px 0 0 $color-rust;
+  }
+
+  /* Label */
+
+  &__label {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: $size-md;
+    transition: all 200ms;
+    pointer-events: none;
+  }
+
+  &--error &__label {
+    color: $color-rust;
+  }
+
+  &--active &__label {
+    top: -12px;
+    font-size: 10px;
+  }
+
+  /* Helper */
+
+  &__helper {
+    position: absolute;
+    left: $size-md;
+    bottom: -20px;
+    font-size: 10px;
+  }
+
+  &--error &__helper {
+    color: $color-rust;
+  }
+
+  /* Icon */
+
+  &__icon {
+    @include square($size-lg);
+
+    position: absolute;
+    top: 50%;
+    right: $size-md;
+    opacity: 0;
+    transition: opacity 200ms ease-in 100ms;
+    transform: translateY(-50%);
+    fill: $color-rust;
+  }
+
+  &--error &__icon {
+    opacity: 1;
+  }
+}

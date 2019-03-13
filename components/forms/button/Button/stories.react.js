@@ -19,13 +19,21 @@ storiesOf('Forms/Button/Button', module)
       'Size',
       {
         Small: 'small',
-        Base: '',
+        Base: undefined,
       },
       '',
     )
+    const disabled = boolean('Disabled', false)
+
     const uppercase = boolean('Uppercase', false)
     return (
-      <Button variant={variant} size={size} uppercase={uppercase}>
+      <Button
+        variant={variant}
+        onClick={() => console.log('click')}
+        size={size}
+        uppercase={uppercase}
+        disabled={disabled}
+      >
         Lorem Button
       </Button>
     )

@@ -6,7 +6,7 @@
   "scripts": {
     "storybook:html": "start-storybook -s ./vendor -p 9005 -c .storybook/html",
     "storybook:vue": "start-storybook -p 9006 -c .storybook/vue",
-    "storybook:react": "NODE_PATH=styles:components start-storybook -p 9007 -c .storybook/react",
+    "storybook:react": "cross-env NODE_PATH=styles:components start-storybook -p 9007 -c .storybook/react",
     "generate-colors-css": "node -e 'require(\"./styles/generate-style-stories\").createCssClassesFromColors()'",
     "deploy-storybook": "storybook-to-ghpages -s build:storybook -o gh-pages",
     "build:storybook": "build-storybook -c .storybook/react -o gh-pages",
@@ -41,7 +41,7 @@
     "@babel/plugin-proposal-class-properties": "^7.3.0",
     "@babel/preset-env": "^7.3.1",
     "@masonite/eslint-config": "0.0.12",
-    "@masonite/stylelint-config": "0.0.7",
+    "@masonite/stylelint-config": "^1.4.0",
     "babel-eslint": "^9.0.0",
     "babel-loader": "^8.0.5",
     "babel-preset-react-app": "^6.1.0",
@@ -60,6 +60,7 @@
     "sass-loader": "^7.1.0",
     "stylelint": "^9.10.1",
     "stylelint-config-recommended": "^2.1.0",
+    "stylelint-scss": "^3.5.4",
     "svg-inline-loader": "^0.8.0"
   },
   "dependencies": {
@@ -76,12 +77,13 @@
     "@storybook/vue": "^4.1.11",
     "classnames": "^2.2.6",
     "cross-env": "^5.2.0",
-    "enzyme": "^3.8.0",
+    "enzyme": "^3.9.0",
     "enzyme-adapter-react-16": "^1.9.1",
     "enzyme-to-json": "^3.3.5",
     "prop-types": "^15.7.1",
     "react": "^16.8.1",
     "react-lottie": "^1.2.3",
+    "react-onclickoutside": "^6.8.0",
     "tinycolor2": "^1.4.1"
   }
 }

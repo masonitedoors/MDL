@@ -1,4 +1,21 @@
+// Used in calculating rems in the fontSize mixin
+$rootFontSize: 16px;
+
 @mixin square($x) {
   height: $x;
   width: $x;
+}
+
+@mixin circle($x) {
+  height: $x;
+  width: $x;
+  border-radius: 50%;
+}
+
+@mixin completely-center() {
+  position: absolute;
+  display: inline-block;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }

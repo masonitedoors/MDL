@@ -6,13 +6,14 @@ import s from './style.module.scss'
 const cx = classNames.bind(s)
 
 const Button = ({
-  children, onClick, variant, size, uppercase,
+  children, onClick, variant, size, uppercase, fullWidth,
 }) => {
   const classes = cx(['btn'], {
     'btn--light': variant === 'light',
     'btn--dark': variant === 'dark',
     'btn--uppercase': uppercase,
     'btn--sm': size === 'small' || size === 'sm',
+    'btn--full-width': fullWidth,
   })
 
   return (
@@ -28,6 +29,7 @@ Button.propTypes = {
   variant: PropTypes.oneOf(['light', 'dark']),
   size: PropTypes.oneOf(['small', 'sm']),
   uppercase: PropTypes.bool,
+  fullWidth: PropTypes.bool,
 }
 
 Button.defaultProps = {
@@ -35,6 +37,7 @@ Button.defaultProps = {
   variant: null,
   size: null,
   uppercase: false,
+  fullWidth: false
 }
 
 export default Button

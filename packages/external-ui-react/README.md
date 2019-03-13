@@ -38,6 +38,8 @@ Props noted with an asterisk are required. Not always by necessity, but by lack 
 
 | Prop      | Default    | Accepted Values       |
 | --------- | ---------- | --------------------- |
+| disabled  | false      | boolean               |
+| fullWidth | false      | boolean               |
 | onClick   | `() => {}` | function              |
 | uppercase | boolean    | false                 |
 | size      | null       | null, 'small'         |
@@ -75,6 +77,12 @@ Props noted with an asterisk are required. Not always by necessity, but by lack 
 | placeholder | ---     | string          |                               |
 | value\*     | ---     | string          |                               |
 | variant\*   | ---     | 'dark', null    |                               |
+
+### menu/OverflowMenu
+
+| Prop     | Default | Accepted Values  | Description |
+| -------- | ------- | ---------------- | ----------- |
+| children | --      | function, string |             |
 
 ### nav/Tabs
 

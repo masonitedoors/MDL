@@ -12,8 +12,8 @@ storiesOf('Menu/Overflow Menu', module)
     'default',
     () => (
       <OverflowMenu>
-        <p>SAVED ON: 05/30/18<br />
-          EDITED BY: LOREM IPSUM
+        <p className={cx('overflow-menu__p')}>saved on: 05/30/18<br />
+          edited by: lorem ipsum
         </p>
         <span className={cx('overflow-menu__button-wrapper')}>
           <Button variant="light" fullWidth uppercase>My First Button</Button>

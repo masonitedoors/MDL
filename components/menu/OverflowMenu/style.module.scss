@@ -1,0 +1,43 @@
+@import "../../../styles/index";
+
+.overflow-menu {
+  position: relative;
+  display: inline-block;
+}
+
+.overflow-menu__button {
+  @include circle(26px);
+  padding: $size-md;
+  border: none;
+  background-color: $color-gray;
+  display: inline-block;
+  cursor: pointer;
+  position: relative;
+
+  &:focus {
+    outline: 0;
+  }
+}
+
+.overflow-menu__svg {
+  @include completely-center();
+  width: 40%;
+  height: 60%;
+}
+
+.overflow-menu__actions {
+  padding: $size-lg;
+  background-color: $color-snow;
+  border-radius: 2px;
+  width: (282px - ($size-lg * 2)); // set to 282px;
+  display: inline-block;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  box-shadow: 0 12px 15px 0 rgba(0, 0, 0, 0.14);
+  z-index: 9;
+}
+
+.overflow-menu__actions > *:last-child {
+  margin-bottom: 0;
+}

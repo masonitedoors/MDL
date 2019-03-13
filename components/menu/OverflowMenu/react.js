@@ -44,7 +44,7 @@ export class OverflowMenu extends Component {
 
         {displayOverflowMenuActions
           && (
-          <div className={cx('overflow-menu__actions')} onClick={e => this.checkToCloseOverflowMenu(e)}>
+          <div role="presentation" className={cx('overflow-menu__actions')} onClick={e => this.checkToCloseOverflowMenu(e)} onKeyPress={e => this.checkToCloseOverflowMenu(e)}>
             {children}
           </div>
           )

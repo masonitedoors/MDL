@@ -1,5 +1,9 @@
 @import "styles/colors.scss";
 
 ul {
-      list-style-type: none;
+  list-style-type: none;
+}
+
+.radio-group-row {
+  display: inline-block;
 }

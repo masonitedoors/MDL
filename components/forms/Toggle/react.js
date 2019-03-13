@@ -26,7 +26,6 @@ const Toggle = ({
 )
 
 Toggle.propTypes = {
-  children: PropTypes.string.isRequired,
   onClick: PropTypes.func,
   variant: PropTypes.oneOf(['light', 'dark']),
   size: PropTypes.oneOf(['small', 'sm']),

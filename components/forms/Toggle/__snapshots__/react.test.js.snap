@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Toggle with snapshots should render correctly 1`] = `
+<Toggle
+  checked={[MockFunction]}
+  name="toggle"
+  onChange={[MockFunction]}
+  onClick={null}
+  onSearch={[MockFunction]}
+  size={null}
+  uppercase={false}
+  value=""
+  variant={null}
+>
+  <div
+    aria-checked={[MockFunction]}
+    className="toggle"
+    onClick={[MockFunction]}
+    onKeyPress={[MockFunction]}
+    role="checkbox"
+    tabIndex={0}
+  >
+    <label
+      className="toggle__switch"
+    >
+      <input
+        className="toggle__input"
+        type="checkbox"
+      />
+      <span
+        className="toggle__slider"
+      />
+    </label>
+  </div>
+</Toggle>
+`;

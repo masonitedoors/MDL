@@ -17,7 +17,6 @@ const Radio = ({
       value={value}
       readOnly
     />
-    <div className={s.radio__icon} />
   </div>
 )
 

@@ -1,9 +1,8 @@
 @import "styles/colors.scss";
 
-
-.toggle{
-
+.toggle {
   $size: 14px;
+
   align-items: center;
   align-content: center;
   position: relative;
@@ -15,13 +14,13 @@
     position: relative;
     display: inline-block;
   }
-  
-  &__switch input { 
+
+  &__switch input {
     opacity: 0;
     width: 0;
     height: 0;
   }
-  
+
   &__slider {
     position: absolute;
     cursor: pointer;
@@ -30,14 +29,23 @@
     right: 0;
     bottom: 0;
     background-color: $color-gray;
-    -webkit-transition: .4s;
-    transition: .4s;
-    height: 8px;	
-    width:24px;
-    border-radius:34px;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+    height: 8px;
+    width: 24px;
+    border-radius: 34px;
   }
-  
-  &__slider:before {
+
+  &__input:checked + &__slider {
+    background: $color-gray;
+  }
+
+  &__input:focus + &__slider {
+    box-shadow: 0 0 1px $color-onyx;
+  }
+
+  &__slider::before {
+    border-radius: 50%;
     position: absolute;
     content: "";
     height: 16px;
@@ -46,31 +54,15 @@
     top: -5px;
     bottom: 4px;
     background-color: $color-onyx;
-    -webkit-transition: .4s;
-    transition: .4s;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
   }
 
-  &__input:checked + &__slider:before {
-    background-color: $color-limerick;
-    left: -10px;
-  }
-  
-  &__input:checked + &__slider {
-    background: $color-gray;
-  }
-  
-  &__input:focus + &__slider {
-    box-shadow: 0 0 1px $color-onyx;
-  }
-  
-  &__input:checked + &__slider:before {
+  &__input:checked + &__slider::before {
     -webkit-transform: translateX(26px);
     -ms-transform: translateX(26px);
     transform: translateX(26px);
+    background-color: $color-limerick;
+    left: -10px;
   }
-  
-  &__slider:before {
-    border-radius: 50%;
-  }
-
 }

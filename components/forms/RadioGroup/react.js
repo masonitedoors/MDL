@@ -7,7 +7,7 @@ const RadioGroup = ({
   checkedChoice, choices, direction, onChange,
 }) => {
   const radios = choices.map(({ label, value }) => (
-    <li key={value} className={direction === 'column' ? 'radio-group--column' : ''}>
+    <li key={value} className={direction === 'column' ? '' : s['radio-group-row']}>
       <Radio
         checked={checkedChoice === value}
         onClick={value => onChange(value)}
@@ -29,15 +29,11 @@ RadioGroup.propTypes = {
       checked: PropTypes.bool,
     }),
   ).isRequired,
-  direction: PropTypes.oneOf[('column', 'row')],
   onChange: PropTypes.func.isRequired,
 }
 
 RadioGroup.defaultProps = {
-  checkedChoice: null,
-  direction: null,
+  checkedChoice: null
 }
 
 export default memo(RadioGroup)
-
-// click events which will update my state - it will go under <Radio > Ln7

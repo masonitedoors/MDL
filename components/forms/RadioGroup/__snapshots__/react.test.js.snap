@@ -1,0 +1,90 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RadioButton with snapshots should render correctly 1`] = `
+<RadioGroup
+  checked={[MockFunction]}
+  checkedChoice={null}
+  choices={
+    Array [
+      Object {
+        "label": "Filter 1",
+        "value": "FILTER1",
+      },
+      Object {
+        "label": "Filter 2",
+        "value": "FILTER2",
+      },
+    ]
+  }
+  direction="row"
+  onChange={[MockFunction]}
+  onClick={[MockFunction]}
+>
+  <ul>
+    <li
+      className="radio-group-row"
+      key="FILTER1"
+    >
+      <Radio
+        checked={false}
+        disabled={false}
+        label="Filter 1"
+        name="radio"
+        onChange={[Function]}
+        onClick={[Function]}
+        value="FILTER1"
+      >
+        <div
+          aria-checked={false}
+          className="radio"
+          role="radio"
+          tabIndex={0}
+        >
+          <input
+            checked={false}
+            className="radio__input"
+            key="FILTER1"
+            name="radio"
+            onClick={[Function]}
+            readOnly={true}
+            type="radio"
+            value="FILTER1"
+          />
+        </div>
+      </Radio>
+    </li>
+    <li
+      className="radio-group-row"
+      key="FILTER2"
+    >
+      <Radio
+        checked={false}
+        disabled={false}
+        label="Filter 2"
+        name="radio"
+        onChange={[Function]}
+        onClick={[Function]}
+        value="FILTER2"
+      >
+        <div
+          aria-checked={false}
+          className="radio"
+          role="radio"
+          tabIndex={0}
+        >
+          <input
+            checked={false}
+            className="radio__input"
+            key="FILTER2"
+            name="radio"
+            onClick={[Function]}
+            readOnly={true}
+            type="radio"
+            value="FILTER2"
+          />
+        </div>
+      </Radio>
+    </li>
+  </ul>
+</RadioGroup>
+`;

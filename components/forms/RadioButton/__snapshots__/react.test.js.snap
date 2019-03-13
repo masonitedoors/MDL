@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RadioButton with snapshots should render correctly 1`] = `
+<Radio
+  checked={[MockFunction]}
+  disabled={false}
+  name="radio"
+  onChange={[MockFunction]}
+  onSearch={[MockFunction]}
+  value=""
+>
+  <div
+    aria-checked={[MockFunction]}
+    className="radio"
+    role="radio"
+    tabIndex={0}
+  >
+    <input
+      checked={[MockFunction]}
+      className="radio__input"
+      key=""
+      name="radio"
+      onClick={[Function]}
+      readOnly={true}
+      type="radio"
+      value=""
+    />
+  </div>
+</Radio>
+`;

@@ -1,7 +1,8 @@
 @import "styles/colors.scss";
 
 .radio {
-  $size: 14px;
+  $size: 15px;
+
   align-items: center;
   align-content: center;
   position: relative;
@@ -9,33 +10,26 @@
   width: $size;
 
   &__input {
-    position: absolute;
-    top: 0;
-    left: 0;
-    margin: 0;
+    -webkit-appearance: none;
+    border: 1px solid $color-night;
+    border-radius: 50%;
+    outline: none;
+    box-shadow: 0 0 1px 0 $color-night inset;
+    width: $size;
+    height: $size;
     cursor: pointer;
-    opacity: 0;
   }
 
-  &__icon {
-    position: absolute;
-    top: 0;
-    left: 0;
-    content: "";
-    background: blue;
-    width: 16px;
-    height: 16px;
-    pointer-events: none;
+  &__input::before {
+    content: '';
+    display: block;
+    width: 60%;
+    height: 60%;
+    margin: 20% auto;
+    border-radius: 50%;
   }
 
-  &__input:checked ~ &__icon {
-    background: red;
-  }
-
-  &__svg-wrapper {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
+  &__input:checked::before {
+    background: $color-night;
   }
 }

@@ -29,13 +29,16 @@
   padding: $size-lg;
   background-color: $color-snow;
   border-radius: 2px;
-  width: (282px - ($size-lg * 2)); // set to 282px;
+  width: 282px;
   display: inline-block;
   position: absolute;
-  top: 100%;
-  left: 0;
+  top: 60%;
+  left: 60%;
   box-shadow: 0 12px 15px 0 rgba(0, 0, 0, 0.14);
   z-index: 9;
+  -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+  box-sizing: border-box; /* Addresses padding affecting box-width */
 }
 
 .overflow-menu__actions > *:last-child {

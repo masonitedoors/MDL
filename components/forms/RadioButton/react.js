@@ -8,7 +8,7 @@ const Radio = ({
   <div role="radio" aria-checked={checked} tabIndex={0} className={s.radio}>
     <input
       onClick={event => onChange(event.target.value)}
-      // TODO: Add onKeyPress
+      onKeyPress={event => onChange(event.target.value)}
       name={name}
       key={value}
       className={s.radio__input}

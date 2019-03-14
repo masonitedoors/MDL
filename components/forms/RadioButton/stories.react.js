@@ -18,7 +18,9 @@ storiesOf('Forms/Radio', module)
       </React.Fragment>
     )),
   )
+
   .add('fully controlled', () => {
-    const checked = boolean('Checked', true)
-    return <Radio checked={checked} name={name}/>
+  const checked = boolean('Checked', true)
+  return <Radio checked={checked}  onChange={() => console.log("click")} />
+   
   })

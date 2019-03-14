@@ -45,8 +45,5 @@ describe('RadioButton', () => {
      const radios = wrapper.find('li');         
      expect(radios.length).toBe(2);
     })
-    it('should check direction of radio group', () => {
-     expect(wrapper.find('li')).to.have.className('radio-group-row')
-    })
   })
 })

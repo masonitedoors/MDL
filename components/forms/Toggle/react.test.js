@@ -12,10 +12,8 @@ describe('Toggle', () => {
 
   beforeEach(() => {
     props = {
-      checked: jest.fn(),
+      checked: false,
       onChange: jest.fn(),
-      onSearch: jest.fn(),
-      value: '',
       name: 'toggle'
     }
 
@@ -31,10 +29,11 @@ describe('Toggle', () => {
   })
 
   describe('with user actions', () => {
-    it('should display when clicking the toggle button', () => {
-      console.log(props);
-      wrapper.find('input').simulate('click')
-      expect(wrapper.find('input').prop('value')).toEqual(true)
+    it('should display the when clicking the toggle button', () => {
+      wrapper.find('input').simulate('click');
+      wrapper.setProps({ checked: true });
+     let checkbox = wrapper.find('Toggle')
+      expect(checkbox.props().checked).toBe(true);
     })
   })
 })

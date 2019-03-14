@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 
 - `variant` prop options for `<Button />` updated to reflect changes in MDL. 'Secondary' (replaces 'dark'), 'default' (light), and added 'primary'. Old variant names still supported.
+- Spacing in `<TextField />`
 
 ## [1.9.2] - 2019-03-13
 

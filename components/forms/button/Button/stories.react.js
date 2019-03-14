@@ -9,9 +9,10 @@ storiesOf('Forms/Button/Button', module)
     const variant = select(
       'Variant',
       {
-        Light: 'light',
+        Default: 'default',
         Base: '',
-        Dark: 'dark',
+        Primary: 'primary',
+        Secondary: 'secondary',
       },
       'light',
     )

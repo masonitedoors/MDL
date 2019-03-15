@@ -5,12 +5,28 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [1.9.1] - 2019-03-13
+## [Unreleased]
+
+### Changed
+
+- `variant` prop options for `<Button />` updated to reflect changes in MDL. 'Secondary' (replaces 'dark'), 'default' (light), and added 'primary'. Old variant names still supported.
+- Spacing in `<TextField />`
+
+### Fixed
+
+- `<TextField />` onBlur console error
+
+## [1.9.2] - 2019-03-13
 
 ### Added
 
-- `OverflowMenu` component.
-- `disabled` and `fullWidth` prop to `Button` component.
+- `<OverflowMenu />` component.
+- `disabled` and `fullWidth` prop to `<Button />` component.
+- `variant` prop to `<FilterableSearch />` component (for its child `<TextField />`)
+
+### Changed
+
+- default value for `variant` prop on `<TextField />` to "dark" since most examples and apps are on a white background.
 
 ## [1.8.0] - 2019-03-08
 

@@ -20,12 +20,17 @@
     cursor: not-allowed;
   }
 
-  &--light {
+  &--default {
     background: $color-snow;
     box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.15);
   }
 
-  &--dark {
+  &--primary {
+    background: $color-limerick;
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.15);
+  }
+
+  &--secondary {
     background: $color-deepgrey;
     color: white;
   }

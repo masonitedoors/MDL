@@ -9,8 +9,9 @@ const Button = ({
   children, disabled, fullWidth, onClick, variant, size, uppercase,
 }) => {
   const classes = cx(['btn'], {
-    'btn--light': variant === 'light',
-    'btn--dark': variant === 'dark',
+    'btn--primary': variant === 'primary',
+    'btn--secondary': ['secondary', 'dark'].includes(variant),
+    'btn--default': ['default', 'light'].includes(variant),
     'btn--uppercase': uppercase,
     'btn--sm': size === 'small' || size === 'sm',
     'btn--disabled': disabled,
@@ -28,7 +29,7 @@ Button.propTypes = {
   children: PropTypes.string.isRequired,
   onClick: PropTypes.func,
   disabled: PropTypes.bool,
-  variant: PropTypes.oneOf(['light', 'dark']),
+  variant: PropTypes.oneOf(['default', 'primary', 'secondary']),
   size: PropTypes.oneOf(['small', 'sm']),
   uppercase: PropTypes.bool,
   fullWidth: PropTypes.bool,
@@ -37,7 +38,7 @@ Button.propTypes = {
 Button.defaultProps = {
   disabled: false,
   onClick: null,
-  variant: null,
+  variant: 'default',
   size: null,
   uppercase: false,
   fullWidth: false,

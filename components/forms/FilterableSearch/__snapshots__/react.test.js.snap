@@ -23,6 +23,7 @@ exports[`FilterableSearch with snapshots should render correctly 1`] = `
   onSubmit={[MockFunction]}
   placeholder="Search"
   value=""
+  variant="dark"
 >
   <div
     className="filterable-search"
@@ -34,10 +35,10 @@ exports[`FilterableSearch with snapshots should render correctly 1`] = `
       onKeyDown={[Function]}
       placeholder="Search"
       value=""
-      variant="light"
+      variant="dark"
     >
       <div
-        className="text-field text-field--light"
+        className="text-field text-field--dark"
       >
         <div
           className="text-field__label"

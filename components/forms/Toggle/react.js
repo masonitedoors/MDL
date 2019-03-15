@@ -1,11 +1,10 @@
 import React from 'react'
-import classNames from 'classnames/bind'
 import PropTypes from 'prop-types'
 import s from './style.module.scss'
 
 
 const Toggle = ({
-  checked, disabled, onChange,
+  checked, onChange,
 }) => (
 
   <div
@@ -16,8 +15,8 @@ const Toggle = ({
     onKeyPress={onChange}
     className={s.toggle}
   >
-    <label className={s.toggle__switch}>
-      <input className={s.toggle__input} type="checkbox" />
+    <label className={s.toggle__switch} htmlFor="toggle">
+      <input className={s.toggle__input} type="checkbox" id="toggle" />
       <span className={s.toggle__slider} />
     </label>
 
@@ -26,17 +25,13 @@ const Toggle = ({
 )
 
 Toggle.propTypes = {
-  onClick: PropTypes.func,
-  variant: PropTypes.oneOf(['light', 'dark']),
-  size: PropTypes.oneOf(['small', 'sm']),
-  uppercase: PropTypes.bool,
+  onChange: PropTypes.func,
+  checked: PropTypes.bool,
 }
 
 Toggle.defaultProps = {
-  onClick: null,
-  variant: null,
-  size: null,
-  uppercase: false,
+  onChange: null,
+  checked: false,
 }
 
 export default Toggle

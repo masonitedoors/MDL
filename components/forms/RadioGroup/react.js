@@ -30,10 +30,12 @@ RadioGroup.propTypes = {
     }),
   ).isRequired,
   onChange: PropTypes.func.isRequired,
+  direction: PropTypes.string,
 }
 
 RadioGroup.defaultProps = {
-  checkedChoice: null
+  checkedChoice: null,
+  direction: 'column',
 }
 
 export default memo(RadioGroup)

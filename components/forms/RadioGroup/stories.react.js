@@ -1,8 +1,7 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
-import { withKnobs, boolean } from '@storybook/addon-knobs'
+import { withKnobs } from '@storybook/addon-knobs'
 import { withState } from '@dump247/storybook-state'
-import Radio from './react'
 import RadioGroup from './react'
 
 storiesOf('Forms/RadioGroup', module)
@@ -23,11 +22,11 @@ storiesOf('Forms/RadioGroup', module)
       ],
       direction: 'column',
     })(({ store }) => (
-        <RadioGroup
-          checkedChoice={store.state.checkedChoice}
-          choices={store.state.choices}
-          onChange={value => store.set({ checkedChoice: value })}
-          direction
-        />
+      <RadioGroup
+        checkedChoice={store.state.checkedChoice}
+        choices={store.state.choices}
+        onChange={value => store.set({ checkedChoice: value })}
+        direction
+      />
     )),
   )

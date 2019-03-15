@@ -2,18 +2,16 @@
 
 exports[`Toggle with snapshots should render correctly 1`] = `
 <Toggle
-  checked={[MockFunction]}
+  checked={true}
   name="toggle"
   onChange={[MockFunction]}
   onClick={null}
-  onSearch={[MockFunction]}
   size={null}
   uppercase={false}
-  value=""
   variant={null}
 >
   <div
-    aria-checked={[MockFunction]}
+    aria-checked={true}
     className="toggle"
     onClick={[MockFunction]}
     onKeyPress={[MockFunction]}

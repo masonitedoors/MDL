@@ -14,7 +14,7 @@ describe('Toggle', () => {
     props = {
       checked: false,
       onChange: jest.fn(),
-      name: 'toggle'
+      name: 'toggle',
     }
 
     wrapper = mount(<Toggle {...props} />, {
@@ -30,10 +30,8 @@ describe('Toggle', () => {
 
   describe('with user actions', () => {
     it('should display the when clicking the toggle button', () => {
-      wrapper.find('input').simulate('click');
-      wrapper.setProps({ checked: true });
-     let checkbox = wrapper.find('Toggle')
-      expect(checkbox.props().checked).toBe(true);
+      wrapper.find('Toggle').simulate('click')
+      expect(props.onChange).toHaveBeenCalledTimes(1)
     })
   })
 })

@@ -21,16 +21,15 @@ const Radio = ({
 
 Radio.propTypes = {
   checked: PropTypes.bool.isRequired,
-  disabled: PropTypes.bool,
   onChange: PropTypes.func,
   value: PropTypes.string,
   name: PropTypes.string,
 }
 
 Radio.defaultProps = {
-  disabled: false,
   onChange: null,
   name: 'radio',
+  value: null,
 }
 
 export default memo(Radio)

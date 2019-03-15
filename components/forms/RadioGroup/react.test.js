@@ -26,7 +26,7 @@ describe('RadioButton', () => {
           value: 'FILTER2',
         },
       ],
-      checkedChoice: null
+      checkedChoice: null,
     }
 
     wrapper = mount(<RadioGroup {...props} />, {
@@ -42,8 +42,8 @@ describe('RadioButton', () => {
 
   describe('with user actions', () => {
     it('should display the when clicking the dropdown button', () => {
-     const radios = wrapper.find('li');         
-     expect(radios.length).toBe(2);
+      const radios = wrapper.find('li')
+      expect(radios.length).toBe(2)
     })
   })
 })

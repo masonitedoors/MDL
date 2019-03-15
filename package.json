@@ -17,7 +17,8 @@
     "lint:styles": "npx stylelint **/*.scss --syntax scss",
     "lint": "npm run lint:styles && npm run lint:scripts",
     "test:watch": "npx jest --watch",
-    "test": "npm run lint && npx jest"
+    "test": "npm run lint && npx jest",
+    "start": "npm run storybook:react"
   },
   "keywords": [],
   "author": "",

@@ -9,7 +9,6 @@ const Radio = ({
     <input
       onClick={event => onChange(event.target.value)}
       onKeyPress={event => onChange(event.target.value)}
-      name={name}
       key={value}
       className={s.radio__input}
       type="radio"

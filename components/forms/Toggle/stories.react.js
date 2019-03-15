@@ -15,7 +15,3 @@ storiesOf('Forms/Toggle', module)
       />
     )),
   )
-  .add('fully controlled', () => {
-    const checked = boolean('Checked', true)
-    return <Toggle checked={checked} />
-  })

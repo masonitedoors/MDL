@@ -1,4 +1,4 @@
-@import "styles/colors.scss";
+@import "styles/index.scss";
 
 ul {
   list-style-type: none;
@@ -6,5 +6,5 @@ ul {
 
 .radio-group-row {
   display: inline-block;
-  padding: 5px;
+  padding: $size-sm;
 }

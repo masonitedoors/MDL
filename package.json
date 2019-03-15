@@ -16,8 +16,7 @@
     "lint:styles": "npx stylelint **/*.scss --syntax scss",
     "lint": "npm run lint:styles && npm run lint:scripts",
     "test:watch": "npx jest --watch",
-    "test": "npm run lint && npx jest",
-    "storybook:react-windows": "cross-env NODE_PATH=styles:components start-storybook -p 9007 -c .storybook/react"
+    "test": "npm run lint && npx jest"
   },
   "keywords": [],
   "author": "",

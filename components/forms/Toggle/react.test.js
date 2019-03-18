@@ -14,7 +14,6 @@ describe('Toggle', () => {
     props = {
       checked: false,
       onChange: jest.fn(),
-      name: 'toggle',
     }
 
     wrapper = mount(<Toggle {...props} />, {

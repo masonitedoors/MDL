@@ -41,7 +41,7 @@ describe('RadioButton', () => {
   })
 
   describe('with user actions', () => {
-    it('check number of radio buttons in radio group', () => {
+    it('should have the correct amount of radio buttons', () => {
       const radios = wrapper.find('li')
       expect(radios.length).toBe(2)
     })

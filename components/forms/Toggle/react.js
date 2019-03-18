@@ -15,8 +15,8 @@ const Toggle = ({
     onKeyPress={onChange}
     className={s.toggle}
   >
-    <label className={s.toggle__switch} htmlFor="toggle">
-      <input className={s.toggle__input} type="checkbox" id="toggle" />
+    <label className={s.toggle__switch}>
+      <input className={s.toggle__input} type="checkbox" />
       <span className={s.toggle__slider} />
     </label>
 

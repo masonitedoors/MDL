@@ -41,7 +41,7 @@ describe('RadioButton', () => {
   })
 
   describe('with user actions', () => {
-    it('should display the when clicking the dropdown button', () => {
+    it('check number of radio buttons in radio group', () => {
       const radios = wrapper.find('li')
       expect(radios.length).toBe(2)
     })

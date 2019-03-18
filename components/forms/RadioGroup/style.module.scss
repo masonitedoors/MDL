@@ -1,10 +1,11 @@
 @import "styles/index.scss";
 
-ul {
+.radio-group {
   list-style-type: none;
-}
+  $size: 5px;
 
-.radio-group-row {
-  display: inline-block;
-  padding: $size-sm;
+  &__row {
+    display: inline-block;
+    padding: $size-sm;
+  }
 }

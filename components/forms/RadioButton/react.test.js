@@ -12,7 +12,7 @@ describe('RadioButton', () => {
 
   beforeEach(() => {
     props = {
-      checked: true,
+      checked: false,
       onChange: jest.fn(),
       value: 'true',
       name: 'radio',
@@ -30,9 +30,9 @@ describe('RadioButton', () => {
   })
 
   describe('with user actions', () => {
-    it('should display the when clicking the radio button', () => {
+    it('if the onChange function is called on click', () => {
       wrapper.find('input').simulate('click')
-      expect(wrapper.find('input').prop('checked')).toEqual(true)
+      expect(props.onChange).toHaveBeenCalledTimes(1)
     })
   })
 })

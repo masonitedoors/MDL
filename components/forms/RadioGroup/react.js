@@ -7,21 +7,22 @@ const RadioGroup = ({
   checkedChoice, choices, direction, onChange,
 }) => {
   const radios = choices.map(({ label, value }) => (
-    <li key={value} className={direction === 'column' ? '' : s['radio-group-row']}>
+    <li key={value} className={direction === 'column' ? '' : s['radio-group__row']}>
       <Radio
         checked={checkedChoice === value}
-        onClick={value => onChange(value)}
-        onChange={value => onChange(value)}
+        onClick={event => onChange(event.target.value)}
+        onChange={event => onChange(event.target.value)}
         label={label}
         value={value}
       />
     </li>
   ))
-  return <ul>{radios}</ul>
+  return <ul className={s['radio-group']}>{radios}</ul>
 }
 
 RadioGroup.propTypes = {
   checkedChoice: PropTypes.string,
+  direction: PropTypes.string,
   choices: PropTypes.arrayOf(
     PropTypes.shape({
       label: PropTypes.string,
@@ -30,7 +31,7 @@ RadioGroup.propTypes = {
     }),
   ).isRequired,
   onChange: PropTypes.func.isRequired,
-  direction: PropTypes.string,
+
 }
 
 RadioGroup.defaultProps = {

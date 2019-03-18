@@ -26,7 +26,7 @@ storiesOf('Forms/RadioGroup', module)
         checkedChoice={store.state.checkedChoice}
         choices={store.state.choices}
         onChange={value => store.set({ checkedChoice: value })}
-        direction
+        direction={store.state.direction}
       />
     )),
   )

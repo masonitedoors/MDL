@@ -32,7 +32,7 @@
 }
 
 .overflow-menu__svg--opened {
-  fill: $color-m-primary-blue;
+  fill: $color-blue;
 }
 
 .overflow-menu__actions {
@@ -46,7 +46,7 @@
   left: 60%;
   box-shadow: 0 12px 15px 0 rgba(0, 0, 0, 0.14);
   z-index: 9;
-  box-sizing: border-box; /* Addresses padding affecting box-width */
+  box-sizing: border-box;
 }
 
 .overflow-menu__actions > *:last-child {

@@ -16,13 +16,13 @@ storiesOf('Menu/Overflow Menu', module)
           edited by: lorem ipsum
         </p>
         <span className={cx('overflow-menu__button-wrapper')}>
-          <Button variant="light" fullWidth uppercase>My First Button</Button>
+          <Button variant="default" fullWidth uppercase>My First Button</Button>
         </span>
         <span className={cx('overflow-menu__button-wrapper')}>
-          <Button variant="light" fullWidth uppercase>My Second Button</Button>
+          <Button variant="default" fullWidth uppercase>My Second Button</Button>
         </span>
         <span className={cx('overflow-menu__button-wrapper')}>
-          <Button variant="light" fullWidth uppercase>My Third Button</Button>
+          <Button variant="default" fullWidth uppercase>My Third Button</Button>
         </span>
       </OverflowMenu>
     ),

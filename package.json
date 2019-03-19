@@ -13,10 +13,12 @@
     "build-package:external-ui-react": "cd packages/external-ui-react && npm run build",
     "publish": "npm run build-package:external-ui-react && lerna publish",
     "lint:scripts": "npx eslint './**/*.js'",
+    "lint:scripts:fix": "npm run lint:scripts -- --fix",
     "lint:styles": "npx stylelint **/*.scss --syntax scss",
     "lint": "npm run lint:styles && npm run lint:scripts",
     "test:watch": "npx jest --watch",
-    "test": "npm run lint && npx jest"
+    "test": "npm run lint && npx jest",
+    "start": "npm run storybook:react"
   },
   "keywords": [],
   "author": "",

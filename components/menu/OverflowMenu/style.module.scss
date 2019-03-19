@@ -7,7 +7,7 @@
 
 .overflow-menu__button {
   @include circle(36px);
-  padding: $size-md;
+  padding: $space-xs;
   border: none;
   background-color: $color-gray;
   display: inline-block;

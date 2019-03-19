@@ -39,7 +39,7 @@ export class OverflowMenu extends Component {
     return (
       <div className={cx('overflow-menu')}>
         <button type="button" className={cx('overflow-menu__button')} onClick={this.toggleOverflowMenu}>
-          <svg className={cx('overflow-menu__svg')} dangerouslySetInnerHTML={{ __html: mMoreHorizontal }} />
+          <svg className={displayOverflowMenuActions ? cx('overflow-menu__svg--opened') : cx('overflow-menu__svg')} dangerouslySetInnerHTML={{ __html: mMoreHorizontal }} />
         </button>
 
         {displayOverflowMenuActions

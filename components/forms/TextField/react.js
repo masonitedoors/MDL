@@ -39,7 +39,7 @@ const TextField = ({
         onKeyDown={onKeyDown}
         onBlur={event => {
           setActive(false)
-          onBlur(event.target.value)
+          onBlur && onBlur(event.target.value)
         }}
         onFocus={() => setActive(true)}
         onChange={event => onChange(event.target.value)}

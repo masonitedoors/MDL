@@ -10,7 +10,7 @@
   width: $size;
 
   &__input {
-    appearance: none;
+    -webkit-appearance: none;
     border: 1px solid $color-night;
     border-radius: 50%;
     outline: none;

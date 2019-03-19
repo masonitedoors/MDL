@@ -30,7 +30,7 @@ describe('RadioButton', () => {
   })
 
   describe('with user actions', () => {
-    it('It should display the when clicking the radio button', () => {
+    it('should display the when clicking the radio button', () => {
       wrapper.find('input').simulate('click')
       expect(props.onChange).toHaveBeenCalledTimes(1)
     })

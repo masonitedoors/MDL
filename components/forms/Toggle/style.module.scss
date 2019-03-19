@@ -1,24 +1,30 @@
 @import "styles/index.scss";
 
 .toggle {
-  $size: 14px;
+  $size: 16px;
 
   align-items: center;
   align-content: center;
   position: relative;
   height: $size;
-  width: $size;
+  padding: 10px;
   flex-shrink: 0;
+  display: inline-flex;
+  border: 0;
+  outline: none;
+  font-size: 0;
 
   &__switch {
     position: relative;
     display: inline-block;
+    outline: initial;
   }
 
   &__input {
     opacity: 0;
     width: 0;
     height: 0;
+    position: absolute;
   }
 
   &__slider {
@@ -28,27 +34,24 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: $color-deepgrey;
+    background-color: $color-silver;
     transition: 0.4s;
     height: 8px;
     width: 24px;
     border-radius: 34px;
+    margin: 0 8px;
   }
 
-  &__input:checked + &__slider {
-    background: $color-deepgrey;
-  }
-
-  &__input:focus + &__slider {
-    box-shadow: inset 0 1px 0 0 $color-night;
+  &__input + &__slider {
+    box-shadow: inset 0 1px 0 0 rgba(0, 0, 0, 0.2);
   }
 
   &__slider::before {
     border-radius: 50%;
     position: absolute;
     content: "";
-    height: 16px;
-    width: 16px;
+    height: $size;
+    width: $size;
     left: -7px;
     top: -5px;
     bottom: 4px;

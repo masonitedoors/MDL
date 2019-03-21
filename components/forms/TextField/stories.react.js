@@ -1,5 +1,6 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
+import { mPhone } from '@masonite/svg-icons'
 import {
   withKnobs, boolean, select, text,
 } from '@storybook/addon-knobs'
@@ -15,6 +16,9 @@ storiesOf('Forms/TextField', module)
       const label = text('Label', 'Label')
       const error = boolean('Error State', false)
       const helper = error ? 'Something is wrong.' : ''
+      const trailingIcon = select('Trailing Icon', {
+        Phone: <svg dangerouslySetInnerHTML={{ __html: mPhone }} />,
+      })
       return (
         <TextField
           variant={variant}

@@ -22,6 +22,7 @@ const TextField = ({
 }) => {
   const [isActive, setActive] = useState(false)
   const Label = label ? 'label' : 'div'
+  const TrailingIcon = trailingIcon || null
 
   return (
     <Label
@@ -35,12 +36,7 @@ const TextField = ({
     >
       <div className={cx('text-field__label')}>{label}</div>
       <div className={cx('text-field__helper')}>{helper}</div>
-      {/* <div className={cx('text-field__icon text-field__icon--trailing')}>
-        <svg
-          className={cx(['checkbox-svg-icon'])}
-          dangerouslySetInnerHTML={{ __html: mAlertTriangle }}
-        />
-      </div> */}
+      {trailingIcon && <div className={cx('text-field__icon text-field__icon--trailing')} />}
       <input
         className={cx('text-field__input')}
         type={type}

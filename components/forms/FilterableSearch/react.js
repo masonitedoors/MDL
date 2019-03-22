@@ -47,7 +47,6 @@ class FilterableSearch extends PureComponent {
       filterChoices = [],
       placeholder,
       value,
-      variant,
     } = this.props
 
     const { showFilters } = this.state
@@ -67,7 +66,10 @@ class FilterableSearch extends PureComponent {
     const DropdownToggle = () => (
       <button
         type="button"
-        className={cx(['filterable-search__dropdown-toggle'])}
+        className={cx([
+          'filterable-search__dropdown-toggle',
+          { 'filterable-search__dropdown-toggle--active': showFilters },
+        ])}
         onClick={() =>
           this.setState(prevState => ({
             showFilters: !prevState.showFilters,
@@ -75,17 +77,20 @@ class FilterableSearch extends PureComponent {
         }
       >
         <div
-          className={cx(['filterable-search__dropdown-toggle-icon'])}
+          className={cx([
+            'filterable-search__dropdown-toggle-icon',
+            { 'filterable-search__dropdown-toggle-icon--active': showFilters },
+          ])}
           dangerouslySetInnerHTML={{ __html: selectedDropdownIcon }}
         />
       </button>
     )
 
-    const DropdownMenu = ({ show }) => (
+    const DropdownMenu = ({ showFilters }) => (
       <ul
         className={cx([
           'filterable-search__dropdown-menu',
-          { 'filterable-search__dropdown-menu--open': show },
+          { 'filterable-search__dropdown-menu--open': showFilters },
         ])}
       >
         {filterChoices.map(({ label, value, checked }, index) => (
@@ -118,12 +123,11 @@ class FilterableSearch extends PureComponent {
             if (ev.keyCode === 13 && onSubmit) onSubmit(ev.target.value)
           }}
           value={value}
-          variant={variant}
         />
         {onSubmit && <SearchButton />}
         <div ref={this.dropdownMenuRef}>
           <DropdownToggle />
-          <DropdownMenu show={showFilters} />
+          <DropdownMenu showFilters={showFilters} />
         </div>
       </div>
     )
@@ -145,7 +149,6 @@ FilterableSearch.propTypes = {
     }),
   ).isRequired,
   placeholder: PropTypes.string,
-  variant: PropTypes.oneOf(['dark', 'light']),
 }
 
 FilterableSearch.defaultProps = {
@@ -154,7 +157,6 @@ FilterableSearch.defaultProps = {
   placeholder: 'Search',
   onSubmit: undefined,
   onInputChange: undefined,
-  variant: 'dark',
 }
 
 export default FilterableSearch

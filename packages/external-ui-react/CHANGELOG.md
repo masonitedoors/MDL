@@ -11,6 +11,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - `variant` prop options for `<Button />` updated to reflect changes in MDL. 'Secondary' (replaces 'dark'), 'default' (light), and added 'primary'. Old variant names still supported.
 - Spacing in `<TextField />`
+- `variant` is no longer an option for `<FilterableSearch />`
+- `<FilterableSearch />` colors updated
 
 ### Fixed
 

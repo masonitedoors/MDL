@@ -3,7 +3,6 @@
 exports[`RadioButton with snapshots should render correctly 1`] = `
 <Radio
   checked={false}
-  name="radio"
   onChange={[MockFunction]}
   value="true"
 >

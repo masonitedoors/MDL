@@ -20,6 +20,7 @@ exports[`Toggle with snapshots should render correctly 1`] = `
       <input
         checked={false}
         className="toggle__input"
+        readOnly={true}
         type="checkbox"
       />
       <span

@@ -30,7 +30,6 @@ exports[`RadioButton with snapshots should render correctly 1`] = `
       <Radio
         checked={false}
         label="Filter 1"
-        name="radio"
         onChange={[Function]}
         onClick={[Function]}
         value="FILTER1"
@@ -61,7 +60,6 @@ exports[`RadioButton with snapshots should render correctly 1`] = `
       <Radio
         checked={false}
         label="Filter 2"
-        name="radio"
         onChange={[Function]}
         onClick={[Function]}
         value="FILTER2"

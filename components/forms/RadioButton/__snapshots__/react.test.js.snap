@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`RadioButton with snapshots should render correctly 1`] = `
+exports[`RadioButton The values of the radio input should be updated when props are passed in should render correctly 1`] = `
 <Radio
   checked={false}
   onChange={[MockFunction]}
@@ -21,6 +21,29 @@ exports[`RadioButton with snapshots should render correctly 1`] = `
       readOnly={true}
       type="radio"
       value="true"
+    />
+  </div>
+</Radio>
+`;
+
+exports[`RadioButton with snapshots should render correctly 1`] = `
+<Radio
+  checked={false}
+  onChange={null}
+>
+  <div
+    aria-checked={false}
+    className="radio"
+    role="radio"
+    tabIndex={0}
+  >
+    <input
+      checked={false}
+      className="radio__input"
+      onClick={null}
+      onKeyPress={null}
+      readOnly={true}
+      type="radio"
     />
   </div>
 </Radio>

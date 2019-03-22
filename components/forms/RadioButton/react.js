@@ -25,7 +25,7 @@ Radio.propTypes = {
 
 Radio.defaultProps = {
   onChange: null,
-  value: null,
+  value: undefined,
 }
 
 export default memo(Radio)

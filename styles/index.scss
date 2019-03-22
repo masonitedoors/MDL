@@ -1,5 +1,6 @@
 /* Mixins, @font-face and variables only. */
-@import "./colors";
-@import "./helpers";
-@import "./typography";
-@import "./sizes";
+@import "colors";
+@import "accessibility";
+@import "helpers";
+@import "typography";
+@import "sizes";

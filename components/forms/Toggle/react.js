@@ -2,11 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import s from './style.module.scss'
 
-
-const Toggle = ({
-  checked, onChange,
-}) => (
-
+const Toggle = ({ checked, onChange }) => (
   <div
     role="checkbox"
     aria-checked={checked}
@@ -16,12 +12,10 @@ const Toggle = ({
     className={s.toggle}
   >
     <label className={s.toggle__switch}>
-      <input className={s.toggle__input} type="checkbox" />
+      <input className={s.toggle__input} type="checkbox" checked={checked} />
       <span className={s.toggle__slider} />
     </label>
-
   </div>
-
 )
 
 Toggle.propTypes = {

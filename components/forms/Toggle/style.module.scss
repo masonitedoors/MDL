@@ -1,45 +1,28 @@
 @import "styles/index.scss";
 
 .toggle {
-  $size: 16px;
-
-  align-items: center;
-  align-content: center;
   position: relative;
-  height: 32px;
-  flex-shrink: 0;
-  display: inline-flex;
-  border: 0;
-  outline: none;
-  font-size: 0;
-
-  &__switch {
-    position: relative;
-    display: inline-block;
-    outline: initial;
-    padding-top: 8px;
-  }
+  display: inline-block;
+  height: 16px;
+  width: 40px;
 
   &__input {
-    opacity: 0;
     width: 0;
     height: 0;
-    position: absolute;
+    margin: 0;
+    display: none;
   }
 
   &__slider {
+    @include vertically-center();
     position: absolute;
     cursor: pointer;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
     background-color: $color-silver;
-    transition: 0.4s;
     height: 8px;
     width: 24px;
     border-radius: 34px;
     margin: 0 8px;
+    pointer-events: none;
   }
 
   &__input + &__slider {
@@ -47,21 +30,19 @@
   }
 
   &__slider::before {
-    border-radius: 50%;
-    position: absolute;
     content: "";
-    height: $size;
-    width: $size;
-    left: -7px;
-    top: -4px;
-    bottom: 4px;
+    @include circle(16px);
+    position: absolute;
+    top: 50%;
+    border-radius: 50%;
     background-color: $color-deepgrey;
-    transition: 0.4s;
+    transform: translate3d(-8px, -50%, 0);
+    transition: 300ms;
+    pointer-events: none;
   }
 
   &__input:checked + &__slider::before {
-    transform: translateX(26px);
     background-color: $color-limerick;
-    left: -10px;
+    transform: translate3d(16px, -50%, 0);
   }
 }

@@ -7,5 +7,14 @@ module.exports = {
     'no-console': 0,
     'react/jsx-one-expression-per-line': ['on', { allow: 'literal' }],
     'implicit-arrow-linebreak': 0,
+    'jsx-a11y/label-has-for': 0,
+    'jsx-a11y/label-has-associated-control': [
+      2,
+      {
+        labelComponents: ['label', 'Label'],
+        controlComponents: ['input', 'textarea', 'Input'],
+        depth: 3,
+      },
+    ],
   },
 }

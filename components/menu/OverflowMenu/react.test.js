@@ -12,9 +12,9 @@ describe('When the component is created', () => {
     wrapper = shallow(
       <OverflowMenu>
         <p>This is a test</p>
-        <Button variant="light" fullWidth uppercase>My First Button</Button>
-        <Button variant="light" fullWidth uppercase>My Second Button</Button>
-        <Button variant="light" fullWidth uppercase>My Third Button</Button>
+        <Button variant="default" fullWidth uppercase>My First Button</Button>
+        <Button variant="default" fullWidth uppercase>My Second Button</Button>
+        <Button variant="default" fullWidth uppercase>My Third Button</Button>
       </OverflowMenu>,
     )
 
@@ -27,6 +27,17 @@ describe('When the component is created', () => {
 
   it('Should not display the overflow menu on the initial state', () => {
     expect(wrapper.find('overflow-menu__actions').length).toBe(0)
+  })
+
+  it('Should not contain the overflow button action color change on initial state', () => {
+    expect(wrapper.find('.overflow-menu__svg--opened').length).toBe(0)
+    expect(wrapper.find('.overflow-menu__svg').length).toBe(1)
+  })
+
+  it('Should contain the overflow button action color if the button is clicked', () => {
+    instance.toggleOverflowMenu()
+    expect(wrapper.find('.overflow-menu__svg--opened').length).toBe(1)
+    expect(wrapper.find('.overflow-menu__svg').length).toBe(0)
   })
 
   it('Should toggle the overflow menu if clicked multiple times', () => {

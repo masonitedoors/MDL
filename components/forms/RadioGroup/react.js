@@ -10,8 +10,8 @@ const RadioGroup = ({
     <li key={value} className={direction === 'column' ? '' : s['radio-group__row']}>
       <Radio
         checked={checkedChoice === value}
-        onClick={event => onChange(event.target.value)}
-        onChange={event => onChange(event.target.value)}
+        onClick={onChange}
+        onChange={onChange}
         label={label}
         value={value}
       />

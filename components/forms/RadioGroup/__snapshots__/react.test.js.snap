@@ -49,8 +49,8 @@ exports[`RadioButton The radio buttons should render with passed in props and a 
       <Radio
         checked={false}
         label="Filter 1"
-        onChange={[Function]}
-        onClick={[Function]}
+        onChange={[MockFunction]}
+        onClick={[MockFunction]}
         value="FILTER1"
       >
         <div
@@ -63,8 +63,8 @@ exports[`RadioButton The radio buttons should render with passed in props and a 
             checked={false}
             className="radio__input"
             key="FILTER1"
-            onClick={[Function]}
-            onKeyPress={[Function]}
+            onClick={[MockFunction]}
+            onKeyPress={[MockFunction]}
             readOnly={true}
             type="radio"
             value="FILTER1"
@@ -79,8 +79,8 @@ exports[`RadioButton The radio buttons should render with passed in props and a 
       <Radio
         checked={false}
         label="Filter 2"
-        onChange={[Function]}
-        onClick={[Function]}
+        onChange={[MockFunction]}
+        onClick={[MockFunction]}
         value="FILTER2"
       >
         <div
@@ -93,8 +93,8 @@ exports[`RadioButton The radio buttons should render with passed in props and a 
             checked={false}
             className="radio__input"
             key="FILTER2"
-            onClick={[Function]}
-            onKeyPress={[Function]}
+            onClick={[MockFunction]}
+            onKeyPress={[MockFunction]}
             readOnly={true}
             type="radio"
             value="FILTER2"
@@ -109,8 +109,8 @@ exports[`RadioButton The radio buttons should render with passed in props and a 
       <Radio
         checked={false}
         label="Filter 3"
-        onChange={[Function]}
-        onClick={[Function]}
+        onChange={[MockFunction]}
+        onClick={[MockFunction]}
         value="FILTER 3"
       >
         <div
@@ -123,8 +123,8 @@ exports[`RadioButton The radio buttons should render with passed in props and a 
             checked={false}
             className="radio__input"
             key="FILTER 3"
-            onClick={[Function]}
-            onKeyPress={[Function]}
+            onClick={[MockFunction]}
+            onKeyPress={[MockFunction]}
             readOnly={true}
             type="radio"
             value="FILTER 3"
@@ -166,8 +166,8 @@ exports[`RadioButton The radio buttons should render with passed in props and us
       <Radio
         checked={false}
         label="Filter 1"
-        onChange={[Function]}
-        onClick={[Function]}
+        onChange={[MockFunction]}
+        onClick={[MockFunction]}
         value="FILTER1"
       >
         <div
@@ -180,8 +180,8 @@ exports[`RadioButton The radio buttons should render with passed in props and us
             checked={false}
             className="radio__input"
             key="FILTER1"
-            onClick={[Function]}
-            onKeyPress={[Function]}
+            onClick={[MockFunction]}
+            onKeyPress={[MockFunction]}
             readOnly={true}
             type="radio"
             value="FILTER1"
@@ -196,8 +196,8 @@ exports[`RadioButton The radio buttons should render with passed in props and us
       <Radio
         checked={false}
         label="Filter 2"
-        onChange={[Function]}
-        onClick={[Function]}
+        onChange={[MockFunction]}
+        onClick={[MockFunction]}
         value="FILTER2"
       >
         <div
@@ -210,8 +210,8 @@ exports[`RadioButton The radio buttons should render with passed in props and us
             checked={false}
             className="radio__input"
             key="FILTER2"
-            onClick={[Function]}
-            onKeyPress={[Function]}
+            onClick={[MockFunction]}
+            onKeyPress={[MockFunction]}
             readOnly={true}
             type="radio"
             value="FILTER2"

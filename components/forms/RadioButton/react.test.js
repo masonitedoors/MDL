@@ -78,6 +78,5 @@ describe('RadioButton', () => {
         expect(props.onChange).toHaveBeenCalledWith(mockEvent)
       })
     })
-
   })
 })

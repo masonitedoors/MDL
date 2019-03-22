@@ -1,29 +1,34 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import classNames from 'classnames/bind'
 import s from './style.module.scss'
 
-const Toggle = ({ checked, onChange }) => (
+const cx = classNames.bind(s)
+
+const Toggle = ({ checked, disabled, onChange }) => (
   <div
     role="checkbox"
     aria-checked={checked}
     tabIndex={0}
-    onClick={onChange}
-    onKeyPress={onChange}
-    className={s.toggle}
+    onClick={() => !disabled && onChange()}
+    onKeyPress={() => !disabled && onChange()}
+    className={cx(['toggle', { 'toggle--disabled': disabled }])}
   >
-    <label className={s.toggle__switch}>
+    <div className={s.toggle__switch}>
       <input className={s.toggle__input} type="checkbox" checked={checked} />
       <span className={s.toggle__slider} />
-    </label>
+    </div>
   </div>
 )
 
 Toggle.propTypes = {
   onChange: PropTypes.func,
   checked: PropTypes.bool,
+  disabled: PropTypes.bool,
 }
 
 Toggle.defaultProps = {
+  disabled: false,
   onChange: null,
   checked: false,
 }

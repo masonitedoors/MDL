@@ -1,17 +1,21 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
-import { withKnobs } from '@storybook/addon-knobs'
+import { withKnobs, boolean } from '@storybook/addon-knobs'
 import { withState } from '@dump247/storybook-state'
 import Toggle from './react'
 
 storiesOf('Forms/Toggle', module)
   .addDecorator(withKnobs)
   .add(
-    'checked with a click event',
-    withState({ checked: true })(({ store }) => (
-      <Toggle
-        checked={store.state.checked}
-        onChange={() => store.set({ checked: !store.state.checked })}
-      />
-    )),
+    'fully controlled',
+    withState({ checked: true })(({ store }) => {
+      const disabled = boolean('Disabled', false)
+      return (
+        <Toggle
+          checked={store.state.checked}
+          disabled={disabled}
+          onChange={() => store.set({ checked: !store.state.checked })}
+        />
+      )
+    }),
   )

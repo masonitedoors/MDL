@@ -1,10 +1,6 @@
 import React from 'react'
 import { mount } from 'enzyme'
-import { JSDOM } from 'jsdom'
 import RadioButton from './react'
-
-const jsdom = new JSDOM('<!doctype html><html><body><div id="app">Mount here</div></body></html>')
-const { window } = jsdom
 
 describe('RadioButton', () => {
   let props
@@ -15,10 +11,7 @@ describe('RadioButton', () => {
     props = {
       checked: false
     }
-    wrapper = mount(<RadioButton {...props} />, {
-      attachTo: window.document.querySelector('#app'),
-    })
-
+    wrapper = mount(<RadioButton {...props} />)
     inputElem = wrapper.find('input').at(0)
   })
 
@@ -56,10 +49,7 @@ describe('RadioButton', () => {
         value: 'true',
       }
 
-      wrapper = mount(<RadioButton {...props} />, {
-        attachTo: window.document.querySelector('#app'),
-      })
-
+      wrapper = mount(<RadioButton {...props} />)
       inputElem = wrapper.find('input').at(0)
     })
 
@@ -85,6 +75,7 @@ describe('RadioButton', () => {
         const mockEvent = { target: { value: !props.value }}
         inputElem.prop('onKeyPress')(mockEvent)
         expect(props.onChange).toHaveBeenCalledTimes(1)
+        expect(props.onChange).toHaveBeenCalledWith(mockEvent)
       })
     })
 

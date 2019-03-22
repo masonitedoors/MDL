@@ -1,6 +1,21 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`RadioButton with snapshots should render correctly 1`] = `
+exports[`RadioButton The default state of the component with minimal required items passed in should render correctly 1`] = `
+<RadioGroup
+  checked={[MockFunction]}
+  checkedChoice={null}
+  choices={Array []}
+  direction="column"
+  onChange={[MockFunction]}
+  onClick={[MockFunction]}
+>
+  <ul
+    className="radio-group"
+  />
+</RadioGroup>
+`;
+
+exports[`RadioButton The radio buttons should render with passed in props and a direction set to anything other than "column" Should render correctly 1`] = `
 <RadioGroup
   checked={[MockFunction]}
   checkedChoice={null}
@@ -14,9 +29,13 @@ exports[`RadioButton with snapshots should render correctly 1`] = `
         "label": "Filter 2",
         "value": "FILTER2",
       },
+      Object {
+        "label": "Filter 3",
+        "value": "FILTER 3",
+      },
     ]
   }
-  direction="row"
+  direction=""
   onChange={[MockFunction]}
   onClick={[MockFunction]}
 >
@@ -55,6 +74,123 @@ exports[`RadioButton with snapshots should render correctly 1`] = `
     </li>
     <li
       className="radio-group__row"
+      key="FILTER2"
+    >
+      <Radio
+        checked={false}
+        label="Filter 2"
+        onChange={[Function]}
+        onClick={[Function]}
+        value="FILTER2"
+      >
+        <div
+          aria-checked={false}
+          className="radio"
+          role="radio"
+          tabIndex={0}
+        >
+          <input
+            checked={false}
+            className="radio__input"
+            key="FILTER2"
+            onClick={[Function]}
+            onKeyPress={[Function]}
+            readOnly={true}
+            type="radio"
+            value="FILTER2"
+          />
+        </div>
+      </Radio>
+    </li>
+    <li
+      className="radio-group__row"
+      key="FILTER 3"
+    >
+      <Radio
+        checked={false}
+        label="Filter 3"
+        onChange={[Function]}
+        onClick={[Function]}
+        value="FILTER 3"
+      >
+        <div
+          aria-checked={false}
+          className="radio"
+          role="radio"
+          tabIndex={0}
+        >
+          <input
+            checked={false}
+            className="radio__input"
+            key="FILTER 3"
+            onClick={[Function]}
+            onKeyPress={[Function]}
+            readOnly={true}
+            type="radio"
+            value="FILTER 3"
+          />
+        </div>
+      </Radio>
+    </li>
+  </ul>
+</RadioGroup>
+`;
+
+exports[`RadioButton The radio buttons should render with passed in props and using the default direction should render correctly 1`] = `
+<RadioGroup
+  checked={[MockFunction]}
+  checkedChoice={null}
+  choices={
+    Array [
+      Object {
+        "label": "Filter 1",
+        "value": "FILTER1",
+      },
+      Object {
+        "label": "Filter 2",
+        "value": "FILTER2",
+      },
+    ]
+  }
+  direction="column"
+  onChange={[MockFunction]}
+  onClick={[MockFunction]}
+>
+  <ul
+    className="radio-group"
+  >
+    <li
+      className=""
+      key="FILTER1"
+    >
+      <Radio
+        checked={false}
+        label="Filter 1"
+        onChange={[Function]}
+        onClick={[Function]}
+        value="FILTER1"
+      >
+        <div
+          aria-checked={false}
+          className="radio"
+          role="radio"
+          tabIndex={0}
+        >
+          <input
+            checked={false}
+            className="radio__input"
+            key="FILTER1"
+            onClick={[Function]}
+            onKeyPress={[Function]}
+            readOnly={true}
+            type="radio"
+            value="FILTER1"
+          />
+        </div>
+      </Radio>
+    </li>
+    <li
+      className=""
       key="FILTER2"
     >
       <Radio

@@ -28,7 +28,7 @@ describe('Toggle', () => {
   })
 
   describe('with user actions', () => {
-    it('should display the when clicking the toggle button', () => {
+    it('should call onChange on click', () => {
       wrapper.find('Toggle').simulate('click')
       expect(props.onChange).toHaveBeenCalledTimes(1)
     })

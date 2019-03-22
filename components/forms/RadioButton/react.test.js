@@ -15,7 +15,6 @@ describe('RadioButton', () => {
       checked: false,
       onChange: jest.fn(),
       value: 'true',
-      name: 'radio',
     }
 
     wrapper = mount(<RadioButton {...props} />, {
@@ -30,7 +29,7 @@ describe('RadioButton', () => {
   })
 
   describe('with user actions', () => {
-    it('should display the when clicking the radio button', () => {
+    it('should call onChange on click', () => {
       wrapper.find('input').simulate('click')
       expect(props.onChange).toHaveBeenCalledTimes(1)
     })

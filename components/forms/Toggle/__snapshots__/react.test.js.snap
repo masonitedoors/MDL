@@ -2,33 +2,30 @@
 
 exports[`Toggle with snapshots should render correctly 1`] = `
 <Toggle
-  checked={true}
-  name="toggle"
+  checked={false}
+  disabled={false}
   onChange={[MockFunction]}
-  onClick={null}
-  size={null}
-  uppercase={false}
-  variant={null}
 >
   <div
-    aria-checked={true}
+    aria-checked={false}
     className="toggle"
-    onClick={[MockFunction]}
-    onKeyPress={[MockFunction]}
+    onClick={[Function]}
+    onKeyPress={[Function]}
     role="checkbox"
     tabIndex={0}
   >
-    <label
+    <div
       className="toggle__switch"
     >
       <input
+        checked={false}
         className="toggle__input"
         type="checkbox"
       />
       <span
         className="toggle__slider"
       />
-    </label>
+    </div>
   </div>
 </Toggle>
 `;

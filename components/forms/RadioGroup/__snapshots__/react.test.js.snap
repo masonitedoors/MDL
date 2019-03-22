@@ -20,14 +20,15 @@ exports[`RadioButton with snapshots should render correctly 1`] = `
   onChange={[MockFunction]}
   onClick={[MockFunction]}
 >
-  <ul>
+  <ul
+    className="radio-group"
+  >
     <li
-      className="radio-group-row"
+      className="radio-group__row"
       key="FILTER1"
     >
       <Radio
         checked={false}
-        disabled={false}
         label="Filter 1"
         name="radio"
         onChange={[Function]}
@@ -44,8 +45,8 @@ exports[`RadioButton with snapshots should render correctly 1`] = `
             checked={false}
             className="radio__input"
             key="FILTER1"
-            name="radio"
             onClick={[Function]}
+            onKeyPress={[Function]}
             readOnly={true}
             type="radio"
             value="FILTER1"
@@ -54,12 +55,11 @@ exports[`RadioButton with snapshots should render correctly 1`] = `
       </Radio>
     </li>
     <li
-      className="radio-group-row"
+      className="radio-group__row"
       key="FILTER2"
     >
       <Radio
         checked={false}
-        disabled={false}
         label="Filter 2"
         name="radio"
         onChange={[Function]}
@@ -76,8 +76,8 @@ exports[`RadioButton with snapshots should render correctly 1`] = `
             checked={false}
             className="radio__input"
             key="FILTER2"
-            name="radio"
             onClick={[Function]}
+            onKeyPress={[Function]}
             readOnly={true}
             type="radio"
             value="FILTER2"

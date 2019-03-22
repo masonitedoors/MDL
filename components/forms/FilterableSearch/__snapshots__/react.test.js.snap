@@ -23,7 +23,6 @@ exports[`FilterableSearch with snapshots should render correctly 1`] = `
   onSubmit={[MockFunction]}
   placeholder="Search"
   value=""
-  variant="dark"
 >
   <div
     className="filterable-search"
@@ -94,7 +93,7 @@ exports[`FilterableSearch with snapshots should render correctly 1`] = `
         </button>
       </DropdownToggle>
       <DropdownMenu
-        show={false}
+        showFilters={false}
       >
         <ul
           className="filterable-search__dropdown-menu"

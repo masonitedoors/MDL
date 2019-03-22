@@ -2,24 +2,23 @@
 
 exports[`RadioButton with snapshots should render correctly 1`] = `
 <Radio
-  checked={true}
-  disabled={false}
+  checked={false}
   name="radio"
   onChange={[MockFunction]}
   value="true"
 >
   <div
-    aria-checked={true}
+    aria-checked={false}
     className="radio"
     role="radio"
     tabIndex={0}
   >
     <input
-      checked={true}
+      checked={false}
       className="radio__input"
       key="true"
-      onClick={[Function]}
-      onKeyPress={[Function]}
+      onClick={[MockFunction]}
+      onKeyPress={[MockFunction]}
       readOnly={true}
       type="radio"
       value="true"

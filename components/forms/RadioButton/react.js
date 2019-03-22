@@ -2,9 +2,7 @@ import React, { memo } from 'react'
 import PropTypes from 'prop-types'
 import s from './style.module.scss'
 
-const Radio = ({
-  checked, onChange, value, name,
-}) => (
+const Radio = ({ checked, onChange, value }) => (
   <div role="radio" aria-checked={checked} tabIndex={0} className={s.radio}>
     <input
       onClick={onChange}

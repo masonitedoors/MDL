@@ -17,15 +17,17 @@ exports[`Toggle Should render the component when properties are passed into it a
     <div
       className="toggle__switch"
     >
-      <input
-        checked={true}
-        className="toggle__input"
-        readOnly={true}
-        type="checkbox"
-      />
-      <span
-        className="toggle__slider"
-      />
+      <label>
+        <input
+          checked={true}
+          className="toggle__input"
+          readOnly={true}
+          type="checkbox"
+        />
+        <span
+          className="toggle__slider"
+        />
+      </label>
     </div>
   </div>
 </Toggle>
@@ -48,15 +50,17 @@ exports[`Toggle Should render the component when properties are passed into it a
     <div
       className="toggle__switch"
     >
-      <input
-        checked={false}
-        className="toggle__input"
-        readOnly={true}
-        type="checkbox"
-      />
-      <span
-        className="toggle__slider"
-      />
+      <label>
+        <input
+          checked={false}
+          className="toggle__input"
+          readOnly={true}
+          type="checkbox"
+        />
+        <span
+          className="toggle__slider"
+        />
+      </label>
     </div>
   </div>
 </Toggle>
@@ -79,15 +83,17 @@ exports[`Toggle Should render with default properties set when nothing is passed
     <div
       className="toggle__switch"
     >
-      <input
-        checked={false}
-        className="toggle__input"
-        readOnly={true}
-        type="checkbox"
-      />
-      <span
-        className="toggle__slider"
-      />
+      <label>
+        <input
+          checked={false}
+          className="toggle__input"
+          readOnly={true}
+          type="checkbox"
+        />
+        <span
+          className="toggle__slider"
+        />
+      </label>
     </div>
   </div>
 </Toggle>

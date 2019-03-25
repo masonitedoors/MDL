@@ -12,6 +12,11 @@ $toggle-transition-timing-function: cubic-bezier(0.77, 0, 0.175, 1);
   width: $toggle-track-width;
   height: $toggle-track-height;
   padding: ($toggle-knob-size * 0.25) ($toggle-knob-size * 0.5);
+  cursor: pointer;
+
+  &:focus {
+    outline: none;
+  }
 
   &--disabled {
     opacity: 0.75;

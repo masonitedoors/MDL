@@ -4,16 +4,18 @@ import s from './style.module.scss'
 
 const Radio = ({ checked, onChange, value }) => (
   <div role="radio" aria-checked={checked} tabIndex={0} className={s.radio}>
-    <input
-      onClick={onChange}
-      onKeyPress={onChange}
-      key={value}
-      className={s.radio__input}
-      type="radio"
-      checked={checked}
-      value={value}
-      readOnly
-    />
+    <label>
+      <input
+        onClick={onChange}
+        onKeyPress={onChange}
+        key={value}
+        className={s.radio__input}
+        type="radio"
+        checked={checked}
+        value={value}
+        readOnly
+      />
+    </label>
   </div>
 )
 

@@ -59,16 +59,18 @@ exports[`RadioButton The radio buttons should render with passed in props and a 
           role="radio"
           tabIndex={0}
         >
-          <input
-            checked={false}
-            className="radio__input"
-            key="FILTER1"
-            onClick={[MockFunction]}
-            onKeyPress={[MockFunction]}
-            readOnly={true}
-            type="radio"
-            value="FILTER1"
-          />
+          <label>
+            <input
+              checked={false}
+              className="radio__input"
+              key="FILTER1"
+              onClick={[MockFunction]}
+              onKeyPress={[MockFunction]}
+              readOnly={true}
+              type="radio"
+              value="FILTER1"
+            />
+          </label>
         </div>
       </Radio>
     </li>
@@ -89,16 +91,18 @@ exports[`RadioButton The radio buttons should render with passed in props and a 
           role="radio"
           tabIndex={0}
         >
-          <input
-            checked={false}
-            className="radio__input"
-            key="FILTER2"
-            onClick={[MockFunction]}
-            onKeyPress={[MockFunction]}
-            readOnly={true}
-            type="radio"
-            value="FILTER2"
-          />
+          <label>
+            <input
+              checked={false}
+              className="radio__input"
+              key="FILTER2"
+              onClick={[MockFunction]}
+              onKeyPress={[MockFunction]}
+              readOnly={true}
+              type="radio"
+              value="FILTER2"
+            />
+          </label>
         </div>
       </Radio>
     </li>
@@ -119,16 +123,18 @@ exports[`RadioButton The radio buttons should render with passed in props and a 
           role="radio"
           tabIndex={0}
         >
-          <input
-            checked={false}
-            className="radio__input"
-            key="FILTER 3"
-            onClick={[MockFunction]}
-            onKeyPress={[MockFunction]}
-            readOnly={true}
-            type="radio"
-            value="FILTER 3"
-          />
+          <label>
+            <input
+              checked={false}
+              className="radio__input"
+              key="FILTER 3"
+              onClick={[MockFunction]}
+              onKeyPress={[MockFunction]}
+              readOnly={true}
+              type="radio"
+              value="FILTER 3"
+            />
+          </label>
         </div>
       </Radio>
     </li>
@@ -176,16 +182,18 @@ exports[`RadioButton The radio buttons should render with passed in props and us
           role="radio"
           tabIndex={0}
         >
-          <input
-            checked={false}
-            className="radio__input"
-            key="FILTER1"
-            onClick={[MockFunction]}
-            onKeyPress={[MockFunction]}
-            readOnly={true}
-            type="radio"
-            value="FILTER1"
-          />
+          <label>
+            <input
+              checked={false}
+              className="radio__input"
+              key="FILTER1"
+              onClick={[MockFunction]}
+              onKeyPress={[MockFunction]}
+              readOnly={true}
+              type="radio"
+              value="FILTER1"
+            />
+          </label>
         </div>
       </Radio>
     </li>
@@ -206,16 +214,18 @@ exports[`RadioButton The radio buttons should render with passed in props and us
           role="radio"
           tabIndex={0}
         >
-          <input
-            checked={false}
-            className="radio__input"
-            key="FILTER2"
-            onClick={[MockFunction]}
-            onKeyPress={[MockFunction]}
-            readOnly={true}
-            type="radio"
-            value="FILTER2"
-          />
+          <label>
+            <input
+              checked={false}
+              className="radio__input"
+              key="FILTER2"
+              onClick={[MockFunction]}
+              onKeyPress={[MockFunction]}
+              readOnly={true}
+              type="radio"
+              value="FILTER2"
+            />
+          </label>
         </div>
       </Radio>
     </li>

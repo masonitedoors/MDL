@@ -25,7 +25,9 @@ const Radio = ({
           readOnly
         />
       </div>
-      <span className={cx(['radio__label', checked && 'radio__label--checked'])}>{label}</span>
+      {label && (
+        <span className={cx(['radio__label', checked && 'radio__label--checked'])}>{label}</span>
+      )}
     </Label>
   )
 }
@@ -40,7 +42,7 @@ Radio.propTypes = {
 Radio.defaultProps = {
   onChange: null,
   value: undefined,
-  label: 'hello',
+  label: '',
 }
 
 export default memo(Radio)

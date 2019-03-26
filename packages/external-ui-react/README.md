@@ -78,6 +78,14 @@ Props noted with an asterisk are required. Not always by necessity, but by lack 
 | value\*     | ---     | string          |                               |
 | variant\*   | ---     | 'dark', null    |                               |
 
+### forms/Toggle
+
+| Prop     | Default | Accepted Values | Description |
+| -------- | ------- | --------------- | ----------- |
+| checked  | false   | boolean         |             |
+| disabled | false   | boolean         |             |
+| onChange | null    | function        |             |
+
 ### menu/OverflowMenu
 
 | Prop     | Default | Accepted Values  | Description |

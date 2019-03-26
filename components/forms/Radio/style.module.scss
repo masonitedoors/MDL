@@ -4,11 +4,9 @@
   $size: 16px;
 
   display: flex;
+  align-items: center;
 
   &__input-wrapper {
-    position: relative;
-    align-items: center;
-    align-content: center;
     position: relative;
     height: $size;
     width: $size;
@@ -26,7 +24,6 @@
   }
 
   &__label {
-    margin-top: -2px;
     margin-left: $space-xs;
 
     &--checked {
@@ -45,6 +42,5 @@
     @include circle(10px);
     @include completely-center();
     background: $color-night;
-    border-radius: 50%;
   }
 }

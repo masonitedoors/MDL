@@ -13,6 +13,7 @@ exports[`Toggle rendering with defaults should render correctly 1`] = `
     checked={false}
     className="toggle__input"
     readOnly={true}
+    tabIndex="-1"
     type="checkbox"
   />
   <span
@@ -34,6 +35,7 @@ exports[`Toggle rendering with props should render correctly 1`] = `
     checked={false}
     className="toggle__input"
     readOnly={true}
+    tabIndex="-1"
     type="checkbox"
   />
   <span

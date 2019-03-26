@@ -10,10 +10,9 @@ const Radio = ({
 }) => {
   const Label = label ? 'label' : 'div'
   return (
-    <Label className={s.radio}>
-      <div className={s['radio__input-wrapper']}>
+    <Label className={cx('radio')} key={value}>
+      <div className={cx('radio__input-wrapper')}>
         <input
-          key={value}
           className={s.radio__input}
           aria-checked={checked}
           tabIndex={0}
@@ -42,7 +41,7 @@ Radio.propTypes = {
 Radio.defaultProps = {
   onChange: null,
   value: undefined,
-  label: '',
+  label: 'f',
 }
 
 export default memo(Radio)

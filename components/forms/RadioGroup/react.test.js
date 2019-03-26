@@ -14,11 +14,11 @@ describe('RadioGroup', () => {
       choices: [],
     }
 
-    wrapper = mount(<RadioGroup {...props} />)
+    wrapper = shallow(<RadioGroup {...props} />)
     listItems = wrapper.find('li')
   })
 
-  describe('The default state of the component with minimal required items passed in', () => {
+  describe('rendering with defaults', () => {
     it('should render correctly', () => {
       expect(wrapper).toMatchSnapshot()
     })
@@ -26,9 +26,13 @@ describe('RadioGroup', () => {
     it('Should contain no list items if the choices passed in are an empty array', () => {
       expect(wrapper.find('li').length).toBe(0)
     })
+
+    it("should not render a label if one isn't provided", () => {
+      expect(wrapper.find('.radio__label').length).toBe(0)
+    })
   })
 
-  describe('The radio buttons should render with passed in props and using the default direction', () => {
+  describe('rendering with props', () => {
     beforeEach(() => {
       props = {
         ...props,
@@ -44,11 +48,16 @@ describe('RadioGroup', () => {
         ],
       }
 
-      wrapper = mount(<RadioGroup {...props} />)
+      wrapper = shallow(<RadioGroup {...props} />)
       listItems = wrapper.find('li')
     })
 
     it('should render correctly', () => {
+      expect(wrapper).toMatchSnapshot()
+    })
+
+    it('should render correctly with row passed in', () => {
+      wrapper.setProps({ row: true })
       expect(wrapper).toMatchSnapshot()
     })
 
@@ -63,40 +72,7 @@ describe('RadioGroup', () => {
     })
   })
 
-  describe('The radio buttons should render with passed in props and a direction set to anything other than "column"', () => {
-    beforeEach(() => {
-      props = {
-        ...props,
-        direction: '',
-        choices: [
-          {
-            label: 'Filter 1',
-            value: 'FILTER1',
-          },
-          {
-            label: 'Filter 2',
-            value: 'FILTER2',
-          },
-          {
-            label: 'Filter 3',
-            value: 'FILTER 3',
-          },
-        ],
-      }
-
-      wrapper = mount(<RadioGroup {...props} />)
-    })
-
-    it('Should render correctly', () => {
-      expect(wrapper).toMatchSnapshot()
-    })
-
-    it('Should render li element equivalent to the number of choices passed in', () => {
-      expect(wrapper.find('li').length).toBe(props.choices.length)
-    })
-  })
-
-  describe('interactions', () => {
+  describe('with user actions', () => {
     beforeEach(() => {
       props = {
         ...props,
@@ -115,7 +91,7 @@ describe('RadioGroup', () => {
           },
         ],
       }
-      wrapper = mount(<RadioGroup {...props} />)
+      wrapper = shallow(<RadioGroup {...props} />)
     })
     it('should call onChange when a radio item is clicked', () => {
       wrapper

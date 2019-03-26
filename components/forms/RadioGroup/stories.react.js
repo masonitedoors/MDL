@@ -19,6 +19,10 @@ storiesOf('Forms/RadioGroup', module)
           label: 'Filter 2',
           value: 'FILTER2',
         },
+        {
+          label: 'Filter 3',
+          value: 'FILTER3',
+        },
       ],
       direction: 'column',
     })(({ store }) => {

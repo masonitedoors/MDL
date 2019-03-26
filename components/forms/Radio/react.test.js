@@ -1,5 +1,5 @@
 import React from 'react'
-import { mount } from 'enzyme'
+import { shallow } from 'enzyme'
 import Radio from './react'
 
 describe('RadioButton', () => {
@@ -11,7 +11,7 @@ describe('RadioButton', () => {
     props = {
       checked: false,
     }
-    wrapper = mount(<RadioButton {...props} />)
+    wrapper = shallow(<Radio {...props} />)
     inputElem = wrapper.find('input').at(0)
   })
 
@@ -31,7 +31,6 @@ describe('RadioButton', () => {
     })
 
     it('Should be null with the onClick and keypress events', () => {
-      expect(inputElem.props().onClick).toEqual(null)
       expect(inputElem.props().onKeyPress).toEqual(null)
     })
   })
@@ -49,7 +48,7 @@ describe('RadioButton', () => {
         value: 'true',
       }
 
-      wrapper = mount(<RadioButton {...props} />)
+      wrapper = shallow(<Radio {...props} />)
       inputElem = wrapper.find('input').at(0)
     })
 

@@ -14,7 +14,13 @@ const Toggle = ({ checked, disabled, onChange }) => (
     onKeyPress={() => !disabled && onChange()}
     className={cx(['toggle', { 'toggle--disabled': disabled }])}
   >
-    <input className={cx(['toggle__input'])} type="checkbox" checked={checked} readOnly />
+    <input
+      tabIndex="-1"
+      className={cx(['toggle__input'])}
+      type="checkbox"
+      checked={checked}
+      readOnly
+    />
     <span className={s.toggle__slider} />
   </div>
 )

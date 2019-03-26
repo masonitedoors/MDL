@@ -1,28 +1,31 @@
 import React, { memo } from 'react'
 import PropTypes from 'prop-types'
-import { React as Radio } from 'components/forms/RadioButton'
+import { React as Radio } from 'components/forms/Radio'
+import classNames from 'classnames/bind'
 import s from './style.module.scss'
 
+const cx = classNames.bind(s)
+
 const RadioGroup = ({
-  checkedChoice, choices, direction, onChange,
+  checkedChoice, choices, row, onChange,
 }) => {
   const radios = choices.map(({ label, value }) => (
-    <li key={value} className={direction === 'column' ? '' : s['radio-group__row']}>
+    <li key={value} className={cx(['radio-group__li'])}>
       <Radio
         checked={checkedChoice === value}
         onClick={onChange}
         onChange={onChange}
-        label={label}
         value={value}
+        label={label}
       />
     </li>
   ))
-  return <ul className={s['radio-group']}>{radios}</ul>
+  return <ul className={cx(['radio-group', row && 'radio-group--row'])}>{radios}</ul>
 }
 
 RadioGroup.propTypes = {
   checkedChoice: PropTypes.string,
-  direction: PropTypes.string,
+  row: PropTypes.bool,
   choices: PropTypes.arrayOf(
     PropTypes.shape({
       label: PropTypes.string,
@@ -31,12 +34,11 @@ RadioGroup.propTypes = {
     }),
   ).isRequired,
   onChange: PropTypes.func.isRequired,
-
 }
 
 RadioGroup.defaultProps = {
   checkedChoice: null,
-  direction: 'column',
+  row: false,
 }
 
 export default memo(RadioGroup)

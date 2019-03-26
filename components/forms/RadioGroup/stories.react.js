@@ -1,6 +1,6 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
-import { withKnobs } from '@storybook/addon-knobs'
+import { withKnobs, boolean } from '@storybook/addon-knobs'
 import { withState } from '@dump247/storybook-state'
 import RadioGroup from './react'
 
@@ -21,12 +21,15 @@ storiesOf('Forms/RadioGroup', module)
         },
       ],
       direction: 'column',
-    })(({ store }) => (
-      <RadioGroup
-        checkedChoice={store.state.checkedChoice}
-        choices={store.state.choices}
-        onChange={value => store.set({ checkedChoice: value })}
-        direction={store.state.direction}
-      />
-    )),
+    })(({ store }) => {
+      const row = boolean('Row', false)
+      return (
+        <RadioGroup
+          checkedChoice={store.state.checkedChoice}
+          choices={store.state.choices}
+          onChange={({ target: { value: checkedChoice } }) => store.set({ checkedChoice })}
+          row={row}
+        />
+      )
+    }),
   )

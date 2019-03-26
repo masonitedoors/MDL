@@ -1,6 +1,6 @@
 import React from 'react'
 import { mount } from 'enzyme'
-import RadioButton from './react'
+import Radio from './react'
 
 describe('RadioButton', () => {
   let props
@@ -9,7 +9,7 @@ describe('RadioButton', () => {
 
   beforeEach(() => {
     props = {
-      checked: false
+      checked: false,
     }
     wrapper = mount(<RadioButton {...props} />)
     inputElem = wrapper.find('input').at(0)
@@ -41,7 +41,7 @@ describe('RadioButton', () => {
     let wrapper
     let inputElem
 
-    beforeEach( () => {
+    beforeEach(() => {
       props = {
         ...props,
         checked: false,
@@ -72,7 +72,7 @@ describe('RadioButton', () => {
       })
 
       it('Should call onChange when the input field triggers an "onChange" event', () => {
-        const mockEvent = { target: { value: !props.value }}
+        const mockEvent = { target: { value: !props.value } }
         inputElem.prop('onKeyPress')(mockEvent)
         expect(props.onChange).toHaveBeenCalledTimes(1)
         expect(props.onChange).toHaveBeenCalledWith(mockEvent)

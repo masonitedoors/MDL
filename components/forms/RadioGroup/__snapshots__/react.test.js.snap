@@ -1,13 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`RadioButton The default state of the component with minimal required items passed in should render correctly 1`] = `
+exports[`RadioGroup The default state of the component with minimal required items passed in should render correctly 1`] = `
 <RadioGroup
   checked={[MockFunction]}
   checkedChoice={null}
   choices={Array []}
-  direction="column"
   onChange={[MockFunction]}
-  onClick={[MockFunction]}
+  row={false}
 >
   <ul
     className="radio-group"
@@ -15,7 +14,7 @@ exports[`RadioButton The default state of the component with minimal required it
 </RadioGroup>
 `;
 
-exports[`RadioButton The radio buttons should render with passed in props and a direction set to anything other than "column" Should render correctly 1`] = `
+exports[`RadioGroup The radio buttons should render with passed in props and a direction set to anything other than "column" Should render correctly 1`] = `
 <RadioGroup
   checked={[MockFunction]}
   checkedChoice={null}
@@ -37,29 +36,28 @@ exports[`RadioButton The radio buttons should render with passed in props and a 
   }
   direction=""
   onChange={[MockFunction]}
-  onClick={[MockFunction]}
+  row={false}
 >
   <ul
     className="radio-group"
   >
     <li
-      className="radio-group__row"
+      className="radio-group__li"
       key="FILTER1"
     >
-      <Radio
-        checked={false}
-        label="Filter 1"
-        onChange={[MockFunction]}
-        onClick={[MockFunction]}
-        value="FILTER1"
-      >
-        <div
-          aria-checked={false}
-          className="radio"
-          role="radio"
-          tabIndex={0}
+      <label>
+        <Radio
+          checked={false}
+          onChange={[MockFunction]}
+          onClick={[MockFunction]}
+          value="FILTER1"
         >
-          <label>
+          <div
+            aria-checked={false}
+            className="radio"
+            role="radio"
+            tabIndex={0}
+          >
             <input
               checked={false}
               className="radio__input"
@@ -70,28 +68,32 @@ exports[`RadioButton The radio buttons should render with passed in props and a 
               type="radio"
               value="FILTER1"
             />
-          </label>
-        </div>
-      </Radio>
+          </div>
+        </Radio>
+        <span
+          className="radio-group__label"
+        >
+          Filter 1
+        </span>
+      </label>
     </li>
     <li
-      className="radio-group__row"
+      className="radio-group__li"
       key="FILTER2"
     >
-      <Radio
-        checked={false}
-        label="Filter 2"
-        onChange={[MockFunction]}
-        onClick={[MockFunction]}
-        value="FILTER2"
-      >
-        <div
-          aria-checked={false}
-          className="radio"
-          role="radio"
-          tabIndex={0}
+      <label>
+        <Radio
+          checked={false}
+          onChange={[MockFunction]}
+          onClick={[MockFunction]}
+          value="FILTER2"
         >
-          <label>
+          <div
+            aria-checked={false}
+            className="radio"
+            role="radio"
+            tabIndex={0}
+          >
             <input
               checked={false}
               className="radio__input"
@@ -102,28 +104,32 @@ exports[`RadioButton The radio buttons should render with passed in props and a 
               type="radio"
               value="FILTER2"
             />
-          </label>
-        </div>
-      </Radio>
+          </div>
+        </Radio>
+        <span
+          className="radio-group__label"
+        >
+          Filter 2
+        </span>
+      </label>
     </li>
     <li
-      className="radio-group__row"
+      className="radio-group__li"
       key="FILTER 3"
     >
-      <Radio
-        checked={false}
-        label="Filter 3"
-        onChange={[MockFunction]}
-        onClick={[MockFunction]}
-        value="FILTER 3"
-      >
-        <div
-          aria-checked={false}
-          className="radio"
-          role="radio"
-          tabIndex={0}
+      <label>
+        <Radio
+          checked={false}
+          onChange={[MockFunction]}
+          onClick={[MockFunction]}
+          value="FILTER 3"
         >
-          <label>
+          <div
+            aria-checked={false}
+            className="radio"
+            role="radio"
+            tabIndex={0}
+          >
             <input
               checked={false}
               className="radio__input"
@@ -134,15 +140,20 @@ exports[`RadioButton The radio buttons should render with passed in props and a 
               type="radio"
               value="FILTER 3"
             />
-          </label>
-        </div>
-      </Radio>
+          </div>
+        </Radio>
+        <span
+          className="radio-group__label"
+        >
+          Filter 3
+        </span>
+      </label>
     </li>
   </ul>
 </RadioGroup>
 `;
 
-exports[`RadioButton The radio buttons should render with passed in props and using the default direction should render correctly 1`] = `
+exports[`RadioGroup The radio buttons should render with passed in props and using the default direction should render correctly 1`] = `
 <RadioGroup
   checked={[MockFunction]}
   checkedChoice={null}
@@ -158,31 +169,29 @@ exports[`RadioButton The radio buttons should render with passed in props and us
       },
     ]
   }
-  direction="column"
   onChange={[MockFunction]}
-  onClick={[MockFunction]}
+  row={false}
 >
   <ul
     className="radio-group"
   >
     <li
-      className=""
+      className="radio-group__li"
       key="FILTER1"
     >
-      <Radio
-        checked={false}
-        label="Filter 1"
-        onChange={[MockFunction]}
-        onClick={[MockFunction]}
-        value="FILTER1"
-      >
-        <div
-          aria-checked={false}
-          className="radio"
-          role="radio"
-          tabIndex={0}
+      <label>
+        <Radio
+          checked={false}
+          onChange={[MockFunction]}
+          onClick={[MockFunction]}
+          value="FILTER1"
         >
-          <label>
+          <div
+            aria-checked={false}
+            className="radio"
+            role="radio"
+            tabIndex={0}
+          >
             <input
               checked={false}
               className="radio__input"
@@ -193,28 +202,32 @@ exports[`RadioButton The radio buttons should render with passed in props and us
               type="radio"
               value="FILTER1"
             />
-          </label>
-        </div>
-      </Radio>
+          </div>
+        </Radio>
+        <span
+          className="radio-group__label"
+        >
+          Filter 1
+        </span>
+      </label>
     </li>
     <li
-      className=""
+      className="radio-group__li"
       key="FILTER2"
     >
-      <Radio
-        checked={false}
-        label="Filter 2"
-        onChange={[MockFunction]}
-        onClick={[MockFunction]}
-        value="FILTER2"
-      >
-        <div
-          aria-checked={false}
-          className="radio"
-          role="radio"
-          tabIndex={0}
+      <label>
+        <Radio
+          checked={false}
+          onChange={[MockFunction]}
+          onClick={[MockFunction]}
+          value="FILTER2"
         >
-          <label>
+          <div
+            aria-checked={false}
+            className="radio"
+            role="radio"
+            tabIndex={0}
+          >
             <input
               checked={false}
               className="radio__input"
@@ -225,9 +238,14 @@ exports[`RadioButton The radio buttons should render with passed in props and us
               type="radio"
               value="FILTER2"
             />
-          </label>
-        </div>
-      </Radio>
+          </div>
+        </Radio>
+        <span
+          className="radio-group__label"
+        >
+          Filter 2
+        </span>
+      </label>
     </li>
   </ul>
 </RadioGroup>

@@ -1,0 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RadioButton The values of the radio input should be updated when props are passed in should render correctly 1`] = `undefined`;
+
+exports[`RadioButton with snapshots should render correctly 1`] = `undefined`;

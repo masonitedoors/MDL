@@ -5,8 +5,21 @@
   margin: 0;
   padding: 0;
 
-  &__row {
-    display: inline-block;
-    padding: $space-xxs;
+  &--row {
+    display: flex;
+  }
+
+  &__li {
+    display: flex;
+    align-content: flex-start;
+    margin-bottom: $space-s;
+  }
+
+  &--row &__li {
+    margin-right: $space-s;
+
+    &:last-child {
+      margin-right: 0;
+    }
   }
 }

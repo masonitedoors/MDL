@@ -1,5 +1,5 @@
 import React from 'react'
-import { mount } from 'enzyme'
+import { shallow } from 'enzyme'
 import Toggle from './react'
 
 describe('Toggle', () => {
@@ -7,87 +7,61 @@ describe('Toggle', () => {
   let wrapper
 
   beforeEach(() => {
-    wrapper = mount(<Toggle />)
+    wrapper = shallow(<Toggle />)
   })
 
-  describe('Should render with default properties set when nothing is passed in', () => {
-    it('Should render correctly', () => {
+  describe('rendering with defaults', () => {
+    it('should render correctly', () => {
       expect(wrapper).toMatchSnapshot()
     })
 
-    it('Should render with the className of "toggle" on the initial load', () => {
+    it('should render with the className of "toggle" on the initial load', () => {
       expect(wrapper.find('.toggle').length).toBe(1)
     })
 
-    it('Should render the toggle switch in an unchecked state', () => {
+    it('should render the input in an unchecked state', () => {
       expect(wrapper.find('.toggle__input').props().checked).toBe(false)
     })
   })
 
-  describe('Should render the component when properties are passed into it and the checked state is false', () => {
+  describe('rendering with props', () => {
     beforeEach(() => {
       props = {
         onChange: jest.fn(),
-        checked: false,
-        disabled: false,
       }
 
-      wrapper = mount(<Toggle {...props} />)
+      wrapper = shallow(<Toggle {...props} />)
     })
 
-    it('Should render correctly', () => {
+    it('should render correctly', () => {
       expect(wrapper).toMatchSnapshot()
     })
 
-    it('Should change to a disabled state when the toggle div is clicked upon', () => {
-      wrapper.find('.toggle').simulate('click')
+    it('should have a checked input when checked is true', () => {
+      wrapper.setProps({ checked: true })
+      expect(wrapper.find('.toggle__input').props().checked).toBe(true)
+    })
+
+    it('should call onChange when the component is clicked', () => {
+      wrapper.simulate('click')
       expect(props.onChange).toHaveBeenCalledTimes(1)
-      expect(wrapper.find('.toggle__input').filterWhere(item => item.prop('checked')).length).toBe(
-        1,
-      )
     })
 
-    it('Should change to a disabled state when a key is pressed when inside the toggle div', () => {
-      const mockEvent = { target: { value: !props.value } }
-      wrapper.find('.toggle').prop('onKeyPress')(mockEvent)
-
+    it('should call onChange when the component has a keypress event', () => {
+      wrapper.simulate('keypress')
       expect(props.onChange).toHaveBeenCalledTimes(1)
-      expect(wrapper.find('toggle--disabled')).toBeTruthy()
     })
 
-    it('Should render the toggle switch in an unchecked state', () => {
-      expect(wrapper.find('.toggle__input').props().checked).toBe(false)
-    })
-  })
-
-  describe('Should render the component when properties are passed into it and the checked state and checked state are true', () => {
-    beforeEach(() => {
-      props = {
-        onChange: jest.fn(),
-        checked: true,
-        disabled: true,
-      }
-
-      wrapper = mount(<Toggle {...props} />)
-    })
-
-    it('Should render correctly', () => {
-      expect(wrapper).toMatchSnapshot()
-    })
-
-    it('Should change to a non disabled state when the toggle div is clicked upon', () => {
-      wrapper.find('.toggle--disabled').simulate('click')
+    it('should not call onChange when disabled and clicked', () => {
+      wrapper.setProps({ disabled: true })
+      wrapper.simulate('click')
       expect(props.onChange).toHaveBeenCalledTimes(0)
     })
 
-    it('Should change to a disabled state when a key is pressed when inside the toggle div', () => {
-      const mockEvent = { target: { value: !props.value } }
-      wrapper.find('.toggle--disabled').prop('onKeyPress')(mockEvent)
+    it('should not call onChange when disabled and has a keypress event', () => {
+      wrapper.setProps({ disabled: true })
+      wrapper.simulate('keypress')
       expect(props.onChange).toHaveBeenCalledTimes(0)
-    })
-
-    it('Should render the toggle switch in an unchecked state', () => {
-      expect(wrapper.find('.toggle__input').props().checked).toBeTruthy()
     })
   })
 })

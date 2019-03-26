@@ -15,7 +15,7 @@ const Toggle = ({ checked, disabled, onChange }) => (
     className={cx(['toggle', { 'toggle--disabled': disabled }])}
   >
     <div className={s.toggle__switch}>
-      <input className={s.toggle__input} type="checkbox" checked={checked} readOnly />
+      <input className={cx(['toggle__input'])} type="checkbox" checked={checked} readOnly />
       <span className={s.toggle__slider} />
     </div>
   </div>

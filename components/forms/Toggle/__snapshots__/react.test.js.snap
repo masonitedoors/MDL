@@ -1,94 +1,51 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Toggle Should render the component when properties are passed into it and the checked state and checked state are true Should render correctly 1`] = `
-<Toggle
-  checked={true}
-  disabled={true}
-  onChange={[MockFunction]}
+exports[`Toggle rendering with defaults should render correctly 1`] = `
+<div
+  aria-checked={false}
+  className="toggle"
+  onClick={[Function]}
+  onKeyPress={[Function]}
+  role="checkbox"
+  tabIndex={0}
 >
   <div
-    aria-checked={true}
-    className="toggle toggle--disabled"
-    onClick={[Function]}
-    onKeyPress={[Function]}
-    role="checkbox"
-    tabIndex={0}
+    className="toggle__switch"
   >
-    <div
-      className="toggle__switch"
-    >
-      <input
-        checked={true}
-        className="toggle__input"
-        readOnly={true}
-        type="checkbox"
-      />
-      <span
-        className="toggle__slider"
-      />
-    </div>
+    <input
+      checked={false}
+      className="toggle__input"
+      readOnly={true}
+      type="checkbox"
+    />
+    <span
+      className="toggle__slider"
+    />
   </div>
-</Toggle>
+</div>
 `;
 
-exports[`Toggle Should render the component when properties are passed into it and the checked state is false Should render correctly 1`] = `
-<Toggle
-  checked={false}
-  disabled={false}
-  onChange={[MockFunction]}
+exports[`Toggle rendering with props should render correctly 1`] = `
+<div
+  aria-checked={false}
+  className="toggle"
+  onClick={[Function]}
+  onKeyPress={[Function]}
+  role="checkbox"
+  tabIndex={0}
 >
   <div
-    aria-checked={false}
-    className="toggle"
-    onClick={[Function]}
-    onKeyPress={[Function]}
-    role="checkbox"
-    tabIndex={0}
+    className="toggle__switch"
   >
-    <div
-      className="toggle__switch"
-    >
-      <input
-        checked={false}
-        className="toggle__input"
-        readOnly={true}
-        type="checkbox"
-      />
-      <span
-        className="toggle__slider"
-      />
-    </div>
+    <input
+      checked={false}
+      className="toggle__input"
+      readOnly={true}
+      type="checkbox"
+    />
+    <span
+      className="toggle__slider"
+    />
   </div>
-</Toggle>
-`;
-
-exports[`Toggle Should render with default properties set when nothing is passed in Should render correctly 1`] = `
-<Toggle
-  checked={false}
-  disabled={false}
-  onChange={null}
->
-  <div
-    aria-checked={false}
-    className="toggle"
-    onClick={[Function]}
-    onKeyPress={[Function]}
-    role="checkbox"
-    tabIndex={0}
-  >
-    <div
-      className="toggle__switch"
-    >
-      <input
-        checked={false}
-        className="toggle__input"
-        readOnly={true}
-        type="checkbox"
-      />
-      <span
-        className="toggle__slider"
-      />
-    </div>
-  </div>
-</Toggle>
+</div>
 `;

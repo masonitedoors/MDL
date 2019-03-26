@@ -1,48 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`RadioGroup The radio buttons should render with passed in props and a direction set to anything other than "column" Should render correctly 1`] = `
-<ul
-  className="radio-group"
->
-  <li
-    className="radio-group__li"
-    key="FILTER1"
-  >
-    <Radio
-      checked={false}
-      label="Filter 1"
-      onChange={[MockFunction]}
-      onClick={[MockFunction]}
-      value="FILTER1"
-    />
-  </li>
-  <li
-    className="radio-group__li"
-    key="FILTER2"
-  >
-    <Radio
-      checked={false}
-      label="Filter 2"
-      onChange={[MockFunction]}
-      onClick={[MockFunction]}
-      value="FILTER2"
-    />
-  </li>
-  <li
-    className="radio-group__li"
-    key="FILTER 3"
-  >
-    <Radio
-      checked={false}
-      label="Filter 3"
-      onChange={[MockFunction]}
-      onClick={[MockFunction]}
-      value="FILTER 3"
-    />
-  </li>
-</ul>
-`;
-
 exports[`RadioGroup rendering with defaults should render correctly 1`] = `
 <ul
   className="radio-group"

@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`RadioButton The values of the radio input should be updated when props are passed in should render correctly 1`] = `
-<div
+exports[`Radio The values of the radio input should be updated when props are passed in should render correctly 1`] = `
+<label
   className="radio"
   key="true"
 >
@@ -20,10 +20,15 @@ exports[`RadioButton The values of the radio input should be updated when props 
       value="true"
     />
   </div>
-</div>
+  <span
+    className="radio__label"
+  >
+    Choice
+  </span>
+</label>
 `;
 
-exports[`RadioButton with snapshots should render correctly 1`] = `
+exports[`Radio with snapshots should render correctly 1`] = `
 <div
   className="radio"
 >

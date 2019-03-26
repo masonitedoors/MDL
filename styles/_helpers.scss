@@ -19,3 +19,9 @@ $rootFontSize: 16px;
   left: 50%;
   transform: translate(-50%, -50%);
 }
+
+@mixin vertically-center() {
+  position: absolute;
+  top: 50%;
+  transform: translate3d(0, -50%, 0);
+}

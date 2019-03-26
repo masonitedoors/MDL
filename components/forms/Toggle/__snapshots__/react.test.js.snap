@@ -9,19 +9,15 @@ exports[`Toggle rendering with defaults should render correctly 1`] = `
   role="checkbox"
   tabIndex={0}
 >
-  <div
-    className="toggle__switch"
-  >
-    <input
-      checked={false}
-      className="toggle__input"
-      readOnly={true}
-      type="checkbox"
-    />
-    <span
-      className="toggle__slider"
-    />
-  </div>
+  <input
+    checked={false}
+    className="toggle__input"
+    readOnly={true}
+    type="checkbox"
+  />
+  <span
+    className="toggle__slider"
+  />
 </div>
 `;
 
@@ -34,18 +30,14 @@ exports[`Toggle rendering with props should render correctly 1`] = `
   role="checkbox"
   tabIndex={0}
 >
-  <div
-    className="toggle__switch"
-  >
-    <input
-      checked={false}
-      className="toggle__input"
-      readOnly={true}
-      type="checkbox"
-    />
-    <span
-      className="toggle__slider"
-    />
-  </div>
+  <input
+    checked={false}
+    className="toggle__input"
+    readOnly={true}
+    type="checkbox"
+  />
+  <span
+    className="toggle__slider"
+  />
 </div>
 `;

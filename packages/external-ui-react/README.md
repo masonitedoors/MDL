@@ -86,6 +86,15 @@ Props noted with an asterisk are required. Not always by necessity, but by lack 
 | disabled | false   | boolean         |             |
 | onChange | null    | function        |             |
 
+### forms/RadioGroup
+
+| Prop          | Default | Accepted Values                       | Description |
+| ------------- | ------- | ------------------------------------- | ----------- |
+| choices\*     |         | `[{ label: String, value: String },]` |             |
+| checkedChoice | false   | string                                |             |
+| onChange\*    |         | function                              |             |
+| row           | false   | boolean                               |             |
+
 ### menu/OverflowMenu
 
 | Prop     | Default | Accepted Values  | Description |

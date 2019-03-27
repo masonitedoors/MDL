@@ -1,0 +1,15 @@
+services:
+  nginx:
+    image: tugboatqa/nginx:1
+    default: true
+
+    commands:
+      init:
+        # Adding the NodeSource APT repository AND the PGP key for verifying packages
+        - curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
+        - apt-get install -y nodejs
+        - npm install
+
+      build:
+        - npm run build
+        - ln -snf "${TUGBOAT_ROOT}/gh-pages" "${DOCROOT}"

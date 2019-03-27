@@ -9,6 +9,7 @@ const { window } = jsdom
 describe('FilterableSearch', () => {
   let props
   let wrapper
+  let instance
 
   beforeEach(() => {
     props = {
@@ -25,6 +26,8 @@ describe('FilterableSearch', () => {
     wrapper = mount(<FilterableSearch {...props} />, {
       attachTo: window.document.querySelector('#app'),
     })
+
+    instance = wrapper.instance()
   })
 
   describe('with snapshots', () => {
@@ -34,13 +37,20 @@ describe('FilterableSearch', () => {
   })
 
   describe('with user actions', () => {
-    it('should display the filter options when clicking the dropdown button', () => {
-      expect(wrapper.find('DropdownMenu').prop('show')).toEqual(false)
-      wrapper.find('DropdownToggle').simulate('click')
-      expect(wrapper.find('DropdownMenu').prop('show')).toEqual(true)
-      wrapper.find('DropdownToggle').simulate('click')
-      expect(wrapper.find('DropdownMenu').prop('show')).toEqual(false)
+    it('Should have an initial state with the "showFilters" set to "false"', () => {
+      expect(instance.state.showFilters).toBe(false)
     })
+
+    it('Should set the showFilters in the state to be false when the dropdownToggle button is clicked two times', () => {
+      const dropDownToggleButton = wrapper.find('DropdownToggle').find('button').at(0)
+
+      dropDownToggleButton.simulate('click')
+      expect(instance.state.showFilters).toBeTruthy()
+
+      dropDownToggleButton.simulate('click')
+      expect(instance.state.showFilters).toBe(false)
+    })
+
     it('should trigger search action when the user hits enter in input or clicks SearchButton', () => {
       expect(props.onSubmit).toBeCalledTimes(0)
       wrapper.find('SearchButton').simulate('click')

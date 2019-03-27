@@ -11,5 +11,5 @@ services:
         - npm install
 
       build:
-        - npm run build
+        - npm run build:storybook
         - ln -snf "${TUGBOAT_ROOT}/gh-pages" "${DOCROOT}"

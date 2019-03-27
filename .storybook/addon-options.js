@@ -1,4 +1,4 @@
 export default {
-  name: '🚪 Masonite Design Language 🚪',
+  name: 'Masonite Design Language 🚪',
   showAddonPanel: true,
 }

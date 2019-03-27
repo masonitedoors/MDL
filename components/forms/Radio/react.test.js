@@ -35,7 +35,7 @@ describe('Radio', () => {
     })
 
     it('should not render a label, if empty', () => {
-      expect(wrapper.find('Label').length).toBe(0)
+      expect(wrapper.find('label').length).toBe(0)
     })
   })
 
@@ -62,7 +62,7 @@ describe('Radio', () => {
     })
 
     it('should render a label, if provided', () => {
-      expect(wrapper.find('Label').length).toBe(1)
+      expect(wrapper.find('label').length).toBe(1)
     })
 
     it('Should render with the default checked status of false when the checked is passed in as "false"', () => {
@@ -75,7 +75,7 @@ describe('Radio', () => {
 
     it('should bolden the text when checked', () => {
       wrapper.setProps({ checked: true })
-      expect(wrapper.find('radio__label--checked').length).toBe(1)
+      expect(wrapper.find('.radio__label--checked').length).toBe(1)
     })
 
     describe('with user actions', () => {

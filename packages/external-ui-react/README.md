@@ -73,7 +73,7 @@ Props noted with an asterisk are required. Not always by necessity, but by lack 
 | helper      | --      | string          | Text that appears below input |
 | label       | ---     | string          |                               |
 | onBlur      | --      | function        |                               |
-| onChange\*  | ---     | function        | Returns input value           |
+| onChange\*  | ---     | function        | Returns event                 |
 | placeholder | ---     | string          |                               |
 | value\*     | ---     | string          |                               |
 | variant\*   | ---     | 'dark', null    |                               |

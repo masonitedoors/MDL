@@ -23,7 +23,7 @@ describe('PaginationDots', () => {
     expect(wrapper.findWhere(n => n.props().filled).length).toBe(1)
   })
 
-  it('should add an active class to the correct dot', () => {
+  it('should have a filled prop set to true on the correct dot', () => {
     expect(
       wrapper
         .find('Dot')

@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PaginationDots should render without crashing 1`] = `
+<div
+  className="pagination-dots"
+>
+  <Dot
+    filled={false}
+    key="0"
+  />
+  <Dot
+    filled={false}
+    key="1"
+  />
+  <Dot
+    filled={true}
+    key="2"
+  />
+  <Dot
+    filled={false}
+    key="3"
+  />
+  <Dot
+    filled={false}
+    key="4"
+  />
+</div>
+`;

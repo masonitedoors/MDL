@@ -5,7 +5,7 @@ import 'styles/storybook'
 
 addDecorator(withOptions(options))
 
-const req = require.context('./../../components', true, /stories\.react\.js$/)
+const req = require.context('./../../components', true, /(stories\.react|react\.stories).js$/)
 
 function loadStories() {
   req.keys().forEach(filename => req(filename))

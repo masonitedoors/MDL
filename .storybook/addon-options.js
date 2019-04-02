@@ -1,4 +1,10 @@
+import { create } from '@storybook/theming'
+
 export default {
-  name: 'Masonite Design Language',
-  showAddonPanel: true,
+  options: {
+    theme: {
+      brandTitle: 'Masonite Design Language',
+    },
+    showPanel: true,
+  },
 }

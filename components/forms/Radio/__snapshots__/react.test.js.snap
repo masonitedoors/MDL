@@ -1,0 +1,50 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Radio The values of the radio input should be updated when props are passed in should render correctly 1`] = `
+<label
+  className="radio"
+  key="true"
+>
+  <div
+    className="radio__input-wrapper"
+  >
+    <input
+      aria-checked={false}
+      checked={false}
+      className="radio__input"
+      onClick={[MockFunction]}
+      onKeyPress={[MockFunction]}
+      readOnly={true}
+      tabIndex={0}
+      type="radio"
+      value="true"
+    />
+  </div>
+  <span
+    className="radio__label"
+  >
+    Choice
+  </span>
+</label>
+`;
+
+exports[`Radio with snapshots should render correctly 1`] = `
+<div
+  className="radio"
+>
+  <div
+    className="radio__input-wrapper"
+  >
+    <input
+      aria-checked={false}
+      checked={false}
+      className="radio__input"
+      onClick={null}
+      onKeyPress={null}
+      readOnly={true}
+      tabIndex={0}
+      type="radio"
+    />
+  </div>
+</div>
+`;

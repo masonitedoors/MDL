@@ -1,6 +1,6 @@
 {
   "name": "@masonite/external-ui-react",
-  "version": "1.9.2",
+  "version": "2.1.0",
   "description": "Masonite Design Language for React",
   "main": "dist/index.js",
   "scripts": {
@@ -20,5 +20,5 @@
     "webpack": "^4.25.1",
     "webpack-cli": "^3.1.2"
   },
-  "gitHead": "8aa1c7e8b5cd4b7496f5b26ae599de518d75ee6f"
+  "gitHead": "b864a5dd65da25157d16c41d3678599f1a259420"
 }

@@ -73,10 +73,27 @@ Props noted with an asterisk are required. Not always by necessity, but by lack 
 | helper      | --      | string          | Text that appears below input |
 | label       | ---     | string          |                               |
 | onBlur      | --      | function        |                               |
-| onChange\*  | ---     | function        | Returns input value           |
+| onChange\*  | ---     | function        | Returns event                 |
 | placeholder | ---     | string          |                               |
 | value\*     | ---     | string          |                               |
 | variant\*   | ---     | 'dark', null    |                               |
+
+### forms/Toggle
+
+| Prop     | Default | Accepted Values | Description |
+| -------- | ------- | --------------- | ----------- |
+| checked  | false   | boolean         |             |
+| disabled | false   | boolean         |             |
+| onChange | null    | function        |             |
+
+### forms/RadioGroup
+
+| Prop          | Default | Accepted Values                       | Description |
+| ------------- | ------- | ------------------------------------- | ----------- |
+| choices\*     |         | `[{ label: String, value: String },]` |             |
+| checkedChoice | false   | string                                |             |
+| onChange\*    |         | function                              |             |
+| row           | false   | boolean                               |             |
 
 ### menu/OverflowMenu
 

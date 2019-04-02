@@ -1,0 +1,18 @@
+@import "styles/index";
+
+.pagination-dots {
+  display: inline-block;
+
+  &__dot {
+    display: inline-block;
+    height: 8px;
+    width: 8px;
+    margin: 4px;
+    border-radius: 50%;
+    background-color: $color-silver;
+
+    &--filled {
+      background-color: $color-limerick;
+    }
+  }
+}

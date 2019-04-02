@@ -34,10 +34,10 @@ exports[`FilterableSearch with snapshots should render correctly 1`] = `
       onKeyDown={[Function]}
       placeholder="Search"
       value=""
-      variant="light"
+      variant="dark"
     >
       <div
-        className="text-field text-field--light"
+        className="text-field text-field--dark"
       >
         <div
           className="text-field__label"
@@ -93,7 +93,7 @@ exports[`FilterableSearch with snapshots should render correctly 1`] = `
         </button>
       </DropdownToggle>
       <DropdownMenu
-        show={false}
+        showFilters={false}
       >
         <ul
           className="filterable-search__dropdown-menu"

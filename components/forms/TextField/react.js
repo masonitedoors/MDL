@@ -48,7 +48,7 @@ const TextField = ({
         }}
         onFocus={() => setActive(true)}
         onChange={event => onChange(event.target.value, event)}
-        onClick={() => {}}
+        onClick={onClick}
         value={value}
       />
       <div

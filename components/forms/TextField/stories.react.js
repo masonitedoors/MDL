@@ -12,7 +12,7 @@ storiesOf('Forms/TextField', module)
   .add(
     'default',
     withState({ value: '' })(({ store }) => {
-      const variant = select('Variant', { Light: 'light', Dark: 'dark' }, 'light')
+      const variant = select('Variant', { Light: 'light', Dark: 'dark' }, 'dark')
       const label = text('Label', 'Label')
       const error = boolean('Error State', false)
       const helper = error ? 'Something is wrong.' : ''

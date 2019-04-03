@@ -8,7 +8,7 @@
     "storybook:vue": "cross-env NODE_PATH=styles:components node_modules/@storybook/vue/bin/index.js -p 9006 -c .storybook/vue",
     "storybook:react": "cross-env NODE_PATH=styles:components node_modules/@storybook/react/bin/index.js -p 9007 -c .storybook/react",
     "generate-colors-css": "node -e 'require(\"./styles/generate-style-stories\").createCssClassesFromColors()'",
-    "build:storybook": "build-storybook -c .storybook/react -o gh-pages",
+    "build:storybook": "node_modules/@storybook/react/bin/build.js -c .storybook/react -o gh-pages",
     "build-package:external-ui-react": "cd packages/external-ui-react && npm run build",
     "publish": "npm run build-package:external-ui-react && lerna publish",
     "lint:scripts": "npx eslint './**/*.js'",

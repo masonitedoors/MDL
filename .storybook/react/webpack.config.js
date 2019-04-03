@@ -1,7 +1,7 @@
 const path = require('path')
 
-module.exports = (storybookBaseConfig, configType, defaultConfig) => {
-  defaultConfig.module.rules.push(
+module.exports = ({ config, mode }) => {
+  config.module.rules.push(
     {
       test: /\/react\.js$/,
       enforce: 'pre',
@@ -50,16 +50,16 @@ module.exports = (storybookBaseConfig, configType, defaultConfig) => {
     },
   )
 
-  defaultConfig.module.rules = defaultConfig.module.rules.map(rule => {
+  config.module.rules = config.module.rules.map(rule => {
     const oldPattern = /\.(svg|ico|jpg|jpeg|png|gif|eot|otf|webp|ttf|woff|woff2|cur|ani)(\?.*)?$/
     const newPattern = /\.(ico|jpg|jpeg|png|gif|eot|otf|webp|ttf|woff|woff2|cur|ani)(\?.*)?$/
 
     return String(rule.test) === String(oldPattern) ? { ...rule, test: newPattern } : rule
   })
 
-  defaultConfig.resolve.modules.push(path.resolve(__dirname, '../../'))
+  config.resolve.modules.push(path.resolve(__dirname, '../../'))
 
-  defaultConfig.resolve.extensions = defaultConfig.resolve.extensions.concat(['.scss'])
+  config.resolve.extensions = config.resolve.extensions.concat(['.scss'])
 
-  return defaultConfig
+  return config
 }

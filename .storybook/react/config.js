@@ -1,6 +1,6 @@
 import { addParameters, configure } from '@storybook/react'
 import { withOptions } from '@storybook/addon-options'
-import parameters from './../addon-options'
+import parameters from './../parameters'
 import 'styles/storybook'
 
 addParameters(parameters)

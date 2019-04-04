@@ -81,10 +81,15 @@
     opacity: 0;
     transition: opacity 200ms ease-in 100ms;
     transform: translateY(-50%);
-    fill: $color-rust;
+    fill: $color-limerick;
+
+    &--trailing {
+      opacity: 1;
+    }
   }
 
   &--error &__icon {
     opacity: 1;
+    fill: $color-rust;
   }
 }

@@ -7,7 +7,7 @@ import {
 import { withState } from '@dump247/storybook-state'
 import TextField from './react'
 
-storiesOf('Forms/TextField', module)
+storiesOf('TextField', module)
   .addDecorator(withKnobs)
   .add(
     'default',
@@ -16,19 +16,19 @@ storiesOf('Forms/TextField', module)
       const label = text('Label', 'Label')
       const error = boolean('Error State', false)
       const helper = error ? 'Something is wrong.' : ''
-      const trailingIcon = select('Trailing Icon', {
-        Phone: <svg dangerouslySetInnerHTML={{ __html: mPhone }} />,
-      })
+      const showTrailingIcon = boolean('Show Trailing Icon', true)
+      const trailingIcon = showTrailingIcon && mPhone
       return (
         <TextField
-          variant={variant}
           error={error}
           helper={helper}
           label={label}
           placeholder="Placeholder"
           onBlur={value => console.log('onBlur called, value: ', value)}
           onChange={value => store.set({ value })}
+          trailingIcon={trailingIcon}
           value={store.state.value}
+          variant={variant}
         />
       )
     }),

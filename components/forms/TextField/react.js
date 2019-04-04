@@ -12,6 +12,7 @@ const TextField = ({
   label,
   onBlur,
   onClick,
+  onFocus,
   onChange,
   onKeyDown,
   placeholder,
@@ -22,7 +23,13 @@ const TextField = ({
 }) => {
   const [isActive, setActive] = useState(false)
   const Label = label ? 'label' : 'div'
-  const TrailingIcon = trailingIcon || null
+
+  const TrailingIcon = () => (
+    <div
+      className={cx(['text-field__icon', trailingIcon && !error && 'text-field__icon--trailing'])}
+      dangerouslySetInnerHTML={{ __html: error ? mAlertTriangle : trailingIcon }}
+    />
+  )
 
   return (
     <Label
@@ -36,7 +43,6 @@ const TextField = ({
     >
       <div className={cx('text-field__label')}>{label}</div>
       <div className={cx('text-field__helper')}>{helper}</div>
-      {trailingIcon && <div className={cx('text-field__icon text-field__icon--trailing')} />}
       <input
         className={cx('text-field__input')}
         type={type}
@@ -46,15 +52,15 @@ const TextField = ({
           setActive(false)
           onBlur && onBlur(event.target.value, event)
         }}
-        onFocus={() => setActive(true)}
+        onFocus={event => {
+          setActive(true)
+          onFocus && onFocus(event.target.value, event)
+        }}
         onChange={event => onChange(event.target.value, event)}
         onClick={onClick}
         value={value}
       />
-      <div
-        className={cx('text-field__icon')}
-        dangerouslySetInnerHTML={{ __html: mAlertTriangle }}
-      />
+      <TrailingIcon />
     </Label>
   )
 }
@@ -64,6 +70,7 @@ export default memo(TextField)
 TextField.propTypes = {
   onBlur: PropTypes.func,
   onChange: PropTypes.func.isRequired,
+  onFocus: PropTypes.func,
   onClick: PropTypes.func,
   error: PropTypes.bool,
   helper: PropTypes.string,
@@ -79,6 +86,7 @@ TextField.propTypes = {
 TextField.defaultProps = {
   onBlur: undefined,
   onClick: undefined,
+  onFocus: undefined,
   error: false,
   helper: '',
   label: undefined,

@@ -1,10 +1,16 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import classNames from 'classnames/bind'
+import style from '../style.module.scss'
 
-export const ModalFooter = ({ children }) => (
-  <footer className="internal-modal__footer">{children}</footer>
+const cx = classNames.bind(style)
+
+const ModalFooter = ({ children }) => (
+  <footer className={cx('wizard-modal__footer')}>{children}</footer>
 )
 
 ModalFooter.propTypes = {
-  children: PropTypes.oneOfType([PropTypes.func]).isRequired,
+  children: PropTypes.oneOfType([PropTypes.string, PropTypes.func]).isRequired,
 }
+
+export default ModalFooter

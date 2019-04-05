@@ -6,6 +6,14 @@ import s from './style.module.scss'
 const cx = classNames.bind(s)
 
 const Toggle = ({ checked, disabled, onChange }) => (
+
+  <label class="toggle" role="switch" onClick={() => !disabled && onChange()} onKeyPress={() => !disabled && onChange()}>
+    <input class="toggle__input" type="checkbox" />
+    <span class="toggle__track">
+      <span class="toggle__knob"></span>
+    </span>
+  </label>
+
   <div
     role="checkbox"
     aria-checked={checked}

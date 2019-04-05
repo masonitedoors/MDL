@@ -1,58 +1,166 @@
 @import "styles/index.scss";
 
-$toggle-track-width: 24px;
-$toggle-track-height: 8px;
-$toggle-knob-size: 16px;
 $toggle-transition-duration: 0.23s;
-$toggle-transition-timing-function: cubic-bezier(0.77, 0, 0.175, 1);
+$toggle-transition-timing-function: cubic-bezier(1, 0, 0.7, 0.98);
+$toggle-font-family: $font-family;
+
+// small
+
+$toggle-track-color: $color-silver;
+$toggle-track-color-active: $color-silver;
+$toggle-knob-color: $color-deepgrey;
+$toggle-knob-color-active: $color-limerick;
+$toggle-track-height: 8px;
+$toggle-track-width: 24px;
+$toggle-knob-size: 16px;
+$toggle-padding: ($toggle-knob-size / 2);
+$toggle-track-padding: ($toggle-track-height - $toggle-knob-size) / 2;
+$toggle-knob-distance: ($toggle-track-width - $toggle-knob-size) - ($toggle-track-padding * 2);
+
+// large
+
+$toggle-lg-track-color: $color-deepgrey;
+$toggle-lg-track-color-active: $color-limerick;
+$toggle-lg-icon-color: rgba($color-night, 0.5);
+$toggle-lg-knob-color: $color-white;
+$toggle-lg-knob-color-active: $color-white;
+$toggle-lg-label-color-on: $color-night;
+$toggle-lg-label-color-off: $color-white;
+$toggle-lg-track-height: 36px;
+$toggle-lg-track-width: 68px;
+$toggle-lg-knob-size: 28px;
+$toggle-lg-padding: 0;
+$toggle-lg-label-width: ($toggle-lg-track-width - $toggle-lg-knob-size);
+$toggle-lg-track-padding: ($toggle-lg-track-height - $toggle-lg-knob-size) / 2;
+$toggle-lg-knob-distance: ($toggle-lg-track-width - $toggle-lg-knob-size) - ($toggle-lg-track-padding * 2);
 
 .toggle {
+  box-sizing: content-box;
   position: relative;
   display: inline-block;
+  cursor: pointer;
+  backface-visibility: hidden; // Avoid unnecessary paints of other components.
+  user-select: none;
+  padding: $toggle-padding;
   width: $toggle-track-width;
   height: $toggle-track-height;
-  padding: ($toggle-knob-size * 0.25) ($toggle-knob-size * 0.5);
-  cursor: pointer;
 
-  &--disabled {
-    opacity: 0.75;
-    cursor: not-allowed;
+  .toggle--large & {
+    padding: $toggle-lg-padding;
+    width: auto;
+    width: $toggle-lg-track-width;
+    height: $toggle-lg-track-height;
   }
 
   &__input {
-    @include visually-hidden();
+    @extend %visually-hidden;
   }
 
-  &__slider {
-    @include vertically-center();
-    position: absolute;
-    cursor: pointer;
-    background-color: $color-silver;
+  &__track {
+    border: 0;
+    display: inline-block;
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.15);
+    position: relative;
     width: $toggle-track-width;
     height: $toggle-track-height;
-    border-radius: 34px;
-    pointer-events: none;
+    background-color: $toggle-track-color;
+    border-radius: ($toggle-track-height / 2);
+    transition: background-color $toggle-transition-duration $toggle-transition-timing-function;
 
-    &::before {
-      content: "";
-      @include circle(16px);
-      position: absolute;
-      top: 50%;
-      left: $toggle-knob-size / -2;
-      border-radius: 50%;
-      background-color: $color-deepgrey;
-      transform: translate3d(0, -50%, 0);
-      transition: 300ms;
-      pointer-events: none;
+    .toggle--large & {
+      width: $toggle-lg-track-width;
+      height: $toggle-lg-track-height;
+      background-color: $toggle-lg-track-color;
+      border-radius: ($toggle-lg-track-height / 2);
+    }
+
+    .toggle__input[disabled] + & {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+
+    .toggle__input:checked + & {
+      background-color: $toggle-track-color-active;
+    }
+
+    .toggle--large .toggle__input:checked + & {
+      background-color: $toggle-lg-track-color-active;
     }
   }
 
-  &__input + &__slider {
-    box-shadow: inset 0 1px 0 0 rgba(0, 0, 0, 0.2);
+  &__knob {
+    will-change: transform;
+    box-sizing: border-box;
+    content: "";
+    text-align: center;
+    position: absolute;
+    padding: 0;
+    border-radius: 50%;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+    z-index: 1;
+    transition-property: background-color, transform;
+    transition-duration: $toggle-transition-duration;
+    transition-timing-function: $toggle-transition-timing-function;
+    height: $toggle-knob-size;
+    width: $toggle-knob-size;
+    top: $toggle-track-padding;
+    left: $toggle-track-padding;
+    line-height: $toggle-knob-size;
+    background-color: $toggle-knob-color;
+
+    .toggle--large & {
+      height: $toggle-lg-knob-size;
+      width: $toggle-lg-knob-size;
+      top: $toggle-lg-track-padding;
+      left: $toggle-lg-track-padding;
+      line-height: $toggle-lg-knob-size;
+      background-color: $toggle-lg-knob-color;
+      color: $toggle-lg-icon-color;
+      font-size: 14px;
+    }
+
+    .toggle__input:checked + .toggle__track & {
+      background-color: $toggle-knob-color-active;
+      transform: translateX($toggle-knob-distance);
+
+      .toggle--large & {
+        background-color: $toggle-lg-knob-color-active;
+        transform: translateX($toggle-lg-knob-distance);
+      }
+    }
   }
 
-  &__input:checked + &__slider::before {
-    background-color: $color-limerick;
-    transform: translate3d($toggle-track-width, -50%, 0);
+  &__label-on,
+  &__label-off {
+    position: absolute;
+    width: $toggle-lg-label-width;
+    font-family: $toggle-font-family;
+    font-weight: 300;
+    letter-spacing: 0.04em;
+    box-sizing: border-box;
+    font-size: 12px;
+    text-align: center;
+    z-index: 0;
+    line-height: $toggle-lg-track-height;
+    white-space: nowrap;
+    transition: color $toggle-transition-duration $toggle-transition-timing-function;
+  }
+
+  &__label-on {
+    left: 0;
+    color: rgba($toggle-lg-label-color-on, 0);
+
+    .toggle__input:checked + .toggle__track & {
+      color: rgba($toggle-lg-label-color-on, 1);
+    }
+  }
+
+  &__label-off {
+    right: 0;
+    color: rgba($toggle-lg-label-color-off, 1);
+
+    .toggle__input:checked + .toggle__track & {
+      color: rgba($toggle-lg-label-color-on, 0);
+    }
   }
 }

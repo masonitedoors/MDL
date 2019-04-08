@@ -14,5 +14,5 @@ const ModalBackdrop = ({ children }) => (
 export default ModalBackdrop
 
 ModalBackdrop.propTypes = {
-  children: PropTypes.oneOfType([PropTypes.object]).isRequired,
+  children: PropTypes.oneOfType([PropTypes.element, PropTypes.string]).isRequired,
 }

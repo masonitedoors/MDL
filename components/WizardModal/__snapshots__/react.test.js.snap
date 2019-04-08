@@ -1,0 +1,78 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`WizardModal should render without crashing 1`] = `
+<OnClickOutside(Modal)
+  eventTypes={
+    Array [
+      "mousedown",
+      "touchstart",
+    ]
+  }
+  excludeScrollbar={false}
+  outsideClickIgnoreClass="ignore-react-onclickoutside"
+  preventDefault={false}
+  stopPropagation={false}
+>
+  <Modal
+    disableOnClickOutside={[Function]}
+    enableOnClickOutside={[Function]}
+    eventTypes={
+      Array [
+        "mousedown",
+        "touchstart",
+      ]
+    }
+    outsideClickIgnoreClass="ignore-react-onclickoutside"
+    preventDefault={false}
+    stopPropagation={false}
+  >
+    <div
+      className="wizard-modal"
+    >
+      <ModalHeader
+        title="Title"
+      >
+        <header
+          className="wizard-modal__header"
+        >
+          <div
+            className="wizard-modal__header-title-area"
+          >
+            <div
+              className="wizard-modal__header-icon"
+            >
+              <svg
+                className="wizard-modal__header-icon-svg"
+                dangerouslySetInnerHTML={
+                  Object {
+                    "__html": undefined,
+                  }
+                }
+              />
+            </div>
+            <h1
+              className="wizard-modal__title"
+            >
+              Title
+            </h1>
+          </div>
+        </header>
+      </ModalHeader>
+      <ModalBody>
+        <div
+          className="wizard-modal__body"
+        >
+          Body
+        </div>
+      </ModalBody>
+      <ModalFooter>
+        <footer
+          className="wizard-modal__footer"
+        >
+          Footer
+        </footer>
+      </ModalFooter>
+    </div>
+  </Modal>
+</OnClickOutside(Modal)>
+`;

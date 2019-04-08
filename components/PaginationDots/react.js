@@ -10,7 +10,7 @@ export const Dot = ({ filled }) => (
 )
 
 export const PaginationDots = ({ activePage, totalPages }) => (
-  <div className="pagination-dots">
+  <div className={cx('pagination-dots')}>
     {[...Array(totalPages).keys()].map((dot, i) => (
       <Dot key={dot} filled={i === activePage} />
     ))}

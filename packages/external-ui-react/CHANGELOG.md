@@ -10,7 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - `<SmallTitle />` component
-- `<WizardModal />` component.
+- `<WizardModal />` component
 - `<ModalBackdrop />` component
 
 ## [2.1.0] - 2019-04-01

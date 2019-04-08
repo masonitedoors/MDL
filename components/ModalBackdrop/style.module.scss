@@ -2,6 +2,7 @@
 
 .modal-backdrop {
   position: fixed;
+  z-index: 1000;
   top: 0;
   left: 0;
   width: 100vw;
@@ -9,7 +10,6 @@
   background-color: rgba($color-deepgray, 0.75);
 
   &__content {
-    z-index: 1000;
     position: absolute;
     top: 50%;
     left: 50%;

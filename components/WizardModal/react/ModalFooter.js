@@ -10,7 +10,10 @@ const ModalFooter = ({ children }) => (
 )
 
 ModalFooter.propTypes = {
-  children: PropTypes.oneOfType([PropTypes.string, PropTypes.func]).isRequired,
+  children: PropTypes.oneOfType([
+    PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
+    PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.string, PropTypes.element])),
+  ]).isRequired,
 }
 
 export default ModalFooter

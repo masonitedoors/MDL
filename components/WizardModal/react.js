@@ -5,7 +5,6 @@ import classNames from 'classnames/bind'
 import ModalHeader from './react/ModalHeader'
 import ModalBody from './react/ModalBody'
 import ModalFooter from './react/ModalFooter'
-import ModalSubheading from './react/ModalSubheading'
 import style from './style.module.scss'
 
 const cx = classNames.bind(style)
@@ -39,4 +38,3 @@ export default WizardModal
 WizardModal.Header = ModalHeader
 WizardModal.Body = ModalBody
 WizardModal.Footer = ModalFooter
-WizardModal.Subheading = ModalSubheading

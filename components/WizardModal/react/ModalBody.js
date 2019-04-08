@@ -10,5 +10,8 @@ const ModalBody = ({ children }) => <div className={cx('wizard-modal__body')}>{c
 export default ModalBody
 
 ModalBody.propTypes = {
-  children: PropTypes.oneOfType([PropTypes.element]).isRequired,
+  children: PropTypes.oneOfType([
+    PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
+    PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.string, PropTypes.element])),
+  ]).isRequired,
 }

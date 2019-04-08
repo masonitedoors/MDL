@@ -92,10 +92,4 @@
     background: $color-white;
     padding: $space-m;
   }
-
-  &__footer-btns {
-    > *:not(:last-child) {
-      margin: 0 $space-xs;
-    }
-  }
 }

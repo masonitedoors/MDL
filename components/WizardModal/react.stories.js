@@ -19,7 +19,10 @@ storiesOf('WizardModal', module).add('example', () => (
       />
       <Modal.Body>
         <SmallTitle>Small Title as Field Label</SmallTitle>
-        <TextField placeholder="Some Field" onChange={() => {}} value="" variant="light" />
+        <TextField placeholder="Some Field" onChange={() => {}} value="" />
+        <TextField placeholder="Some Field" onChange={() => {}} value="" />
+        <TextField placeholder="Some Field" onChange={() => {}} value="" />
+        <TextField placeholder="Some Field" onChange={() => {}} value="" />
       </Modal.Body>
       <Modal.Footer activePage={0} totalPages={4}>
         <Button variant="secondary" uppercase>

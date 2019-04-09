@@ -6,6 +6,10 @@
   height: 610px;
   box-sizing: border-box;
 
+  input {
+    --mdl-text-field-input-background-color: yellow;
+  }
+
   &__header {
     position: relative;
     width: 100%;

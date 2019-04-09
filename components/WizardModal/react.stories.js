@@ -21,8 +21,7 @@ storiesOf('WizardModal', module).add('example', () => (
         <SmallTitle>Small Title as Field Label</SmallTitle>
         <TextField placeholder="Some Field" onChange={() => {}} value="" variant="light" />
       </Modal.Body>
-      <Modal.Footer>
-        <PaginationDots activePage={0} totalPages={4} />
+      <Modal.Footer activePage={0} totalPages={4}>
         <Button variant="secondary" uppercase>
           Save
         </Button>

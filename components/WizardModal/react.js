@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import onClickOutside from 'react-onclickoutside'
 import classNames from 'classnames/bind'
+import { React as TextField } from 'components/forms/TextField'
 import ModalHeader from './react/ModalHeader'
 import ModalBody from './react/ModalBody'
 import ModalFooter from './react/ModalFooter'
@@ -33,8 +34,11 @@ Modal.defaultProps = {
 
 const WizardModal = onClickOutside(Modal)
 
+export const BodyTextField = props => <TextField {...props} variant="secondary" />
+
 export default WizardModal
 
 WizardModal.Header = ModalHeader
 WizardModal.Body = ModalBody
+WizardModal.TextField = BodyTextField
 WizardModal.Footer = ModalFooter

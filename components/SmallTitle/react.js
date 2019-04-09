@@ -5,7 +5,14 @@ import style from './style.module.scss'
 
 const cx = classNames.bind(style)
 
-export const SmallTitle = ({ children }) => <h2 className={cx('small-title')}>{children}</h2>
+export const SmallTitle = props => {
+  const { children } = props
+  return (
+    <h2 className={cx('small-title')} {...props}>
+      {children}
+    </h2>
+  )
+}
 
 export default SmallTitle
 

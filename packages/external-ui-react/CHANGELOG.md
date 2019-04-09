@@ -5,6 +5,17 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.4.0] - 2019-04-09
+
+### Added
+
+- Export of `<TextField />` with preset props for `WizardModal.Body` available as `WizardModal.TextField`
+
+### Changed
+
+- `<SmallTitle />` has built-in margins based on its usage, and can receive `props.style`, for removal if necessary by another component using it. Also, first-child margin removed.
+- `<SmallTitle />` text color updated.
+
 ## [2.3.0] - 2019-04-09
 
 ### Added

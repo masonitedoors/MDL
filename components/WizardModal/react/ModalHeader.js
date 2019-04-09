@@ -43,7 +43,7 @@ export const ModalHeader = ({
     </div>
     {subtitle && (
       <div className={cx('wizard-modal__subheading')}>
-        <SmallTitle>{subtitle}</SmallTitle>
+        <SmallTitle style={{ margin: 0 }}>{subtitle}</SmallTitle>
       </div>
     )}
   </header>

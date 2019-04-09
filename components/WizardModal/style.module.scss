@@ -69,11 +69,12 @@
   }
 
   &__body {
-    height: 377px;
+    height: 405px;
     background: $color-snow;
     overflow: hidden;
     overflow-y: scroll;
     padding: $space-m;
+    box-sizing: border-box;
 
     &::-webkit-scrollbar {
       width: 6px;

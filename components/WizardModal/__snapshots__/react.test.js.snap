@@ -69,7 +69,12 @@ exports[`WizardModal should render without crashing 1`] = `
         <footer
           className="wizard-modal__footer"
         >
-          Footer
+          <div />
+          <div
+            className="wizard-modal__footer-actions"
+          >
+            Footer
+          </div>
         </footer>
       </ModalFooter>
     </div>

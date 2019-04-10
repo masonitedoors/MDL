@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ModalBackdrop should render without crashing 1`] = `
+<div
+  className="modal-backdrop"
+>
+  <div
+    className="modal-backdrop__content"
+  >
+    <div>
+      Test
+    </div>
+  </div>
+</div>
+`;

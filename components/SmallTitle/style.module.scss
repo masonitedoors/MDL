@@ -1,0 +1,13 @@
+@import "styles/index";
+
+.small-title {
+  font-size: 14px;
+  font-weight: 300;
+  text-transform: uppercase;
+  margin: $space-s 0;
+  color: $color-night;
+
+  &:first-child {
+    margin-top: 0;
+  }
+}

@@ -5,44 +5,54 @@ import s from './style.module.scss'
 
 const cx = classNames.bind(s)
 
-const Toggle = ({ checked, disabled, onChange }) => (
-
-  <label class="toggle" role="switch" onClick={() => !disabled && onChange()} onKeyPress={() => !disabled && onChange()}>
-    <input class="toggle__input" type="checkbox" />
-    <span class="toggle__track">
-      <span class="toggle__knob"></span>
-    </span>
-  </label>
-
-  <div
-    role="checkbox"
-    aria-checked={checked}
-    tabIndex={0}
-    onClick={() => !disabled && onChange()}
-    onKeyPress={() => !disabled && onChange()}
-    className={cx(['toggle', { 'toggle--disabled': disabled }])}
-  >
-    <input
-      tabIndex="-1"
-      className={cx(['toggle__input'])}
-      type="checkbox"
-      checked={checked}
-      readOnly
-    />
-    <span className={s.toggle__slider} />
-  </div>
-)
+const Toggle = ({
+  checked, disabled, icon, onChange, large,
+}) => {
+  console.log(large)
+  return (
+    <div
+      aria-checked={checked}
+      className={cx(['toggle', { 'toggle--large': large }])}
+      onClick={() => !disabled && onChange()}
+      onKeyPress={() => !disabled && onChange()}
+      role="switch"
+      tabIndex={0}
+    >
+      <input
+        checked={checked}
+        className={s.toggle__input}
+        disabled={disabled}
+        readOnly
+        tabIndex="-1"
+        type="checkbox"
+      />
+      <span className={s.toggle__track} aria-hidden="true">
+        <span className={s.toggle__knob}>{large && icon}</span>
+        {large && (
+          <>
+            <span className={s['toggle__label-on']}>On</span>
+            <span className={s['toggle__label-off']}>Off</span>
+          </>
+        )}
+      </span>
+    </div>
+  )
+}
 
 Toggle.propTypes = {
-  onChange: PropTypes.func,
   checked: PropTypes.bool,
   disabled: PropTypes.bool,
+  icon: PropTypes.element,
+  onChange: PropTypes.func,
+  large: PropTypes.bool,
 }
 
 Toggle.defaultProps = {
-  disabled: false,
-  onChange: null,
   checked: false,
+  disabled: false,
+  icon: null,
+  onChange: null,
+  large: false,
 }
 
 export default Toggle

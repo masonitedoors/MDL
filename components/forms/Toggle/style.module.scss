@@ -15,7 +15,8 @@ $toggle-track-width: 24px;
 $toggle-knob-size: 16px;
 $toggle-padding: ($toggle-knob-size / 2);
 $toggle-track-padding: ($toggle-track-height - $toggle-knob-size) / 2;
-$toggle-knob-distance: ($toggle-track-width - $toggle-knob-size) - ($toggle-track-padding * 2);
+$toggle-knob-distance: ($toggle-track-width - $toggle-knob-size) -
+  ($toggle-track-padding * 2);
 
 // large
 
@@ -117,6 +118,14 @@ $toggle-lg-knob-distance: ($toggle-lg-track-width - $toggle-lg-knob-size) - ($to
       background-color: $toggle-lg-knob-color;
       color: $toggle-lg-icon-color;
       font-size: 14px;
+      display: flex;
+      justify-content: center;
+
+      svg {
+        opacity: 0.5;
+        width: ($toggle-lg-knob-size * 0.7);
+        height: auto;
+      }
     }
 
     .toggle__input:checked + .toggle__track & {
@@ -132,6 +141,7 @@ $toggle-lg-knob-distance: ($toggle-lg-track-width - $toggle-lg-knob-size) - ($to
 
   &__label-on,
   &__label-off {
+    backface-visibility: hidden;
     position: absolute;
     width: $toggle-lg-label-width;
     font-family: $toggle-font-family;

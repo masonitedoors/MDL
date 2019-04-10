@@ -27,7 +27,7 @@ const Toggle = ({
         type="checkbox"
       />
       <span className={s.toggle__track} aria-hidden="true">
-        <span className={s.toggle__knob}>{large && icon}</span>
+        <span className={s.toggle__knob} dangerouslySetInnerHTML={{ __html: icon }} />
         {large && (
           <>
             <span className={s['toggle__label-on']}>On</span>

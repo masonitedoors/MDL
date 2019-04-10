@@ -1,6 +1,7 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
-import { withKnobs, boolean, select } from '@storybook/addon-knobs'
+import { withKnobs, boolean } from '@storybook/addon-knobs'
+import { mVolume1 } from '@masonite/svg-icons'
 import { withState } from '@dump247/storybook-state'
 import Toggle from './react'
 
@@ -28,6 +29,21 @@ storiesOf('Toggle', module)
           checked={store.state.checked}
           disabled={disabled}
           onChange={() => store.set({ checked: !store.state.checked })}
+          large
+        />
+      )
+    }),
+  )
+  .add(
+    'large with icon',
+    withState({ checked: true })(({ store }) => {
+      const disabled = boolean('Disabled', false)
+      return (
+        <Toggle
+          checked={store.state.checked}
+          disabled={disabled}
+          onChange={() => store.set({ checked: !store.state.checked })}
+          icon={mVolume1}
           large
         />
       )

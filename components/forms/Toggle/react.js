@@ -39,7 +39,7 @@ const Toggle = ({
 Toggle.propTypes = {
   checked: PropTypes.bool,
   disabled: PropTypes.bool,
-  icon: PropTypes.element,
+  icon: PropTypes.string,
   onChange: PropTypes.func,
   large: PropTypes.bool,
 }

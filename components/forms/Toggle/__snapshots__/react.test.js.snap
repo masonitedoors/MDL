@@ -6,19 +6,30 @@ exports[`Toggle rendering with defaults should render correctly 1`] = `
   className="toggle"
   onClick={[Function]}
   onKeyPress={[Function]}
-  role="checkbox"
+  role="switch"
   tabIndex={0}
 >
   <input
     checked={false}
     className="toggle__input"
+    disabled={false}
     readOnly={true}
     tabIndex="-1"
     type="checkbox"
   />
   <span
-    className="toggle__slider"
-  />
+    aria-hidden="true"
+    className="toggle__track"
+  >
+    <span
+      className="toggle__knob"
+      dangerouslySetInnerHTML={
+        Object {
+          "__html": null,
+        }
+      }
+    />
+  </span>
 </div>
 `;
 
@@ -28,18 +39,29 @@ exports[`Toggle rendering with props should render correctly 1`] = `
   className="toggle"
   onClick={[Function]}
   onKeyPress={[Function]}
-  role="checkbox"
+  role="switch"
   tabIndex={0}
 >
   <input
     checked={false}
     className="toggle__input"
+    disabled={false}
     readOnly={true}
     tabIndex="-1"
     type="checkbox"
   />
   <span
-    className="toggle__slider"
-  />
+    aria-hidden="true"
+    className="toggle__track"
+  >
+    <span
+      className="toggle__knob"
+      dangerouslySetInnerHTML={
+        Object {
+          "__html": null,
+        }
+      }
+    />
+  </span>
 </div>
 `;

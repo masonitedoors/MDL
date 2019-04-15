@@ -1,5 +1,6 @@
 import React from 'react'
 import { shallow } from 'enzyme'
+import { mVolume1 } from '@masonite/svg-icons'
 import Toggle from './react'
 
 describe('Toggle', () => {
@@ -62,6 +63,23 @@ describe('Toggle', () => {
       wrapper.setProps({ disabled: true })
       wrapper.simulate('keypress')
       expect(props.onChange).toHaveBeenCalledTimes(0)
+    })
+
+    it('should have on/off labels when large and checked', () => {
+      expect(wrapper.find('.toggle__label-on').length).toBe(0)
+      wrapper.setProps({ large: true })
+      expect(wrapper.find('.toggle__label-on').length).toBe(1)
+    })
+
+    it('should display icon when icon prop is used', () => {
+      const icon = '<svg></svg>'
+      wrapper.setProps({ large: true, icon })
+      expect(wrapper.find('.toggle__knob').html()).toContain('<svg></svg>')
+    })
+
+    it('should have large modifier class when large', () => {
+      wrapper.setProps({ large: true })
+      expect(wrapper.find('.toggle--large').length).toBe(1)
     })
   })
 })

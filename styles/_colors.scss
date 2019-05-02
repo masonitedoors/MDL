@@ -1,39 +1,18 @@
-$color-m-primary-green: #99c221;
-$color-m-darker-gray: #343639;
-$color-m-secondary-beige: #b8b298;
-$color-m-font-beige: #938b82;
-$color-m-black: #000;
-$color-m-primary-charcoal: #53565a;
-$color-m-secondary-silver: #ccc;
-$color-m-primary-gray: #ddd;
-$color-m-primary-dark-gray: #393c40;
-$color-m-primary-light-gray: #f3f3f3;
-$color-m-font-gray: #4b4b4b;
-$color-m-secondary-slate: #7c878e;
-$color-m-white: #fff;
-$color-m-primary-blue: #5188f3;
-$color-m-primary-lighter-gray: #fafafa;
-$color-m-primary-accent-blue: #4d82e9;
-
-$color-blackolive: #393c40; // Dark Grey
+$color-blackolive: #393c40;
 $color-blue: #5188f3;
 $color-blueberry: #4d82e9;
-$color-deepgrey: #53565a; // Primary Charcoal
+$color-deepgrey: #53565a;
 $color-deepgray: $color-deepgrey;
-$color-khaki: #b8b298; // Secondary Beige
-$color-limerick: #99c221; // Primary Green
-$color-night: #000; // Black
-$color-onyx: #343639; // Darker Grey
-$color-pastelgray: #ccc; // Secondary Silver
+$color-khaki: #b8b298;
+$color-limerick: #99c221;
+$color-night: #000;
+$color-onyx: #343639;
+$color-pastelgray: #ccc;
 $color-silver: #ddd;
 $color-pastelgrey: $color-pastelgray;
 $color-slategray: #7c878e;
-$color-taupegrey: #938b82; // Beige
+$color-taupegrey: #938b82;
 $color-rust: #d11818;
 $color-snow: #fafafa;
 $color-white: #fff;
 $color-gray: #f3f3f3;
-
-@mixin gradient-dark() {
-  background-image: linear-gradient($color-deepgrey, $color-blackolive);
-}

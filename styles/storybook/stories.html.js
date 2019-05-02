@@ -12,7 +12,7 @@ storiesOf('Colors', module).add('main', () => {
     .mostReadable(value, ['#000', '#fff'])
     .toHexString()}">${value}</div>
           </div>
-          <div class="color__label">${name.slice(8)}</div>
+          <div class="color__label">${name}</div>
         </article>`,
     )
     .join('')

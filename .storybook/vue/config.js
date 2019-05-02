@@ -1,7 +1,7 @@
 import { addParameters, configure } from '@storybook/vue'
 import { withOptions } from '@storybook/addon-options'
 import parameters from './../addon-options'
-import 'styles/storybook'
+import 'styles/storybook/storybook'
 
 addParameters(parameters)
 

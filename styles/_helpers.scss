@@ -1,6 +1,3 @@
-// Used in calculating rems in the fontSize mixin
-$rootFontSize: 16px;
-
 @mixin square($x) {
   height: $x;
   width: $x;

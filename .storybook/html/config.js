@@ -1,6 +1,6 @@
 import { addDecorator, configure } from '@storybook/html'
 import { withOptions } from '@storybook/addon-options'
-import options from './../addon-options'
+import options from './../parameters'
 
 addDecorator(withOptions(options))
 

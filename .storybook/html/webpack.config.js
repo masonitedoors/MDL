@@ -1,7 +1,7 @@
 const path = require('path')
 
-module.exports = (storybookBaseConfig, configType, defaultConfig) => {
-  defaultConfig.module.rules.push(
+module.exports = ({ config, mode }) => {
+  config.module.rules.push(
     {
       test: /stories\.html\.js$/,
       loaders: [require.resolve('@storybook/addon-storysource/loader')],
@@ -18,9 +18,9 @@ module.exports = (storybookBaseConfig, configType, defaultConfig) => {
     },
   )
 
-  defaultConfig.resolve.modules.push(path.resolve(__dirname, '../../'))
+  config.resolve.modules.push(path.resolve(__dirname, '../../'))
 
-  defaultConfig.resolve.extensions = defaultConfig.resolve.extensions.concat(['.scss'])
+  config.resolve.extensions = config.resolve.extensions.concat(['.scss'])
 
-  return defaultConfig
+  return config
 }

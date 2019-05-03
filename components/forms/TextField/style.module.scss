@@ -1,4 +1,4 @@
-@import "styles/index";
+@import "styles/toolbox";
 
 .text-field {
   position: relative;
@@ -10,10 +10,8 @@
     margin-top: $space-m;
   }
 
-  /* Input */
-
   &__input {
-    font-family: $font-family;
+    font-family: $font-family-primary;
     border-radius: 2px;
     border: 0;
     box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.15); // should be moved to pseudo-element http://tobiasahlin.com/blog/how-to-animate-box-shadow/
@@ -37,8 +35,6 @@
     box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.15), inset 0 -3px 0 0 $color-rust;
   }
 
-  /* Label */
-
   &__label {
     position: absolute;
     top: 50%;
@@ -57,8 +53,6 @@
     font-size: 10px;
   }
 
-  /* Helper */
-
   &__helper {
     position: absolute;
     left: $space-xs;
@@ -69,8 +63,6 @@
   &--error &__helper {
     color: $color-rust;
   }
-
-  /* Icon */
 
   &__icon {
     @include square($size-lg);

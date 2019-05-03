@@ -1,8 +1,6 @@
-@import url("https://cloud.typography.com/7038756/6738972/css/fonts.css");
-@import "../index";
+@import "styles/toolbox";
+@import url($font-family-primary-url);
 
 body {
-  font-family: $font-family;
+  font-family: $font-family-primary;
 }
-
-@include element-tag-typography();

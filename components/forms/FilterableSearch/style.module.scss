@@ -1,10 +1,10 @@
-@import "styles/index";
+@import "styles/toolbox";
 
 $height: 32px;
 
 .filterable-search {
   position: relative;
-  font-family: $font-family;
+  font-family: $font-family-primary;
   display: flex;
   align-items: top;
   width: 100%;
@@ -14,7 +14,7 @@ $height: 32px;
     display: inline-block;
     height: $height;
     border: 0;
-    font-family: $font-family;
+    font-family: $font-family-primary;
     font-size: 12px;
     color: $color-night;
     font-weight: 700;

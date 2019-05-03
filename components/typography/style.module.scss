@@ -1,35 +1,35 @@
-@import "styles/typography";
+@import "styles/toolbox";
 
-.h1 {
-  @include typography-h1;
-}
+// .h1 {
+//   @include typography-h1;
+// }
 
-.h2 {
-  @include typography-h2;
-}
+// .h2 {
+//   @include typography-h2;
+// }
 
-.h3 {
-  @include typography-h3;
-}
+// .h3 {
+//   @include typography-h3;
+// }
 
-.h4 {
-  @include typography-h4;
-}
+// .h4 {
+//   @include typography-h4;
+// }
 
-.h5 {
-  @include typography-h5;
-}
+// .h5 {
+//   @include typography-h5;
+// }
 
-.h6 {
-  @include typography-h6;
-}
+// .h6 {
+//   @include typography-h6;
+// }
 
-.p {
-  @include typography-p;
-}
+// .p {
+//   @include typography-p;
+// }
 
-@each $className in (h2, h3, h4, h5, h6, p, li) {
-  .#{$className}--dark {
-    color: white;
-  }
-}
+// @each $className in (h2, h3, h4, h5, h6, p, li) {
+//   .#{$className}--dark {
+//     color: white;
+//   }
+// }

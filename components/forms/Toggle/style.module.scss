@@ -1,8 +1,8 @@
-@import "styles/index.scss";
+@import "styles/toolbox";
 
 $toggle-transition-duration: 0.23s;
 $toggle-transition-timing-function: cubic-bezier(1, 0, 0.7, 0.98);
-$toggle-font-family: $font-family;
+$toggle-font-family: $font-family-primary;
 
 // small
 
@@ -33,7 +33,8 @@ $toggle-lg-knob-size: 28px;
 $toggle-lg-padding: 0;
 $toggle-lg-label-width: ($toggle-lg-track-width - $toggle-lg-knob-size);
 $toggle-lg-track-padding: ($toggle-lg-track-height - $toggle-lg-knob-size) / 2;
-$toggle-lg-knob-distance: ($toggle-lg-track-width - $toggle-lg-knob-size) - ($toggle-lg-track-padding * 2);
+$toggle-lg-knob-distance: ($toggle-lg-track-width - $toggle-lg-knob-size) -
+  ($toggle-lg-track-padding * 2);
 
 .toggle {
   box-sizing: content-box;
@@ -66,7 +67,8 @@ $toggle-lg-knob-distance: ($toggle-lg-track-width - $toggle-lg-knob-size) - ($to
     height: $toggle-track-height;
     background-color: $toggle-track-color;
     border-radius: ($toggle-track-height / 2);
-    transition: background-color $toggle-transition-duration $toggle-transition-timing-function;
+    transition: background-color $toggle-transition-duration
+      $toggle-transition-timing-function;
 
     .toggle--large & {
       width: $toggle-lg-track-width;
@@ -153,7 +155,8 @@ $toggle-lg-knob-distance: ($toggle-lg-track-width - $toggle-lg-knob-size) - ($to
     z-index: 0;
     line-height: $toggle-lg-track-height;
     white-space: nowrap;
-    transition: color $toggle-transition-duration $toggle-transition-timing-function;
+    transition: color $toggle-transition-duration
+      $toggle-transition-timing-function;
   }
 
   &__label-on {

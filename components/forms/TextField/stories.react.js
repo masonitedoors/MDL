@@ -29,6 +29,7 @@ storiesOf('TextField', module)
           trailingIcon={trailingIcon}
           value={store.state.value}
           variant={variant}
+          removeMargin={false}
         />
       )
     }),

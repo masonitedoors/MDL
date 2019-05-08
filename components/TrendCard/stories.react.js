@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react'
 import { withKnobs, boolean } from '@storybook/addon-knobs'
 import TrendCard from './react'
 
-storiesOf('Cards/TrendCard', module)
+storiesOf('TrendCard', module)
   .addDecorator(withKnobs)
   .add('Default', () => {
     const squareImage = boolean('Square image', false)

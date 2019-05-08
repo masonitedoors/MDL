@@ -20,6 +20,7 @@ const TextField = ({
   type,
   value,
   variant,
+  removeMargin,
 }) => {
   const [isActive, setActive] = useState(false)
   const Label = label ? 'label' : 'div'
@@ -39,6 +40,7 @@ const TextField = ({
         'text-field--dark': variant === 'dark',
         'text-field--error': error,
         'text-field--active': isActive || value.length,
+        'text-field--no-margin': removeMargin
       })}
     >
       <div className={cx('text-field__label')}>{label}</div>
@@ -81,6 +83,7 @@ TextField.propTypes = {
   trailingIcon: PropTypes.string,
   type: PropTypes.oneOf(['text', 'number', 'email']),
   variant: PropTypes.oneOf(['dark', 'light']),
+  removeMargin: PropTypes.bool,
 }
 
 TextField.defaultProps = {
@@ -95,4 +98,5 @@ TextField.defaultProps = {
   trailingIcon: undefined,
   type: 'text',
   variant: 'dark',
+  removeMargin: false,
 }

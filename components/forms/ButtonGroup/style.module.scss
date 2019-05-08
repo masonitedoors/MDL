@@ -1,0 +1,27 @@
+@import "styles/index";
+
+.button-group {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+
+  &--row {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 768px;
+  }
+
+  &__li {
+    display: flex;
+    align-content: flex-start;
+    margin-bottom: $space-xs;
+  }
+
+  &--row &__li {
+    margin-right: $space-s;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}

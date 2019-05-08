@@ -33,6 +33,7 @@ exports[`FilterableSearch with snapshots should render correctly 1`] = `
       onChange={[Function]}
       onKeyDown={[Function]}
       placeholder="Search"
+      removeMargin={false}
       type="text"
       value=""
       variant="dark"

@@ -42,6 +42,10 @@ describe('TextField', () => {
     ).toBe(true)
   })
 
+  it('should not contain the no-margin modifier when the component initially loads, as the "removeMargin" prop is defaulted to false', () => {
+    expect(wrapper.find('.text-field--no-margin').length).toBe(0)
+  })
+
   it('should be wrapped in a <Label> tag if a label is provided', () => {
     expect(wrapper.findWhere(n => n.name() === 'label').length).toBe(0)
     wrapper.setProps({ label: 'TextField Label' })
@@ -104,5 +108,10 @@ describe('TextField', () => {
         .find('div')
         .props().dangerouslySetInnerHTML.__html,
     ).toBe(mAlertTriangle)
+  })
+
+  it('Should set the no-margin modifier when the "removeMargin" prop is passed in as true', () => {
+    wrapper.setProps({ removeMargin: true })
+    expect(wrapper.find('.text-field--no-margin').length).toBe(1)
   })
 })

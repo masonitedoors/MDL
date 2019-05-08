@@ -8,6 +8,7 @@ exports[`TextField should render without crashing 1`] = `
   onChange={[MockFunction]}
   onFocus={[MockFunction]}
   placeholder=""
+  removeMargin={false}
   type="text"
   value=""
   variant="dark"

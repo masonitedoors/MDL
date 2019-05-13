@@ -4,7 +4,7 @@ import { withKnobs } from '@storybook/addon-knobs'
 import { withState } from '@dump247/storybook-state'
 import FilterableSearch from './react'
 
-storiesOf('Forms/FilterableSearch', module)
+storiesOf('FilterableSearch', module)
   .addDecorator(withKnobs)
   .add(
     'default',

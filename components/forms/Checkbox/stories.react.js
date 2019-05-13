@@ -4,7 +4,7 @@ import { withKnobs, boolean } from '@storybook/addon-knobs'
 import { withState } from '@dump247/storybook-state'
 import Checkbox from './react'
 
-storiesOf('Forms/Checkbox', module)
+storiesOf('Checkbox', module)
   .addDecorator(withKnobs)
   .add(
     'checked with a click event',

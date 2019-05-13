@@ -7,7 +7,7 @@ import storyStyles from './stories-style.module.scss'
 
 const cx = classNames.bind(storyStyles)
 
-storiesOf('Menu/Overflow Menu', module)
+storiesOf('OverflowMenu', module)
   .add(
     'default',
     () => (

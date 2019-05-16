@@ -3,7 +3,7 @@ import Lottie from 'react-lottie'
 import classNames from 'classnames/bind'
 import PropTypes from 'prop-types'
 import animationData from './data.json'
-import styles from './index.module.scss'
+import styles from './style.module.scss'
 
 const cx = classNames.bind(styles)
 

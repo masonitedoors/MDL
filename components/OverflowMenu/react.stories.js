@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react'
 import classNames from 'classnames/bind'
 import Button from 'components/Button/react'
 import OverflowMenu from './react'
-import storyStyles from './stories-style.module.scss'
+import storyStyles from './react.stories.module.scss'
 
 const cx = classNames.bind(storyStyles)
 

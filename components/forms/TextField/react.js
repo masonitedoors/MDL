@@ -40,7 +40,7 @@ const TextField = ({
         'text-field--dark': variant === 'dark',
         'text-field--error': error,
         'text-field--active': isActive || value.length,
-        'text-field--no-margin': removeMargin
+        'text-field--no-margin': removeMargin,
       })}
     >
       <div className={cx('text-field__label')}>{label}</div>

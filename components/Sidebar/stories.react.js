@@ -5,7 +5,7 @@ import { withState } from '@dump247/storybook-state'
 import { mChevronRight, mBook, mFlag } from '@masonite/svg-icons'
 import Sidebar from './react'
 
-storiesOf('Nav/Sidebar', module)
+storiesOf('Sidebar', module)
   .addDecorator(withKnobs)
   .add(
     'Default',

@@ -1,6 +1,6 @@
 import React, { memo } from 'react'
 import PropTypes from 'prop-types'
-import { React as Radio } from 'components/forms/Radio'
+import { React as Radio } from 'components/Radio'
 import classNames from 'classnames/bind'
 import s from './style.module.scss'
 

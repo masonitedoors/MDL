@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react'
 import { withKnobs } from '@storybook/addon-knobs'
 import BlogCard from './react'
 
-storiesOf('Cards/BlogCard', module)
+storiesOf('BlogCard', module)
   .addDecorator(withKnobs)
   .add('Default', () => (
     <BlogCard

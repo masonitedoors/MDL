@@ -1,13 +1,13 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
 import classNames from 'classnames/bind'
+import Button from 'components/Button/react'
 import OverflowMenu from './react'
-import Button from '../../forms/button/Button/react'
 import storyStyles from './stories-style.module.scss'
 
 const cx = classNames.bind(storyStyles)
 
-storiesOf('Menu/Overflow Menu', module)
+storiesOf('OverflowMenu', module)
   .add(
     'default',
     () => (

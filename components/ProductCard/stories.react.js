@@ -4,7 +4,7 @@ import { withKnobs, text } from '@storybook/addon-knobs'
 
 import ProductCard from './react'
 
-const stories = storiesOf('Cards/ProductCard', module)
+const stories = storiesOf('ProductCard', module)
 
 stories.addDecorator(withKnobs)
 

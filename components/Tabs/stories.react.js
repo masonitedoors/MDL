@@ -4,7 +4,7 @@ import { withKnobs } from '@storybook/addon-knobs'
 import { withState } from '@dump247/storybook-state'
 import Tabs from './react'
 
-storiesOf('Nav/Tabs', module)
+storiesOf('Tabs', module)
   .addDecorator(withKnobs)
   .add(
     'Default',

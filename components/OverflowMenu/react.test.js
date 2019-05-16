@@ -1,8 +1,8 @@
 import React from 'react'
 import { shallow } from 'enzyme'
 import { shallowToJson } from 'enzyme-to-json'
+import Button from 'components/Button/react'
 import { OverflowMenu } from './react'
-import Button from '../../forms/button/Button/react'
 
 describe('When the component is created', () => {
   let wrapper

@@ -4,7 +4,7 @@ import { withKnobs, boolean } from '@storybook/addon-knobs'
 import { withState } from '@dump247/storybook-state'
 import RadioGroup from './react'
 
-storiesOf('Forms/RadioGroup', module)
+storiesOf('RadioGroup', module)
   .addDecorator(withKnobs)
   .add(
     'checked with a click event',

@@ -4,8 +4,8 @@ import { mGlobe } from '@masonite/svg-icons'
 import { React as ModalBackdrop } from 'components/ModalBackdrop'
 import { React as PaginationDots } from 'components/PaginationDots'
 import { React as SmallTitle } from 'components/SmallTitle'
-import { React as TextField } from 'components/forms/TextField'
-import { React as Button } from 'components/forms/button/Button'
+import { React as TextField } from 'components/TextField'
+import { React as Button } from 'components/Button'
 import Modal from './react'
 
 storiesOf('WizardModal', module).add('example', () => (
@@ -15,11 +15,11 @@ storiesOf('WizardModal', module).add('example', () => (
         title="Hello World"
         subtitle="Subtitle or Subheading"
         icon={mGlobe}
-        onDismiss={() => {}}
+        onDismiss={() => { }}
       />
       <Modal.Body>
         <SmallTitle>Small Title as Field Label</SmallTitle>
-        <TextField placeholder="Some Field" onChange={() => {}} value="" variant="light" />
+        <TextField placeholder="Some Field" onChange={() => { }} value="" variant="light" />
       </Modal.Body>
       <Modal.Footer activePage={0} totalPages={4}>
         <Button variant="secondary" uppercase>

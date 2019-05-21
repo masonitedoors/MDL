@@ -23,10 +23,14 @@ describe('TableBulkEditPopover', () => {
     })
 
     it('should return cell value',()=>{
-     expect (wrapper.find('.popover-wrapper--cell').text()).toBe('4.2')
+     expect (wrapper.find('.popover-wrapper__cell').text()).toBe('4.2')
     })
     it('should return left direction class',()=>{
-      expect (wrapper.find('.popover-wrapper--position-left').length).toBe(1)
+      expect (wrapper.find('.popover--left').length).toBe(1)
+    })
+
+    it('should not return top direction class',()=>{
+      expect (wrapper.find('.popover--top').length).toBe(0)
     })
 
     it('should return top direction class',()=>{
@@ -36,7 +40,17 @@ describe('TableBulkEditPopover', () => {
        }
    
        wrapper = shallow(<TableBulkEditPopover {...props} />)
-      expect (wrapper.find('.popover-wrapper--position-top').length).toBe(1)
+      expect (wrapper.find('.popover--top').length).toBe(1)
+    })
+
+    it('should not return left direction class',()=>{
+      props = {
+        ...props,
+        direction: 'top',
+       }
+   
+       wrapper = shallow(<TableBulkEditPopover {...props} />)
+      expect (wrapper.find('.popover--left').length).toBe(0)
     })
   })
 })

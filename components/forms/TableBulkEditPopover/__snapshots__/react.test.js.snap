@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TableBulkEditPopover rendering with defaults should render correctly 1`] = `
+<th
+  class="popover-wrapper popover-wrapper--left"
+>
+  <div
+    className="popover-wrapper--position-left"
+  />
+  <div
+    className="popover-wrapper--cell"
+  >
+    4.2
+  </div>
+</th>
+`;

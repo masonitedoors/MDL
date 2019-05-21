@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react'
 import { withKnobs } from '@storybook/addon-knobs'
 import { Heading, P } from './react'
 
-storiesOf('Typography/Content', module)
+storiesOf('Typography', module)
   .addDecorator(withKnobs)
   .add('All', () => {
     // const darkMode = boolean("Dark Mode", false);

@@ -2,7 +2,7 @@
 
 exports[`TableBulkEditPopover rendering with defaults should render correctly 1`] = `
 <th
-  class="popover-wrapper popover-wrapper--left"
+  className="popover-wrapper popover-wrapper--left"
   style={
     Object {
       "position": "absolute",
@@ -11,7 +11,9 @@ exports[`TableBulkEditPopover rendering with defaults should render correctly 1`
 >
   <div
     className="popover popover--left"
-  />
+  >
+    field
+  </div>
   <div
     className="popover-wrapper__cell"
   >

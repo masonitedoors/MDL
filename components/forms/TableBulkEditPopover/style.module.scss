@@ -1,0 +1,21 @@
+@import "styles/index";
+
+.popover-wrapper {
+  .popover {
+    position: absolute;
+    background: $color-night;
+    padding: $space-xs;
+
+    &--top {
+      bottom: 100%;
+    }
+
+    &--left {
+      right: 100%;
+    }
+  }
+
+  &__cell {
+    border: $color-night solid 1px;
+  }
+}

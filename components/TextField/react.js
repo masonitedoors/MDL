@@ -21,6 +21,7 @@ const TextField = ({
   value,
   variant,
   removeMargin,
+  align,
 }) => {
   const [isActive, setActive] = useState(false)
   const Label = label ? 'label' : 'div'
@@ -46,7 +47,10 @@ const TextField = ({
       <div className={cx('text-field__label')}>{label}</div>
       <div className={cx('text-field__helper')}>{helper}</div>
       <input
-        className={cx('text-field__input')}
+        className={cx('text-field__input', {
+          'text-field__input--align-right': align === 'right',
+          'text-field__input--align-center': align === 'center',
+        })}
         type={type}
         placeholder={isActive || !label ? placeholder : ''}
         onKeyDown={onKeyDown}
@@ -84,6 +88,7 @@ TextField.propTypes = {
   type: PropTypes.oneOf(['text', 'number', 'email']),
   variant: PropTypes.oneOf(['dark', 'light']),
   removeMargin: PropTypes.bool,
+  align: PropTypes.oneOf(['left', 'center', 'right']),
 }
 
 TextField.defaultProps = {
@@ -99,4 +104,5 @@ TextField.defaultProps = {
   type: 'text',
   variant: 'dark',
   removeMargin: false,
+  align: 'left',
 }

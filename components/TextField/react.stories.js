@@ -54,7 +54,7 @@ storiesOf('TextField', module)
           value={store.state.value}
           variant={variant}
           removeMargin={false}
-          align={'center'}
+          align="center"
         />
       )
     }),

@@ -1,6 +1,5 @@
 import React from 'react'
 import { shallow } from 'enzyme'
-import { mVolume1 } from '@masonite/svg-icons'
 import Toggle from './react'
 
 describe('Toggle', () => {

@@ -33,7 +33,3 @@ $color-rust: #d11818;
 $color-snow: #fafafa;
 $color-white: #fff;
 $color-gray: #f3f3f3;
-
-@mixin gradient-dark() {
-  background-image: linear-gradient($color-deepgrey, $color-blackolive);
-}

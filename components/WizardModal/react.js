@@ -29,7 +29,7 @@ Modal.propTypes = {
 }
 
 Modal.defaultProps = {
-  onOutsideClick: undefined,
+  onOutsideClick: () => {},
 }
 
 const WizardModal = onClickOutside(Modal)

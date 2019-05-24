@@ -23,6 +23,14 @@
     box-sizing: border-box;
     transition: box-shadow 200ms ease-in;
     width: 100%;
+
+    &--align-right {
+      text-align: right;
+    }
+
+    &--align-center {
+      text-align: center;
+    }
   }
 
   &--light &__input {

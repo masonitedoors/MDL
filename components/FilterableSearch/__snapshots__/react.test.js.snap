@@ -28,6 +28,7 @@ exports[`FilterableSearch with snapshots should render correctly 1`] = `
     className="filterable-search"
   >
     <TextField
+      align="left"
       error={false}
       helper=""
       onChange={[Function]}

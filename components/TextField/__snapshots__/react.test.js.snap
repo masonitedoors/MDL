@@ -2,6 +2,7 @@
 
 exports[`TextField should render without crashing 1`] = `
 <TextField
+  align="left"
   error={false}
   helper=""
   onBlur={[MockFunction]}

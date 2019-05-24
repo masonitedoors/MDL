@@ -22,6 +22,7 @@ exports[`WizardModal should render without crashing 1`] = `
         "touchstart",
       ]
     }
+    onOutsideClick={[Function]}
     outsideClickIgnoreClass="ignore-react-onclickoutside"
     preventDefault={false}
     stopPropagation={false}

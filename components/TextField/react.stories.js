@@ -38,7 +38,6 @@ storiesOf('TextField', module)
     'center',
     withState({ value: '' })(({ store }) => {
       const variant = select('Variant', { Light: 'light', Dark: 'dark' }, 'dark')
-      const label = text('Label', 'Label')
       const error = boolean('Error State', false)
       const helper = error ? 'Something is wrong.' : ''
       const showTrailingIcon = boolean('Show Trailing Icon', true)
@@ -54,7 +53,7 @@ storiesOf('TextField', module)
           value={store.state.value}
           variant={variant}
           removeMargin={false}
-          align={'center'}
+          align="center"
         />
       )
     }),

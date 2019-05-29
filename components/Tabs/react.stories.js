@@ -3,8 +3,10 @@ import { storiesOf } from '@storybook/react'
 import { withKnobs } from '@storybook/addon-knobs'
 import { withState } from '@dump247/storybook-state'
 import Tabs from './react'
+import Readme from './react.README.md'
 
 storiesOf('Tabs', module)
+  .addParameters({ readme: { sidebar: Readme } })
   .addDecorator(withKnobs)
   .add(
     'Default',

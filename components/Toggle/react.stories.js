@@ -4,8 +4,10 @@ import { withKnobs, boolean } from '@storybook/addon-knobs'
 import { mVolume1 } from '@masonite/svg-icons'
 import { withState } from '@dump247/storybook-state'
 import Toggle from './react'
+import Readme from './react.README.md'
 
 storiesOf('Toggle', module)
+  .addParameters({ readme: { sidebar: Readme } })
   .addDecorator(withKnobs)
   .add(
     'fully controlled',

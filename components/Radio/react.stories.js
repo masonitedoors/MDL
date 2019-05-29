@@ -3,8 +3,10 @@ import { storiesOf } from '@storybook/react'
 import { withKnobs } from '@storybook/addon-knobs'
 import { withState } from '@dump247/storybook-state'
 import Radio from './react'
+import Readme from './react.README.md'
 
 storiesOf('Radio', module)
+  .addParameters({ readme: { sidebar: Readme } })
   .addDecorator(withKnobs)
   .add(
     'checked with a click event',

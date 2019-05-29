@@ -18,7 +18,7 @@ module.exports = ({ config, mode }) => {
       include: path.resolve(__dirname, '../../components'),
     },
     {
-      test: /stories\.react\.js$/,
+      test: /react\.stories\.js$/,
       exclude: /node_modules/,
       loaders: [require.resolve('@storybook/addon-storysource/loader')],
       include: [path.resolve(__dirname, '../../components')],

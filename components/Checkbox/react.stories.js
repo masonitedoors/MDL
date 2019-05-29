@@ -3,8 +3,10 @@ import { storiesOf } from '@storybook/react'
 import { withKnobs, boolean } from '@storybook/addon-knobs'
 import { withState } from '@dump247/storybook-state'
 import Checkbox from './react'
+import Readme from './react.README.md'
 
 storiesOf('Checkbox', module)
+  .addParameters({ readme: { sidebar: Readme } })
   .addDecorator(withKnobs)
   .add(
     'checked with a click event',

@@ -3,8 +3,10 @@ import { storiesOf } from '@storybook/react'
 import { withKnobs } from '@storybook/addon-knobs'
 import { withState } from '@dump247/storybook-state'
 import FilterableSearch from './react'
+import Readme from './react.README.md'
 
 storiesOf('FilterableSearch', module)
+  .addParameters({ readme: { sidebar: Readme } })
   .addDecorator(withKnobs)
   .add(
     'default',

@@ -2,8 +2,10 @@ import React, { Fragment } from 'react'
 import { storiesOf } from '@storybook/react'
 import { withKnobs } from '@storybook/addon-knobs'
 import { Heading, P } from './react'
+import Readme from './react.README.md'
 
 storiesOf('Typography', module)
+  .addParameters({ readme: { sidebar: Readme } })
   .addDecorator(withKnobs)
   .add('All', () => {
     // const darkMode = boolean("Dark Mode", false);

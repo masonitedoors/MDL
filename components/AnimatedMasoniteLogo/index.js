@@ -25,6 +25,9 @@ function AnimatedMasoniteLogo({ centered }) {
 }
 
 AnimatedMasoniteLogo.propTypes = {
+  /**
+   * Center the animated logo within the viewport.
+   */
   centered: PropTypes.bool,
 }
 

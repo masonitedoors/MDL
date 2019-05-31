@@ -27,9 +27,21 @@ function BlogCard({
 }
 
 BlogCard.propTypes = {
+  /**
+   * The card title.
+   */
   title: PropTypes.string,
+  /**
+   * The card's content area.
+   */
   content: PropTypes.string,
+  /**
+   * The href value if the card is clickable.
+   */
   to: PropTypes.string,
+  /**
+   * The onClick action for the card.
+   */
   action: PropTypes.func,
 }
 

@@ -6,8 +6,10 @@ import {
 } from '@storybook/addon-knobs'
 import { withState } from '@dump247/storybook-state'
 import TextField from './react'
+import Readme from './react.README.md'
 
 storiesOf('TextField', module)
+  .addParameters({ readme: { sidebar: Readme } })
   .addDecorator(withKnobs)
   .add(
     'default',

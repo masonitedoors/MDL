@@ -4,10 +4,12 @@ import classNames from 'classnames/bind'
 import Button from 'components/Button/react'
 import OverflowMenu from './react'
 import storyStyles from './react.stories.module.scss'
+import Readme from './react.README.md'
 
 const cx = classNames.bind(storyStyles)
 
 storiesOf('OverflowMenu', module)
+  .addParameters({ readme: { sidebar: Readme } })
   .add(
     'default',
     () => (

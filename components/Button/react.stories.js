@@ -2,8 +2,10 @@ import React from 'react'
 import { storiesOf } from '@storybook/react'
 import { withKnobs, boolean, select } from '@storybook/addon-knobs'
 import Button from './react'
+import Readme from './react.README.md'
 
 storiesOf('Button', module)
+  .addParameters({ readme: { sidebar: Readme } })
   .addDecorator(withKnobs)
   .add('default', () => {
     const variant = select(

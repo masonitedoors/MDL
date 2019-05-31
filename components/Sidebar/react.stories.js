@@ -4,8 +4,10 @@ import { withKnobs } from '@storybook/addon-knobs'
 import { withState } from '@dump247/storybook-state'
 import { mChevronRight, mBook, mFlag } from '@masonite/svg-icons'
 import Sidebar from './react'
+import Readme from './react.README.md'
 
 storiesOf('Sidebar', module)
+  .addParameters({ readme: { sidebar: Readme } })
   .addDecorator(withKnobs)
   .add(
     'Default',

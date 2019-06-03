@@ -1,7 +1,6 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
 import { withKnobs } from '@storybook/addon-knobs'
-import { withState } from '@dump247/storybook-state'
 import {
   mEntry, mInterior, mExport, mContact, mSignout,
 } from '@masonite/svg-icons'
@@ -11,7 +10,7 @@ import Readme from './react.README.md'
 
 const addKey = item => ({ ...item, key: item.label })
 
-storiesOf('Sidebar', module)
+storiesOf('SidebarNav', module)
   .addParameters({ readme: { sidebar: Readme } })
   .addDecorator(withKnobs)
   .add('Default', () => {

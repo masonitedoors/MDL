@@ -45,12 +45,18 @@ const Submenu = ({ items, expanded, dispatchMenuState }) => (
   </ul>
 )
 
+Submenu.propTypes = {
+  items: PropTypes.arrayOf(PropTypes.object).isRequired,
+  expanded: PropTypes.bool.isRequired,
+  dispatchMenuState: PropTypes.func.isRequired,
+}
+
 const MainMenuItem = ({
   icon,
   href,
   label,
   onClick,
-  items = [],
+  items,
   index,
   menuState,
   dispatchMenuState,
@@ -90,6 +96,25 @@ const MainMenuItem = ({
       )}
     </li>
   )
+}
+
+MainMenuItem.propTypes = {
+  icon: PropTypes.element.isRequired,
+  href: PropTypes.string,
+  label: PropTypes.string.isRequired,
+  onClick: PropTypes.func,
+  index: PropTypes.number.isRequired,
+  items: PropTypes.arrayOf(PropTypes.object),
+  menuState: PropTypes.bool.isRequired,
+  dispatchMenuState: PropTypes.func.isRequired,
+  showMainMenuLabels: PropTypes.bool.isRequired,
+  showingMainMenuLabels: PropTypes.func.isRequired,
+}
+
+MainMenuItem.defaultProps = {
+  href: '#',
+  items: [],
+  onClick: null,
 }
 
 const SidebarNav = ({

@@ -6,6 +6,8 @@ import styles from './style.module.scss'
 
 const cx = classNames.bind(styles)
 
+const locationShape = { pathname: PropTypes.string }
+
 const menuReducer = (state, { type, index: selectedIndex = null }) => {
   switch (type) {
     case 'SHOW_MENU':
@@ -17,7 +19,9 @@ const menuReducer = (state, { type, index: selectedIndex = null }) => {
   }
 }
 
-const Submenu = ({ items, expanded, dispatchMenuState }) => (
+const Submenu = ({
+  items, expanded, location, dispatchMenuState,
+}) => (
   <ul
     onMouseOut={() => dispatchMenuState({ type: 'HIDE_ALL_MENUS' })}
     onBlur={() => dispatchMenuState({ type: 'HIDE_ALL_MENUS' })}
@@ -28,13 +32,16 @@ const Submenu = ({ items, expanded, dispatchMenuState }) => (
     {items.map(({ label, href = '#', onClick }) => (
       <li key={label}>
         <a
-          className={cx('menu-item-link')}
+          className={cx('menu-item-link', {
+            'menu-item-link--active': location && location.pathname === href,
+          })}
           href={href}
           tabIndex="0"
           onClick={e => {
             if (onClick) {
               e.preventDefault()
               onClick()
+              console.log(location, href)
             }
           }}
         >
@@ -48,6 +55,7 @@ const Submenu = ({ items, expanded, dispatchMenuState }) => (
 Submenu.propTypes = {
   items: PropTypes.arrayOf(PropTypes.object).isRequired,
   expanded: PropTypes.bool.isRequired,
+  location: PropTypes.shape(locationShape).isRequired,
   dispatchMenuState: PropTypes.func.isRequired,
 }
 
@@ -58,6 +66,8 @@ const MainMenuItem = ({
   onClick,
   items,
   index,
+  active,
+  location,
   menuState,
   dispatchMenuState,
   showMainMenuLabels,
@@ -67,8 +77,14 @@ const MainMenuItem = ({
     dispatchMenuState({ type: 'HIDE_ALL_MENUS' })
     if (items.length > 0) dispatchMenuState({ type: 'SHOW_MENU', index })
   }
+
   return (
-    <li key={label} className={cx('menu-item')} onMouseOver={onMouseOver} onFocus={onMouseOver}>
+    <li
+      key={label}
+      className={cx('menu-item', { 'menu-item--active': active || false })}
+      onMouseOver={onMouseOver}
+      onFocus={onMouseOver}
+    >
       <a
         tabIndex="0"
         className={cx('menu-item-link')}
@@ -92,7 +108,12 @@ const MainMenuItem = ({
       </a>
 
       {items.length > 0 && (
-        <Submenu items={items} expanded={menuState[index]} dispatchMenuState={dispatchMenuState} />
+        <Submenu
+          items={items}
+          location={location}
+          expanded={menuState[index]}
+          dispatchMenuState={dispatchMenuState}
+        />
       )}
     </li>
   )
@@ -103,27 +124,35 @@ MainMenuItem.propTypes = {
   href: PropTypes.string,
   label: PropTypes.string.isRequired,
   onClick: PropTypes.func,
+  active: PropTypes.bool,
   index: PropTypes.number.isRequired,
   items: PropTypes.arrayOf(PropTypes.object),
-  menuState: PropTypes.bool.isRequired,
+  location: PropTypes.shape(locationShape).isRequired,
+  menuState: PropTypes.arrayOf(PropTypes.bool).isRequired,
   dispatchMenuState: PropTypes.func.isRequired,
   showMainMenuLabels: PropTypes.bool.isRequired,
-  showingMainMenuLabels: PropTypes.func.isRequired,
+  showingMainMenuLabels: PropTypes.bool.isRequired,
 }
 
 MainMenuItem.defaultProps = {
+  active: undefined,
   href: '#',
   items: [],
   onClick: null,
 }
 
-const SidebarNav = ({
-  menuItems = [], bottomMenuItems = [], logo, expandedCb,
+export const SidebarNav = ({
+  menuItems = [],
+  bottomMenuItems = [],
+  logo,
+  location,
+  expandedCb,
 }) => {
   const [menuState, dispatchMenuState] = useReducer(menuReducer, menuItems.map(v => false))
   const [showingMainMenuLabels, setShowingMainMenuLabels] = useState(false)
   const [showMainMenuLabels, setShowMainMenuLabels] = useState(false)
   const menuItemDependencies = {
+    location,
     menuState,
     dispatchMenuState,
     showMainMenuLabels,
@@ -182,7 +211,8 @@ const menuItemShape = PropTypes.arrayOf(
 )
 
 SidebarNav.propTypes = {
-  logo: PropTypes.element,
+  logo: PropTypes.node,
+  location: PropTypes.shape(locationShape),
   menuItems: menuItemShape,
   bottomMenuItems: menuItemShape,
   expandedCb: PropTypes.func,
@@ -190,9 +220,25 @@ SidebarNav.propTypes = {
 
 SidebarNav.defaultProps = {
   logo: null,
+  location: {},
   menuItems: [],
   bottomMenuItems: [],
   expandedCb: () => {},
 }
 
-export default SidebarNav
+export const SidebarNavLayout = props => {
+  const [expanded, setExpanded] = useState(false)
+  const { children } = props
+  return (
+    <div>
+      <SidebarNav {...props} expandedCb={expanded => setExpanded(expanded)} />
+      <div className={cx('content', expanded && 'content--main-menu-expanded')}>{children}</div>
+    </div>
+  )
+}
+
+SidebarNavLayout.propTypes = {
+  children: PropTypes.node.isRequired,
+}
+
+export default SidebarNavLayout

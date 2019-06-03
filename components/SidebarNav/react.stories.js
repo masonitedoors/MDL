@@ -5,7 +5,7 @@ import {
   mEntry, mInterior, mExport, mContact, mSignout,
 } from '@masonite/svg-icons'
 import logo from 'images/masonite-icon.png'
-import SidebarNav from './react'
+import SidebarNavLayout from './react'
 import Readme from './react.README.md'
 
 const addKey = item => ({ ...item, key: item.label })
@@ -15,10 +15,14 @@ storiesOf('SidebarNav', module)
   .addDecorator(withKnobs)
   .add('Default', () => {
     const onClick = () => console.log('Mock onClick call')
+    const location = {
+      pathname: '/glass/inventory',
+    }
     const menuItems = [
       {
         label: 'Exterior Doors',
         icon: <span dangerouslySetInnerHTML={{ __html: mEntry }} />,
+        active: true,
         href: '/',
         items: [
           {
@@ -67,17 +71,40 @@ storiesOf('SidebarNav', module)
       },
     ].map(addKey)
 
+    const Logo = (
+      <a href="/" tabIndex="0">
+        <img src={logo} alt="Back to Landing" />
+      </a>
+    )
+
     return (
-      <div style={{ width: '100%', height: '100%', margin: '-8px' }}>
-        <SidebarNav
-          logo={(
-            <a href="/" tabIndex="0">
-              <img src={logo} alt="Back to Landing" />
-            </a>
-)}
+      <div
+        style={{
+          width: '100%',
+          height: '100%',
+          position: 'fixed',
+          left: 0,
+          top: 0,
+        }}
+      >
+        <SidebarNavLayout
+          logo={Logo}
+          location={location}
           menuItems={menuItems}
           bottomMenuItems={bottomMenuItems}
-        />
+        >
+          <div style={{ padding: 20 }}>
+            <h1>Page</h1>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+              incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+              exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
+              dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+              Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+              mollit anim id est laborum.
+            </p>
+          </div>
+        </SidebarNavLayout>
       </div>
     )
   })

@@ -4,7 +4,20 @@ $main-menu-expanded-width: 200px;
 $main-menu-logo-width: 40px;
 $main-menu-icon-width: 32px;
 $main-menu-width: ($space-m * 2) + $main-menu-icon-width;
+$main-menu-transition: 200ms all cubic-bezier(0.39, 0.575, 0.565, 1) 250ms;
 $submenu-width: 180px;
+
+.content {
+  transform: translate3d($main-menu-width, 0, 0);
+  width: calc(100% - #{$main-menu-width});
+  overflow: hidden;
+  transition: $main-menu-transition;
+
+  &--main-menu-expanded {
+    transform: translate3d($main-menu-expanded-width, 0, 0);
+    width: calc(100% - #{$main-menu-expanded-width});
+  }
+}
 
 .sidebar {
   position: absolute;
@@ -14,7 +27,6 @@ $submenu-width: 180px;
   z-index: 10;
   height: 100vh;
   fill: $color-gray;
-  backface-visibility: hidden;
 }
 
 .main-menu {
@@ -30,7 +42,7 @@ $submenu-width: 180px;
   font-size: 14px;
   color: $color-pastelgray;
   background-color: $color-deepgray;
-  transition: 200ms all cubic-bezier(0.39, 0.575, 0.565, 1) 250ms;
+  transition: $main-menu-transition;
   box-sizing: border-box;
 
   &--expanded {
@@ -53,6 +65,16 @@ $submenu-width: 180px;
   .menu-item {
     display: inline-flex;
     margin: 0;
+
+    &--active {
+      .menu-item-link__icon {
+        fill: $color-limerick !important;
+      }
+      .menu-item-link__label {
+        color: $color-limerick;
+        text-decoration: none;
+      }
+    }
 
     &--logo {
       @include square($main-menu-icon-width);
@@ -80,6 +102,7 @@ $submenu-width: 180px;
     cursor: pointer;
     align-items: center;
     transition: 100ms all ease-in;
+    text-decoration: none;
 
     &:hover &__icon {
       fill: $color-snow;
@@ -87,6 +110,7 @@ $submenu-width: 180px;
 
     &:hover {
       color: $color-snow !important; // Bootstrap removes color changes for href="#"
+      text-decoration: none;
     }
 
     &__icon {
@@ -122,7 +146,7 @@ $submenu-width: 180px;
   top: 0;
   left: 0;
   margin: 0;
-  padding: $space-m $space-s;
+  padding: $space-m 0;
   bottom: 0;
   width: $submenu-width;
   list-style: none;
@@ -137,10 +161,16 @@ $submenu-width: 180px;
   .menu-item-link {
     display: block;
     margin: 0 0 $space-m;
-    padding: 0;
+    padding: 0 $space-s;
     color: $color-pastelgray;
     cursor: pointer;
     text-decoration: none;
+
+    &:hover#{&}--active,
+    &--active {
+      color: $color-limerick;
+      border-right: 3px solid $color-limerick;
+    }
 
     &:hover {
       color: $color-snow;

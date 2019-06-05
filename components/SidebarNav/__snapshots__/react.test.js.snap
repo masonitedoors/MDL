@@ -27,6 +27,7 @@ exports[`SidebarNav with renders should render without crashing 1`] = `
     tabIndex={0}
     title="Show menu labels"
   >
+    Show menu labels
     <span
       className="expand-btn__icon"
       dangerouslySetInnerHTML={

@@ -41,7 +41,6 @@ const Submenu = ({
             if (onClick) {
               e.preventDefault()
               onClick()
-              console.log(location, href)
             }
           }}
         >
@@ -142,11 +141,7 @@ MainMenuItem.defaultProps = {
 }
 
 export const SidebarNav = ({
-  menuItems = [],
-  bottomMenuItems = [],
-  logo,
-  location,
-  expandedCb,
+  menuItems, bottomMenuItems, logo, location, expandedCb,
 }) => {
   const [menuState, dispatchMenuState] = useReducer(menuReducer, menuItems.map(v => false))
   const [showingMainMenuLabels, setShowingMainMenuLabels] = useState(false)
@@ -186,10 +181,11 @@ export const SidebarNav = ({
         className={cx('expand-btn')}
         onClick={() => setShowingMainMenuLabels(!showingMainMenuLabels)}
         onKeyDown={e => e.key === 'Enter' && setShowingMainMenuLabels(!showingMainMenuLabels)}
-        title="Press enter to toggle display of main menu item labels"
+        title={showMainMenuLabels ? 'Hide menu labels' : 'Show menu labels'}
         tabIndex={0}
         role="button"
       >
+        expand
         <span
           className={cx('expand-btn__icon')}
           dangerouslySetInnerHTML={{

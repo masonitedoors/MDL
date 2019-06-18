@@ -1,6 +1,12 @@
+@import "styles/index";
+
 .centered {
   position: fixed;
   left: 50vw;
   top: 50vh;
   transform: translate3d(-50%, -50%, 0);
+}
+
+.black {
+  background-color: $color-m-black;
 }

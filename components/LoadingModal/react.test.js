@@ -4,11 +4,6 @@ import LoadingModal from './react'
 
 describe('LoadingModal', () => {
   it('should render without crashing', () => {
-    expect(
-      shallow(
-        <LoadingModal>
-        </LoadingModal>,
-      ),
-    ).toMatchSnapshot()
+    expect(shallow(<LoadingModal />)).toMatchSnapshot()
   })
 })

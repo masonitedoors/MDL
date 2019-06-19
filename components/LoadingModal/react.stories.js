@@ -5,8 +5,4 @@ import Readme from './react.README.md'
 
 storiesOf('LoadingModal', module)
   .addParameters({ readme: { sidebar: Readme } })
-  .add('default', () => (
-    <LoadingModal>
-    
-    </LoadingModal>
-  ))
+  .add('default', () => <LoadingModal />)

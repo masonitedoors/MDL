@@ -1,13 +1,13 @@
 import React from 'react'
 import { React as ModalBackdrop } from 'components/ModalBackdrop'
-import AnimatedMasoniteLogo  from 'components/AnimatedMasoniteLogo'
+import AnimatedMasoniteLogo from 'components/AnimatedMasoniteLogo'
 
 const LoadingModal = () => (
 
-   <ModalBackdrop>
+  <ModalBackdrop>
     <AnimatedMasoniteLogo />
   </ModalBackdrop>
- 
+
 )
 
 export default LoadingModal

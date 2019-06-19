@@ -18,18 +18,23 @@ function AnimatedMasoniteLogo({ variant }) {
   }
 
   return (
-    <div className={cx([{ 'animated-masonite-logo--dark': variant === 'dark' }, 'animated-masonite-log'])}>
+    <div
+      className={cx([
+        'animated-masonite-logo',
+        { 'animated-masonite-logo--dark': variant === 'dark' },
+      ])}
+    >
       <Lottie options={defaultOptions} height={40} width={40} />
     </div>
   )
 }
 
 AnimatedMasoniteLogo.propTypes = {
-  variant: PropTypes.string
+  variant: PropTypes.string,
 }
 
 AnimatedMasoniteLogo.defaultProps = {
-  variant: 'dark'
+  variant: 'dark',
 }
 
 export default AnimatedMasoniteLogo

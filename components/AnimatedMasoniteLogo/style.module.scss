@@ -1,9 +1,9 @@
 @import "styles/index";
 
-.animated-masonite-logo--dark {
-  background-color: $color-night;
-}
-
-.animated-masonite-log {
+.animated-masonite-logo {
   display: inline-block;
+
+  &--dark {
+    background-color: $color-night;
+  }
 }

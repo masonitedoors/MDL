@@ -7,7 +7,7 @@ import styles from './style.module.scss'
 
 const cx = classNames.bind(styles)
 
-function AnimatedMasoniteLogo({ centered, variant }) {
+function AnimatedMasoniteLogo({ variant }) {
   const defaultOptions = {
     loop: true,
     autoplay: true,
@@ -18,21 +18,17 @@ function AnimatedMasoniteLogo({ centered, variant }) {
   }
 
   return (
-    <div className={cx([{ centered, 'black': variant === 'dark' }])}>
+    <div className={cx([{ 'anime-bg-black': variant === 'dark' }])}>
       <Lottie options={defaultOptions} height={40} width={40} />
     </div>
   )
 }
 
 AnimatedMasoniteLogo.propTypes = {
-  /**
-   * Center the animated logo within the viewport.
-   */
-  centered: PropTypes.bool,
+  variant: PropTypes.string
 }
 
 AnimatedMasoniteLogo.defaultProps = {
-  centered: true,
   variant: 'dark'
 }
 

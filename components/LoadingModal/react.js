@@ -5,7 +5,7 @@ import AnimatedMasoniteLogo  from 'components/AnimatedMasoniteLogo'
 const LoadingModal = () => (
 
    <ModalBackdrop>
-    <AnimatedMasoniteLogo centered = {false} />
+    <AnimatedMasoniteLogo />
   </ModalBackdrop>
  
 )

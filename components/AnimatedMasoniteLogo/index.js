@@ -18,7 +18,7 @@ function AnimatedMasoniteLogo({ variant }) {
   }
 
   return (
-    <div className={cx([{ 'anime-bg-black': variant === 'dark' }])}>
+    <div className={cx([{ 'animated-masonite-logo--dark': variant === 'dark' }, 'animated-masonite-log'])}>
       <Lottie options={defaultOptions} height={40} width={40} />
     </div>
   )

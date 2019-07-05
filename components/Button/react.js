@@ -1,5 +1,6 @@
 import React from 'react'
 import classNames from 'classnames/bind'
+import 'vanilla-ripplejs'
 import PropTypes from 'prop-types'
 import s from './style.module.scss'
 
@@ -21,6 +22,7 @@ const Button = ({
   return (
     <button type="button" className={classes} onClick={onClick} disabled={disabled}>
       {children}
+      <span className="rippleJS" />
     </button>
   )
 }

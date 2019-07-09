@@ -94,7 +94,6 @@
     "react-lottie": "^1.2.3",
     "react-onclickoutside": "^6.8.0",
     "storybook-readme": "^5.0.5",
-    "tinycolor2": "^1.4.1",
-    "vanilla-ripplejs": "^1.0.6"
+    "tinycolor2": "^1.4.1"
   }
 }

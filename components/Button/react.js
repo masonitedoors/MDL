@@ -1,6 +1,7 @@
 import React from 'react'
 import classNames from 'classnames/bind'
-import 'vanilla-ripplejs'
+import '../../vendor/vanilla-rippleJS/ripple.css'
+import '../../vendor/vanilla-rippleJS/ripple'
 import PropTypes from 'prop-types'
 import s from './style.module.scss'
 
@@ -19,10 +20,12 @@ const Button = ({
     'btn--full-width': fullWidth,
   })
 
+  const rippleClasses = (variant === 'primary' || variant === 'secondary') ? 'rippleJS--lightRipple' : ''
+
   return (
     <button type="button" className={classes} onClick={onClick} disabled={disabled}>
       {children}
-      <span className="rippleJS" />
+      <span className={`${rippleClasses} rippleJS`} />
     </button>
   )
 }

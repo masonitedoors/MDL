@@ -1,0 +1,33 @@
+@import "styles/index";
+
+.tile {
+  position: relative;
+  overflow: hidden;
+  display: inline-flex;
+  padding: 0 $space-s;
+  background-color: white;
+  min-height: $space-l;
+  border-radius: 2px;
+  box-shadow: 0 2px 22px 0 rgba(0, 0, 0, 0.15);
+
+  &:hover {
+    border: solid 4px $color-deepgray;
+  }
+
+  &:hover#{&}--selected,
+  &--selected {
+    border: solid 4px $color-limerick;
+
+    &::before {
+      $size: $space-l;
+      @include square($size);
+      content: "";
+      position: absolute;
+      top: -($size/2);
+      left: -($size/2);
+      background-color: $color-limerick;
+      transform-origin: center;
+      transform: rotate3d(0, 0, 1, 45deg);
+    }
+  }
+}

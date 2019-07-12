@@ -14,9 +14,16 @@ storiesOf('Tile', module)
   .add(
     'default',
     withState({ value: '' })(({ store }) => (
-      <React.Fragment>
-        <Tile label="The Tile Component" />
-        <Tile label="The Tile Component" selected />
-      </React.Fragment>
+      <div style={{ display: 'flex' }}>
+        <Tile
+          label="Tile Component"
+          imageUrl="https://embed.widencdn.net/img/masonite/gsozalqsz9/exact/Shop-by-Panel.png"
+        />
+        <Tile
+          label="A Selected Tile Component"
+          imageUrl="https://embed.widencdn.net/img/masonite/644ybigshm/exact/Shop-by-Collection.png"
+          selected
+        />
+      </div>
     )),
   )

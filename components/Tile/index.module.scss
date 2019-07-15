@@ -1,27 +1,25 @@
 @import "styles/index";
 
-$shadow: 0 2px 22px 0 rgba(0, 0, 0, 0.15);
-
 .tile {
   position: relative;
   overflow: hidden;
   display: inline-flex;
   flex-direction: column;
-  background-color: white;
-  width: 220px;
+  background-color: $color-white;
+  max-width: 220px;
   border-radius: 2px;
-  box-shadow: $shadow;
+  box-shadow: $card-box-shadow;
   box-sizing: content-box;
   margin: 4px;
   transition: 100ms all;
 
   &:hover {
-    box-shadow: 0 0 0 4px $color-deepgray, $shadow;
+    box-shadow: 0 0 0 4px $color-deepgray, $card-box-shadow;
   }
 
   &:hover#{&}--selected,
   &--selected {
-    box-shadow: 0 0 0 4px $color-limerick, $shadow;
+    box-shadow: 0 0 0 4px $color-limerick, $card-box-shadow;
 
     &::before {
       $size: $space-xl;

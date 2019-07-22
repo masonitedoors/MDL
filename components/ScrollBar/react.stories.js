@@ -1,13 +1,11 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
 import { withKnobs } from '@storybook/addon-knobs'
-// import { withState } from '@dump247/storybook-state'
-// import { mChevronRight, mBook, mFlag } from '@masonite/svg-icons'
 import ScrollBar from './react'
-// import Readme from './react.README.md'
+import Readme from './react.README.md'
 
 storiesOf('ScrollBar', module)
-  // .addParameters({ readme: { sidebar: Readme } })
+  .addParameters({ readme: { sidebar: Readme } })
   .addDecorator(withKnobs)
   .add('Default', () => (
     <ScrollBar

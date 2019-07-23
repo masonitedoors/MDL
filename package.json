@@ -94,6 +94,7 @@
     "react": "^16.8.6",
     "react-lottie": "^1.2.3",
     "react-onclickoutside": "^6.8.0",
+    "react-scrollbar": "^0.5.6",
     "storybook-readme": "^5.0.5",
     "tinycolor2": "^1.4.1"
   }

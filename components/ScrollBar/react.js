@@ -30,5 +30,9 @@ ScrollBar.propTypes = {
   children: PropTypes.element.isRequired,
   areaStyle: PropTypes.element.isRequired,
   contentStyle: PropTypes.element.isRequired,
-  scrollSpeed: PropTypes.number.isRequired,
+  scrollSpeed: PropTypes.number,
+}
+
+ScrollBar.defaultProps = {
+  scrollSpeed: 1,
 }

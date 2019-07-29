@@ -4,7 +4,6 @@ import PropTypes from 'prop-types'
 import ScrollArea from 'react-scrollbar'
 import style from './style.module.scss'
 
-console.log(style)
 const cx = classNames.bind(style)
 
 export const ScrollBar = ({

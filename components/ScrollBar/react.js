@@ -7,10 +7,7 @@ import style from './style.module.scss'
 const cx = classNames.bind(style)
 
 export const ScrollBar = ({
-  children,
-  areaStyle,
-  contentStyle,
-  scrollSpeed,
+  children, areaStyle, contentStyle, scrollSpeed,
 }) => (
   <ScrollArea
     speed={scrollSpeed}
@@ -26,12 +23,26 @@ export const ScrollBar = ({
 export default ScrollBar
 
 ScrollBar.propTypes = {
+  /**
+   * A single child element.
+   */
   children: PropTypes.element.isRequired,
-  areaStyle: PropTypes.element.isRequired,
-  contentStyle: PropTypes.element.isRequired,
+  /**
+   * The style for the component.
+   */
+  areaStyle: PropTypes.objectOf(PropTypes.oneOfType([PropTypes.string, PropTypes.number])),
+  /**
+   * Inline styles applied to element with scroll area content.
+   */
+  contentStyle: PropTypes.objectOf(PropTypes.oneOfType([PropTypes.string, PropTypes.number])),
+  /**
+   * The scroll speed.
+   */
   scrollSpeed: PropTypes.number,
 }
 
 ScrollBar.defaultProps = {
   scrollSpeed: 1,
+  areaStyle: {},
+  contentStyle: {},
 }

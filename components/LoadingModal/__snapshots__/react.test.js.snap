@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LoadingModal should render without crashing 1`] = `
+<ModalBackdrop>
+  <AnimatedMasoniteLogo
+    variant="dark"
+  />
+</ModalBackdrop>
+`;

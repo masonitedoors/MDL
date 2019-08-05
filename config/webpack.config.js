@@ -73,5 +73,9 @@ module.exports = {
       vendor: path.resolve(__dirname, '../vendor'),
     },
   },
-  plugins: [new CopyWebpackPlugin([{ from: './../../styles', to: 'styles', ignore: '**/*.js' }])],
+  plugins: [
+    new CopyWebpackPlugin([
+      { from: './../../styles', to: 'styles', ignore: '**/*.js' },
+    ]),
+  ],
 }

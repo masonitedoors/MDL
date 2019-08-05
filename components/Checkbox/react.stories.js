@@ -9,7 +9,7 @@ storiesOf('Checkbox', module)
   .addParameters({ readme: { sidebar: Readme } })
   .addDecorator(withKnobs)
   .add(
-    'checked with a click event',
+    'fully controlled',
     withState({ checked: true })(({ store }) => (
       <Checkbox
         checked={store.state.checked}
@@ -17,7 +17,3 @@ storiesOf('Checkbox', module)
       />
     )),
   )
-  .add('fully controlled', () => {
-    const checked = boolean('Checked', true)
-    return <Checkbox checked={checked} />
-  })

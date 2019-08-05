@@ -1,0 +1,73 @@
+@import "styles/index";
+
+.tile {
+  position: relative;
+  overflow: hidden;
+  display: inline-flex;
+  flex-direction: column;
+  background-color: $color-white;
+  max-width: 220px;
+  border-radius: 2px;
+  box-shadow: $card-box-shadow;
+  box-sizing: content-box;
+  margin: 4px;
+  transition: 100ms all;
+
+  &:hover {
+    box-shadow: 0 0 0 4px $color-deepgray, $card-box-shadow;
+  }
+
+  &:hover#{&}--selected,
+  &--selected {
+    box-shadow: 0 0 0 4px $color-limerick, $card-box-shadow;
+
+    &::before {
+      $size: $space-xl;
+      @include square($size);
+      content: "";
+      position: absolute;
+      top: -($size/2);
+      left: -($size/2);
+      background-color: $color-limerick;
+      transform-origin: center;
+      transform: rotate3d(0, 0, 1, 45deg);
+    }
+  }
+
+  &--selected &__selected-icon {
+    opacity: 1;
+  }
+
+  &__selected-icon {
+    @include square($space-s);
+    position: absolute;
+    left: 2px;
+    top: 2px;
+    fill: $color-night;
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  &__label {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: $space-xl + $space-s;
+    text-align: center;
+    padding: 0 $space-s;
+    font-weight: 700;
+    font-size: $base-font-size;
+    text-transform: uppercase;
+  }
+
+  &__image {
+    font-size: 0;
+    width: 100%;
+    background-color: $color-gray;
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+}

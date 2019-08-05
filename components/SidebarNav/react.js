@@ -185,7 +185,6 @@ export const SidebarNav = ({
         tabIndex={0}
         role="button"
       >
-        {showMainMenuLabels ? 'Hide menu labels' : 'Show menu labels'}
         <span
           className={cx('expand-btn__icon')}
           dangerouslySetInnerHTML={{

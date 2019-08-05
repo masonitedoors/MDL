@@ -26,34 +26,19 @@ storiesOf('SidebarNav', module)
         href: '/',
         items: [
           {
-            label: 'Net Price Management',
-            href: '/',
+            label: 'Menu Item 1',
+            href: '/menu/1',
             onClick,
           },
           {
-            label: 'Glass Management',
-            href: '/glass/inventory',
-            onClick,
-          },
-          {
-            label: 'Slab Management',
-            href: '/slab/inventory',
-            onClick,
-          },
-          {
-            label: 'Factory Glazed Management',
-            href: '/factory-glazed/inventory',
+            label: 'Menu Item 2',
+            href: '/menu/2',
             onClick,
           },
         ].map(addKey),
       },
       {
-        label: 'Interior Doors',
-        icon: <span dangerouslySetInnerHTML={{ __html: mInterior }} />,
-        href: '/interior/',
-      },
-      {
-        label: 'Export',
+        label: 'External Link',
         icon: <span dangerouslySetInnerHTML={{ __html: mExport }} />,
         href: '#',
       },

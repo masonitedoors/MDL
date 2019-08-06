@@ -33,3 +33,9 @@ $color-rust: #d11818;
 $color-snow: #fafafa;
 $color-white: #fff;
 $color-gray: #f3f3f3;
+
+$card-box-shadow: 0 2px 22px 0 rgba(0, 0, 0, 0.15);
+
+@mixin gradient-dark() {
+  background-image: linear-gradient($color-deepgrey, $color-blackolive);
+}

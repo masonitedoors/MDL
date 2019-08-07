@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Tile should render without crashing 1`] = `
+<Tile
+  onClick={null}
+  selected={false}
+>
+  <div
+    aria-checked={false}
+    className="tile"
+    onClick={null}
+    onKeyPress={null}
+    role="checkbox"
+    tabIndex="-1"
+  >
+    <svg
+      className="tile__selected-icon"
+      dangerouslySetInnerHTML={
+        Object {
+          "__html": "<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 24 24\\"><title>check</title><path d=\\"M20.7 5.3c-0.4-0.4-1-0.4-1.4 0l-10.3 10.3-4.3-4.3c-0.4-0.4-1-0.4-1.4 0s-0.4 1 0 1.4l5 5c0.2 0.2 0.4 0.3 0.7 0.3s0.5-0.1 0.7-0.3l11-11c0.4-0.4 0.4-1 0-1.4z\\"></path></svg>",
+        }
+      }
+    />
+    <div
+      className="tile__label"
+    />
+    <div
+      className="tile__image"
+    >
+      <img />
+    </div>
+  </div>
+</Tile>
+`;

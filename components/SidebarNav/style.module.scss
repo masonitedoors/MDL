@@ -1,0 +1,193 @@
+@import "styles/index";
+
+$main-menu-expanded-width: 200px;
+$main-menu-logo-width: 40px;
+$main-menu-icon-width: 32px;
+$main-menu-width: ($space-m * 2) + $main-menu-icon-width;
+$main-menu-transition: 200ms all cubic-bezier(0.39, 0.575, 0.565, 1) 250ms;
+$submenu-width: 180px;
+
+.content {
+  transform: translate3d($main-menu-width, 0, 0);
+  width: calc(100% - #{$main-menu-width});
+  overflow: hidden;
+  transition: $main-menu-transition;
+
+  &--main-menu-expanded {
+    transform: translate3d($main-menu-expanded-width, 0, 0);
+    width: calc(100% - #{$main-menu-expanded-width});
+  }
+}
+
+.sidebar {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  z-index: 10;
+  height: 100vh;
+  fill: $color-gray;
+}
+
+.main-menu {
+  @include gradient-dark();
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: calc(100% - #{$space-l});
+  width: $main-menu-width;
+  margin: 0;
+  padding: 0 $space-m;
+  list-style: none;
+  font-size: 14px;
+  color: $color-pastelgray;
+  background-color: $color-deepgray;
+  transition: $main-menu-transition;
+  box-sizing: border-box;
+
+  &--expanded {
+    width: $main-menu-expanded-width;
+    padding: 0 $space-xs 0 $space-s;
+
+    .sidebar-nav-submenu--expanded {
+      transform: translate3d($main-menu-expanded-width, 0, 0);
+    }
+  }
+
+  &__top,
+  &__bottom {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    flex-direction: column;
+  }
+
+  .menu-item {
+    display: inline-flex;
+    margin: 0;
+
+    &--active {
+      .menu-item-link__icon {
+        fill: $color-limerick !important;
+      }
+      .menu-item-link__label {
+        color: $color-limerick;
+        text-decoration: none;
+      }
+    }
+
+    &--logo {
+      @include square($main-menu-icon-width);
+      position: relative;
+      margin: $space-m auto $space-s;
+      padding: 0;
+    }
+
+    &--logo img {
+      max-width: $main-menu-logo-width;
+    }
+
+    &--logo a {
+      @include square($main-menu-logo-width);
+      display: block;
+      position: absolute;
+      left: 50%;
+      transform: translate3d(-50%, 0, 0);
+    }
+  }
+
+  .menu-item-link {
+    display: inline-flex;
+    padding: $space-s 0;
+    cursor: pointer;
+    align-items: center;
+    transition: 100ms all ease-in;
+    text-decoration: none;
+
+    &:hover &__icon {
+      fill: $color-snow;
+    }
+
+    &:hover {
+      color: $color-snow !important; // Bootstrap removes color changes for href="#"
+      text-decoration: none;
+    }
+
+    &__icon {
+      @include square($main-menu-icon-width);
+      flex-shrink: 0;
+      backface-visibility: hidden;
+      fill: $color-gray !important; // Bootstrap conflict
+    }
+
+    &__label {
+      transition: 200ms opacity;
+      opacity: 1;
+      margin-left: $space-xs;
+      color: $color-pastelgray;
+      text-decoration: none;
+
+      &--hide {
+        transition: 200ms opacity;
+        opacity: 0;
+      }
+
+      &--hidden {
+        @include visually-hidden();
+        opacity: 0;
+      }
+    }
+  }
+}
+
+.sidebar-nav-submenu {
+  position: absolute;
+  z-index: -10;
+  top: 0;
+  left: 0;
+  margin: 0;
+  padding: $space-m 0;
+  bottom: 0;
+  width: $submenu-width;
+  list-style: none;
+  background: $color-deepgray;
+  transition: 200ms transform cubic-bezier(0.39, 0.575, 0.565, 1) 250ms;
+  transform: translate3d(-100%, 0, 0);
+
+  &--expanded {
+    transform: translate3d($main-menu-width, 0, 0);
+  }
+
+  .menu-item-link {
+    display: block;
+    margin: 0 0 $space-m;
+    padding: 0 $space-s;
+    color: $color-pastelgray;
+    cursor: pointer;
+    text-decoration: none;
+
+    &:hover#{&}--active,
+    &--active {
+      color: $color-limerick;
+      border-right: 3px solid $color-limerick;
+    }
+
+    &:hover {
+      color: $color-snow;
+      text-decoration: none;
+    }
+  }
+}
+
+.expand-btn {
+  display: block;
+  cursor: pointer;
+  background-color: $color-onyx;
+  padding: $space-s;
+
+  &__icon {
+    @include square($space-s);
+    display: block;
+    margin: auto;
+  }
+}

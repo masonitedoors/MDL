@@ -1,0 +1,35 @@
+@import "styles/index";
+
+.welcome {
+  height: 100vh;
+  width: 100vw;
+}
+
+.shapes {
+  display: flex;
+  height: 214px;
+}
+
+.square {
+  @include square(214px);
+  object-fit: contain;
+  border-radius: 2px;
+  box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.13);
+  border: solid 4px $color-rust;
+  background-color: rgba(83, 86, 90, 0.63);
+}
+
+.circle {
+  @include circle(214px);
+  object-fit: contain;
+  box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.13);
+  border: solid 4px $color-limerick;
+  background-color: rgba(83, 86, 90, 0.63);
+  margin-left: -$space-l;
+}
+
+.triangle {
+  > svg {
+    @include square(100%);
+  }
+}

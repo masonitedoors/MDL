@@ -5,7 +5,7 @@ import Readme from './react.README.md'
 storiesOf('Grid', module)
   .addParameters({ readme: { sidebar: Readme } })
   .add('default', () => (
-    <div className="container-fluid">
+    <div className="container">
       <div className="row">
         <div className="col-lg">
           This is the 12-column grid found in Bootstrap 4. Developers may use the column mixins or

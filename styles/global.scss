@@ -1,4 +1,8 @@
+/* global.scss - All variables, mixins, and utility classes. */
+
 @import url("https://cloud.typography.com/7038756/6738972/css/fonts.css");
+
 @import "index";
+@import "grid";
 
 @include element-tag-typography();

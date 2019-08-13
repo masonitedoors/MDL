@@ -1,0 +1,39 @@
+@import "styles/index";
+
+.welcome {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  padding: $space-l;
+  background-color: $color-deepgray;
+}
+
+.logo {
+  @include completely-center();
+  margin: auto;
+  max-width: 420px;
+  font-size: 0;
+  width: calc(100% - 32px);
+
+  &__svg {
+    margin-bottom: $space-s;
+  }
+
+  &__text {
+    color: $color-silver;
+    text-transform: uppercase;
+    font-weight: 300;
+    text-align: center;
+    font-size: $space-m;
+  }
+
+  @media (min-width: 640px) {
+    max-width: 620px;
+
+    &__text {
+      font-size: $space-l;
+    }
+  }
+}

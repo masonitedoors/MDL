@@ -25,8 +25,12 @@ module.exports = ({ config, mode }) => {
       enforce: 'pre',
     },
     {
+      test: /storybook.scss$/,
+      loaders: ['style-loader', 'css-loader', 'sass-loader'],
+    },
+    {
       test: /\.scss$/,
-      exclude: /node_modules/,
+      exclude: /node_modules|storybook/,
       loaders: [
         'style-loader',
         {
@@ -61,7 +65,7 @@ module.exports = ({ config, mode }) => {
     test: /\.stories\.jsx?$/,
     loaders: [require.resolve('@storybook/addon-storysource/loader')],
     enforce: 'pre',
-  });
+  })
 
   config.resolve.modules.push(path.resolve(__dirname, '../../'))
 

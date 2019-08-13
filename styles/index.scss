@@ -1,6 +1,25 @@
+html {
+  box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+@import "functions"; // Bootstrap grid dependency
+@import "config-variables";
+
 /* Mixins, @font-face and variables only. */
 @import "colors";
 @import "accessibility";
 @import "helpers";
 @import "typography";
 @import "sizes";
+
+@import "mixins/breakpoints"; // Bootstrap grid dependency
+@import "mixins/grid"; // Bootstrap grid dependency
+@import "mixins/grid-framework"; // Bootstrap grid dependency
+
+/* Grid utility classes */
+@import "grid";

@@ -1,35 +1,39 @@
 @import "styles/index";
 
 .welcome {
-  height: 100vh;
-  width: 100vw;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  padding: $space-l;
+  background-color: $color-deepgray;
 }
 
-.shapes {
-  display: flex;
-  height: 214px;
-}
+.logo {
+  @include completely-center();
+  margin: auto;
+  max-width: 420px;
+  font-size: 0;
+  width: calc(100% - 32px);
 
-.square {
-  @include square(214px);
-  object-fit: contain;
-  border-radius: 2px;
-  box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.13);
-  border: solid 4px $color-rust;
-  background-color: rgba(83, 86, 90, 0.63);
-}
+  &__svg {
+    margin-bottom: $space-s;
+  }
 
-.circle {
-  @include circle(214px);
-  object-fit: contain;
-  box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.13);
-  border: solid 4px $color-limerick;
-  background-color: rgba(83, 86, 90, 0.63);
-  margin-left: -$space-l;
-}
+  &__text {
+    color: $color-silver;
+    text-transform: uppercase;
+    font-weight: 300;
+    text-align: center;
+    font-size: $space-m;
+  }
 
-.triangle {
-  > svg {
-    @include square(100%);
+  @media (min-width: 640px) {
+    max-width: 620px;
+
+    &__text {
+      font-size: $space-l;
+    }
   }
 }

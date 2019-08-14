@@ -11,6 +11,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - `<SidebarNav />` component.
 
+### Fixed
+
+- `<FilterableSearch />` button text vertical alignment.
+- `<TextField />` icon pointer-event preventing focusing of text input.
+
 ## [2.9.0] - 2019-08-13
 
 ### Added
@@ -27,7 +32,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Checkbox background color
 
-## [2.7.0] - 2019-06-19
+## [2.7.0] - 2019-06-19s
 
 ### Added
 

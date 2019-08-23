@@ -1,5 +1,14 @@
 @import "global";
 
+html {
+  box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
 body {
   font-family: $font-family;
 }

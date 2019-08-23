@@ -1,0 +1,128 @@
+@import "styles/index";
+
+$border-color: rgba(221, 221, 221, 0.5);
+$selected-border-color: black;
+
+.table-outer-wrapper {
+  position: relative;
+  margin: 0 0 $space-m;
+}
+
+.table-inner-wrapper {
+  overflow: auto;
+}
+
+.table {
+  position: relative;
+  text-align: left;
+  margin: 0;
+  border-collapse: separate;
+  border-spacing: 0;
+
+  &--2-colspan-header &__cell:nth-child(2n + 3) {
+    background-color: $color-snow;
+  }
+  &--2-colspan-header &__cell:nth-child(2n) {
+    background-color: $color-white;
+  }
+
+  tbody tr:last-child {
+    border-bottom: none;
+  }
+
+  tr {
+    overflow: scroll;
+  }
+
+  &__cell {
+    position: relative;
+    border-collapse: separate;
+    border-bottom: 1px solid $border-color;
+    height: 49px;
+    min-width: $space-xxl;
+    text-align: center;
+    display: table-cell;
+    vertical-align: middle;
+    padding: 8px;
+    font-size: 14px;
+    font-weight: normal;
+    background-color: $color-white;
+
+    &--heading {
+      text-align: center;
+      font-weight: 500;
+    }
+
+    &--fixed {
+      position: sticky !important; // td and th to temporarily support old tables
+      left: 0;
+      z-index: 1;
+    }
+
+    &:nth-child(2n + 3) {
+      background-color: initial;
+    }
+
+    &:nth-child(2n) {
+      background-color: $color-snow;
+    }
+
+    &--align-left {
+      text-align: left;
+    }
+
+    &--align-right {
+      text-align: right;
+    }
+
+    &--last-row {
+      border-bottom: none;
+    }
+  }
+
+  &__cell-selection {
+    position: absolute;
+    top: 0;
+    bottom: -1px;
+    left: 0;
+    right: 0;
+    pointer-events: none;
+    opacity: 0;
+    border: 1px solid transparent;
+
+    &--col,
+    &--row {
+      opacity: 1;
+    }
+
+    &--col {
+      border-left: 1px solid $selected-border-color;
+      border-right: 1px solid $selected-border-color;
+    }
+
+    &--row {
+      border-top: 1px solid $selected-border-color;
+      border-bottom: 1px solid $selected-border-color;
+    }
+
+    &--col-start {
+      border-top: 1px solid $selected-border-color;
+    }
+
+    &--col-end {
+      border-bottom: 1px solid $selected-border-color;
+    }
+
+    &--row-start {
+      border-left: 1px solid $selected-border-color;
+    }
+
+    &--row-end {
+      border-right: 1px solid $selected-border-color;
+    }
+  }
+
+  input {
+    min-width: 80px;
+  }
+}

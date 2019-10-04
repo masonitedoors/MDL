@@ -1,14 +1,5 @@
 /* index.scss - Variables and mixins ONLY. */
 
-html {
-  box-sizing: border-box;
-}
-*,
-*:before,
-*:after {
-  box-sizing: inherit;
-}
-
 @import "functions"; // Bootstrap grid dependency
 @import "config-variables";
 

@@ -11,6 +11,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - TextField component's trailing icon overlapping the input value
 - Anchor tags didn't inherit their font size
+- Duplicate CSS box-sizing rule being outputted
 
 ## [2.10.0] - 2019-08-14
 

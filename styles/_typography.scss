@@ -113,12 +113,8 @@ $font-family: "Gotham SSm A", "Gotham SSm B", -apple-system, BlinkMacSystemFont,
     @include typography-h6;
   }
 
-  a,
-  label,
-  span {
+  p {
     @include typography-p;
-
-    margin: 0;
   }
 
   blockquote,

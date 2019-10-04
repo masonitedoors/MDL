@@ -50,6 +50,7 @@ const TextField = ({
         className={cx('text-field__input', {
           'text-field__input--align-right': align === 'right',
           'text-field__input--align-center': align === 'center',
+          'text-field__input--trailing-icon': trailingIcon,
         })}
         type={type}
         placeholder={isActive || !label ? placeholder : ''}

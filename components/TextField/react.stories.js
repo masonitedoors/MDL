@@ -15,6 +15,7 @@ storiesOf('TextField', module)
     'default',
     withState({ value: '' })(({ store }) => {
       const variant = select('Variant', { Light: 'light', Dark: 'dark' }, 'dark')
+      const align = select('Align', { Left: '', Right: 'right', Center: 'center' }, '')
       const label = text('Label', 'Label')
       const error = boolean('Error State', false)
       const helper = error ? 'Something is wrong.' : ''
@@ -26,12 +27,13 @@ storiesOf('TextField', module)
           helper={helper}
           label={label}
           placeholder="Placeholder"
-          onBlur={value => console.log('onBlur called, value: ', value)}
+          onBlur={value => {}}
           onChange={value => store.set({ value })}
           trailingIcon={trailingIcon}
           value={store.state.value}
           variant={variant}
           removeMargin={false}
+          align={align}
         />
       )
     }),

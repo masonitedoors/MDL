@@ -16,8 +16,8 @@ const exportStatements = svgFiles
     const camelcaseName = hyphenatedName.replace(/-([a-z0-9])/g, g => (g.match(/[a-z]/) ? g[1].toUpperCase() : g[1]))
     const exportName = `${camelcaseName[0].toUpperCase()}${camelcaseName.slice(1)}`
 
-    const inlineSvgExport = `export { default as m${exportName} } from "./../../../vendor/micons/svg/SVG/${hyphenatedName}.svg"`
-    const craExport = `export { default as M${exportName} } from "./../../../vendor/micons/svg/SVG/${hyphenatedName}.svg"`
+    const inlineSvgExport = `export { default as m${exportName} } from './../../../vendor/micons/svg/SVG/${hyphenatedName}.svg'`
+    const craExport = `export { default as M${exportName} } from './../../../vendor/micons/svg/SVG/${hyphenatedName}.svg'`
 
     return [inlineSvgExport, craExport].join('\n')
   })

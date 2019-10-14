@@ -9,7 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-- `<TextField />` crashing when value is `null`
+- `<TextField />` allows for `null` value
 
 ## [2.10.1] - 2019-10-02
 

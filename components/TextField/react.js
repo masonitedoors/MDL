@@ -25,6 +25,7 @@ const TextField = ({
 }) => {
   const [isActive, setActive] = useState(false)
   const Label = label ? 'label' : 'div'
+  const fieldValue = (value || '').toString()
 
   const TrailingIcon = () => (
     <div
@@ -40,7 +41,7 @@ const TextField = ({
         'text-field--light': variant === 'light',
         'text-field--dark': variant === 'dark',
         'text-field--error': error,
-        'text-field--active': isActive || value.length,
+        'text-field--active': isActive || fieldValue.length,
         'text-field--no-margin': removeMargin,
       })}
     >
@@ -65,7 +66,7 @@ const TextField = ({
         }}
         onChange={event => onChange(event.target.value, event)}
         onClick={onClick}
-        value={value}
+        value={fieldValue}
       />
       <TrailingIcon />
     </Label>
@@ -84,7 +85,7 @@ TextField.propTypes = {
   label: PropTypes.string,
   onKeyDown: PropTypes.func,
   placeholder: PropTypes.string,
-  value: PropTypes.string.isRequired,
+  value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   trailingIcon: PropTypes.string,
   type: PropTypes.oneOf(['text', 'number', 'email']),
   variant: PropTypes.oneOf(['dark', 'light']),
@@ -106,4 +107,5 @@ TextField.defaultProps = {
   variant: 'dark',
   removeMargin: false,
   align: 'left',
+  value: '',
 }

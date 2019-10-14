@@ -31,6 +31,10 @@
     &--align-center {
       text-align: center;
     }
+
+    &--trailing-icon {
+      padding-right: $space-l;
+    }
   }
 
   &--light &__input {

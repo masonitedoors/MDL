@@ -1,0 +1,52 @@
+@import "styles/index";
+
+.pagination {
+  border-top: 1px solid $color-night;
+  border-bottom: 1px solid $color-night;
+  padding: 8px 0;
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &__info {
+    margin: 0;
+    padding: 0;
+    font-size: 12px;
+  }
+
+  &__info-viewing-label {
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+
+  &__nav {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    list-style: none;
+  }
+
+  &__nav-item {
+    margin: 0;
+    padding: 0;
+
+    &--active > * {
+      font-weight: 700;
+    }
+  }
+
+  &__nav-link {
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    width: 1.75em;
+    cursor: pointer;
+    text-decoration: none;
+    user-select: none;
+    appearance: none;
+    background-color: transparent;
+    border: 0;
+  }
+}

@@ -42,6 +42,16 @@ const Pagination = ({
             3
           </button>
         </li>
+        <li className={cx('pagination__nav-item')}>
+          <button className={cx('pagination__nav-link')} type="button">
+            4
+          </button>
+        </li>
+        <li className={cx('pagination__nav-item')}>
+          <button className={cx('pagination__nav-link')} type="button">
+            5
+          </button>
+        </li>
       </ul>
     </div>
   )

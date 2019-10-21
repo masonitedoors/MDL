@@ -1,7 +1,7 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import classNames from 'classnames/bind'
 import { React as Button } from 'components/Button'
-import PropTypes from 'prop-types'
 
 import styles from './style.module.scss'
 

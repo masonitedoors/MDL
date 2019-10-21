@@ -18,8 +18,7 @@ const Pagination = ({
 }) => {
   // Calculate total pages needed & generate an array of page numbers.
   const totalPages = Math.ceil(totalItems / itemsPerPage)
-  const pageNumbers = [...Array(totalPages + 1).keys()]
-  pageNumbers.shift()
+  const pageNumbers = [...Array(totalPages).keys()].map(n => n + 1)
 
   // Define our first & last page numbers.
   const firstPageNumber = 1

@@ -1,13 +1,19 @@
 import React from 'react'
 import classNames from 'classnames/bind'
 import { React as Button } from 'components/Button'
+import PropTypes from 'prop-types'
 
 import styles from './style.module.scss'
 
 const cx = classNames.bind(styles)
 
 const Pagination = ({
-  currentPageNumber, totalItems, itemsPerPage = 10, onChange,
+  currentPageNumber,
+  totalItems,
+  itemsPerPage,
+  onChange,
+  prevLabel,
+  nextLabel,
 }) => {
   // Calculate the total number of pages.
   const totalPages = Math.ceil(totalItems / itemsPerPage)
@@ -26,9 +32,7 @@ const Pagination = ({
 
   // Calculate the current item range for the current page.
   const currentItemsRangeMin = currentPageNumber * itemsPerPage - (itemsPerPage - 1)
-  const currentItemsRangeMax = currentPageNumber === lastPageNumber
-    ? totalItems
-    : currentPageNumber * itemsPerPage
+  const currentItemsRangeMax = currentPageNumber === lastPageNumber ? totalItems : currentPageNumber * itemsPerPage
   const currentItemsRange = `${currentItemsRangeMin}-${currentItemsRangeMax} of ${totalItems}`
 
   return (
@@ -42,10 +46,11 @@ const Pagination = ({
           <li className={cx(['pagination__nav-item', 'pagination__nav-item-prev'])}>
             <Button
               size="small"
+              aria-label={`Page ${prevPageNumber}`}
               disabled={currentPageNumber === firstPageNumber}
               onClick={() => onChange(prevPageNumber)}
             >
-              Prev
+              {prevLabel}
             </Button>
           </li>
           {pageNumbers.map(pageNumber => (
@@ -59,7 +64,7 @@ const Pagination = ({
               <button
                 type="button"
                 className={cx('pagination__nav-link')}
-                aria-label={`Goto Page ${pageNumber}`}
+                aria-label={`Page ${pageNumber}`}
                 onClick={() => onChange(pageNumber)}
               >
                 {pageNumber}
@@ -69,16 +74,32 @@ const Pagination = ({
           <li className={cx(['pagination__nav-item', 'pagination__nav-item-next'])}>
             <Button
               size="small"
+              aria-label={`Page ${nextPageNumber}`}
               disabled={currentPageNumber === lastPageNumber}
               onClick={() => onChange(nextPageNumber)}
             >
-              Next
+              {nextLabel}
             </Button>
           </li>
         </ul>
       </nav>
     </div>
   )
+}
+
+Pagination.propTypes = {
+  currentPageNumber: PropTypes.number.isRequired,
+  totalItems: PropTypes.number.isRequired,
+  onChange: PropTypes.func.isRequired,
+  itemsPerPage: PropTypes.number,
+  prevLabel: PropTypes.string,
+  nextLabel: PropTypes.string,
+}
+
+Pagination.defaultProps = {
+  itemsPerPage: 10,
+  prevLabel: 'Prev',
+  nextLabel: 'Next',
 }
 
 export default Pagination

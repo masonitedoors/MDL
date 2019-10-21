@@ -1,0 +1,119 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Pagination Should render the component without crashing 1`] = `
+<div
+  className="pagination"
+>
+  <div
+    className="pagination__info"
+  >
+    <span
+      className="pagination__info-viewing-label"
+    >
+      Viewing 
+    </span>
+    1-10 of 103
+  </div>
+  <nav
+    aria-label="Pagination Navigation"
+    role="navigation"
+  >
+    <ul
+      className="pagination__nav"
+    >
+      <li
+        className="pagination__nav-item pagination__nav-item-prev"
+      >
+        <Button
+          aria-label="Page 0"
+          disabled={true}
+          fullWidth={false}
+          onClick={[Function]}
+          size="small"
+          uppercase={false}
+          variant="default"
+        >
+          Prev
+        </Button>
+      </li>
+      <li
+        className="pagination__nav-item pagination__nav-item--active"
+        key="0_1"
+      >
+        <button
+          aria-label="Page 1"
+          className="pagination__nav-link"
+          onClick={[Function]}
+          type="button"
+        >
+          1
+        </button>
+      </li>
+      <li
+        className="pagination__nav-item"
+        key="1_2"
+      >
+        <button
+          aria-label="Page 2"
+          className="pagination__nav-link"
+          onClick={[Function]}
+          type="button"
+        >
+          2
+        </button>
+      </li>
+      <li
+        className="pagination__nav-item"
+        key="2_3"
+      >
+        <button
+          aria-label="Page 3"
+          className="pagination__nav-link"
+          onClick={[Function]}
+          type="button"
+        >
+          3
+        </button>
+      </li>
+      <li
+        className="pagination__nav-item"
+        key="3_..."
+      >
+        <span
+          className="pagination__nav-link"
+        >
+          ...
+        </span>
+      </li>
+      <li
+        className="pagination__nav-item"
+        key="4_11"
+      >
+        <button
+          aria-label="Page 11"
+          className="pagination__nav-link"
+          onClick={[Function]}
+          type="button"
+        >
+          11
+        </button>
+      </li>
+      <li
+        className="pagination__nav-item pagination__nav-item-next"
+      >
+        <Button
+          aria-label="Page 2"
+          disabled={false}
+          fullWidth={false}
+          onClick={[Function]}
+          size="small"
+          uppercase={false}
+          variant="default"
+        >
+          Next
+        </Button>
+      </li>
+    </ul>
+  </nav>
+</div>
+`;

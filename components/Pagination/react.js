@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import classNames from 'classnames/bind'
 import { React as Button } from 'components/Button'
+import { generateVisiblePages } from './generateVisiblePages'
 
 import styles from './style.module.scss'
 
@@ -19,6 +20,9 @@ const Pagination = ({
   // Calculate total pages needed & generate an array of page numbers.
   const totalPages = Math.ceil(totalItems / itemsPerPage)
   const pageNumbers = [...Array(totalPages).keys()].map(n => n + 1)
+
+  // Generate the list of visible page numbers.
+  const visiblePageNumbers = generateVisiblePages(page, totalPages)
 
   // Define our first & last page numbers.
   const firstPageNumber = 1
@@ -51,24 +55,35 @@ const Pagination = ({
               {prevLabel}
             </Button>
           </li>
-          {pageNumbers.map(pageNumber => (
-            <li
-              key={pageNumber}
-              className={cx([
-                'pagination__nav-item',
-                page === pageNumber && 'pagination__nav-item--active',
-              ])}
-            >
-              <button
-                type="button"
-                className={cx('pagination__nav-link')}
-                aria-label={`Page ${pageNumber}`}
-                onClick={() => onChange(pageNumber)}
+
+          {visiblePageNumbers.map((pageNumber, i) => {
+            const key = `${i}_${pageNumber}`
+            return (
+              <li
+                key={key}
+                className={cx([
+                  'pagination__nav-item',
+                  page === pageNumber && 'pagination__nav-item--active',
+                ])}
               >
-                {pageNumber}
-              </button>
-            </li>
-          ))}
+                {pageNumber === '...' ? (
+                  // Return an unclickable ellipsis.
+                  <span className={cx('pagination__nav-link')}>...</span>
+                ) : (
+                  // Return our clickable button.
+                  <button
+                    type="button"
+                    className={cx('pagination__nav-link')}
+                    aria-label={`Page ${pageNumber}`}
+                    onClick={() => onChange(pageNumber)}
+                  >
+                    {pageNumber}
+                  </button>
+                )}
+              </li>
+            )
+          })}
+
           <li className={cx(['pagination__nav-item', 'pagination__nav-item-next'])}>
             <Button
               size="small"

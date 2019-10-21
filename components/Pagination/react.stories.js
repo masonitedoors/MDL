@@ -8,16 +8,16 @@ storiesOf('Pagination', module)
   .addDecorator(withKnobs)
   .add(
     'default',
-    withState({ currentPageNumber: 1 })(({ store }) => {
+    withState({ page: 1 })(({ store }) => {
       const itemsPerPage = number('Number of items per page', 10)
       const totalItems = number('Total number of items', 103)
 
       return (
         <Pagination
+          page={store.state.page}
           totalItems={totalItems}
           itemsPerPage={itemsPerPage}
-          currentPageNumber={store.state.currentPageNumber}
-          onChange={pageNumber => store.set({ currentPageNumber: pageNumber })}
+          onChange={page => store.set({ page })}
         />
       )
     }),

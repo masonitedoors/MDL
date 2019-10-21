@@ -8,17 +8,16 @@ import styles from './style.module.scss'
 const cx = classNames.bind(styles)
 
 const Pagination = ({
-  currentPageNumber,
+  page,
   totalItems,
   itemsPerPage,
   onChange,
   prevLabel,
   nextLabel,
+  viewingLabel,
 }) => {
-  // Calculate the total number of pages.
+  // Calculate total pages needed & generate an array of page numbers.
   const totalPages = Math.ceil(totalItems / itemsPerPage)
-
-  // Generate an array of page numbers.
   const pageNumbers = [...Array(totalPages + 1).keys()]
   pageNumbers.shift()
 
@@ -27,19 +26,19 @@ const Pagination = ({
   const lastPageNumber = pageNumbers[pageNumbers.length - 1]
 
   // Define our previous and next page.
-  const prevPageNumber = currentPageNumber - 1
-  const nextPageNumber = currentPageNumber + 1
+  const prevPageNumber = page - 1
+  const nextPageNumber = page + 1
 
   // Calculate the current item range for the current page.
-  const currentItemsRangeMin = currentPageNumber * itemsPerPage - (itemsPerPage - 1)
-  const currentItemsRangeMax = currentPageNumber === lastPageNumber ? totalItems : currentPageNumber * itemsPerPage
-  const currentItemsRange = `${currentItemsRangeMin}-${currentItemsRangeMax} of ${totalItems}`
+  const viewingMin = page * itemsPerPage - (itemsPerPage - 1)
+  const viewingMax = page === lastPageNumber ? totalItems : page * itemsPerPage
+  const viewingRange = `${viewingMin}-${viewingMax} of ${totalItems}`
 
   return (
     <div className={cx('pagination')}>
       <div className={cx('pagination__info')}>
-        <span className={cx('pagination__info-viewing-label')}>Viewing </span>
-        {currentItemsRange}
+        <span className={cx('pagination__info-viewing-label')}>{viewingLabel}</span>
+        {viewingRange}
       </div>
       <nav role="navigation" aria-label="Pagination Navigation">
         <ul className={cx('pagination__nav')}>
@@ -47,7 +46,7 @@ const Pagination = ({
             <Button
               size="small"
               aria-label={`Page ${prevPageNumber}`}
-              disabled={currentPageNumber === firstPageNumber}
+              disabled={page === firstPageNumber}
               onClick={() => onChange(prevPageNumber)}
             >
               {prevLabel}
@@ -58,7 +57,7 @@ const Pagination = ({
               key={pageNumber}
               className={cx([
                 'pagination__nav-item',
-                currentPageNumber === pageNumber && 'pagination__nav-item--active',
+                page === pageNumber && 'pagination__nav-item--active',
               ])}
             >
               <button
@@ -75,7 +74,7 @@ const Pagination = ({
             <Button
               size="small"
               aria-label={`Page ${nextPageNumber}`}
-              disabled={currentPageNumber === lastPageNumber}
+              disabled={page === lastPageNumber}
               onClick={() => onChange(nextPageNumber)}
             >
               {nextLabel}
@@ -88,18 +87,20 @@ const Pagination = ({
 }
 
 Pagination.propTypes = {
-  currentPageNumber: PropTypes.number.isRequired,
+  page: PropTypes.number.isRequired,
   totalItems: PropTypes.number.isRequired,
   onChange: PropTypes.func.isRequired,
   itemsPerPage: PropTypes.number,
   prevLabel: PropTypes.string,
   nextLabel: PropTypes.string,
+  viewingLabel: PropTypes.string,
 }
 
 Pagination.defaultProps = {
   itemsPerPage: 10,
   prevLabel: 'Prev',
   nextLabel: 'Next',
+  viewingLabel: 'Viewing ',
 }
 
 export default Pagination

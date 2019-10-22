@@ -12,7 +12,7 @@ exports[`Pagination Should render the component without crashing 1`] = `
     >
       Viewing 
     </span>
-    1-10 of 103
+    31-40 of 103
   </div>
   <nav
     aria-label="Pagination Navigation"
@@ -25,8 +25,8 @@ exports[`Pagination Should render the component without crashing 1`] = `
         className="pagination__nav-item pagination__nav-item-prev"
       >
         <Button
-          aria-label="Page 0"
-          disabled={true}
+          aria-label="Page 3"
+          disabled={false}
           fullWidth={false}
           onClick={[Function]}
           size="small"
@@ -37,7 +37,7 @@ exports[`Pagination Should render the component without crashing 1`] = `
         </Button>
       </li>
       <li
-        className="pagination__nav-item pagination__nav-item--active"
+        className="pagination__nav-item"
         key="0_1"
       >
         <button
@@ -76,8 +76,47 @@ exports[`Pagination Should render the component without crashing 1`] = `
         </button>
       </li>
       <li
+        className="pagination__nav-item pagination__nav-item--active"
+        key="3_4"
+      >
+        <button
+          aria-label="Page 4"
+          className="pagination__nav-link"
+          onClick={[Function]}
+          type="button"
+        >
+          4
+        </button>
+      </li>
+      <li
         className="pagination__nav-item"
-        key="3_..."
+        key="4_5"
+      >
+        <button
+          aria-label="Page 5"
+          className="pagination__nav-link"
+          onClick={[Function]}
+          type="button"
+        >
+          5
+        </button>
+      </li>
+      <li
+        className="pagination__nav-item"
+        key="5_6"
+      >
+        <button
+          aria-label="Page 6"
+          className="pagination__nav-link"
+          onClick={[Function]}
+          type="button"
+        >
+          6
+        </button>
+      </li>
+      <li
+        className="pagination__nav-item"
+        key="6_..."
       >
         <span
           className="pagination__nav-link"
@@ -87,7 +126,7 @@ exports[`Pagination Should render the component without crashing 1`] = `
       </li>
       <li
         className="pagination__nav-item"
-        key="4_11"
+        key="7_11"
       >
         <button
           aria-label="Page 11"
@@ -102,7 +141,7 @@ exports[`Pagination Should render the component without crashing 1`] = `
         className="pagination__nav-item pagination__nav-item-next"
       >
         <Button
-          aria-label="Page 2"
+          aria-label="Page 5"
           disabled={false}
           fullWidth={false}
           onClick={[Function]}

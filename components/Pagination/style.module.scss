@@ -1,0 +1,85 @@
+@import "styles/index";
+
+.pagination {
+  border-top: 1px solid $color-night;
+  border-bottom: 1px solid $color-night;
+  padding: 6px 0;
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &__info {
+    margin: 0;
+    padding: 0;
+    font-size: 12px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+
+  &__info-viewing-label {
+    text-transform: uppercase;
+    font-weight: 700;
+
+    &::after {
+      content: " ";
+    }
+  }
+
+  &__nav {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    list-style: none;
+  }
+
+  &__nav-item {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &--active > * {
+      text-shadow: 0 0 1px $color-night;
+    }
+  }
+
+  &__nav-item-prev {
+    margin-right: $space-xs;
+  }
+
+  &__nav-item-next {
+    margin-left: $space-xs;
+  }
+
+  &__nav-link {
+    margin: 0;
+    padding: 0 0.5em;
+    background-color: transparent;
+    border-radius: 2px;
+    border: 0;
+    cursor: pointer;
+    font-size: 15px;
+    line-height: inherit;
+    text-align: center;
+    text-decoration: none;
+    transition: background-color 0.2s;
+    user-select: none;
+    -webkit-appearance: none;
+
+    &:focus {
+      z-index: 1; // Ensure focus outline stays on top when user hovers an adjacent link.
+    }
+  }
+
+  &__nav-ellipsis {
+    margin: 0;
+    padding: 0 0.5em;
+    font-size: 15px;
+    line-height: inherit;
+    user-select: none;
+  }
+}

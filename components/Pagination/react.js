@@ -61,10 +61,8 @@ const Pagination = ({
                 ])}
               >
                 {pageNumber === '...' ? (
-                  // Return an unclickable ellipsis.
-                  <span className={cx('pagination__nav-link')}>...</span>
+                  <span className={cx(['pagination__nav-ellipsis'])}>...</span>
                 ) : (
-                  // Return our clickable button.
                   <button
                     type="button"
                     className={cx('pagination__nav-link')}

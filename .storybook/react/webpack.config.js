@@ -3,6 +3,21 @@ const path = require('path')
 module.exports = ({ config, mode }) => {
   config.module.rules.push(
     {
+      test: /\/react\.js$/,
+      enforce: 'pre',
+      exclude: /node_modules/,
+      loaders: [
+        {
+          loader: 'eslint-loader',
+          options: {
+            fix: true,
+            emitWarning: true,
+          },
+        },
+      ],
+      include: path.resolve(__dirname, '../../components'),
+    },
+    {
       test: /stories\.react\.js$/,
       exclude: /node_modules/,
       loaders: [require.resolve('@storybook/addon-storysource/loader')],

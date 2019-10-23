@@ -17,25 +17,19 @@ const Pagination = ({
   nextLabel,
   viewingLabel,
 }) => {
-  // Calculate total pages needed & generate an array of page numbers.
   const totalPages = Math.ceil(totalItems / itemsPerPage)
   const pageNumbers = [...Array(totalPages).keys()].map(n => n + 1)
 
-  // Generate the list of visible page numbers.
-  const visiblePageNumbers = generateVisiblePages(page, totalPages)
-
-  // Define our first & last page numbers.
   const firstPageNumber = 1
   const lastPageNumber = pageNumbers[pageNumbers.length - 1]
-
-  // Define our previous and next page.
   const prevPageNumber = page - 1
   const nextPageNumber = page + 1
 
-  // Calculate the current item range for the current page.
   const viewingMin = page * itemsPerPage - (itemsPerPage - 1)
   const viewingMax = page === lastPageNumber ? totalItems : page * itemsPerPage
   const viewingRange = `${viewingMin}-${viewingMax} of ${totalItems}`
+
+  const visiblePageNumbers = generateVisiblePages(page, totalPages)
 
   return (
     <div className={cx('pagination')}>

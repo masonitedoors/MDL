@@ -22,6 +22,10 @@
   &__info-viewing-label {
     text-transform: uppercase;
     font-weight: 700;
+
+    &::after {
+      content: " ";
+    }
   }
 
   &__nav {

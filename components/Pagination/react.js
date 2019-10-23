@@ -114,7 +114,7 @@ Pagination.defaultProps = {
   itemsPerPage: 10,
   prevLabel: 'Prev',
   nextLabel: 'Next',
-  viewingLabel: 'Viewing ',
+  viewingLabel: 'Viewing',
 }
 
 export default Pagination

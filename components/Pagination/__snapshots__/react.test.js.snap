@@ -10,7 +10,7 @@ exports[`Pagination Should render the component without crashing 1`] = `
     <span
       className="pagination__info-viewing-label"
     >
-      Viewing 
+      Viewing
     </span>
     31-40 of 103
   </div>

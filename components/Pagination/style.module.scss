@@ -48,11 +48,11 @@
   }
 
   &__nav-item-prev {
-    margin-right: 10px;
+    margin-right: $space-xs;
   }
 
   &__nav-item-next {
-    margin-left: 10px;
+    margin-left: $space-xs;
   }
 
   &__nav-link {

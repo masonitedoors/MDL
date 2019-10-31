@@ -11,6 +11,7 @@
   text-align: center;
   cursor: pointer;
   background-color: transparent;
+  transition: 125ms all ease-in;
 
   &--uppercase {
     text-transform: uppercase;
@@ -24,16 +25,28 @@
   &--default {
     background: $color-snow;
     box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.15);
+
+    &:hover {
+      background: darken($color-snow, 10%);
+    }
   }
 
   &--primary {
     background: $color-limerick;
     box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.15);
+
+    &:hover {
+      background: darken($color-limerick, 5%);
+    }
   }
 
   &--secondary {
     background: $color-deepgrey;
     color: white;
+
+    &:hover {
+      background: darken($color-deepgrey, 10%);
+    }
   }
 
   &--sm {

@@ -45,7 +45,8 @@
     background: $color-deepgrey;
     color: white;
 
-    &:hover {
+    &:hover,
+    &:focus {
       background: darken($color-deepgrey, 10%);
     }
   }

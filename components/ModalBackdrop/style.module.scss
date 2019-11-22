@@ -13,6 +13,60 @@
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate3d(-50%, -50%, 0);
+    opacity: 0;
+  }
+}
+
+:global {
+  .modal-backdrop {
+    $transition-speed: 150ms;
+
+    &-exit-done,
+    &-enter {
+      opacity: 0;
+    }
+
+    &-enter-active {
+      opacity: 1;
+      transition: $transition-speed all ease-in;
+    }
+
+    &-enter-done,
+    &-exit {
+      opacity: 1;
+    }
+
+    &-exit-active {
+      opacity: 0;
+      transition: $transition-speed all ease-out;
+    }
+
+    &__content {
+      $transition-speed: 250ms;
+
+      &-exit-done,
+      &-enter {
+        opacity: 0;
+        transform: translate3d(-50%, -45%, 0);
+      }
+
+      &-enter-active {
+        opacity: 1;
+        transform: translate3d(-50%, -50%, 0);
+        transition: $transition-speed all ease-out;
+      }
+
+      &-enter-done,
+      &-exit {
+        opacity: 1;
+      }
+
+      &-exit-active {
+        opacity: 0;
+        transform: translate3d(-50%, -45%, 0);
+        transition: $transition-speed all ease-in;
+      }
+    }
   }
 }

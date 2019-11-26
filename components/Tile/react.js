@@ -19,9 +19,11 @@ const Tile = ({
   >
     <svg className={cx('tile__selected-icon')} dangerouslySetInnerHTML={{ __html: mCheck }} />
     <div className={cx('tile__label')}>{label}</div>
-    <div className={cx('tile__image')}>
-      <img src={imageUrl} alt={label} />
-    </div>
+    {imageUrl && (
+      <div className={cx('tile__image')}>
+        <img src={imageUrl} alt={label} />
+      </div>
+    )}
   </div>
 )
 

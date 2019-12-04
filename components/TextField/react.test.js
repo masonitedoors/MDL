@@ -114,4 +114,26 @@ describe('TextField', () => {
     wrapper.setProps({ removeMargin: true })
     expect(wrapper.find('.text-field--no-margin').length).toBe(1)
   })
+
+  describe('disabled prop', () => {
+    it('Should set the disabled modifier when true', () => {
+      wrapper.setProps({ disabled: true })
+      expect(wrapper.find('.text-field--disabled').length).toBe(1)
+    })
+    it('Should not set the disabled modifier when false', () => {
+      wrapper.setProps({ disabled: false })
+      expect(wrapper.find('.text-field--disabled').length).toBe(0)
+    })
+  })
+
+  describe('readonly prop', () => {
+    it('Should set the readonly modifier when true', () => {
+      wrapper.setProps({ readonly: true })
+      expect(wrapper.find('.text-field--readonly').length).toBe(1)
+    })
+    it('Should not set the readonly modifier when false', () => {
+      wrapper.setProps({ readonly: false })
+      expect(wrapper.find('.text-field--readonly').length).toBe(0)
+    })
+  })
 })

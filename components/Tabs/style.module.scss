@@ -10,15 +10,19 @@
 .tab {
   display: inline-block;
   margin: 0;
-  padding: $size-md;
+  padding: $space-xs;
   border-bottom: 1px solid $color-pastelgray;
   text-align: center;
   background: white;
   cursor: pointer;
-}
 
-.tab--active {
-  box-shadow: inset 0 -3px $color-limerick;
-  background: #f3f3f3;
-  color: #000;
+  &--active {
+    box-shadow: inset 0 -3px $color-limerick;
+    background: #f3f3f3;
+    color: #000;
+  }
+
+  &--sm {
+    padding: ($space-xxs * 1.5) ($space-xs * 1.5); // Multipliers compensate for line height not being factored into the mockup.
+  }
 }

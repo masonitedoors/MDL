@@ -10,6 +10,7 @@ const TextField = ({
   error,
   helper,
   label,
+  labelAlwaysAbove,
   onBlur,
   onClick,
   onFocus,
@@ -41,7 +42,7 @@ const TextField = ({
         'text-field--light': variant === 'light',
         'text-field--dark': variant === 'dark',
         'text-field--error': error,
-        'text-field--active': isActive || fieldValue.length,
+        'text-field--active': labelAlwaysAbove || isActive || fieldValue.length,
         'text-field--no-margin': removeMargin,
       })}
     >
@@ -54,7 +55,7 @@ const TextField = ({
           'text-field__input--trailing-icon': trailingIcon,
         })}
         type={type}
-        placeholder={isActive || !label ? placeholder : ''}
+        placeholder={labelAlwaysAbove || !label ? placeholder : ''}
         onKeyDown={onKeyDown}
         onBlur={event => {
           setActive(false)
@@ -83,6 +84,7 @@ TextField.propTypes = {
   error: PropTypes.bool,
   helper: PropTypes.string,
   label: PropTypes.string,
+  labelAlwaysAbove: PropTypes.bool,
   onKeyDown: PropTypes.func,
   placeholder: PropTypes.string,
   value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
@@ -100,8 +102,9 @@ TextField.defaultProps = {
   error: false,
   helper: '',
   label: undefined,
+  labelAlwaysAbove: undefined,
   onKeyDown: undefined,
-  placeholder: '',
+  placeholder: undefined,
   trailingIcon: undefined,
   type: 'text',
   variant: 'dark',

@@ -14,10 +14,11 @@
 
   &__input {
     font-family: $font-family;
+    font-size: $base-font-size;
     border-radius: 2px;
-    border: 0;
-    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.15); // should be moved to pseudo-element http://tobiasahlin.com/blog/how-to-animate-box-shadow/
-    font-size: 14px;
+    border: 1px solid $color-silver;
+    color: $color-deepgray;
+    box-shadow: inset 0 1px 2px 0 rgba(0, 0, 0, 0.15);
     height: 32px;
     padding: $space-xxs $space-xs;
     box-sizing: border-box;
@@ -46,7 +47,7 @@
   }
 
   &--error &__input {
-    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.15), inset 0 -3px 0 0 $color-rust;
+    border-color: $color-rust;
   }
 
   &--no-margin {
@@ -62,6 +63,7 @@
     left: $space-xs;
     transition: all 200ms;
     pointer-events: none;
+    color: $color-slategray;
   }
 
   &--error &__label {
@@ -71,6 +73,7 @@
   &--active &__label {
     top: -$space-xs;
     font-size: 10px;
+    color: $color-deepgray;
   }
 
   /* Helper */

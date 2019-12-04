@@ -1,0 +1,81 @@
+@import "styles/index";
+
+$drop-shadow-drop-down: rgba(0, 0, 0, 0.2);
+
+.mdl-select {
+  .mdl-select-placeholder {
+    font-size: 1.4rem;
+  }
+
+  .mdl-select-control {
+    box-shadow: 0 1px 1px 0 $drop-shadow-drop-down;
+    border: 1px solid $color-white;
+    border-radius: 2px;
+  }
+
+  &.mdl-select .mdl-select-arrow {
+    font-family: "MIcons" !important; // TODO: Replace?
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    border: none;
+    display: inline-block;
+    height: auto;
+    width: auto;
+    position: relative;
+  }
+
+  &.mdl-select.is-open > .mdl-select-control .mdl-select-arrow {
+    top: auto;
+  }
+
+  &.mdl-select.is-disabled > .mdl-select-control:hover {
+    box-shadow: 0 1px 1px 0 $drop-shadow-drop-down;
+  }
+
+  &.mdl-select .mdl-select-arrow:before {
+    content: "\e92e";
+  }
+
+  .mdl-select-value {
+    font-size: 1.4rem;
+  }
+
+  .mdl-select-clear-zone {
+    display: none;
+  }
+}
+
+.mdl-select .mdl-select-arrow-zone,
+.icon-chevron-down,
+.mdl-select.mdl-select .mdl-select-arrow {
+  font-size: 1.6rem;
+  color: $background-color-8;
+}
+
+.selectDiv select {
+  appearance: none;
+  cursor: pointer;
+}
+
+.selectDiv {
+  position: relative;
+
+  &:after {
+    content: ">";
+    font-family: $drop-down-arrow-distributor-modal;
+    font-size: 1.7em;
+    color: $primary-button-color;
+    transform: rotate(90deg);
+    right: 11px;
+    top: 3px;
+    padding: 0 0 2px;
+    position: absolute;
+    pointer-events: none;
+  }
+}

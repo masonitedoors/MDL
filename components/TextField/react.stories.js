@@ -20,6 +20,8 @@ storiesOf('TextField', module)
       const error = boolean('Error State', false)
       const helper = error ? 'Something is wrong.' : ''
       const showTrailingIcon = boolean('Show Trailing Icon', true)
+      const disabled = boolean('Disabled', false)
+      const readonly = boolean('Readonly', false)
       const trailingIcon = showTrailingIcon && mPhone
       return (
         <TextField
@@ -34,6 +36,8 @@ storiesOf('TextField', module)
           variant={variant}
           removeMargin={false}
           align={align}
+          disabled={disabled}
+          readonly={readonly}
         />
       )
     }),

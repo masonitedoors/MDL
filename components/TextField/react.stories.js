@@ -24,17 +24,27 @@ storiesOf('TextField', module)
       const showTrailingIcon = boolean('Show Trailing Icon', true)
       const disabled = boolean('Disabled', false)
       const readonly = boolean('Readonly', false)
+      const removeMargin = boolean('Remove margins', false)
       const trailingIcon = showTrailingIcon && mPhone
 
       return (
         <TextField
           {...{
-            align, error, helper, label, labelAlwaysAbove, placeholder, trailingIcon, variant,
+            align,
+            disabled,
+            error,
+            helper,
+            label,
+            labelAlwaysAbove,
+            placeholder,
+            readonly,
+            removeMargin,
+            trailingIcon,
+            variant,
           }}
           onBlur={value => {}}
           onChange={value => store.set({ value })}
           value={store.state.value}
-          removeMargin={false}
         />
       )
     }),

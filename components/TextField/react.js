@@ -22,6 +22,8 @@ const TextField = ({
   variant,
   removeMargin,
   align,
+  disabled,
+  readonly,
 }) => {
   const [isActive, setActive] = useState(false)
   const Label = label ? 'label' : 'div'
@@ -43,6 +45,8 @@ const TextField = ({
         'text-field--error': error,
         'text-field--active': isActive || fieldValue.length,
         'text-field--no-margin': removeMargin,
+        'text-field--disabled': disabled,
+        'text-field--readonly': readonly,
       })}
     >
       <div className={cx('text-field__label')}>{label}</div>
@@ -67,6 +71,8 @@ const TextField = ({
         onChange={event => onChange(event.target.value, event)}
         onClick={onClick}
         value={fieldValue}
+        disabled={disabled}
+        readOnly={readonly}
       />
       <TrailingIcon />
     </Label>
@@ -91,6 +97,8 @@ TextField.propTypes = {
   variant: PropTypes.oneOf(['dark', 'light']),
   removeMargin: PropTypes.bool,
   align: PropTypes.oneOf(['left', 'center', 'right']),
+  disabled: PropTypes.bool,
+  readonly: PropTypes.bool,
 }
 
 TextField.defaultProps = {
@@ -108,4 +116,6 @@ TextField.defaultProps = {
   removeMargin: false,
   align: 'left',
   value: '',
+  disabled: false,
+  readonly: false,
 }

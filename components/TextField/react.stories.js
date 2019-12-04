@@ -15,13 +15,15 @@ storiesOf('TextField', module)
     'default',
     withState({ value: '' })(({ store }) => {
       const variant = select('Variant', { Light: 'light', Dark: 'dark' }, 'dark')
-      const align = select('Align', { Left: '', Right: 'right', Center: 'center' }, '')
+      const align = select('Align', { Left: 'left', Right: 'right', Center: 'center' }, 'left')
       const label = text('Label', 'Label')
       const labelAlwaysAbove = boolean('Label always above', false)
       const placeholder = text('Placeholder', 'Placeholder')
       const error = boolean('Error State', false)
       const helper = error ? 'Something is wrong.' : ''
       const showTrailingIcon = boolean('Show Trailing Icon', true)
+      const disabled = boolean('Disabled', false)
+      const readonly = boolean('Readonly', false)
       const trailingIcon = showTrailingIcon && mPhone
 
       return (

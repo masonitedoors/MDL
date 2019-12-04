@@ -16,6 +16,7 @@
     "lint:scripts:fix": "npm run lint:scripts -- --fix",
     "lint:styles": "npx stylelint **/*.scss --syntax scss",
     "lint": "npm run lint:styles && npm run lint:scripts",
+    "format": "prettier-eslint \"components/**/*.js\" --write",
     "test:watch": "npx jest --watch",
     "test": "npm run lint && npx jest",
     "start": "npm run storybook:react"
@@ -63,6 +64,7 @@
     "jsdom": "^15.1.0",
     "lerna": "^3.15.0",
     "node-sass": "^4.12.0",
+    "prettier-eslint": "^9.0.1",
     "react-dom": "^16.8.6",
     "sass-loader": "^7.1.0",
     "stylelint": "^10.1.0",

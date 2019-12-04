@@ -53,6 +53,11 @@
     margin: 0;
   }
 
+  &--disabled,
+  &--readonly {
+    opacity: 0.5;
+  }
+
   /* Label */
 
   &__label {

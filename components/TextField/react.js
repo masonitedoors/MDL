@@ -45,6 +45,8 @@ const TextField = ({
         'text-field--error': error,
         'text-field--active': isActive || fieldValue.length,
         'text-field--no-margin': removeMargin,
+        'text-field--disabled': disabled,
+        'text-field--readonly': readonly,
       })}
     >
       <div className={cx('text-field__label')}>{label}</div>

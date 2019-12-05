@@ -17,107 +17,34 @@ storiesOf('TextField', module)
       const variant = select('Variant', { Light: 'light', Dark: 'dark' }, 'dark')
       const align = select('Align', { Left: 'left', Right: 'right', Center: 'center' }, 'left')
       const label = text('Label', 'Label')
+      const labelAlwaysAbove = boolean('Label always above', false)
+      const placeholder = text('Placeholder', 'Placeholder')
       const error = boolean('Error State', false)
       const helper = error ? 'Something is wrong.' : ''
       const showTrailingIcon = boolean('Show Trailing Icon', true)
       const disabled = boolean('Disabled', false)
       const readonly = boolean('Readonly', false)
+      const removeMargin = boolean('Remove margins', false)
       const trailingIcon = showTrailingIcon && mPhone
+
       return (
         <TextField
-          error={error}
-          helper={helper}
-          label={label}
-          placeholder="Placeholder"
+          {...{
+            align,
+            disabled,
+            error,
+            helper,
+            label,
+            labelAlwaysAbove,
+            placeholder,
+            readonly,
+            removeMargin,
+            trailingIcon,
+            variant,
+          }}
           onBlur={value => {}}
           onChange={value => store.set({ value })}
-          trailingIcon={trailingIcon}
           value={store.state.value}
-          variant={variant}
-          removeMargin={false}
-          align={align}
-          disabled={disabled}
-          readonly={readonly}
-        />
-      )
-    }),
-  )
-  .add(
-    'center',
-    withState({ value: '' })(({ store }) => {
-      const variant = select('Variant', { Light: 'light', Dark: 'dark' }, 'dark')
-      const error = boolean('Error State', false)
-      const helper = error ? 'Something is wrong.' : ''
-      const showTrailingIcon = boolean('Show Trailing Icon', true)
-      const trailingIcon = showTrailingIcon && mPhone
-      return (
-        <TextField
-          error={error}
-          helper={helper}
-          placeholder="Placeholder"
-          onBlur={value => console.log('onBlur called, value: ', value)}
-          onChange={value => store.set({ value })}
-          trailingIcon={trailingIcon}
-          value={store.state.value}
-          variant={variant}
-          removeMargin={false}
-          align="center"
-        />
-      )
-    }),
-  )
-  .add(
-    'disabled',
-    withState({ value: '' })(({ store }) => {
-      const variant = select('Variant', { Light: 'light', Dark: 'dark' }, 'dark')
-      const align = select('Align', { Left: 'left', Right: 'right', Center: 'center' }, 'left')
-      const label = text('Label', 'Label')
-      const error = boolean('Error State', false)
-      const helper = error ? 'Something is wrong.' : ''
-      const showTrailingIcon = boolean('Show Trailing Icon', true)
-      const trailingIcon = showTrailingIcon && mPhone
-      return (
-        <TextField
-          error={error}
-          helper={helper}
-          label={label}
-          placeholder="Placeholder"
-          onBlur={value => {}}
-          onChange={value => store.set({ value })}
-          trailingIcon={trailingIcon}
-          value={store.state.value}
-          variant={variant}
-          removeMargin={false}
-          align={align}
-          disabled
-        />
-      )
-    }),
-  )
-  .add(
-    'readonly',
-    withState({ value: '' })(({ store }) => {
-      const variant = select('Variant', { Light: 'light', Dark: 'dark' }, 'dark')
-      const align = select('Align', { Left: 'left', Right: 'right', Center: 'center' }, 'left')
-      const label = text('Label', 'Label')
-      const error = boolean('Error State', false)
-      const helper = error ? 'Something is wrong.' : ''
-      const showTrailingIcon = boolean('Show Trailing Icon', true)
-      const trailingIcon = showTrailingIcon && mPhone
-      return (
-        <TextField
-          error={error}
-          helper={helper}
-          label={label}
-          placeholder="Placeholder"
-          onBlur={value => {}}
-          onChange={value => store.set({ value })}
-          trailingIcon={trailingIcon}
-          value={store.state.value}
-          variant={variant}
-          removeMargin={false}
-          align={align}
-          readonly
         />
       )
     }),

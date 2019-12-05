@@ -5,7 +5,19 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-# [2.13.0] - 2019-11-26
+## [2.14.0] - 2019-12-05
+
+### Added
+
+- `readonly` and `disabled` prop to `<TextField />`.
+- `size` prop to `<Tabs />` with `sm` size.
+- `<Button />` hover states.
+
+### Updated
+
+- overall visual appearance of `<TextField />`.
+
+## [2.13.0] - 2019-11-26
 
 ### Added
 

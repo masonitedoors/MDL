@@ -50,8 +50,12 @@
     border-color: $color-rust;
   }
 
-  &--no-margin {
+  &--no-margin:not(.text-field--label-always-above) {
     margin: 0;
+  }
+
+  &--no-margin.text-field--label-always-above {
+    margin-bottom: 0;
   }
 
   &--disabled,
@@ -75,7 +79,8 @@
     color: $color-rust;
   }
 
-  &--active &__label {
+  &--active &__label,
+  &--label-always-above &__label {
     top: -$space-xs;
     font-size: 10px;
     color: $color-deepgray;

@@ -7,7 +7,7 @@ import styles from './index.module.scss'
 const cx = classNames.bind(styles)
 
 const Tile = ({
-  selected, label, imageUrl, onClick,
+  selected, label, imageUrl, onClick, uppercase,
 }) => (
   <div
     tabIndex="-1"
@@ -18,7 +18,7 @@ const Tile = ({
     className={cx('tile', { 'tile--selected': selected })}
   >
     <svg className={cx('tile__selected-icon')} dangerouslySetInnerHTML={{ __html: mCheck }} />
-    <div className={cx('tile__label')}>{label}</div>
+    <div className={cx('tile__label', { 'tile__label--uppercase': uppercase })}>{label}</div>
     {imageUrl && (
       <div className={cx('tile__image')}>
         <img src={imageUrl} alt={label} />
@@ -34,9 +34,11 @@ Tile.propTypes = {
   label: PropTypes.string.isRequired,
   imageUrl: PropTypes.string.isRequired,
   onClick: PropTypes.func,
+  uppercase: PropTypes.string,
 }
 
 Tile.defaultProps = {
   selected: false,
   onClick: null,
+  uppercase: false,
 }

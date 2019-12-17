@@ -14,7 +14,7 @@ storiesOf('TableBulkEditPopover', module)
     <div style={{ marginLeft: 100, marginTop: 100 }}>
       <TableBulkEditPopover direction="left" cell={'4\'2"'}>
         <div style={styles}>
-          <TextField onChange={() => { }} value="" variant="light" removeMargin="true" />
+          <TextField onChange={() => {}} value="" variant="light" removeMargin="true" />
         </div>
       </TableBulkEditPopover>
     </div>

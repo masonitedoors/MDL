@@ -31,24 +31,38 @@ export class OverflowMenu extends Component {
     if (displayOverflowMenuActions) {
       this.toggleOverflowMenu()
     }
-  };
+  }
 
   render() {
     const { displayOverflowMenuActions } = this.state
     const { children } = this.props
     return (
       <div className={cx('overflow-menu')}>
-        <button type="button" className={cx('overflow-menu__button')} onClick={this.toggleOverflowMenu}>
-          <svg className={displayOverflowMenuActions ? cx('overflow-menu__svg--opened') : cx('overflow-menu__svg')} dangerouslySetInnerHTML={{ __html: mMoreHorizontal }} />
+        <button
+          type="button"
+          className={cx('overflow-menu__button')}
+          onClick={this.toggleOverflowMenu}
+        >
+          <svg
+            className={
+              displayOverflowMenuActions
+                ? cx('overflow-menu__svg--opened')
+                : cx('overflow-menu__svg')
+            }
+            dangerouslySetInnerHTML={{ __html: mMoreHorizontal }}
+          />
         </button>
 
-        {displayOverflowMenuActions
-          && (
-          <div role="presentation" className={cx('overflow-menu__actions')} onClick={e => this.checkToCloseOverflowMenu(e)} onKeyPress={e => this.checkToCloseOverflowMenu(e)}>
+        {displayOverflowMenuActions && (
+          <div
+            role="presentation"
+            className={cx('overflow-menu__actions')}
+            onClick={e => this.checkToCloseOverflowMenu(e)}
+            onKeyPress={e => this.checkToCloseOverflowMenu(e)}
+          >
             {children}
           </div>
-          )
-        }
+        )}
       </div>
     )
   }

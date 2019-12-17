@@ -12,9 +12,15 @@ describe('When the component is created', () => {
     wrapper = shallow(
       <OverflowMenu>
         <p>This is a test</p>
-        <Button variant="default" fullWidth uppercase>My First Button</Button>
-        <Button variant="default" fullWidth uppercase>My Second Button</Button>
-        <Button variant="default" fullWidth uppercase>My Third Button</Button>
+        <Button variant="default" fullWidth uppercase>
+          My First Button
+        </Button>
+        <Button variant="default" fullWidth uppercase>
+          My Second Button
+        </Button>
+        <Button variant="default" fullWidth uppercase>
+          My Third Button
+        </Button>
       </OverflowMenu>,
     )
 

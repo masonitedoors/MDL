@@ -23,11 +23,7 @@ const ModalBackdrop = ({ children, show }) => {
       onExited={() => setEntered(false)}
     >
       <div className={cx('modal-backdrop')}>
-        <CSSTransition
-          in={entered}
-          timeout={250}
-          classNames="modal-backdrop__content"
-        >
+        <CSSTransition in={entered} timeout={250} classNames="modal-backdrop__content">
           <div className={cx('modal-backdrop__content')}>{children}</div>
         </CSSTransition>
       </div>

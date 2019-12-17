@@ -57,7 +57,10 @@
     padding: 0 $space-s;
     font-weight: 700;
     font-size: $base-font-size;
-    text-transform: uppercase;
+
+    &--uppercase {
+      text-transform: uppercase;
+    }
   }
 
   &__image {

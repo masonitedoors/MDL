@@ -9,8 +9,9 @@ $submenu-width: 180px;
 
 .content {
   transform: translate3d($main-menu-width, 0, 0);
+  height: 100%;
   width: calc(100% - #{$main-menu-width});
-  overflow: hidden;
+  overflow-y: scroll;
   transition: $main-menu-transition;
 
   &--main-menu-expanded {
@@ -25,7 +26,7 @@ $submenu-width: 180px;
   flex-direction: column;
   justify-content: space-between;
   z-index: 10;
-  height: 100vh;
+  height: 100%;
   fill: $color-gray;
 }
 

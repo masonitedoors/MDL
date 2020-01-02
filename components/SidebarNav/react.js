@@ -225,7 +225,7 @@ export const SidebarNavLayout = props => {
   const [expanded, setExpanded] = useState(false)
   const { children } = props
   return (
-    <div style={{ height: '100%' }}>
+    <div>
       <SidebarNav {...props} expandedCb={expanded => setExpanded(expanded)} />
       <div className={cx('content', expanded && 'content--main-menu-expanded')}>{children}</div>
     </div>

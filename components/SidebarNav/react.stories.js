@@ -63,15 +63,6 @@ storiesOf('SidebarNav', module)
     )
 
     return (
-      <div
-        style={{
-          width: '100%',
-          height: '100%',
-          position: 'fixed',
-          left: 0,
-          top: 0,
-        }}
-      >
         <SidebarNavLayout
           logo={Logo}
           location={location}
@@ -154,6 +145,5 @@ storiesOf('SidebarNav', module)
             </p>
           </div>
         </SidebarNavLayout>
-      </div>
     )
   })

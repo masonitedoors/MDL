@@ -21,12 +21,13 @@ $submenu-width: 180px;
 }
 
 .sidebar {
-  position: absolute;
+  position: fixed;
+  top: 0;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   z-index: 10;
-  height: 100%;
+  height: 100vh;
   fill: $color-gray;
 }
 

@@ -9,7 +9,7 @@ $submenu-width: 180px;
 
 .content {
   transform: translate3d($main-menu-width, 0, 0);
-  height: 100%;
+  height: 100vh;
   width: calc(100% - #{$main-menu-width});
   overflow-y: scroll;
   transition: $main-menu-transition;

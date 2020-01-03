@@ -68,6 +68,12 @@ $submenu-width: 180px;
     display: inline-flex;
     margin: 0;
 
+    &:hover {
+      .menu-item-link__icon {
+        fill: $color-limerick !important;
+      }
+    }
+
     &--active {
       .menu-item-link__icon {
         fill: $color-limerick !important;
@@ -107,11 +113,11 @@ $submenu-width: 180px;
     text-decoration: none;
 
     &:hover &__icon {
-      fill: $color-snow;
+      fill: $color-limerick;
     }
 
     &:hover {
-      color: $color-snow !important; // Bootstrap removes color changes for href="#"
+      color: $color-limerick !important; // Bootstrap removes color changes for href="#"
       text-decoration: none;
     }
 

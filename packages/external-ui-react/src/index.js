@@ -1,6 +1,7 @@
 export { React as Button } from 'components/Button'
 export { React as Checkbox } from 'components/Checkbox'
 export { React as FilterableSearch } from 'components/FilterableSearch'
+export { React as Icon } from 'components/Icon'
 export { React as Input, React as TextField } from 'components/TextField'
 export { React as Pagination } from 'components/Pagination'
 export { React as PaginationDots } from 'components/PaginationDots'

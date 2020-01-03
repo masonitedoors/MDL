@@ -29,11 +29,13 @@ const Submenu = ({
       'sidebar-nav-submenu--expanded': expanded,
     })}
   >
-    {items.map(({ label, href = '#', onClick }) => (
+    {items.map(({
+      label, href = '#', onClick, active = null,
+    }) => (
       <li key={label}>
         <a
           className={cx('menu-item-link', {
-            'menu-item-link--active': location && location.pathname === href,
+            'menu-item-link--active': active || (location && location.pathname === href),
           })}
           href={href}
           tabIndex="0"
@@ -88,6 +90,7 @@ const MainMenuItem = ({
         tabIndex="0"
         className={cx('menu-item-link')}
         href={href}
+        title={label}
         onClick={e => {
           if (onClick) {
             e.preventDefault()
@@ -237,3 +240,6 @@ SidebarNavLayout.propTypes = {
 }
 
 export default SidebarNavLayout
+
+const setInlineSvgTitle = (svg, title) =>
+  svg.replace(/<title>\w+<\/title>/, `<title>${title}</title>`)

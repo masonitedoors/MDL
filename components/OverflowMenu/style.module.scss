@@ -3,6 +3,13 @@
 .overflow-menu {
   position: relative;
   display: inline-block;
+
+  &--dark &__button {
+    background-color: $color-deepgrey;
+  }
+  &--dark &__svg {
+    fill: $color-limerick;
+  }
 }
 
 .overflow-menu__button {

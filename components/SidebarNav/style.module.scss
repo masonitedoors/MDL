@@ -21,13 +21,13 @@ $submenu-width: 180px;
 }
 
 .sidebar {
-  position: fixed;
+  position: absolute;
   top: 0;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   z-index: 10;
-  height: 100vh;
+  height: 100%;
   fill: $color-gray;
 }
 
@@ -146,6 +146,10 @@ $submenu-width: 180px;
       }
     }
   }
+}
+
+.sidebar-nav-wrapper {
+  position: relative;
 }
 
 .sidebar-nav-submenu {

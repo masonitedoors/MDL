@@ -17,8 +17,7 @@ const combatStorybookPaddingStyle = {
 }
 
 const Content = () => (
-  <div style={{ padding: 20 }}>
-    <h1>Page</h1>
+  <>
     <p>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
       labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
@@ -82,7 +81,7 @@ const Content = () => (
       voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
       non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
     </p>
-  </div>
+  </>
 )
 
 const menuItems = [
@@ -149,7 +148,10 @@ storiesOf('SidebarNav', module)
           menuItems={menuItems}
           bottomMenuItems={bottomMenuItems}
         >
-          <Content />
+          <div style={{ padding: 20 }}>
+            <h1>Page Title</h1>
+            <Content />
+          </div>
         </SidebarNavLayout>
       </div>
     )
@@ -166,7 +168,7 @@ storiesOf('SidebarNav', module)
     return (
       <div style={combatStorybookPaddingStyle}>
         <header style={{ backgroundColor: '#343639', padding: 8, height: headerHeight }}>
-          <h1>Header</h1>
+          <h1>Page Title</h1>
         </header>
         <SidebarNavLayout
           logo={hasLogo && Logo}
@@ -176,7 +178,10 @@ storiesOf('SidebarNav', module)
           layoutWrapperProps={heightStyle}
           contentWrapperProps={heightStyle}
         >
-          <Content />
+          <div style={{ padding: 20 }}>
+            <h2>Heading</h2>
+            <Content />
+          </div>
         </SidebarNavLayout>
       </div>
     )

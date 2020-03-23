@@ -1,0 +1,58 @@
+@import "styles/index";
+
+.tooltip {
+  &--display-tooltip .tooltip--tooltip-message-wrapper {
+    display: inline-block;
+  }
+
+  &--tooltip-wrapper {
+    position: relative;
+    display: inline-block;
+    color: $color-m-secondary-silver;
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    &:hover .tooltip--tooltip-message-wrapper {
+      display: inline-block;
+    }
+  }
+
+  &--info-icon {
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    fill: $color-m-secondary-silver;
+  }
+
+  &--tooltip-message-wrapper {
+    position: absolute;
+    left: 130%;
+    top: 50%;
+    transform: translateY(-54%);
+    padding: 8px;
+    width: 251px;
+    box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.15);
+    background-color: $color-m-white;
+    z-index: 10;
+    display: none;
+  }
+
+  &--tooltip-message-wrapper p {
+    margin: 0;
+    line-height: 1.8;
+    color: $color-deepgrey;
+  }
+
+  &--positioned-right::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 100%;
+    margin-top: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent $color-m-white transparent transparent;
+  }
+}

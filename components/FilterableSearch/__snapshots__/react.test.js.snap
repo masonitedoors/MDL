@@ -29,11 +29,13 @@ exports[`FilterableSearch with snapshots should render correctly 1`] = `
   >
     <TextField
       align="left"
+      disabled={false}
       error={false}
       helper=""
       onChange={[Function]}
       onKeyDown={[Function]}
       placeholder="Search"
+      readonly={false}
       removeMargin={false}
       type="text"
       value=""
@@ -50,11 +52,13 @@ exports[`FilterableSearch with snapshots should render correctly 1`] = `
         />
         <input
           className="text-field__input"
+          disabled={false}
           onBlur={[Function]}
           onChange={[Function]}
           onFocus={[Function]}
           onKeyDown={[Function]}
           placeholder="Search"
+          readOnly={false}
           type="text"
           value=""
         />

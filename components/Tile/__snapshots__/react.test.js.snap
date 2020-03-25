@@ -4,6 +4,7 @@ exports[`Tile should render without crashing 1`] = `
 <Tile
   onClick={null}
   selected={false}
+  uppercase={false}
 >
   <div
     aria-checked={false}
@@ -24,11 +25,6 @@ exports[`Tile should render without crashing 1`] = `
     <div
       className="tile__label"
     />
-    <div
-      className="tile__image"
-    >
-      <img />
-    </div>
   </div>
 </Tile>
 `;

@@ -12,6 +12,7 @@
   cursor: pointer;
   background-color: transparent;
   transition: 125ms all ease-in;
+  position: relative;
 
   &--uppercase {
     text-transform: uppercase;
@@ -52,12 +53,62 @@
     }
   }
 
+  &--light {
+    background: $color-white;
+    border-radius: 2px;
+    border: 1px solid $color-light-silver;
+  }
+
   &--sm {
     padding: 2px 15px;
     font-size: 12px;
   }
 
+  &--large {
+    padding: 17px 15px;
+    font-size: 16px;
+  }
+
   &--full-width {
     width: 100%;
+  }
+
+  &--active {
+    border: 1px solid $color-limerick;
+
+    &::after {
+      position: absolute;
+      top: 0;
+      height: 0;
+      width: 0;
+      left: 0;
+      border: 10px solid transparent;
+      border-top-color: $color-limerick;
+      border-left-color: $color-limerick;
+      content: "";
+    }
+  }
+
+  &--large-active {
+    &::after {
+      border: 14px solid transparent;
+      border-top-color: $color-limerick;
+      border-left-color: $color-limerick;
+    }
+  }
+
+  &--small-active {
+    &::after {
+      border: 6px solid transparent;
+      border-top-color: $color-limerick;
+      border-left-color: $color-limerick;
+    }
+  }
+
+  &--active-check {
+    position: absolute;
+    top: 0;
+    left: 2px;
+    z-index: 9;
   }
 }

@@ -15,17 +15,21 @@ storiesOf('Button', module)
         Base: '',
         Primary: 'primary',
         Secondary: 'secondary',
+        Light: 'light',
       },
-      'light',
     )
     const size = select(
       'Size',
       {
         Small: 'small',
         Base: undefined,
+        Large: 'large',
       },
       '',
     )
+
+    const active = boolean('Active', false)
+
     const disabled = boolean('Disabled', false)
 
     const uppercase = boolean('Uppercase', false)
@@ -36,6 +40,7 @@ storiesOf('Button', module)
         size={size}
         uppercase={uppercase}
         disabled={disabled}
+        active={active}
       >
         Lorem Button
       </Button>

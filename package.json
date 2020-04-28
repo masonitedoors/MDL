@@ -49,6 +49,8 @@
     "@storybook/addons": "^5.1.8",
     "@storybook/cli": "^5.1.8",
     "@testing-library/react": "^8.0.7",
+    "@zeplin/cli-connect-react-plugin": "^0.2.3",
+    "@zeplin/cli-connect-storybook-plugin": "^0.2.0",
     "babel-eslint": "^10.0.2",
     "babel-loader": "^8.0.6",
     "babel-preset-react-app": "^9.0.0",

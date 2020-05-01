@@ -4,7 +4,7 @@
   "description": "",
   "main": "dist/index.js",
   "scripts": {
-    "build": "npm i && NODE_PATH=./../../ node build.js && NODE_PATH=./../../ webpack --mode production"
+    "build": "npm i && cross-env NODE_PATH=./../../ node build.js && cross-env NODE_PATH=./../../ webpack --mode production"
   },
   "sideEffects": false,
   "keywords": [],

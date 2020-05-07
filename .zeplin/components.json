@@ -61,15 +61,6 @@
       ]
     },
     {
-      "path": "components/OverflowMenu/react.js",
-      "docs": {
-        "urlPath": "/p/2922a5-overflow-menu/b/03357c"
-      },
-      "zeplinNames": [
-        "2. Components/Navigation/Overflow Menu/Drop down menu dark"
-      ]
-    },
-    {
       "path": "components/RadioGroup/react.js",
       "docs": {
         "urlPath": "/p/884447-radio-button/b/558fed"
@@ -80,7 +71,6 @@
         "2. Components/Forms/Radio/Radio Item"
       ]
     },
-
     {
       "path": "components/TextField/react.js",
       "docs": {

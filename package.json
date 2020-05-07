@@ -42,6 +42,7 @@
   "devDependencies": {
     "@babel/core": "^7.4.4",
     "@babel/plugin-proposal-class-properties": "^7.4.4",
+    "@babel/plugin-syntax-export-default-from": "^7.8.3",
     "@babel/preset-env": "^7.4.4",
     "@masonite/eslint-config": "0.0.13",
     "@masonite/stylelint-config": "^1.4.0",
@@ -73,7 +74,8 @@
     "svg-inline-loader": "^0.8.0",
     "vue": "^2.6.10",
     "vue-loader": "^15.7.0",
-    "vue-template-compiler": "^2.6.10"
+    "vue-template-compiler": "^2.6.10",
+    "webpack-cli": "^3.3.11"
   },
   "dependencies": {
     "@dump247/storybook-state": "^1.5.2",

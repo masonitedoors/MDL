@@ -1,0 +1,55 @@
+@import "styles/index";
+
+$min-width: 200px;
+
+.progress-container {
+  margin-left: 100px;
+
+  input {
+    margin: 15px 20px 15px 5px;
+  }
+}
+
+.progress-point-container {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.progress-point {
+  display: flex;
+  align-items: flex-start;
+  appearance: none;
+  background-color: transparent;
+  text-align: left;
+  margin-left: $space-m;
+  padding: 0;
+  font-size: 12px;
+  text-transform: uppercase;
+  border: 0;
+  color: $color-deepgray;
+  font-weight: 700;
+  min-width: $min-width;
+
+  .horizontal & {
+    position: relative;
+    bottom: -30px;
+    left: -50px;
+    width: 120px;
+    text-align: center;
+  }
+}
+
+.change-size {
+  background: none;
+  border: none;
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+  text-decoration: underline;
+  outline: none;
+}
+
+.big {
+  height: 100px;
+}

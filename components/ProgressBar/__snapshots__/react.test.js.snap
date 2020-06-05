@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ProgressBar with renders should render without crashing 1`] = `
+<section
+  className="progress-bar vertical"
+>
+  <div
+    className="progress-bar__meter-wrapper"
+  >
+    <div
+      className="progress-bar__meter"
+      style={
+        Object {
+          "bottom": "NaNpx",
+        }
+      }
+    />
+    <div
+      className="progress-bar__meter progress-bar__meter--fill progress-bar__meter--transitioning"
+      onTransitionEnd={[Function]}
+      style={
+        Object {
+          "height": "8px",
+        }
+      }
+    />
+    <div
+      className="progress-bar__points"
+    />
+  </div>
+</section>
+`;

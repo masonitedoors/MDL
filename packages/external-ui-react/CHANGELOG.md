@@ -7,9 +7,20 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased] - YYYY-MM-DD
 
+## [2.23.0] - 2020-06-08
+
+### Added
+
+- Option to exclude CSS font import via `$import-font` SCSS variable.
+
+### Updated
+
+- All dependencies to pass npm security audit.
+
 ## [2.22.0] - 2020-06-04
 
 ### Added
+
 - `<ProgressBar />` component.
 
 ## [2.21.0] - 2020-03-25

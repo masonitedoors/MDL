@@ -23,7 +23,7 @@ Lerna handles the package.json version, the tags, and releases. However, each pa
 ### @masonite/svg-icons
 
 - Have the MIcons repo cloned in vendors. Clone the `Masonitedoors/MDL` repo with `git clone --recurse-submodules -j8` to get it.
-- There isn't a `CHANGELOG.md` ... yet.
+- Update the `CHANGELOG.md` in `packages/svg-icons`. If there is an `[Unreleased]` block, change that to the next version following semver.
 - Build the package `npm run build-package:svg-icons`
 
 ## Contributing

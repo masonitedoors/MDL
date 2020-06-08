@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased] - YYYY-MM-DD
 
+## [1.5.0] - 2020-06-08
+
+### Added
+
+- Lock and unlock icon revisions
+
 ## [1.4.0] - 2020-05-13
 
 ### Added

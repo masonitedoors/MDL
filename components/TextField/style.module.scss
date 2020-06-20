@@ -118,6 +118,10 @@
     }
   }
 
+  &--error &__label {
+    color: $color-rust;
+  }
+
   &--error &__icon {
     opacity: 1;
     fill: $color-rust;

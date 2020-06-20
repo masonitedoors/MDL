@@ -51,7 +51,9 @@ const TextField = ({
         'text-field--readonly': readonly,
       })}
     >
-      <div className={cx('text-field__label')}>{label}</div>
+      <div className={cx('text-field__label', {
+        'text-field--error': error,
+      })}>{label}</div>
       <div className={cx('text-field__helper')}>{helper}</div>
       <input
         className={cx('text-field__input', {

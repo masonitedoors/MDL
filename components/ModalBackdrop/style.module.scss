@@ -18,6 +18,7 @@
   }
 }
 
+// Intentional. Need CSS module solution for CSSTransition.
 :global {
   .modal-backdrop {
     $transition-speed: 150ms;

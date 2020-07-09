@@ -6,7 +6,9 @@ import styles from './style.module.scss'
 
 const cx = classNames.bind(styles)
 
-const ModalBackdrop = ({ children, show }) => {
+const ModalBackdrop = ({
+  children, className, show, style,
+}) => {
   const [entered, setEntered] = useState(false)
 
   useEffect(() => {
@@ -22,7 +24,7 @@ const ModalBackdrop = ({ children, show }) => {
       onEntered={() => setEntered(true)}
       onExited={() => setEntered(false)}
     >
-      <div className={cx('modal-backdrop')}>
+      <div className={cx('modal-backdrop', className)} style={style}>
         <CSSTransition in={entered} timeout={250} classNames="modal-backdrop__content">
           <div className={cx('modal-backdrop__content')}>{children}</div>
         </CSSTransition>
@@ -36,8 +38,15 @@ export default ModalBackdrop
 ModalBackdrop.propTypes = {
   show: PropTypes.bool,
   children: PropTypes.oneOfType([PropTypes.element, PropTypes.string]).isRequired,
+  className: PropTypes.oneOfType([PropTypes.array, PropTypes.string]),
+  style: PropTypes.shape({
+    backgroundColor: PropTypes.string,
+    background: PropTypes.string,
+  }),
 }
 
 ModalBackdrop.defaultProps = {
+  className: '',
   show: true,
+  style: null,
 }

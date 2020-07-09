@@ -8,6 +8,11 @@
   width: 100vw;
   height: 100vh;
   background-color: rgba($color-deepgray, 0.75);
+  pointer-events: none;
+
+  &--active {
+    pointer-events: all;
+  }
 
   &__content {
     position: absolute;

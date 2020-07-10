@@ -8,16 +8,13 @@ storiesOf('Button', module)
   .addParameters({ readme: { sidebar: Readme } })
   .addDecorator(withKnobs)
   .add('default', () => {
-    const variant = select(
-      'Variant',
-      {
-        Default: 'default',
-        Base: '',
-        Primary: 'primary',
-        Secondary: 'secondary',
-        Light: 'light',
-      },
-    )
+    const variant = select('Variant', {
+      Default: 'default',
+      Base: '',
+      Primary: 'primary',
+      Secondary: 'secondary',
+      Light: 'light',
+    })
     const size = select(
       'Size',
       {

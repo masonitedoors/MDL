@@ -1,14 +1,24 @@
 import React from 'react'
 import classNames from 'classnames/bind'
 import PropTypes from 'prop-types'
+import { mCheck } from '@masonite/svg-icons'
 import s from './style.module.scss'
 import Icon from '../Icon/react'
-import { mCheck } from '@masonite/svg-icons'
 
 const cx = classNames.bind(s)
 
 const Button = ({
-  children, disabled, fullWidth, onClick, variant, size, uppercase, active, ...props
+  children,
+  className,
+  disabled,
+  fullWidth,
+  onClick,
+  variant,
+  size,
+  style,
+  uppercase,
+  active,
+  ...props
 }) => {
   const classes = cx(['btn'], {
     'btn--primary': variant === 'primary',
@@ -21,18 +31,26 @@ const Button = ({
     'btn--disabled': disabled,
     'btn--full-width': fullWidth,
     'btn--active': active,
-    'btn--large-active': (size === 'large' && active),
-    'btn--small-active': ((size === 'small' || size === 'sm') && active),
+    'btn--large-active': size === 'large' && active,
+    'btn--small-active': (size === 'small' || size === 'sm') && active,
+    className,
   })
 
   return (
-    <button type="button" className={classes} onClick={onClick} disabled={disabled} {...props}>
+    <button
+      type="button"
+      className={classes}
+      onClick={onClick}
+      disabled={disabled}
+      style={style}
+      {...props}
+    >
       {children}
-      {active && size === 'large' &&
+      {active && size === 'large' && (
         <span className={cx('btn--active-check')}>
           <Icon svg={mCheck} size={16} />
         </span>
-      }
+      )}
     </button>
   )
 }
@@ -40,20 +58,24 @@ const Button = ({
 Button.propTypes = {
   active: PropTypes.bool,
   children: PropTypes.string.isRequired,
+  className: PropTypes.string,
   onClick: PropTypes.func,
   disabled: PropTypes.bool,
   variant: PropTypes.oneOf(['default', 'primary', 'secondary', 'light']),
   size: PropTypes.oneOf(['small', 'sm', 'large']),
+  style: PropTypes.shape({}),
   uppercase: PropTypes.bool,
   fullWidth: PropTypes.bool,
 }
 
 Button.defaultProps = {
   active: false,
+  className: null,
   disabled: false,
   onClick: null,
   variant: 'default',
   size: null,
+  style: null,
   uppercase: false,
   fullWidth: false,
 }

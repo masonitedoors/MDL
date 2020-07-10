@@ -7,6 +7,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased] - YYYY-MM-DD
 
+## [2.24.0] - YYYY-MM-DD
+
+### Added
+
+- className prop and style prop that merge into to `<Button />`, `<ModalBackdrop />` and `<Icon />`'s outermost visible element.
+- onOutsideClick prop to `<ModalBackdrop />`, which is called when the backdrop is clicked. 
+
 ## [2.23.0] - 2020-06-08
 
 ### Added

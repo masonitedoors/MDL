@@ -7,7 +7,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased] - YYYY-MM-DD
 
-## [2.24.0] - YYYY-MM-DD
+## [2.24.1] - 2020-07-10
+
+### Fixed
+
+- `<Button />`'s className implementation not working.
+
+## [2.24.0] - 2020-07-10
 
 ### Added
 

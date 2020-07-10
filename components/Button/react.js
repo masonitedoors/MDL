@@ -20,7 +20,7 @@ const Button = ({
   active,
   ...props
 }) => {
-  const classes = cx(['btn'], {
+  const classes = cx('btn', {
     'btn--primary': variant === 'primary',
     'btn--secondary': ['secondary', 'dark'].includes(variant),
     'btn--light': variant === 'light',
@@ -33,8 +33,7 @@ const Button = ({
     'btn--active': active,
     'btn--large-active': size === 'large' && active,
     'btn--small-active': (size === 'small' || size === 'sm') && active,
-    className,
-  })
+  }, className)
 
   return (
     <button

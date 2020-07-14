@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased] - YYYY-MM-DD
 
+## [1.6.0] - 2020-07-14
+
+### Added
+
+- Stile and rail icons for panel profile, louver type and sticking
+
 ## [1.5.0] - 2020-06-08
 
 ### Added

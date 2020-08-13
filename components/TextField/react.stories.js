@@ -71,7 +71,7 @@ storiesOf('TextField', module)
             {...{
               align,
               disabled,
-              error,
+              error: true,
               helper,
               label,
               labelAlwaysAbove,

@@ -1,0 +1,29 @@
+@import "styles/index";
+
+.status {
+  background: transparent;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  display: inline-block;
+  border: 1px solid transparent;
+  cursor: pointer;
+
+  &--active {
+    background-color: $color-limerick;
+    border-color: $color-limerick;
+  }
+
+  &--inactive {
+    background-color: $color-pastelgray;
+    border-color: $color-pastelgray;
+  }
+
+  &--pending {
+    border-color: $color-slategray;
+  }
+
+  &--readonly {
+    cursor: default;
+  }
+}

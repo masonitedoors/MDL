@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased] - YYYY-MM-DD
 
+## [1.7.0] - 2020-08-17
+
+### Added
+
+- Pricing icons for door style, height, thickness and width
+
 ## [1.6.0] - 2020-07-14
 
 ### Added

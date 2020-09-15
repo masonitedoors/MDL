@@ -88,6 +88,10 @@
     }
   }
 
+  &--bold {
+    font-weight: bold;
+  }
+
   &--large-active {
     &::after {
       border: 14px solid transparent;

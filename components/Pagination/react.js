@@ -45,6 +45,8 @@ const Pagination = ({
               aria-label={`Page ${prevPageNumber}`}
               disabled={page === firstPageNumber}
               onClick={() => onChange(prevPageNumber)}
+              uppercase={true}
+              bold={true}
             >
               {prevLabel}
             </Button>
@@ -82,6 +84,8 @@ const Pagination = ({
               aria-label={`Page ${nextPageNumber}`}
               disabled={page === lastPageNumber}
               onClick={() => onChange(nextPageNumber)}
+              uppercase={true}
+              bold={true}
             >
               {nextLabel}
             </Button>

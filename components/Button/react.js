@@ -18,6 +18,7 @@ const Button = ({
   style,
   uppercase,
   active,
+  bold,
   ...props
 }) => {
   const classes = cx('btn', {
@@ -30,6 +31,7 @@ const Button = ({
     'btn--large': size === 'large',
     'btn--disabled': disabled,
     'btn--full-width': fullWidth,
+    'btn--bold': bold,
     'btn--active': active,
     'btn--large-active': size === 'large' && active,
     'btn--small-active': (size === 'small' || size === 'sm') && active,
@@ -65,6 +67,7 @@ Button.propTypes = {
   style: PropTypes.shape({}),
   uppercase: PropTypes.bool,
   fullWidth: PropTypes.bool,
+  bold: PropTypes.bool,
 }
 
 Button.defaultProps = {
@@ -77,6 +80,7 @@ Button.defaultProps = {
   style: null,
   uppercase: false,
   fullWidth: false,
+  bold: false
 }
 
 export default Button

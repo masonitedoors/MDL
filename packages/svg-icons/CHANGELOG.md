@@ -7,6 +7,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased] - YYYY-MM-DD
 
+## [1.8.0] - 2020-09-15
+
+### Added
+
+- Pricing icons for plant, distributor location and product category.
+- Arrow icons for table sorting.
+
 ## [1.7.0] - 2020-08-17
 
 ### Added

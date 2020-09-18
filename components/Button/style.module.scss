@@ -5,12 +5,13 @@
   padding: 7px 15px;
   font-weight: 400;
   font-size: 14px;
-  font-family: $font-family;
   border: 1px solid transparent;
   border-radius: 2px;
   text-align: center;
   cursor: pointer;
   background-color: transparent;
+  transition: 125ms all ease-in;
+  position: relative;
 
   &--uppercase {
     text-transform: uppercase;
@@ -24,16 +25,37 @@
   &--default {
     background: $color-snow;
     box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.15);
+
+    &:hover,
+    &:focus {
+      background: darken($color-snow, 10%);
+    }
   }
 
   &--primary {
     background: $color-limerick;
     box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.15);
+
+    &:hover,
+    &:focus {
+      background: darken($color-limerick, 5%);
+    }
   }
 
   &--secondary {
     background: $color-deepgrey;
     color: white;
+
+    &:hover,
+    &:focus {
+      background: darken($color-deepgrey, 10%);
+    }
+  }
+
+  &--light {
+    background: $color-white;
+    border-radius: 2px;
+    border: 1px solid $color-light-silver;
   }
 
   &--sm {
@@ -41,7 +63,55 @@
     font-size: 12px;
   }
 
+  &--large {
+    padding: 17px 15px;
+    font-size: 16px;
+  }
+
   &--full-width {
     width: 100%;
+  }
+
+  &--active {
+    border: 1px solid $color-limerick;
+
+    &::after {
+      position: absolute;
+      top: 0;
+      height: 0;
+      width: 0;
+      left: 0;
+      border: 10px solid transparent;
+      border-top-color: $color-limerick;
+      border-left-color: $color-limerick;
+      content: "";
+    }
+  }
+
+  &--bold {
+    font-weight: bold;
+  }
+
+  &--large-active {
+    &::after {
+      border: 14px solid transparent;
+      border-top-color: $color-limerick;
+      border-left-color: $color-limerick;
+    }
+  }
+
+  &--small-active {
+    &::after {
+      border: 6px solid transparent;
+      border-top-color: $color-limerick;
+      border-left-color: $color-limerick;
+    }
+  }
+
+  &--active-check {
+    position: absolute;
+    top: 0;
+    left: 2px;
+    z-index: 9;
   }
 }

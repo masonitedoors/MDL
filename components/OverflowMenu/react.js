@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { React as Icon } from 'components/Icon'
 import PropTypes from 'prop-types'
 import onClickOutside from 'react-onclickoutside'
 import { mMoreHorizontal } from '@masonite/svg-icons'
@@ -31,24 +32,44 @@ export class OverflowMenu extends Component {
     if (displayOverflowMenuActions) {
       this.toggleOverflowMenu()
     }
-  };
+  }
 
   render() {
     const { displayOverflowMenuActions } = this.state
-    const { children } = this.props
+    const { children, variant } = this.props
     return (
-      <div className={cx('overflow-menu')}>
-        <button type="button" className={cx('overflow-menu__button')} onClick={this.toggleOverflowMenu}>
-          <svg className={displayOverflowMenuActions ? cx('overflow-menu__svg--opened') : cx('overflow-menu__svg')} dangerouslySetInnerHTML={{ __html: mMoreHorizontal }} />
+      <div
+        className={cx('overflow-menu', {
+          'overflow-menu--dark': ['secondary', 'dark'].includes(variant),
+        })}
+      >
+        <button
+          type="button"
+          className={cx('overflow-menu__button')}
+          onClick={this.toggleOverflowMenu}
+        >
+          <Icon
+            className={
+              displayOverflowMenuActions
+                ? cx('overflow-menu__svg--opened')
+                : cx('overflow-menu__svg')
+            }
+            svg={mMoreHorizontal}
+            title="Overflow Menu icon"
+            size={16}
+          />
         </button>
 
-        {displayOverflowMenuActions
-          && (
-          <div role="presentation" className={cx('overflow-menu__actions')} onClick={e => this.checkToCloseOverflowMenu(e)} onKeyPress={e => this.checkToCloseOverflowMenu(e)}>
+        {displayOverflowMenuActions && (
+          <div
+            role="presentation"
+            className={cx('overflow-menu__actions')}
+            onClick={e => this.checkToCloseOverflowMenu(e)}
+            onKeyPress={e => this.checkToCloseOverflowMenu(e)}
+          >
             {children}
           </div>
-          )
-        }
+        )}
       </div>
     )
   }
@@ -56,6 +77,11 @@ export class OverflowMenu extends Component {
 
 OverflowMenu.propTypes = {
   children: PropTypes.node.isRequired,
+  variant: PropTypes.oneOf(['light', 'dark', 'primary', 'secondary']),
+}
+
+OverflowMenu.defaultProps = {
+  variant: 'light',
 }
 
 export default onClickOutside(OverflowMenu)

@@ -1,9 +1,8 @@
 import { addDecorator, addParameters, configure } from '@storybook/react'
-import { addReadme } from 'storybook-readme'
-import parameters from './../parameters'
-import 'styles/storybook'
+import parameters from '../parameters'
+import 'storybook-readme/register'
+import 'styles/storybook.scss'
 
-addDecorator(addReadme)
 addParameters(parameters)
 
 const req = require.context('./../../components', true, /(stories\.react|react\.stories).js$/)
@@ -11,7 +10,7 @@ const req = require.context('./../../components', true, /(stories\.react|react\.
 function loadStories() {
   const reqWelcomeStory = require.context('./../../components', true, /react.welcome.js$/)
   reqWelcomeStory(reqWelcomeStory.keys()[0])
-  req.keys().forEach(filename => req(filename))
+  req.keys().forEach((filename) => req(filename))
 }
 
 configure(loadStories, module)

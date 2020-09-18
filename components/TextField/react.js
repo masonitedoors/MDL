@@ -10,6 +10,7 @@ const TextField = ({
   error,
   helper,
   label,
+  labelAlwaysAbove,
   onBlur,
   onClick,
   onFocus,
@@ -22,6 +23,8 @@ const TextField = ({
   variant,
   removeMargin,
   align,
+  disabled,
+  readonly,
 }) => {
   const [isActive, setActive] = useState(false)
   const Label = label ? 'label' : 'div'
@@ -42,10 +45,15 @@ const TextField = ({
         'text-field--dark': variant === 'dark',
         'text-field--error': error,
         'text-field--active': isActive || fieldValue.length,
+        'text-field--label-always-above': labelAlwaysAbove,
         'text-field--no-margin': removeMargin,
+        'text-field--disabled': disabled,
+        'text-field--readonly': readonly,
       })}
     >
-      <div className={cx('text-field__label')}>{label}</div>
+      <div className={cx('text-field__label', {
+        'text-field--error': error,
+      })}>{label}</div>
       <div className={cx('text-field__helper')}>{helper}</div>
       <input
         className={cx('text-field__input', {
@@ -54,7 +62,7 @@ const TextField = ({
           'text-field__input--trailing-icon': trailingIcon,
         })}
         type={type}
-        placeholder={isActive || !label ? placeholder : ''}
+        placeholder={labelAlwaysAbove || !label ? placeholder : ''}
         onKeyDown={onKeyDown}
         onBlur={event => {
           setActive(false)
@@ -67,6 +75,8 @@ const TextField = ({
         onChange={event => onChange(event.target.value, event)}
         onClick={onClick}
         value={fieldValue}
+        disabled={disabled}
+        readOnly={readonly}
       />
       <TrailingIcon />
     </Label>
@@ -83,6 +93,7 @@ TextField.propTypes = {
   error: PropTypes.bool,
   helper: PropTypes.string,
   label: PropTypes.string,
+  labelAlwaysAbove: PropTypes.bool,
   onKeyDown: PropTypes.func,
   placeholder: PropTypes.string,
   value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
@@ -91,6 +102,8 @@ TextField.propTypes = {
   variant: PropTypes.oneOf(['dark', 'light']),
   removeMargin: PropTypes.bool,
   align: PropTypes.oneOf(['left', 'center', 'right']),
+  disabled: PropTypes.bool,
+  readonly: PropTypes.bool,
 }
 
 TextField.defaultProps = {
@@ -100,12 +113,15 @@ TextField.defaultProps = {
   error: false,
   helper: '',
   label: undefined,
+  labelAlwaysAbove: undefined,
   onKeyDown: undefined,
-  placeholder: '',
+  placeholder: undefined,
   trailingIcon: undefined,
   type: 'text',
   variant: 'dark',
   removeMargin: false,
   align: 'left',
   value: '',
+  disabled: false,
+  readonly: false,
 }

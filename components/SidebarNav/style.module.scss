@@ -9,8 +9,9 @@ $submenu-width: 180px;
 
 .content {
   transform: translate3d($main-menu-width, 0, 0);
+  height: 100vh;
   width: calc(100% - #{$main-menu-width});
-  overflow: hidden;
+  overflow-y: scroll;
   transition: $main-menu-transition;
 
   &--main-menu-expanded {
@@ -21,11 +22,13 @@ $submenu-width: 180px;
 
 .sidebar {
   position: absolute;
+  top: 0;
+  left: 0;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   z-index: 10;
-  height: 100vh;
+  height: 100%;
   fill: $color-gray;
 }
 
@@ -66,6 +69,12 @@ $submenu-width: 180px;
     display: inline-flex;
     margin: 0;
 
+    &:hover {
+      .menu-item-link__icon {
+        fill: $color-limerick !important;
+      }
+    }
+
     &--active {
       .menu-item-link__icon {
         fill: $color-limerick !important;
@@ -105,11 +114,11 @@ $submenu-width: 180px;
     text-decoration: none;
 
     &:hover &__icon {
-      fill: $color-snow;
+      fill: $color-limerick;
     }
 
     &:hover {
-      color: $color-snow !important; // Bootstrap removes color changes for href="#"
+      color: $color-limerick !important; // Bootstrap removes color changes for href="#"
       text-decoration: none;
     }
 
@@ -138,6 +147,10 @@ $submenu-width: 180px;
       }
     }
   }
+}
+
+.sidebar-nav-wrapper {
+  position: relative;
 }
 
 .sidebar-nav-submenu {

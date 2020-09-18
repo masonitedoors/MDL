@@ -10,11 +10,7 @@ exports[`SidebarNav with renders should render without crashing 1`] = `
   >
     <ul
       className="main-menu__top"
-    >
-      <li
-        className="menu-item menu-item--logo"
-      />
-    </ul>
+    />
     <ul
       className="main-menu__bottom"
     />
@@ -40,7 +36,9 @@ exports[`SidebarNav with renders should render without crashing 1`] = `
 `;
 
 exports[`SidebarNav with renders should render without crashing 2`] = `
-<div>
+<div
+  className="sidebar-nav-wrapper"
+>
   <SidebarNav
     bottomMenuItems={Array []}
     expandedCb={[Function]}

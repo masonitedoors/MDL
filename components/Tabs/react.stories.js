@@ -1,6 +1,6 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
-import { withKnobs } from '@storybook/addon-knobs'
+import { withKnobs, select } from '@storybook/addon-knobs'
 import { withState } from '@dump247/storybook-state'
 import Tabs from './react'
 import Readme from './react.README.md'
@@ -21,9 +21,20 @@ storiesOf('Tabs', module)
           children: <span>Using JSX</span>,
         },
       ]
+
+      const size = select(
+        'Size',
+        {
+          Small: 'sm',
+          Base: '',
+        },
+        '',
+      )
+
       return (
         <Tabs
           tabs={tabs}
+          size={size}
           activeTab={store.state.activeTab}
           onTabClick={id => store.set({ activeTab: id })}
         />

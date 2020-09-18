@@ -42,7 +42,10 @@ describe('FilterableSearch', () => {
     })
 
     it('Should set the showFilters in the state to be false when the dropdownToggle button is clicked two times', () => {
-      const dropDownToggleButton = wrapper.find('DropdownToggle').find('button').at(0)
+      const dropDownToggleButton = wrapper
+        .find('DropdownToggle')
+        .find('button')
+        .at(0)
 
       dropDownToggleButton.simulate('click')
       expect(instance.state.showFilters).toBeTruthy()

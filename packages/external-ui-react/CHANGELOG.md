@@ -5,6 +5,136 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [Unreleased] - YYYY-MM-DD
+
+## [2.24.1] - 2020-07-10
+
+### Fixed
+
+- `<Button />`'s className implementation not working.
+
+## [2.24.0] - 2020-07-10
+
+### Added
+
+- className prop and style prop that merge into to `<Button />`, `<ModalBackdrop />` and `<Icon />`'s outermost visible element.
+- onOutsideClick prop to `<ModalBackdrop />`, which is called when the backdrop is clicked. 
+
+## [2.23.0] - 2020-06-08
+
+### Added
+
+- Option to exclude CSS font import via `$import-font` SCSS variable.
+
+### Updated
+
+- All dependencies to pass npm security audit.
+
+## [2.22.0] - 2020-06-04
+
+### Added
+
+- `<ProgressBar />` component.
+
+## [2.21.0] - 2020-03-25
+
+### Added
+
+- `<Tooltip />` component added.
+- Large variant added to `<Button />`.
+
+### Fixed
+
+- Build script compatability for Windows.
+
+## [2.20.0] - 2020-03-16
+
+### Added
+
+- Dark variant to `<OverflowMenu />`.
+
+## [2.19.0] - 2020-03-12
+
+### Updated
+
+- `<SidebarNav />` has two new props for injecting props into `layoutWrapperProps` and `contentWrapperProps`, as well as some slight CSS styling differences.
+
+## [2.18.0] - 2020-01-03
+
+### Added
+
+- `<Icon />` component.
+- `active` prop for `<SidebarNav />` sub-menu items.
+
+## [2.17.0] - 2020-01-02
+
+### Fixed
+
+- Height property on `<SidebarNav />`.
+
+## [2.16.0] - 2019-12-30
+
+### Fixed
+
+- Scrolling in `<SidebarNav />`.
+
+## [2.15.0] - 2019-12-17
+
+### Added
+
+- Uppercase prop to `<Tile />`.
+
+### Changed
+
+- Default casing to normal for `<Tile />`.
+
+## [2.14.0] - 2019-12-05
+
+### Added
+
+- `readonly` and `disabled` prop to `<TextField />`.
+- `size` prop to `<Tabs />` with `sm` size.
+- `<Button />` hover states.
+
+### Updated
+
+- overall visual appearance of `<TextField />`.
+
+## [2.13.0] - 2019-11-26
+
+### Added
+
+- Transitions added to `<ModalBackdrop />`.
+- Hover and focus states added to `<Button />`.
+
+### Updated
+
+- Image element won't render without an image URL in `<Tile />`.
+
+## [2.12.3] - 2019-10-23
+
+### Fixed
+
+- Build issue with `<Pagination />` component.
+
+## [2.12.2] - 2019-10-23
+
+### Fixed
+
+- Export issue with `<Pagination />` component.
+
+## [2.12.1] - 2019-10-23
+
+### Fixed
+
+- Build issue
+
+## [2.12.0] - 2019-10-23
+
+### Added
+
+- `<Pagination />` component
+
 ## [2.11.0] - 2019-10-14
 
 ### Added

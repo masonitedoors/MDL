@@ -1,0 +1,148 @@
+@import "styles/index";
+
+.progress-bar {
+  position: relative;
+  border-radius: 2px;
+
+  &__meter-wrapper {
+    position: absolute;
+
+    .vertical & {
+      left: 0;
+      width: $space-s;
+    }
+
+    .horizontal & {
+      top: 0;
+      height: $space-s;
+    }
+  }
+
+  &__meter {
+    $distance-from-ends: $space-xs;
+    position: absolute;
+    margin: auto;
+    background-color: $color-silver;
+
+    .vertical & {
+      width: $space-xs;
+      left: 0;
+      right: 0;
+      top: $distance-from-ends;
+      bottom: $distance-from-ends;
+    }
+
+    .horizontal & {
+      height: $space-xs;
+      left: $distance-from-ends;
+      right: $distance-from-ends;
+      top: 0;
+      bottom: 0;
+    }
+
+    &--transitioning {
+      transition: width 0.6s ease, height 0.6s ease;
+    }
+
+    &--fill {
+      background-color: $color-limerick;
+
+      .vertical & {
+        bottom: initial;
+      }
+
+      .horizontal & {
+        right: initial;
+      }
+    }
+  }
+
+  &__points {
+    display: flex;
+
+    .vertical & {
+      flex-direction: column;
+      height: 100%;
+    }
+
+    .horizontal & {
+      flex-direction: row;
+      width: 100%;
+    }
+  }
+
+  &__point {
+    position: relative;
+
+    .vertical & {
+      min-height: $space-xl;
+      margin-bottom: $space-xs;
+    }
+
+    .horizontal & {
+      min-width: $space-xl;
+      margin-right: $space-xs;
+    }
+
+    &::after,
+    &::before {
+      @include circle($space-s);
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: block;
+      background-color: $color-silver;
+      z-index: 1;
+      transition: 200ms background-color ease-in;
+    }
+
+    &--active::before {
+      background-color: rgba($color-night, 0.15);
+      animation: grow-and-fade 400ms 1 normal;
+      animation-timing-function: ease-in;
+    }
+
+    &--active::after {
+      z-index: 1;
+      background-color: $color-limerick;
+      animation: pulse 400ms 1 normal;
+      animation-timing-function: ease-in;
+    }
+  }
+
+  &__point-label {
+    left: $space-m;
+  }
+}
+
+@keyframes grow-and-fade {
+  to {
+    $scale: 1;
+    transform: scale3d($scale, $scale, $scale);
+    opacity: 1;
+  }
+
+  from {
+    $scale: 2.25;
+    transform: scale3d($scale, $scale, $scale);
+    opacity: 0;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    $scale: 1;
+    transform: scale3d($scale, $scale, $scale);
+  }
+
+  50% {
+    $scale: 1.2;
+    transform: scale3d($scale, $scale, $scale);
+  }
+
+  100% {
+    $scale: 1;
+    transform: scale3d($scale, $scale, $scale);
+  }
+}

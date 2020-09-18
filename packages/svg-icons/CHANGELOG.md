@@ -1,0 +1,45 @@
+# Changelog
+
+All notable changes to this project will be documented in this file.
+
+The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
+and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+
+## [Unreleased] - YYYY-MM-DD
+
+## [1.8.0] - 2020-09-15
+
+### Added
+
+- Pricing icons for plant, distributor location and product category.
+- Arrow icons for table sorting.
+
+## [1.7.0] - 2020-08-17
+
+### Added
+
+- Pricing icons for door style, height, thickness and width
+
+## [1.6.0] - 2020-07-14
+
+### Added
+
+- Stile and rail icons for panel profile, louver type and sticking
+
+## [1.5.0] - 2020-06-08
+
+### Added
+
+- Lock and unlock icon revisions
+
+## [1.4.0] - 2020-05-13
+
+### Added
+
+- File manager home and sidebar icons
+
+## [1.3.0] - 2020-05-11
+
+### Added
+
+- Various icons.

@@ -1,15 +1,29 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`ModalBackdrop should render without crashing 1`] = `
-<div
-  className="modal-backdrop"
+<CSSTransition
+  classNames="modal-backdrop"
+  in={true}
+  onEntered={[Function]}
+  onExited={[Function]}
+  timeout={150}
 >
   <div
-    className="modal-backdrop__content"
+    className="modal-backdrop"
   >
-    <div>
-      Test
-    </div>
+    <CSSTransition
+      classNames="modal-backdrop__content"
+      in={false}
+      timeout={250}
+    >
+      <div
+        className="modal-backdrop__content"
+      >
+        <div>
+          Test
+        </div>
+      </div>
+    </CSSTransition>
   </div>
-</div>
+</CSSTransition>
 `;

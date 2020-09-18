@@ -1,0 +1,69 @@
+{
+  "links": [
+    {
+      "name": "MDL Documentation",
+      "type": "docs",
+      "url": "https://www.masonite.digital"
+    }
+  ],
+  "plugins": [
+    {
+      "name": "@zeplin/cli-connect-react-plugin"
+    },
+    {
+      "name": "@zeplin/cli-connect-storybook-plugin",
+      "config": {
+        "url": "https://masonitedoors.github.io/MDL/"
+      }
+    }
+  ],
+  "projects": ["5b4e44c4113211861caaa7c1"],
+  "styleguides": ["5d0a60e44725312d15a183b6"],
+  "components": [
+    {
+      "path": "components/Button/react.js",
+      "docs": {
+        "urlPath": "/73kwjxh8i/p/1637cc-button"
+      },
+      "zeplinNames": [
+        "2. Components/Forms/Buttons/- Large/Light",
+        "2. Components/Forms/Buttons/- Large/Dark",
+        "2. Components/Forms/Buttons/- Large/Green",
+        "2. Components/Forms/Buttons/- Large/Text",
+        "2. Components/Forms/Buttons/- Medium/Light",
+        "2. Components/Forms/Buttons/- Medium/Dark",
+        "2. Components/Forms/Buttons/- Medium/Green",
+        "2. Components/Forms/Buttons/- Medium/Text",
+        "2. Components/Forms/Buttons/- Small/Light",
+        "2. Components/Forms/Buttons/- Small/Dark",
+        "2. Components/Forms/Buttons/- Small/Green",
+        "2. Components/Forms/Buttons/- Small/Text"
+      ]
+    },
+    {
+      "path": "components/Checkbox/react.js",
+      "zeplinNames": [
+        "2. Components/Forms/Checkbox/Active",
+        "2. Components/Forms/Checkbox/Inactive"
+      ]
+    },
+    {
+      "path": "components/Icon/react.js",
+      "zeplinNames": [
+        "1. Foundation/Icons/Feather/check-circle",
+        "1. Foundation/Icons/Feather/activity"
+      ]
+    },
+    {
+      "path": "components/TextField/react.js",
+      "zeplinNames": [
+        "2. Components/Forms/Fields/Light",
+        "2. Components/Forms/Fields/Error",
+        "2. Components/Forms/Fields/Dark"
+      ]
+    }
+  ],
+  "github": {
+    "repository": "https://github.com/masonitedoors/MDL"
+  }
+}

@@ -2,28 +2,53 @@
 
 $border-color: rgba(221, 221, 221, 0.5);
 $selected-border-color: black;
+$cell-height: 49px;
 
 .table-outer-wrapper {
   position: relative;
   margin: 0 0 $space-m;
+  width: 100%;
+
+  &--sticky {
+    overflow-y: scroll;
+  }
 }
 
 .table-inner-wrapper {
   overflow: auto;
+
+  &--sticky {
+    position: static;
+  }
 }
 
+table,
 .table {
   position: relative;
   text-align: left;
-  margin: 0;
+  padding: 1px 1px $space-m; // Needed for col/row highlighting. The selection border gets clipped from overflow.
   border-collapse: separate;
   border-spacing: 0;
+  font-size: 12px;
 
-  &--2-colspan-header &__cell:nth-child(2n + 3) {
-    background-color: $color-snow;
+  &--full-width {
+    width: 100%;
   }
-  &--2-colspan-header &__cell:nth-child(2n) {
-    background-color: $color-white;
+
+  &--sticky {
+    position: static;
+    margin: $cell-height 0 0;
+
+    thead,
+    .table__header {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1;
+      background: white;
+      height: $cell-height;
+    }
   }
 
   tbody tr:last-child {
@@ -34,29 +59,44 @@ $selected-border-color: black;
     overflow: scroll;
   }
 
+  thead:first-child, // first-child is for specificity when using a classless thead.
+  .table__header tr {
+    th,
+    .table__cell {
+      position: relative;
+      text-align: left;
+      font-weight: 500;
+      background-color: $color-white;
+    }
+
+    .table__cell--fixed {
+      background-color: $color-white;
+    }
+  }
+
+  td,
+  th,
   &__cell {
     position: relative;
     border-collapse: separate;
     border-bottom: 1px solid $border-color;
-    height: 49px;
-    min-width: $space-xxl;
+    height: $cell-height;
+    min-width: 128px;
     text-align: center;
     display: table-cell;
     vertical-align: middle;
     padding: 8px;
-    font-size: 14px;
     font-weight: normal;
     background-color: $color-white;
-
-    &--heading {
-      text-align: center;
-      font-weight: 500;
-    }
 
     &--fixed {
       position: sticky !important; // td and th to temporarily support old tables
       left: 0;
       z-index: 1;
+    }
+
+    &--btn {
+      cursor: pointer;
     }
 
     &:nth-child(2n + 3) {
@@ -80,6 +120,76 @@ $selected-border-color: black;
     }
   }
 
+  /* 
+    Row/Cell Background Colors 
+  */
+
+  tbody tr {
+    td:nth-child(even),
+    .table__cell:nth-child(even) {
+      background-color: $color-snow;
+    }
+  }
+
+  &#{&}--2-colspan-header .table__cell:nth-child(2n),
+  &#{&}--2-colspan-header .table__cell:nth-child(2n + 3) {
+    background-color: initial;
+  }
+
+  &.table--sticky.table--striped-rows {
+    tbody tr td,
+    tbody tr .table__cell {
+      background-color: $color-snow;
+    }
+
+    tbody tr:nth-child(2n) {
+      td,
+      .table__cell {
+        background-color: initial;
+      }
+    }
+  }
+
+  &--2-colspan-header &__cell:nth-child(2n + 3) {
+    background-color: $color-snow;
+  }
+  &--2-colspan-header &__cell:nth-child(2n) {
+    background-color: $color-white;
+  }
+
+  /*
+    Striped Rows
+  */
+  &.table--striped-rows {
+    thead tr {
+      th,
+      .table__cell,
+      .table__cell.table__cell--fixed {
+        background-color: $color-white;
+      }
+    }
+
+    tbody {
+      tr:nth-child(odd) {
+        td,
+        .table__cell {
+          background-color: $color-snow;
+        }
+      }
+
+      tr:nth-child(even) {
+        td,
+        .table__cell {
+          background-color: $color-white;
+        }
+      }
+    }
+  }
+
+  /* 
+    Cell Selection
+  */
+
   &__cell-selection {
     position: absolute;
     top: 0;
@@ -90,6 +200,7 @@ $selected-border-color: black;
     opacity: 0;
     border: 1px solid transparent;
 
+    &--all,
     &--col,
     &--row {
       opacity: 1;
@@ -105,21 +216,49 @@ $selected-border-color: black;
       border-bottom: 1px solid $selected-border-color;
     }
 
+    &--top,
     &--col-start {
       border-top: 1px solid $selected-border-color;
     }
 
+    &--bottom,
     &--col-end {
       border-bottom: 1px solid $selected-border-color;
     }
 
+    &--left,
     &--row-start {
       border-left: 1px solid $selected-border-color;
     }
 
+    &--right,
     &--row-end {
       border-right: 1px solid $selected-border-color;
     }
+
+    &--top-left {
+      border-top: 1px solid $selected-border-color;
+      border-left: 1px solid $selected-border-color;
+    }
+
+    &--top-right {
+      border-top: 1px solid $selected-border-color;
+      border-right: 1px solid $selected-border-color;
+    }
+
+    &--bottom-right {
+      border-bottom: 1px solid $selected-border-color;
+      border-right: 1px solid $selected-border-color;
+    }
+
+    &--bottom-left {
+      border-bottom: 1px solid $selected-border-color;
+      border-left: 1px solid $selected-border-color;
+    }
+  }
+
+  .non-stock-style {
+    border-bottom: 1px solid $color-rust;
   }
 
   input {

@@ -7,6 +7,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased] - YYYY-MM-DD
 
+## [1.9.0] - 2020-09-24
+
+### Added
+
+- Icons for collection, product category, core, customer, percent-vs-number, stile.
+- Second icon for unit configuration.
+
+### Changed
+
+- Icon for product type.
+
 ## [1.8.0] - 2020-09-15
 
 ### Added

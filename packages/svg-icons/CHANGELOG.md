@@ -7,6 +7,28 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased] - YYYY-MM-DD
 
+## [1.10.0] - 2020-10-14
+
+### Added
+
+- Icons for glass frame, glass lite, grid profile and slab texture.
+- Icons for social media.
+
+### Changed
+
+- Icons for width, height and thickness.
+
+## [1.9.0] - 2020-09-24
+
+### Added
+
+- Icons for collection, product category, core, customer, percent-vs-number, stile.
+- Second icon for unit configuration.
+
+### Changed
+
+- Icon for product type.
+
 ## [1.8.0] - 2020-09-15
 
 ### Added

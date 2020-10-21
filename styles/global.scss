@@ -3,8 +3,10 @@
 @import "index";
 @import "grid";
 
-html {
+html, body {
   box-sizing: border-box;
+  font-family: $font-family;
+  font-size: $base-font-size;
 }
 
 *,

@@ -7,6 +7,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased] - YYYY-MM-DD
 
+## [2.25.0] - 2020-10-21
+
+### Added
+
+- `<Table />` component and `table` styles.
+
+### Updated
+
+- `html`, `body` has base font size set.
+- `h1` tag font weight to 700.
+- `<Button />` has font-family explicitly set.
+
 ## [2.24.1] - 2020-07-10
 
 ### Fixed

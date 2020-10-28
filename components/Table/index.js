@@ -1,1 +1,1 @@
-export { default as React } from './react'
+export { Table, TableContext, SortIcon } from './react'

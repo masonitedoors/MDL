@@ -1,7 +1,7 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
 import classNames from 'classnames/bind'
-import Table from './react'
+import { Table } from './react'
 import Readme from './react.README.md'
 import style from './style.module.scss'
 

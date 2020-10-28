@@ -11,9 +11,12 @@ export const TableContext = React.createContext({})
 const cx = classNames.bind(styles)
 
 const getHeaderColWidths = (table, headerColsLength = null) =>
-  Array.from(table.querySelector('tbody tr:first-child').children)
-    .filter((col, i) => (headerColsLength !== null ? headerColsLength > i : true))
-    .map(col => window.getComputedStyle(col).width)
+  (table
+    && table.querySelector('tbody tr:first-child td')
+    && Array.from(table.querySelector('tbody tr:first-child').children)
+      .filter((col, i) => (headerColsLength !== null ? headerColsLength > i : true))
+      .map(col => window.getComputedStyle(col).width))
+  || []
 
 export const Table = ({
   stickyHeader,
@@ -26,6 +29,7 @@ export const Table = ({
   headerCols,
   headerRows,
   fullWidth,
+  sortableColumns,
   stripedRows,
 }) => {
   const tableRef = useRef()
@@ -112,15 +116,16 @@ export const Table = ({
     }
   }
 
-  const getTheadClasses = () => classNames('table__header')
+  const getTheadClasses = () => cx('table__header')
 
-  const getCellClasses = (dataType = null) => {
+  const getCellClasses = (dataType = null, active = false) => {
     const dType = typeof dataType === 'function' ? dataType() : dataType
-    return classNames([
+    return cx([
       'table__cell',
       {
         'table__cell--align-left': typeof dType === 'string',
         'table__cell--align-right': typeof dType === 'number',
+        'table__cell--active': active,
       },
     ])
   }
@@ -137,13 +142,12 @@ export const Table = ({
     allSelected = false,
   }) =>
     (allSelected
-      ? classNames([
+      ? cx([
         'table__cell-selection',
         'table__cell-selection--all',
         {
           'table__cell-selection--top-left': x === headerCols && y === headerRows,
-          'table__cell-selection--top':
-              x !== headerCols && x !== colsLength && y === headerRows,
+          'table__cell-selection--top': x !== headerCols && x !== colsLength && y === headerRows,
           'table__cell-selection--top-right': x === colsLength - 1 && y === headerRows,
           'table__cell-selection--right': x === colsLength - 1 && y > headerRows,
           'table__cell-selection--bottom-right': x === colsLength - 1 && y === rowsLength - 1,
@@ -154,7 +158,7 @@ export const Table = ({
         },
       ])
       : (activeCell || hoveredCell)
-        && classNames([
+        && cx([
           'table__cell-selection',
           direction === 'row' && {
             'table__cell-selection--row-start': x === headerCols,
@@ -206,6 +210,7 @@ export const Table = ({
         getHeaderColWidths,
         formControlType,
         formControlProps,
+        overflowRef,
         setFormControlType,
         setFormControlProps,
         bulkEditPopoverRef,
@@ -218,6 +223,7 @@ export const Table = ({
         handleCellMouseLeave,
         selectionLocked,
         setSelectionLock,
+        tableRef,
         fixedClassName: cx('table__cell--fixed'),
         getFixedCellStyle: n => ({
           left: tableRef.current
@@ -230,11 +236,7 @@ export const Table = ({
         }),
       }}
     >
-      <div
-        className={cx('table-outer-wrapper', {
-          'table-outer-wrapper--sticky': stickyHeader,
-        })}
-      >
+      <div className={cx('table-outer-wrapper')}>
         <BulkEditPopover
           {...getBulkEditPopoverPosition()}
           visible={hoveredCell && (hoveredCell.id || allCellsSelected)}
@@ -285,7 +287,6 @@ export const Table = ({
           ref={overflowRef}
           className={cx({
             'table-inner-wrapper': headerCols,
-            'table-inner-wrapper--sticky': stickyHeader,
           })}
           style={{ height }}
           onScroll={() => setScrollLeft(overflowRef.current.scrollLeft)}
@@ -297,6 +298,7 @@ export const Table = ({
               'table--full-width': fullWidth,
               'table--2-colspan-header': headerCols === 2,
               'table--sticky': stickyHeader,
+              'table--sortable': sortableColumns,
             })}
           >
             {header && <thead className={cx('table__header')}>{header}</thead>}
@@ -328,4 +330,4 @@ Table.defaultProps = {
   stripedRows: false,
 }
 
-export default Table
+export { SortIcon } from './SortIcon'

@@ -8,18 +8,10 @@ $cell-height: 49px;
   position: relative;
   margin: 0 0 $space-m;
   width: 100%;
-
-  &--sticky {
-    overflow-y: scroll;
-  }
 }
 
 .table-inner-wrapper {
   overflow: auto;
-
-  &--sticky {
-    position: static;
-  }
 }
 
 table,
@@ -39,7 +31,7 @@ table,
     position: static;
     margin: $cell-height 0 0;
 
-    thead,
+    thead:first-child, // first-child is for specificity when using a classless thead.
     .table__header {
       position: absolute;
       top: 0;
@@ -48,6 +40,32 @@ table,
       z-index: 1;
       background: white;
       height: $cell-height;
+    }
+  }
+
+  &--sortable {
+    thead:first-child tr, // first-child is for specificity when using a classless thead.
+    .table__header tr {
+      th,
+      .table__cell {
+        cursor: pointer;
+        display: inline-flex;
+        justify-content: space-between;
+        align-items: center;
+
+        svg {
+          visibility: hidden;
+        }
+      }
+
+      th:hover,
+      .table__cell:hover {
+        background-color: $color-silver;
+
+        svg {
+          visibility: visible;
+        }
+      }
     }
   }
 
@@ -65,7 +83,7 @@ table,
     .table__cell {
       position: relative;
       text-align: left;
-      font-weight: 500;
+      font-weight: 700;
       background-color: $color-white;
     }
 
@@ -107,15 +125,27 @@ table,
       background-color: $color-snow;
     }
 
-    &--align-left {
+    &.table__cell--active {
+      background-color: $color-silver !important;
+
+      svg {
+        visibility: visible !important;
+      }
+    }
+
+    &.table__cell--align-left {
       text-align: left;
     }
 
-    &--align-right {
+    &.table__cell--align-right {
       text-align: right;
     }
 
-    &--last-row {
+    &.table__cell--header {
+      font-weight: bold;
+    }
+
+    &.table__cell--last-row {
       border-bottom: none;
     }
   }

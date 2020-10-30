@@ -3,8 +3,14 @@
 @import "index";
 @import "grid";
 
-html, body {
+html,
+body {
   box-sizing: border-box;
+  font-family: $font-family;
+  font-size: $base-font-size;
+}
+
+button {
   font-family: $font-family;
   font-size: $base-font-size;
 }

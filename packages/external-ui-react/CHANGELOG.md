@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased] - YYYY-MM-DD
 
+## [2.26.0] - 2020-10-30
+
+### Added
+
+- `<Table />` sortable columns.
+
 ## [2.25.0] - 2020-10-21
 
 ### Added

@@ -4,6 +4,7 @@ exports[`Flyout should render with content 1`] = `
 <DocumentFragment>
   <aside
     class="aside"
+    style="width: 700px;"
   >
     <div
       class="header"
@@ -53,6 +54,7 @@ exports[`Flyout should render without crashing 1`] = `
 <DocumentFragment>
   <aside
     class="aside"
+    style="width: 477px;"
   >
     <div
       class="header"

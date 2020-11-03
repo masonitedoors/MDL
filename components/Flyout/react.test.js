@@ -15,6 +15,7 @@ describe('Flyout', () => {
       <Flyout
         heading="My heading"
         moreHeading={<button>A test button</button>}
+        width={700}
       >
         <div>Some body content</div>
       </Flyout>
@@ -22,7 +23,7 @@ describe('Flyout', () => {
     expect(asFragment()).toMatchSnapshot()
   })
 
-  it('should call onClose', async () => {
+  it('should call onClose', () => {
     const onClose = jest.fn()
     render(<Flyout onClose={onClose} />)
     const closeButton = document.querySelector('.close')

@@ -21,17 +21,18 @@
 
 .header {
   background-color: $color-gray;
-  padding: 20px;
+  padding: $space-s;
+  display: flex;
+  align-items: center;
 
   h2 {
-    display: inline-block;
+    margin-bottom: 0;
   }
 }
 
 .close {
   position: relative;
-  top: -3px;
-  margin-right: 20px;
+  margin-right: $space-xs;
   padding: 0;
   border: none;
 }

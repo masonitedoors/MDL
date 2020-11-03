@@ -25,12 +25,16 @@ exports[`Pagination Should render the component without crashing 1`] = `
         className="pagination__nav-item pagination__nav-item-prev"
       >
         <Button
+          active={false}
           aria-label="Page 3"
+          bold={true}
+          className={null}
           disabled={false}
           fullWidth={false}
           onClick={[Function]}
           size="small"
-          uppercase={false}
+          style={null}
+          uppercase={true}
           variant="default"
         >
           Prev
@@ -141,12 +145,16 @@ exports[`Pagination Should render the component without crashing 1`] = `
         className="pagination__nav-item pagination__nav-item-next"
       >
         <Button
+          active={false}
           aria-label="Page 5"
+          bold={true}
+          className={null}
           disabled={false}
           fullWidth={false}
           onClick={[Function]}
           size="small"
-          uppercase={false}
+          style={null}
+          uppercase={true}
           variant="default"
         >
           Next

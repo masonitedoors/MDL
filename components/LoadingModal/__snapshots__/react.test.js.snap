@@ -2,7 +2,10 @@
 
 exports[`LoadingModal should render without crashing 1`] = `
 <ModalBackdrop
+  className=""
+  onOutsideClick={null}
   show={true}
+  style={null}
 >
   <AnimatedMasoniteLogo
     variant="dark"

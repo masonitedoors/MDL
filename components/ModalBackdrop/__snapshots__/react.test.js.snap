@@ -9,7 +9,9 @@ exports[`ModalBackdrop should render without crashing 1`] = `
   timeout={150}
 >
   <div
-    className="modal-backdrop"
+    className="modal-backdrop modal-backdrop--active"
+    onClick={[Function]}
+    style={null}
   >
     <CSSTransition
       classNames="modal-backdrop__content"

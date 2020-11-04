@@ -12,6 +12,7 @@ exports[`When the component is created Renders as expected 1`] = `
     <Icon
       className="overflow-menu__svg"
       size={16}
+      style={null}
       svg="<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 24 24\\"><title>more-horizontal</title><path d=\\"M14 12c0 1.105-0.895 2-2 2s-2-0.895-2-2c0-1.105 0.895-2 2-2s2 0.895 2 2z\\"></path><path d=\\"M21 12c0 1.105-0.895 2-2 2s-2-0.895-2-2c0-1.105 0.895-2 2-2s2 0.895 2 2z\\"></path><path d=\\"M7 12c0 1.105-0.895 2-2 2s-2-0.895-2-2c0-1.105 0.895-2 2-2s2 0.895 2 2z\\"></path></svg>"
       title="Overflow Menu icon"
     />

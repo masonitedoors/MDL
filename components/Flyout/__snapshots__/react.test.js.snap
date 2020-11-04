@@ -79,7 +79,6 @@ exports[`Flyout should render without crashing 1`] = `
           </svg>
         </div>
       </button>
-      <h2 />
     </div>
   </aside>
   <div

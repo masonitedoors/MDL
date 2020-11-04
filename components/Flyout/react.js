@@ -18,7 +18,7 @@ const Flyout = ({
           <button type="button" onClick={onClose} className={cx('close')}>
             <Icon svg={mX} size={20} />
           </button>
-          <h2>{heading}</h2>
+          {heading && <h2>{heading}</h2>}
           {moreHeading}
         </div>
 

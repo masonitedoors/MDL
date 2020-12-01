@@ -15,7 +15,8 @@ const getHeaderColWidths = (table, headerColsLength = null) =>
     && table.querySelector('tbody tr:first-child td')
     && Array.from(table.querySelector('tbody tr:first-child').children)
       .filter((col, i) => (headerColsLength !== null ? headerColsLength > i : true))
-      .map(col => window.getComputedStyle(col).width))
+      .map(col => window.getComputedStyle(col).width)
+      .map(width => +width.replace(/[^0-9\\.]/g, '')))
   || []
 
 export const Table = ({
@@ -179,7 +180,7 @@ export const Table = ({
   const updateHeaderColWidths = () => {
     if (!(tableRef && tableRef.current)) return false
 
-    const widths = getHeaderColWidths(tableRef.current)
+    const widths = getHeaderColWidths(tableRef.current).map(n => `${n}px`)
 
     return (
       widths
@@ -228,8 +229,7 @@ export const Table = ({
         getFixedCellStyle: n => ({
           left: tableRef.current
             ? getHeaderColWidths(tableRef.current, headerCols).reduce(
-              (acc, width, i) =>
-                (headerCols > i && i !== 0 ? acc + Number(width.replace(/[^0-9\\.]/g, '')) : acc),
+              (acc, width, i) => (headerCols > i && i !== 0 ? acc + width : acc),
               0,
             )
             : 'initial',

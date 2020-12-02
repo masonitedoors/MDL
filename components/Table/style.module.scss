@@ -1,6 +1,6 @@
 @import "styles/index";
 
-$border-color: rgba(221, 221, 221, 0.5);
+$border-color: $color-silver;
 $selected-border-color: black;
 $cell-height: 49px;
 
@@ -18,7 +18,7 @@ table,
 .table {
   position: relative;
   text-align: left;
-  padding: 1px 1px $space-m; // Needed for col/row highlighting. The selection border gets clipped from overflow.
+  padding: 1px 0 $space-m; // Needed for col/row highlighting. The selection border gets clipped from overflow.
   border-collapse: separate;
   border-spacing: 0;
   font-size: 12px;
@@ -85,6 +85,7 @@ table,
       text-align: left;
       font-weight: 700;
       background-color: $color-white;
+      border-top: 1px solid $border-color;
     }
 
     .table__cell--fixed {
@@ -97,6 +98,7 @@ table,
   &__cell {
     position: relative;
     border-collapse: separate;
+    border-right: 1px solid $border-color;
     border-bottom: 1px solid $border-color;
     height: $cell-height;
     min-width: 128px;
@@ -115,6 +117,10 @@ table,
 
     &--btn {
       cursor: pointer;
+    }
+
+    &:first-child {
+      border-left: 1px solid $border-color;
     }
 
     &:nth-child(2n + 3) {

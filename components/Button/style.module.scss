@@ -2,8 +2,8 @@
 
 .btn {
   display: inline-block;
-  padding: 7px 15px;
-  font-weight: 400;
+  padding: 7px 15px; // MDL compliant! The border makes it 8px 16px
+  font-weight: 700;
   font-size: 14px;
   font-family: $font-family;
   border: 1px solid transparent;

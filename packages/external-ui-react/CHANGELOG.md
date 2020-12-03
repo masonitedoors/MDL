@@ -7,6 +7,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased] - YYYY-MM-DD
 
+## [2.28.0] - 2020-12-03
+
+### Removed
+
+- `table` styling. If you want to use the Data Table styles, you must use the `.table` CSS class or the `Table` component.
+
+### Updated
+
+- `Button` font weight to bold.
+- `Table` has bordered cells.
+
 ## [2.27.0] - 2020-11-03
 
 ### Added

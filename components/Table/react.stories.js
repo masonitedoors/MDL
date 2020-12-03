@@ -103,7 +103,7 @@ storiesOf('Table', module)
     </Table>
   ))
   .add('HTML (classless)', () => (
-    <table>
+    <table className={cx('table')}>
       <thead>
         <tr>
           <th>Heading</th>

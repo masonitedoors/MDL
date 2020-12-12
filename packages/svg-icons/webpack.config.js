@@ -33,7 +33,7 @@ module.exports = {
   },
   plugins: [
     new CopyWebpackPlugin([
-      { from: './../../vendor/micons/svg/SVG', to: 'svg', ignore: '**/*.js' },
+      { from: './../../vendor/micons/svg/SVG', to: 'svg', ignore: ['**/*.js'] },
     ]),
   ],
 }

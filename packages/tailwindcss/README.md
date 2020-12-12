@@ -1,6 +1,19 @@
 # @masonite/tailwindcss
 
-Tailwind is my favorite CSS framework and I am proud
+This package is a tailwindcss implementation of the Masonite Design Language. [Tailwind](https://tailwindcss.com/) is a utility-first CSS framework that can be used to build for the web without writing CSS. Combine it with another MDL package and avoid coming up with names for for arbitrary markup!
+
+## Usage
+---
+
+All of the design tokens, such as _color_ and _spacing_ are available through CSS classes, along with many classes to represent the box-model, such as `flex` and `mx-auto` for `display: flex; margin-left: auto; margin-right: auto;`. However, **there are no base styles**. You will most likely want to combine it with existing base styles. Everything in Tailwind is zero'd out.
+
+`color-limerick` and `bg-limerick` will produce the Masonite green for the color and background property respectively. All Masonite colors are simply prefixed by `color-` or `bg-`. This pattern applies to border colors and whereever else applicable. Check out the Tailwind [docs](https://tailwindcss.com/docs/) for more.
+
+```html
+
+```
+
+---
 
 ## Install
 
@@ -8,22 +21,21 @@ Tailwind is my favorite CSS framework and I am proud
 npm i @masonite/tailwindcss
 ```
 
-## Usage
-
 ### Tailwind CSS
 
 
 #### Node, webpack, etc
 
-For class Tailwind action, you can import the built CSS file from the package.
+For classic Tailwind action, import the one of the CSS files (unminified should be used for Node/webpack). `tailwind.css` ideally comes before your other CSS, but this isn't prescriptive.
 
 ```js
+//Import one of these near the root of your application
 import '@masonite/tailwindcss/tailwind.css'
+import '@masonite/tailwindcss/tailwind.min.css' // Pre-minified version
+
+// Combine with whatever you currently use to get MDL styles/components
+import '@masonite/external-ui-react/dist/styles/global.scss' 
 ```
-
-#### Manual
-
-The 
 
 ### Accessing MDL Design Tokens in JavaScript
 
@@ -43,11 +55,14 @@ import { tailwindConfig } from "@masonite/tailwindcss";
 
 export default {
   ...tailwindConfig,
-  // Change options.
+  // Change options
 };
 ```
+---
 
 ## Tips
+
+Tailwind is best used with a strong component-driven system or one-offs. You can also use it just for the flexbox, padding and margin helpers.
 
 ### CSS Conflicts
 

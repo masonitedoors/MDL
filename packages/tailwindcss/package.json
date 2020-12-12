@@ -1,0 +1,14 @@
+{
+  "name": "@masonite/tailwindcss",
+  "version": "1.0.0",
+  "description": "Masonite Design Language in Tailwind CSS",
+  "files": [
+    "tailwind.*"
+  ],
+  "keywords": [],
+  "publishConfig": {
+    "access": "public"
+  },
+  "author": "Tarik Hamilton <me@tarikhamilton.com>",
+  "license": "MIT"
+}

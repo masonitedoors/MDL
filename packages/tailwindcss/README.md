@@ -3,17 +3,26 @@
 This package is a tailwindcss implementation of the Masonite Design Language. [Tailwind](https://tailwindcss.com/) is a utility-first CSS framework that can be used to build for the web without writing CSS. Combine it with another MDL package and avoid coming up with names for for arbitrary markup!
 
 ## Usage
----
 
 All of the design tokens, such as _color_ and _spacing_ are available through CSS classes, along with many classes to represent the box-model, such as `flex` and `mx-auto` for `display: flex; margin-left: auto; margin-right: auto;`. However, **there are no base styles**. You will most likely want to combine it with existing base styles. Everything in Tailwind is zero'd out.
 
 `text-limerick` and `bg-limerick` will produce the Masonite green for the color and background property respectively. All Masonite colors are simply prefixed by `text-` or `bg-`. This pattern applies to border colors and whereever else applicable. Check out the Tailwind [docs](https://tailwindcss.com/docs/) for more.
 
 ```html
-
+// Example in plain HTML (used with the global stylesheet)
+<header class="text-center py-xl bg-gray">
+  <h1>
+    <span class="inline-block text-lg text-white bg-limerick py-xs px-sm mb-sm uppercase">
+      Introducing...
+    </span>
+    <span class="block text-night">@masonite/tailwindcss</span>
+  </h1>
+  <h2 class="flex items-center justify-center">
+    <span class="text-3xl mr-xs">🚪</span>
+    <span>No CSS behind these doors</span>
+  </h2>
+</header>
 ```
-
----
 
 ## Install
 

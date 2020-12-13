@@ -20,8 +20,9 @@
     "lint:scripts:fix": "npm run lint:scripts -- --fix",
     "lint:styles": "npx stylelint **/*.scss --syntax scss",
     "lint": "npm run lint:styles && npm run lint:scripts",
-    "format": "prettier-eslint \"{@(.storybook|components|styles)/**/*.@(js|tsx|css|scss),.json,*.js,*.ts}\" --write",
-    "format:tailwindcss": "prettier-eslint \"packages/tailwindcss/{!(node_modules)**/*.js,*.js}\" --write",
+    "format:mdl:source": "prettier-eslint \"{(components|styles)**/*.@(js|ts|tsx|css|scss),*.json,*.js,*.ts}\" --write",
+    "format:mdl:storybook": "prettier-eslint \".storybook/**/*.@(js|ts|tsx|css|scss)\" --write",
+    "format:package:tailwindcss": "prettier-eslint \"packages/tailwindcss/{!(node_modules)**/*.js,*.js}\" --write",
     "test:watch": "npx jest --watch",
     "test": "npm run lint && npx jest",
     "start": "npm run storybook:react"

@@ -5,7 +5,7 @@ import Counter from './react'
 export default {
   title: 'Counter',
   component: Counter,
-    decorators: [
+  decorators: [
     withKnobs,
     (Story: FC) => (
       <div style={{ margin: '2rem' }}>

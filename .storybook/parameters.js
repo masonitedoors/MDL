@@ -1,4 +1,3 @@
-import { create } from '@storybook/theming'
 import React from 'react'
 
 export default {
@@ -12,5 +11,5 @@ export default {
   readme: {
     codeTheme: 'github',
     StoryPreview: ({ children }) => <>{children}</>,
-  }
+  },
 }

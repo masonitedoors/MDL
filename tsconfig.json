@@ -21,7 +21,7 @@
     "jsx": "react"
   },
   "include": [
-    "components/**/*", "packages", "styles"
+    "components/**/*", "packages", "styles", ".storybook"
   ],
   "exclude": ["node_modules", "**/*.spec.ts"]
 }

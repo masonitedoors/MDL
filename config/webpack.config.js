@@ -6,7 +6,7 @@ const CopyWebpackPlugin = require('copy-webpack-plugin')
 
 const rules = [
   {
-    test: /\.js$/,
+    test: /\.(t|j)sx?$/,
     exclude: /node_modules/,
     use: [
       {
@@ -60,6 +60,7 @@ const resolve = {
     styles: path.resolve(__dirname, '../styles'),
     vendor: path.resolve(__dirname, '../vendor'),
   },
+  extensions: ['.ts', '.tsx', '.scss', '.css', '.svg', '.js', '.jsx'],
 }
 
 module.exports = {

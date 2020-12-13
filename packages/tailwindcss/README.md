@@ -7,7 +7,7 @@ This package is a tailwindcss implementation of the Masonite Design Language. [T
 
 All of the design tokens, such as _color_ and _spacing_ are available through CSS classes, along with many classes to represent the box-model, such as `flex` and `mx-auto` for `display: flex; margin-left: auto; margin-right: auto;`. However, **there are no base styles**. You will most likely want to combine it with existing base styles. Everything in Tailwind is zero'd out.
 
-`color-limerick` and `bg-limerick` will produce the Masonite green for the color and background property respectively. All Masonite colors are simply prefixed by `color-` or `bg-`. This pattern applies to border colors and whereever else applicable. Check out the Tailwind [docs](https://tailwindcss.com/docs/) for more.
+`text-limerick` and `bg-limerick` will produce the Masonite green for the color and background property respectively. All Masonite colors are simply prefixed by `text-` or `bg-`. This pattern applies to border colors and whereever else applicable. Check out the Tailwind [docs](https://tailwindcss.com/docs/) for more.
 
 ```html
 

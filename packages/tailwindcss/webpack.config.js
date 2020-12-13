@@ -9,7 +9,7 @@ module.exports = {
     'tailwind.min': './src/tailwind.min.css',
   },
   output: {
-    path: path.resolve(__dirname, 'dist'),
+    path: __dirname,
     filename: '[name].js',
     libraryTarget: 'commonjs2',
   },

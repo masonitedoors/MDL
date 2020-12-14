@@ -12,7 +12,7 @@ const rules = [
       {
         loader: 'babel-loader',
         options: {
-          presets: ['@babel/preset-react'],
+          presets: ['@babel/preset-react', '@babel/preset-typescript'],
           plugins: ['@babel/plugin-proposal-class-properties'],
         },
       },
@@ -64,7 +64,7 @@ const resolve = {
 }
 
 module.exports = {
-  mode: 'production',
+  mode: 'development',
   entry: './src/index.js',
   output: {
     filename: 'index.js',

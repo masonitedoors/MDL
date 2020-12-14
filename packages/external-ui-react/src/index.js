@@ -1,5 +1,6 @@
 export { React as Button } from 'components/Button'
 export { React as Checkbox } from 'components/Checkbox'
+export { React as Counter } from 'components/Counter'
 export { React as FilterableSearch } from 'components/FilterableSearch'
 export { React as Icon } from 'components/Icon'
 export { React as Input, React as TextField } from 'components/TextField'

@@ -20,7 +20,7 @@
     "lint:scripts:fix": "npm run lint:scripts -- --fix",
     "lint:styles": "npx stylelint **/*.scss --syntax scss",
     "lint": "npm run lint:styles && npm run lint:scripts",
-    "format:mdl:source": "prettier-eslint \"{(components|styles)**/*.@(js|ts|tsx|css|scss),*.json,*.js,*.ts}\" --write",
+    "format:mdl:source": "prettier-eslint \"@(components|styles)/**/*.@(js|ts|tsx|css|scss)\" --write",
     "format:mdl:storybook": "prettier-eslint \".storybook/**/*.@(js|ts|tsx|css|scss)\" --write",
     "format:package:tailwindcss": "prettier-eslint \"packages/tailwindcss/{!(node_modules)**/*.js,*.js}\" --write",
     "test:watch": "npx jest --watch",

@@ -6,13 +6,13 @@ const CopyWebpackPlugin = require('copy-webpack-plugin')
 
 const rules = [
   {
-    test: /\.js$/,
+    test: /\.(t|j)sx?$/,
     exclude: /node_modules/,
     use: [
       {
         loader: 'babel-loader',
         options: {
-          presets: ['@babel/preset-react'],
+          presets: ['@babel/preset-react', '@babel/preset-typescript'],
           plugins: ['@babel/plugin-proposal-class-properties'],
         },
       },
@@ -60,10 +60,11 @@ const resolve = {
     styles: path.resolve(__dirname, '../styles'),
     vendor: path.resolve(__dirname, '../vendor'),
   },
+  extensions: ['.ts', '.tsx', '.scss', '.css', '.svg', '.js', '.jsx'],
 }
 
 module.exports = {
-  mode: 'production',
+  mode: 'development',
   entry: './src/index.js',
   output: {
     filename: 'index.js',

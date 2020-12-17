@@ -3,22 +3,11 @@
   "version": "2.28.0",
   "description": "Masonite Design Language for React",
   "main": "dist/index.js",
-  "scripts": {
-    "build": "npm i && cross-env NODE_PATH=./../../ webpack --mode production"
-  },
   "keywords": [],
   "publishConfig": {
     "access": "public"
   },
   "author": "Tarik Hamilton",
   "license": "MIT",
-  "devDependencies": {
-    "@babel/preset-env": "^7.10.4",
-    "@babel/preset-react": "^7.10.4",
-    "babel-loader": "^8.1.0",
-    "svg-inline-loader": "^0.8.2",
-    "webpack": "^4.43.0",
-    "webpack-cli": "^3.3.12"
-  },
   "gitHead": "b864a5dd65da25157d16c41d3678599f1a259420"
 }

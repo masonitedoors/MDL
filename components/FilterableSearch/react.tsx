@@ -3,22 +3,40 @@ import classNames from 'classnames/bind'
 import { mFilter, mChevronDown } from '@masonite/svg-icons'
 import { React as TextField } from 'components/TextField'
 import { React as Checkbox } from 'components/Checkbox'
-import PropTypes from 'prop-types'
 import style from './style.module.scss'
 
 const cx = classNames.bind(style)
 
-class FilterableSearch extends PureComponent {
-  state = {
+interface FilterableSearchState {
+  showFilters: boolean
+}
+
+export interface FilterableSearchProps {
+  buttonLabel?: string
+  dropdownIcon?: 'chevronDown' | 'filter'
+  onFilterChange: any
+  onInputChange?: any
+  onSubmit?: any
+  value: string
+  filterChoices: {
+    label: string
+    value: string
+    checked: boolean
+  }[]
+  placeholder: string
+}
+
+class FilterableSearch extends PureComponent<FilterableSearchProps> {
+  state: FilterableSearchState = {
     showFilters: false,
   }
 
-  dropdownIcons = {
+  dropdownIcons: Record<string, string> = {
     chevronDown: mChevronDown,
     filter: mFilter,
   }
 
-  dropdownMenuRef = React.createRef()
+  dropdownMenuRef = React.createRef<HTMLDivElement>()
 
   componentDidMount() {
     document.body.addEventListener('click', this.handleClick)
@@ -29,29 +47,32 @@ class FilterableSearch extends PureComponent {
   }
 
   handleClick = ({ target }) => {
-    const { showFilters } = this.state
-    const dropdownMenu = this.dropdownMenuRef.current
+    const {
+      dropdownMenuRef,
+      state: { showFilters },
+    } = this
 
-    if (showFilters && !dropdownMenu.contains(target)) {
-      this.setState({ showFilters: false })
-    }
+    dropdownMenuRef.current
+      && showFilters
+      && !dropdownMenuRef.current.contains(target)
+      && this.setState({ showFilters: false })
   }
 
   render() {
     const {
-      buttonLabel,
-      dropdownIcon,
+      buttonLabel = 'Search',
+      dropdownIcon = 'chevronDown',
       onFilterChange,
       onInputChange,
       onSubmit,
       filterChoices = [],
-      placeholder,
+      placeholder = 'Search',
       value,
     } = this.props
 
     const { showFilters } = this.state
 
-    const selectedDropdownIcon = this.dropdownIcons[dropdownIcon]
+    const selectedDropdownIcon = dropdownIcon && this.dropdownIcons[dropdownIcon]
 
     const SearchButton = () => (
       <button
@@ -71,7 +92,7 @@ class FilterableSearch extends PureComponent {
           { 'filterable-search__dropdown-toggle--active': showFilters },
         ])}
         onClick={() =>
-          this.setState(prevState => ({
+          this.setState((prevState: FilterableSearchState) => ({
             showFilters: !prevState.showFilters,
           }))
         }
@@ -86,7 +107,7 @@ class FilterableSearch extends PureComponent {
       </button>
     )
 
-    const DropdownMenu = ({ showFilters }) => (
+    const DropdownMenu = ({ showFilters }: any) => (
       <ul
         className={cx([
           'filterable-search__dropdown-menu',
@@ -101,7 +122,6 @@ class FilterableSearch extends PureComponent {
               htmlFor={`${value}${index}`}
             >
               <Checkbox
-                name={`${value}${index}`}
                 checked={checked}
                 onChange={() => onFilterChange({ label, value, checked })}
               />
@@ -118,9 +138,9 @@ class FilterableSearch extends PureComponent {
       <div className={cx(['filterable-search'])}>
         <TextField
           placeholder={placeholder}
-          onChange={value => onInputChange(value)}
-          onKeyDown={ev => {
-            if (ev.keyCode === 13 && onSubmit) onSubmit(ev.target.value)
+          onChange={(value: string) => onInputChange(value)}
+          onKeyDown={(ev: KeyboardEvent) => {
+            if (ev.key === 'Enter' && onSubmit) onSubmit((ev.target as HTMLInputElement).value)
           }}
           value={value}
         />
@@ -132,31 +152,6 @@ class FilterableSearch extends PureComponent {
       </div>
     )
   }
-}
-
-FilterableSearch.propTypes = {
-  buttonLabel: PropTypes.string,
-  dropdownIcon: PropTypes.oneOf(['chevronDown', 'filter']),
-  onFilterChange: PropTypes.func.isRequired,
-  onInputChange: PropTypes.func,
-  onSubmit: PropTypes.func,
-  value: PropTypes.string.isRequired,
-  filterChoices: PropTypes.arrayOf(
-    PropTypes.shape({
-      label: PropTypes.string,
-      value: PropTypes.string,
-      checked: PropTypes.bool,
-    }),
-  ).isRequired,
-  placeholder: PropTypes.string,
-}
-
-FilterableSearch.defaultProps = {
-  buttonLabel: 'Search',
-  dropdownIcon: 'chevronDown',
-  placeholder: 'Search',
-  onSubmit: undefined,
-  onInputChange: undefined,
 }
 
 export default FilterableSearch

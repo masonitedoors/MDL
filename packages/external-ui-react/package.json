@@ -1,6 +1,6 @@
 {
   "name": "@masonite/external-ui-react",
-  "version": "2.28.0",
+  "version": "2.29.0-alpha.4+0e54c3d",
   "description": "Masonite Design Language for React",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
@@ -29,5 +29,5 @@
   },
   "author": "Tarik Hamilton",
   "license": "MIT",
-  "gitHead": "b864a5dd65da25157d16c41d3678599f1a259420"
+  "gitHead": "0e54c3de72305501461ae2e6c0ea0eb2956eabe8"
 }

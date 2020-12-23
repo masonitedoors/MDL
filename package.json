@@ -16,7 +16,6 @@
     "build:package:external-ui-react": "cd packages/external-ui-react && npm run build-from-root",
     "build:package:svg-icons": "cd packages/svg-icons && npm run build",
     "build:package:tailwindcss": "cd packages/tailwindcss && webpack",
-    "publish": "npm run build-package:external-ui-react && lerna publish",
     "lint:scripts": "npx eslint './**/*.js'",
     "lint:scripts:fix": "npm run lint:scripts -- --fix",
     "lint:styles": "npx stylelint **/*.scss --syntax scss",

@@ -1,6 +1,6 @@
 {
   "name": "@masonite/tailwindcss",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Masonite Design Language in Tailwind CSS",
   "files": [
     "tailwind.*"

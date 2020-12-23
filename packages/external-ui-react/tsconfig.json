@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
-    "target": "es5",
-    "lib": ["esnext", "dom", "dom.iterable"],
+    "target": "ES5",
+    "lib": ["DOM", "ES5", "ScriptHost"],
     "allowJs": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
@@ -16,8 +16,9 @@
     "resolveJsonModule": true,
     "sourceMap": true,
     "isolatedModules": true,
+    "outDir": "dist",
     "jsx": "react",
-    "baseUrl": ".",
-    "types": ["node", "jest"]
+    "baseUrl": "src"
   },
+  "include": ["src"],
 }

@@ -2,10 +2,30 @@
   "name": "@masonite/external-ui-react",
   "version": "2.28.0",
   "description": "Masonite Design Language for React",
-  "main": "dist/index.js",
-  "keywords": [],
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist",
+    "styles"
+  ],
+  "keywords": [
+    "reactjs",
+    "typescript",
+    "components",
+    "ui",
+    "component library"
+  ],
   "publishConfig": {
     "access": "public"
+  },
+  "scripts": {
+    "build": "cd ../../ && npm run build:package:external-ui-react",
+    "build-from-root": "run-s clean copy:* webpack fix-tsc-outdir",
+    "clean": "rimraf \"./@(dist|styles)\"",
+    "copy:styles": "copyfiles -u 1 \"../../styles/*.@(scss|css)\" src",
+    "copy:components": "copyfiles -u 2 \"../../components/**/!(__snapshots__)**/!(react.stories|react.test).@(json|js|ts|tsx|css|scss)\" ../../components/declarations.d.ts src",
+    "fix-tsc-outdir": "copyfiles -u 4 dist/packages/external-ui-react/src/**/*.d.ts dist && rimraf dist/packages",
+    "webpack": "webpack --progress --mode=production"
   },
   "author": "Tarik Hamilton",
   "license": "MIT",

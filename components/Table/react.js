@@ -15,8 +15,8 @@ const getHeaderColWidths = (table, headerColsLength = null) =>
     && table.querySelector('tbody tr:first-child td')
     && Array.from(table.querySelector('tbody tr:first-child').children)
       .filter((col, i) => (headerColsLength !== null ? headerColsLength > i : true))
-      .map(col => window.getComputedStyle(col).width)
-      .map(width => +width.replace(/[^0-9\\.]/g, '')))
+      .map((col) => window.getComputedStyle(col).width)
+      .map((width) => +width.replace(/[^0-9\\.]/g, '')))
   || []
 
 export const Table = ({
@@ -105,13 +105,13 @@ export const Table = ({
     return null
   }
 
-  const handleBulkEditPopoverMouseLeave = event => {
+  const handleBulkEditPopoverMouseLeave = (event) => {
     if (!(event.relatedTarget !== bulkEditPopoverRef.current)) {
       !selectionLocked && clearAllCellStates()
     }
   }
 
-  const handleCellMouseLeave = event => {
+  const handleCellMouseLeave = (event) => {
     if (!(event.relatedTarget === bulkEditPopoverRef.current)) {
       !selectionLocked && clearAllCellStates()
     }
@@ -131,7 +131,7 @@ export const Table = ({
     ])
   }
 
-  const getColumnInputVariant = columnIndex => (columnIndex % 2 ? 'light' : 'dark')
+  const getColumnInputVariant = (columnIndex) => (columnIndex % 2 ? 'light' : 'dark')
 
   const cellSelectionClasses = ({
     x = null,
@@ -180,7 +180,7 @@ export const Table = ({
   const updateHeaderColWidths = () => {
     if (!(tableRef && tableRef.current)) return false
 
-    const widths = getHeaderColWidths(tableRef.current).map(n => `${n}px`)
+    const widths = getHeaderColWidths(tableRef.current).map((n) => `${n}px`)
 
     return (
       widths
@@ -226,7 +226,7 @@ export const Table = ({
         setSelectionLock,
         tableRef,
         fixedClassName: cx('table__cell--fixed'),
-        getFixedCellStyle: n => ({
+        getFixedCellStyle: (n) => ({
           left: tableRef.current
             ? getHeaderColWidths(tableRef.current, headerCols).reduce(
               (acc, width, i) => (headerCols > i && i !== 0 ? acc + width : acc),
@@ -247,7 +247,7 @@ export const Table = ({
           formControlType={formControlType}
           formControlProps={{
             ...formControlProps,
-            onChange: val => {
+            onChange: (val) => {
               switch (formControlType) {
                 case Checkbox:
                   setBulkEditInputValue(!bulkEditInputValue)
@@ -264,7 +264,7 @@ export const Table = ({
               }
             },
             onClick: () => formControlProps.onFocus,
-            onKeyDown: event => {
+            onKeyDown: (event) => {
               switch (formControlType) {
                 case TextField:
                   return (
@@ -329,5 +329,3 @@ Table.defaultProps = {
   stickyHeader: false,
   stripedRows: false,
 }
-
-export { SortIcon } from './SortIcon'

@@ -1,8 +1,4 @@
-/*
- * This is for the module builds in /packages.
- */
 const path = require('path')
-const CopyWebpackPlugin = require('copy-webpack-plugin')
 
 const rules = [
   {
@@ -16,6 +12,7 @@ const rules = [
           plugins: ['@babel/plugin-proposal-class-properties'],
         },
       },
+      'ts-loader',
     ],
   },
   {
@@ -30,9 +27,6 @@ const rules = [
       },
       {
         loader: 'sass-loader',
-        options: {
-          includePaths: [path.resolve(__dirname, './../')],
-        },
       },
     ],
   },
@@ -53,28 +47,26 @@ const rules = [
 
 const resolve = {
   alias: {
-    lib: path.resolve(__dirname, '../lib'),
-    components: path.resolve(__dirname, '../components'),
-    images: path.resolve(__dirname, '../images'),
-    config: path.resolve(__dirname, '../config'),
-    styles: path.resolve(__dirname, '../styles'),
-    vendor: path.resolve(__dirname, '../vendor'),
+    lib: path.resolve(__dirname, 'src/lib'),
+    components: path.resolve(__dirname, 'src/components'),
+    images: path.resolve(__dirname, 'src/images'),
+    config: path.resolve(__dirname, 'src/config'),
+    styles: path.resolve(__dirname, '../../styles'),
+    vendor: path.resolve(__dirname, 'src/vendor'),
   },
   extensions: ['.ts', '.tsx', '.scss', '.css', '.svg', '.js', '.jsx'],
 }
 
 module.exports = {
-  mode: 'development',
-  entry: './index.ts',
+  entry: './src/index.ts',
   output: {
-    filename: 'index.js',
-    path: path.resolve(process.cwd(), 'dist'),
+    filename: 'dist/index.js',
+    path: path.resolve(__dirname),
     libraryTarget: 'commonjs2',
   },
   module,
   externals: ['react', 'react-dom', '@masonite/svg-icons'],
   resolve,
-  plugins: [new CopyWebpackPlugin([{ from: './../../styles', to: 'styles', ignore: ['**/*.js'] }])],
 }
 
 module.exports.module = {

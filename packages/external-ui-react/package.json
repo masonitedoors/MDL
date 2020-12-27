@@ -21,7 +21,7 @@
   "scripts": {
     "build": "cd ../../ && npm run build:package:external-ui-react",
     "build-from-root": "run-s clean copy:* webpack fix-tsc-outdir",
-    "clean": "rimraf \"./@(dist|styles)\"",
+    "clean": "rimraf \"./@(dist|styles|src/components)\"",
     "copy:styles": "copyfiles -u 1 \"../../styles/**/*.@(scss|css)\" src",
     "copy:components": "copyfiles -u 2 \"../../components/**/!(__snapshots__)**/!(react.stories|react.test).@(json|js|ts|tsx|css|scss)\" ../../components/declarations.d.ts src",
     "fix-tsc-outdir": "copyfiles -u 4 dist/packages/external-ui-react/src/**/*.d.ts dist && rimraf dist/packages",

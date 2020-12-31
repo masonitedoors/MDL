@@ -1,112 +1,51 @@
 # @masonite/external-ui-react
 
+MDL styles and React components for development. See them in action in [Storybook](https://masonitedoors.github.io/MDL).
+
 ## Install
 
 ```shell
-npm install --save @masonite/external-ui-react
+npm i @masonite/external-ui-react
 ```
 
 ## Usage
 
-Import a component as shown below and you're good to go.
+### CSS
+
+Add MDL CSS using SCSS found in the `/styles` directory. There are 2 main files to choose from: **index.scss** and **global.scss**. Index provides variables and mixins only. You can safely use this any CSS file. Global adds styling to `h1`-`h6`, `p`, and other element tags, as well as the variables.
+
+#### Customize
+
+Alternatively, you can modify the SCSS by defining the variables found in [\_config-variables.scss](https://github.com/masonitedoors/MDL/blob/master/styles/_config-variables.scss) before importing **index.scss**.
+
+### Import Examples
+
+#### ES6
 
 ```js
-import { Button } from "@masonite/external-ui-react";
+import '@masonite/external-ui-react/dist/styles/index.scss'
 ```
 
-## Components
+#### SCSS file
 
-Props noted with an asterisk are required. Not always by necessity, but by lack of defaults or fallback options. These components can be improved.
+```css
+// This is using webpack. How you access node_modules may differ.
+@import '~@masonite/external-ui-react/dist/styles/index.scss';
+```
 
-### cards/BlogCard
+### React components
 
-| Prop    | Default    | Accepted Values |
-| ------- | ---------- | --------------- |
-| onClick | `() => {}` | function        |
-| title   | ''         | string          |
-| content | null       | string          |
+Import a component as shown below and you're good to go. See the list of available components on [Storybook](https://masonitedoors.github.io/MDL) or check the [components](https://github.com/masonitedoors/MDL/tree/master/components) source folder.
 
-### cards/TrendCard
+```js
+import { Button } from '@masonite/external-ui-react'
+```
 
-| Prop    | Default    | Accepted Values |
-| ------- | ---------- | --------------- |
-| onClick | `() => {}` | function        |
-| title   | ''         | string          |
-| content | null       | string          |
+## Development
 
-### forms/Button
+Clone down `Masonitedoors/MDL`, install dependencies, and run `npm run storybook:react`.
 
-| Prop      | Default    | Accepted Values       |
-| --------- | ---------- | --------------------- |
-| disabled  | false      | boolean               |
-| fullWidth | false      | boolean               |
-| onClick   | `() => {}` | function              |
-| uppercase | boolean    | false                 |
-| size      | null       | null, 'small'         |
-| variant   | null       | null, 'light', 'dark' |
+### Deployment
 
-### forms/Checkbox
-
-| Prop     | Default   | Accepted Values | Description |
-| -------- | --------- | --------------- | ----------- |
-| onChange | undefined | function        |             |
-| checked  | false     | boolean         |             |
-
-### forms/FilterableSearch
-
-| Prop             | Default   | Accepted Values                                      | Description                                |
-| ---------------- | --------- | ---------------------------------------------------- | ------------------------------------------ |
-| buttonLabel      | 'Search'  | string                                               |                                            |
-| dropdownIcon     | 'chevron' | 'chevron', 'filter'                                  |                                            |
-| filterChoices    | ---       | { label: string, value: string, checked: boolean }[] |                                            |
-| onFilterChange\* | ---       | function                                             |                                            |
-| onInputChange    | undefined | function                                             |                                            |
-| onSubmit         | undefined | function                                             | Called when button is pressed or Enter key |
-| placeholder      | 'Search'  | string                                               |                                            |
-| value\*          | ---       | string                                               |                                            |
-
-### forms/TextField
-
-| Prop        | Default | Accepted Values | Description                   |
-| ----------- | ------- | --------------- | ----------------------------- |
-| error       | ---     | boolean         | Error state                   |
-| helper      | --      | string          | Text that appears below input |
-| label       | ---     | string          |                               |
-| onBlur      | --      | function        |                               |
-| onChange\*  | ---     | function        | Returns event                 |
-| placeholder | ---     | string          |                               |
-| value\*     | ---     | string          |                               |
-| variant\*   | ---     | 'dark', null    |                               |
-
-### forms/Toggle
-
-| Prop     | Default | Accepted Values | Description |
-| -------- | ------- | --------------- | ----------- |
-| checked  | false   | boolean         |             |
-| disabled | false   | boolean         |             |
-| onChange | null    | function        |             |
-
-### forms/RadioGroup
-
-| Prop          | Default | Accepted Values                       | Description |
-| ------------- | ------- | ------------------------------------- | ----------- |
-| choices\*     |         | `[{ label: String, value: String },]` |             |
-| checkedChoice | false   | string                                |             |
-| onChange\*    |         | function                              |             |
-| row           | false   | boolean                               |             |
-
-### menu/OverflowMenu
-
-| Prop     | Default | Accepted Values  | Description |
-| -------- | ------- | ---------------- | ----------- |
-| children | --      | function, string |             |
-
-### nav/Tabs
-
-Documentation incomplete.
-
-| Prop         | Default   | Accepted Values                           | Description                                     |
-| ------------ | --------- | ----------------------------------------- | ----------------------------------------------- |
-| activeTab\*  | undefined | number, string                            | Unique identifier                               |
-| onTabClick\* | undefined | function                                  | On tab click callback                           |
-| tabs         | Object[]  | `[{ id: number\|string, children: jsx }]` | Tabs use `{children}` for ultimate flexibility. |
+1. Update the `CHANGELOG.md` for the version you're releasing. If there is an `[Unreleased]` block, change that to the next version following semver.
+1. Build the package with `npm run build-package:external-ui-react` from the monorepo root, followed by `lerna publish`.

@@ -1,30 +1,24 @@
 # MDL - Masonite Design Language
 
-[![lerna](https://img.shields.io/badge/maintained%20with-lerna-cc00ff.svg)](https://lernajs.io/) [![Build Status](https://travis-ci.org/masonitedoors/MDL.svg?branch=master)](https://travis-ci.org/masonitedoors/MDL)
+[![lerna](https://img.shields.io/badge/maintained%20with-lerna-cc00ff.svg)](https://lernajs.io/) [![Build Status](https://travis-ci.org/masonitedoors/MDL.svg?branch=master)](https://travis-ci.org/masonitedoors/MDL) <a href="https://storybook.js.org/">
+<img src="https://cdn.jsdelivr.net/gh/storybookjs/brand@master/badge/badge-storybook.svg" alt="Maintained with Storybook" />
+</a>
 
-A monorepo for Masonite Design Language.
+A monorepo housing Masonite Design Language components and styles for development and reference.
 
-## Usage
+## Packages
 
-For usage information, please refer to each individual package's docs:
+### [@masonite/external-ui-react](packages/external-ui-react/README.md)
 
-- [@masonite/external-ui-react](packages/external-ui-react/README.md)
-- [@masonite/svg-icons](packages/svg-icons/README.md)
+Provides CSS, SCSS partials, and React components.
 
-## Deploying to npm
+### [@masonite/svg-icons](packages/svg-icons/README.md)
 
-Lerna handles the package.json version, the tags, and releases. However, each package may have their own additional steps. Follow the steps below for each package, then run `lerna publish`.
+All of the SVG icons.
 
-### @masonite/external-ui-react
+### [@masonite/tailwindcss](packages/tailwindcss/README.md)
 
-- Update the `CHANGELOG.md` in `packages/external-ui-react`. If there is an `[Unreleased]` block, change that to the next version following semver.
-- Build the package `npm run build-package:external-ui-react`
-
-### @masonite/svg-icons
-
-- Have the MIcons repo cloned in vendors. Clone the `Masonitedoors/MDL` repo with `git clone --recurse-submodules -j8` to get it.
-- Update the `CHANGELOG.md` in `packages/svg-icons`. If there is an `[Unreleased]` block, change that to the next version following semver.
-- Build the package `npm run build-package:svg-icons`
+Supplement the base CSS with MDL [Tailwind](https://tailwindcss.com/) utility classes.
 
 ## Contributing
 

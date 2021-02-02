@@ -52,7 +52,7 @@
     "@dump247/storybook-state": "^1.5.2",
     "@masonite/eslint-config": "0.0.13",
     "@masonite/stylelint-config": "^1.4.0",
-    "@masonite/svg-icons": "^1.10.0",
+    "@masonite/svg-icons": "^1.11.1",
     "@sambego/storybook-state": "^1.3.4",
     "@storybook/addon-centered": "^5.3.21",
     "@storybook/addon-essentials": "^6.1.11",

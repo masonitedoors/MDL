@@ -1,0 +1,46 @@
+@import "styles/index";
+
+.pagination {
+  display: flex;
+  margin-top: 2rem;
+  justify-content: center;
+  align-items: center;
+
+  button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    background-color: $color-m-white;
+    color: $color-m-primary-charcoal;
+    font-family: $font-family;
+    font-size: 1.25rem;
+    margin-left: 0.25rem;
+    margin-right: 0.25rem;
+
+    &:active,
+    &:focus {
+      border: none;
+      outline: none;
+    }
+
+    &.active {
+      font-weight: bold;
+      color: $color-m-black;
+    }
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    &:first-of-type,
+    &:last-of-type {
+      margin: 0;
+
+      svg {
+        height: 42px;
+        width: 42px;
+      }
+    }
+  }
+}

@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased] - YYYY-MM-DD
 
+## [1.12.0] - 2021-02-18
+
+### Changed
+
+- Thumbs Up icon appearance.
+
 ## [1.11.1] - 2021-01-15
 
 ### Fixed

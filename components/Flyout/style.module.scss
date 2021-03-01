@@ -6,17 +6,15 @@
 }
 
 .aside {
+  display: flex;
   position: fixed;
   top: 0;
   right: -100%;
-  height: 100%;
-  background-color: $color-white;
   z-index: 1001;
-
-  animation: slideInCategories ease-out .5s forwards;
-
-  display: flex;
+  height: 100%;
   flex-direction: column;
+  background-color: $color-white;
+  animation: slideInCategories ease-out .5s forwards;
 }
 
 .header {
@@ -24,9 +22,14 @@
   padding: $space-s;
   display: flex;
   align-items: center;
-
+  justify-content: space-between;
+  
   h2 {
     margin-bottom: 0;
+  }
+
+  &__left {
+    display: flex;
   }
 }
 

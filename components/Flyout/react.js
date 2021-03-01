@@ -9,25 +9,25 @@ import styles from './style.module.scss'
 const cx = classNames.bind(styles)
 
 const Flyout = ({
-  children, onClose, heading, moreHeading, width = 477
-}) => {
-  return (
-    <>
-      <aside className={cx('aside')} style={{ width }}>
-        <div className={cx('header')}>
+  children, onClose, heading, moreHeading, width = 477,
+}) => (
+  <>
+    <aside className={cx('aside')} style={{ width }}>
+      <div className={cx('header')}>
+        <div className={cx('header__left')}>
           <button type="button" onClick={onClose} className={cx('close')}>
             <Icon svg={mX} size={20} />
           </button>
           {heading && <h2>{heading}</h2>}
-          {moreHeading}
         </div>
+        {moreHeading}
+      </div>
 
-        {children}
-      </aside>
-      <ModalBackdrop />
-    </>
-  )
-}
+      {children}
+    </aside>
+    <ModalBackdrop />
+  </>
+)
 
 Flyout.propTypes = {
   children: PropTypes.oneOfType([PropTypes.element, PropTypes.string]).isRequired,

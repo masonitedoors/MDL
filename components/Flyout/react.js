@@ -8,11 +8,11 @@ import styles from './style.module.scss'
 
 const cx = classNames.bind(styles)
 
-const Flyout = ({
+const Flyout = React.forwardRef(({
   children, onClose, heading, moreHeading, width = 477,
-}) => (
+}, ref) => (
   <>
-    <aside className={cx('aside')} style={{ width }}>
+    <aside ref={ref} className={cx('aside')} style={{ width }}>
       <div className={cx('header')}>
         <div className={cx('header__left')}>
           <button type="button" onClick={onClose} className={cx('close')}>
@@ -27,7 +27,7 @@ const Flyout = ({
     </aside>
     <ModalBackdrop />
   </>
-)
+))
 
 Flyout.propTypes = {
   children: PropTypes.oneOfType([PropTypes.element, PropTypes.string]).isRequired,

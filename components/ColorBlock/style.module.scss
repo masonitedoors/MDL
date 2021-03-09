@@ -1,4 +1,4 @@
-@import "styles/index";
+@import 'styles/index';
 
 .band-color-blocks {
   padding-top: 1rem;
@@ -39,6 +39,8 @@
 }
 
 .color-block--image {
+  margin: 0 0 1rem;
+
   @media (min-width: 768px) {
     margin-bottom: 0;
     overflow: hidden;

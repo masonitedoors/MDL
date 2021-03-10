@@ -9,10 +9,10 @@ import styles from './style.module.scss'
 const cx = classNames.bind(styles)
 
 const Flyout = React.forwardRef(({
-  children, onClose, heading, moreHeading, width = 477,
+  children, onClose, heading, moreHeading, width = 477, className, style, ...rest
 }, ref) => (
   <>
-    <aside ref={ref} className={cx('aside')} style={{ width }}>
+    <aside ref={ref} className={cx('aside', className)} style={{ width, ...style }} {...rest}>
       <div className={cx('header')}>
         <div className={cx('header__left')}>
           <button type="button" onClick={onClose} className={cx('close')}>
@@ -31,6 +31,7 @@ const Flyout = React.forwardRef(({
 
 Flyout.propTypes = {
   children: PropTypes.oneOfType([PropTypes.element, PropTypes.string]).isRequired,
+  className: PropTypes.string,
   onClose: PropTypes.func.isRequired,
   heading: PropTypes.string,
   moreHeading: PropTypes.oneOfType([PropTypes.element, PropTypes.string]),

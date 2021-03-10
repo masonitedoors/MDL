@@ -3,35 +3,39 @@
 exports[`Flyout should render with content 1`] = `
 <DocumentFragment>
   <aside
-    class="aside"
-    style="width: 700px;"
+    class="aside some class-name"
+    style="width: 700px; background-color: rgb(170, 187, 204);"
   >
     <div
       class="header"
     >
-      <button
-        class="close"
-        type="button"
+      <div
+        class="header__left"
       >
-        <div
-          class="icon "
-          style="height: 20px; width: 20px;"
+        <button
+          class="close"
+          type="button"
         >
-          <svg
-            version="1.1"
-            viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg"
+          <div
+            class="icon "
+            style="height: 20px; width: 20px;"
           >
-            <title />
-            <path
-              d="M13.4 12l5.3-5.3c0.4-0.4 0.4-1 0-1.4s-1-0.4-1.4 0l-5.3 5.3-5.3-5.3c-0.4-0.4-1-0.4-1.4 0s-0.4 1 0 1.4l5.3 5.3-5.3 5.3c-0.4 0.4-0.4 1 0 1.4 0.2 0.2 0.4 0.3 0.7 0.3s0.5-0.1 0.7-0.3l5.3-5.3 5.3 5.3c0.2 0.2 0.5 0.3 0.7 0.3s0.5-0.1 0.7-0.3c0.4-0.4 0.4-1 0-1.4l-5.3-5.3z"
-            />
-          </svg>
-        </div>
-      </button>
-      <h2>
-        My heading
-      </h2>
+            <svg
+              version="1.1"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <title />
+              <path
+                d="M13.4 12l5.3-5.3c0.4-0.4 0.4-1 0-1.4s-1-0.4-1.4 0l-5.3 5.3-5.3-5.3c-0.4-0.4-1-0.4-1.4 0s-0.4 1 0 1.4l5.3 5.3-5.3 5.3c-0.4 0.4-0.4 1 0 1.4 0.2 0.2 0.4 0.3 0.7 0.3s0.5-0.1 0.7-0.3l5.3-5.3 5.3 5.3c0.2 0.2 0.5 0.3 0.7 0.3s0.5-0.1 0.7-0.3c0.4-0.4 0.4-1 0-1.4l-5.3-5.3z"
+              />
+            </svg>
+          </div>
+        </button>
+        <h2>
+          My heading
+        </h2>
+      </div>
       <button>
         A test button
       </button>
@@ -59,26 +63,30 @@ exports[`Flyout should render without crashing 1`] = `
     <div
       class="header"
     >
-      <button
-        class="close"
-        type="button"
+      <div
+        class="header__left"
       >
-        <div
-          class="icon "
-          style="height: 20px; width: 20px;"
+        <button
+          class="close"
+          type="button"
         >
-          <svg
-            version="1.1"
-            viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg"
+          <div
+            class="icon "
+            style="height: 20px; width: 20px;"
           >
-            <title />
-            <path
-              d="M13.4 12l5.3-5.3c0.4-0.4 0.4-1 0-1.4s-1-0.4-1.4 0l-5.3 5.3-5.3-5.3c-0.4-0.4-1-0.4-1.4 0s-0.4 1 0 1.4l5.3 5.3-5.3 5.3c-0.4 0.4-0.4 1 0 1.4 0.2 0.2 0.4 0.3 0.7 0.3s0.5-0.1 0.7-0.3l5.3-5.3 5.3 5.3c0.2 0.2 0.5 0.3 0.7 0.3s0.5-0.1 0.7-0.3c0.4-0.4 0.4-1 0-1.4l-5.3-5.3z"
-            />
-          </svg>
-        </div>
-      </button>
+            <svg
+              version="1.1"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <title />
+              <path
+                d="M13.4 12l5.3-5.3c0.4-0.4 0.4-1 0-1.4s-1-0.4-1.4 0l-5.3 5.3-5.3-5.3c-0.4-0.4-1-0.4-1.4 0s-0.4 1 0 1.4l5.3 5.3-5.3 5.3c-0.4 0.4-0.4 1 0 1.4 0.2 0.2 0.4 0.3 0.7 0.3s0.5-0.1 0.7-0.3l5.3-5.3 5.3 5.3c0.2 0.2 0.5 0.3 0.7 0.3s0.5-0.1 0.7-0.3c0.4-0.4 0.4-1 0-1.4l-5.3-5.3z"
+              />
+            </svg>
+          </div>
+        </button>
+      </div>
     </div>
   </aside>
   <div

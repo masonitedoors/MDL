@@ -29,3 +29,4 @@ __image_snapshots__
 dist
 
 lerna-debug.log
+/.vs

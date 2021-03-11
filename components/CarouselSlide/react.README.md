@@ -1,14 +1,3 @@
 # Usage
-Used to display a single slide inside a carousel.
 
-<!-- PROPS -->
-  heading
-  subHeading
-  image
-  podOneHeading
-  podTwoHeading
-  podThreeHeading
-  podOneContent
-  podTwoContent
-  podThreeContent
-  slideColor
+Pass in children to the CarouselSlide to create a responsive carousel slider that works for all screenns and devices.

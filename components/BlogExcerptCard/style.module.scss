@@ -6,6 +6,7 @@
   border: 2px solid $color-m-primary-gray;
   display: flex;
   flex-direction: column;
+  font-family: $font-family;
 
   .image {
     height: 200px !important; // enforce height
@@ -26,10 +27,14 @@
       color: $color-m-black !important; // enforce mdl size
     }
 
+    p {
+      color: $color-m-font-gray;
+    }
+
     a {
       float: right;
       color: $color-m-black;
-      font-size: 0.875rem;
+      font-size: 14px;
       line-height: 1.5rem;
       margin-right: auto;
       text-decoration: none; // overrride other theme classes

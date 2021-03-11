@@ -1,11 +1,8 @@
 import React from 'react';
-import classNames from 'classnames/bind';
 import PropTypes from 'prop-types';
-import style from './style.module.scss';
+import classes from './style.module.scss';
 // components
 import { Heading, P } from '../typography/react';
-
-const cx = classNames.bind(style);
 
 const BlogExcerptCard = ({ title, content, image, link }) => {
   return (

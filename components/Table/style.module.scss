@@ -300,3 +300,16 @@ $cell-height: 49px;
     min-width: 80px;
   }
 }
+
+/* Headless Table */
+.table {
+  border-collapse: collapse;
+
+  tbody.table-body__headless td {
+    border-top: 1px solid $border-color;
+  }
+}
+
+
+
+

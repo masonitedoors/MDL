@@ -303,7 +303,8 @@ export const Table = ({
           >
             {header && <thead className={cx('table__header')}>{header}</thead>}
             {children}
-            {bodyOverride || (body && <tbody>{body}</tbody>)}
+            {bodyOverride ||
+              (body && <tbody className={cx('table-body__headless')}>{body}</tbody>)}
             {footer && <tfoot>{footer}</tfoot>}
           </table>
         </div>

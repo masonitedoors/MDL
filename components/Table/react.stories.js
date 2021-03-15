@@ -181,7 +181,7 @@ storiesOf('Table', module)
   ))
   .add('Test', () => (
     <table className={cx('table')}>
-      <tbody className={cx('table-body__headless')}>
+      <tbody>
         <tr>
           <td>Lorem data</td>
           <td>Lorem data</td>

@@ -106,6 +106,7 @@
     "react-lottie": "^1.2.3",
     "react-onclickoutside": "^6.9.0",
     "react-scrollbar": "^0.5.6",
+    "react-toastify": "^7.0.3",
     "react-transition-group": "^4.4.1",
     "sass-loader": "^7.3.1",
     "storybook-readme": "^5.0.9",

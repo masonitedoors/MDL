@@ -4,7 +4,6 @@ import classNames from 'classnames/bind'
 import { Table } from './react'
 import Readme from './react.README.md'
 import style from './style.module.scss'
-import { BodyTextField } from '../WizardModal/react'
 
 const cx = classNames.bind(style)
 
@@ -126,7 +125,7 @@ storiesOf('Table', module)
       </tbody>
     </table>
   ))
-  .add('Headerless Table', () => (
+  .add('HTML', () => (
     <>
       <h2>Standard Table</h2>
       <p>
@@ -178,4 +177,20 @@ storiesOf('Table', module)
         </tbody>
       </table>
     </>
+  ))
+  .add('Headerless Table', () => (
+    <table className={cx('table')}>
+      <tbody>
+        <tr>
+          <td>Lorem data</td>
+          <td>Lorem data</td>
+          <td>Lorem data</td>
+        </tr>
+        <tr>
+          <td>Lorem data</td>
+          <td>Lorem data</td>
+          <td>Lorem data</td>
+        </tr>
+      </tbody>
+    </table>
   ))

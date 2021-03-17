@@ -126,7 +126,7 @@ storiesOf('Table', module)
       </tbody>
     </table>
   ))
-  .add('HTML', () => (
+  .add('Headerless Table', () => (
     <>
       <h2>Standard Table</h2>
       <p>
@@ -178,20 +178,4 @@ storiesOf('Table', module)
         </tbody>
       </table>
     </>
-  ))
-  .add('Test', () => (
-    <table className={cx('table')}>
-      <tbody>
-        <tr>
-          <td>Lorem data</td>
-          <td>Lorem data</td>
-          <td>Lorem data</td>
-        </tr>
-        <tr>
-          <td>Lorem data</td>
-          <td>Lorem data</td>
-          <td>Lorem data</td>
-        </tr>
-      </tbody>
-    </table>
   ))

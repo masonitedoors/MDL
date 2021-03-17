@@ -3,12 +3,13 @@ import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 import { mCheck } from '@masonite/svg-icons'
 import { Toast, toastContainerProps } from './react'
-import Button from '../Button/react'
+import { React as Button } from '../Button'
+import { Meta, Story } from '@storybook/react'
 
-const Template = ({ includeButtons, ...props }) => {
+const Template: Story<any> = ({ includeButtons, ...props }: { includeButtons: boolean }) => {
   const buttonsOverride = includeButtons
     ? {
-      buttons: closeToast => ([
+      buttons: (closeToast: () => void) => ([
         <Button key="close" onClick={closeToast}>
           Close
         </Button>,
@@ -25,7 +26,7 @@ const Template = ({ includeButtons, ...props }) => {
     )
   }
 
-  return <Button {...{ onClick }}>SHOW</Button>
+  return <Button {...{ onClick }}>Show</Button>
 }
 
 export default {
@@ -37,7 +38,7 @@ export default {
       <ToastContainer {...toastContainerProps} />
     </>
   )]
-}
+} as Meta
 
 export const IconHeading = Template.bind({})
 IconHeading.args = {

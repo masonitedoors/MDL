@@ -304,9 +304,8 @@ $cell-height: 49px;
 /* Headerless Table */
 .table {
   border-collapse: collapse;
-
+  
   :not(thead tbody) tbody:first-child td {
-    
     border-top: 1px solid $border-color;
   }
 }

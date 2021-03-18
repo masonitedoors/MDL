@@ -178,3 +178,19 @@ storiesOf('Table', module)
       </table>
     </>
   ))
+  .add('Headerless Table', () => (
+    <table className={cx('table')}>
+      <tbody>
+        <tr>
+          <td>Lorem data</td>
+          <td>Lorem data</td>
+          <td>Lorem data</td>
+        </tr>
+        <tr>
+          <td>Lorem data</td>
+          <td>Lorem data</td>
+          <td>Lorem data</td>
+        </tr>
+      </tbody>
+    </table>
+  ))

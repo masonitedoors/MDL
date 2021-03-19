@@ -35,3 +35,5 @@ export const toastContainerProps: ToastContainerProps = {
   position: "bottom-right",
   className: cx('outer-toast')
 }
+
+export default Toast

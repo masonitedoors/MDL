@@ -1,1 +1,1 @@
-export { default as React } from './react'
+export { Toast, toastContainerProps } from './react'

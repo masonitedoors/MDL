@@ -124,5 +124,7 @@
     "webpack-cli": "^4.2.0",
     "webpack-fix-style-only-entries": "^0.6.0"
   },
-  "dependencies": {}
+  "dependencies": {
+    "react-datepicker": "^3.6.0"
+  }
 }

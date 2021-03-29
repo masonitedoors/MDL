@@ -15,9 +15,10 @@ storiesOf('Datepicker', module)
 			<>
 				<div classNames={cx('date')}>
 					<Datepicker
-						selected={effectiveDate}
-						placeholderText="Effective Date"
+						value={effectiveDate}
+						inputPlaceholder="Effective Date"
 						onChange={handleChange}
+						calendarPopperPosition='bottom'
 					/>
 				</div>
 			</>

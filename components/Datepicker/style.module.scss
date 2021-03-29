@@ -1,10 +1,12 @@
 @import "styles/index";
 
-$datepicker__font-family: $font-family;
-$datepicker__font-size: $base-font-size;
-$datepicker__selected-color: $color-limerick;
-$datepicker__text-color: $color-deepgrey;
-$datepicker__background-color: $color-m-white;
-$datepicker__border-radius: 12px;
-
-@import '~react-datepicker/src/stylesheets/datepicker-cssmodules.scss';
+.datepicker {
+	font-family: $font-family;
+	
+	.calendar {
+		box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.15);
+		position: absolute;
+		background-color: $color-m-white;
+		border-radius: 0;
+	}
+}

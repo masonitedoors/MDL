@@ -1,21 +1,30 @@
 import React from 'react'
-import DatePicker from 'react-datepicker'
-import './style.module.scss'
+import Calendar from 'react-modern-calendar-datepicker'
+import 'react-modern-calendar-datepicker/lib/DatePicker.css'
+import classNames from 'classnames/bind'
+import styles from './style.module.scss'
+
+const cx = classNames.bind(styles)
 
 const Datepicker = ({
-	selected,
+	value,
 	onChange,
-	placeholderText,
+	inputPlaceholder,
 	disabled,
+	calendarPopperPosition,
+	calendarClassName,
 	...props
 }) => {
 	return (
-		<div>
-			<DatePicker
-				selected={selected}
+		<div className={cx('datepicker')}>
+			<Calendar
+				value={value}
 				onChange={onChange}
 				disabled={disabled}
-				placeholderText={placeholderText}
+				inputPlaceholder={inputPlaceholder}
+				calendarPopperPosition={calendarPopperPosition}
+				colorPrimary="#99c221"
+				calendarClassName={cx('calendar')}
 				{...props}
 			/>
 		</div>

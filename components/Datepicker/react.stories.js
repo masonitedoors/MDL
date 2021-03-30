@@ -1,10 +1,6 @@
 import { storiesOf } from '@storybook/react'
 import React, { useState } from 'react'
-import classNames from 'classnames/bind'
 import Datepicker from './react'
-import storyStyles from './react.stories.module.scss'
-
-const cx = classNames.bind(storyStyles)
 
 storiesOf('Datepicker', module)
   .add('default', () => {
@@ -13,14 +9,12 @@ storiesOf('Datepicker', module)
 
     return (
 			<>
-				<div classNames={cx('date')}>
-					<Datepicker
-						value={effectiveDate}
-						inputPlaceholder="Effective Date"
-						onChange={handleChange}
-						calendarPopperPosition='bottom'
-					/>
-				</div>
+				<Datepicker
+					value={effectiveDate}
+					inputPlaceholder="Effective Date"
+					onChange={handleChange}
+					calendarPopperPosition='bottom'
+				/>
 			</>
 		)
 	})

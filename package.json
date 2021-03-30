@@ -125,6 +125,6 @@
     "webpack-fix-style-only-entries": "^0.6.0"
   },
   "dependencies": {
-    "react-modern-calendar-datepicker": "^3.1.6",
+    "react-modern-calendar-datepicker": "^3.1.6"
   }
 }

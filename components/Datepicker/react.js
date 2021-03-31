@@ -20,6 +20,7 @@ const Datepicker = ({ className, ...props }) => {
     <div>
       <DatePicker
 				calendarContainer={MyContainer}
+				formatWeekDay={(day) => day[0]}
 				{...props} 
 			/>
     </div>

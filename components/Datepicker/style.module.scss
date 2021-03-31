@@ -8,7 +8,7 @@
 // $datepicker__background-color: $color-m-white;
 // $datepicker__border-radius: 12px;
 
-.mdl-container-wrapper .react-datepicker {
+.mdl-container-wrapper :global(.react-datepicker) {
 	border: none;
 	background-color: aqua;
 }

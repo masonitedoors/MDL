@@ -1,4 +1,4 @@
-import React from 'react'
+import * as React from 'react'
 import classNames from 'classnames/bind'
 import DatePicker, { CalendarContainer } from 'react-datepicker'
 import styles from './style.module.scss'
@@ -6,7 +6,11 @@ import 'react-datepicker/dist/react-datepicker.css'
 
 const cx = classNames.bind(styles)
 
-const Datepicker = ({ className, ...props }) => {
+type DatepickerProps = {
+  props: React.ComponentPropsWithoutRef<DatePicker>
+}
+
+const Datepicker = (props: DatepickerProps) => {
   const MyContainer = ({ className, children }) => {
     return (
       <div className={cx('mdl-container-wrapper')}>
@@ -15,16 +19,15 @@ const Datepicker = ({ className, ...props }) => {
         </CalendarContainer>
       </div>
     )
-  }
+  };
   return (
-    <div>
-      <DatePicker
-				calendarContainer={MyContainer}
-				formatWeekDay={(day) => day[0]}
-				{...props} 
-			/>
-    </div>
+    <DatePicker
+      calendarContainer={MyContainer}
+      formatWeekDay={(day) => day[0]}
+      {...props}
+    />
   )
 }
+// Datepicker.defaultProps = defaultProps;
 
 export default Datepicker

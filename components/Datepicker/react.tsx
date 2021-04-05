@@ -28,6 +28,5 @@ const Datepicker = (props: DatepickerProps) => {
     />
   )
 }
-// Datepicker.defaultProps = defaultProps;
 
 export default Datepicker

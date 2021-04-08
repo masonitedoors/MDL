@@ -16,6 +16,9 @@ describe('Flyout', () => {
         heading="My heading"
         moreHeading={<button>A test button</button>}
         width={700}
+        className="some class-name"
+        style={{ backgroundColor: "#abc" }}
+        onMouseEnter={() => {}}
       >
         <div>Some body content</div>
       </Flyout>

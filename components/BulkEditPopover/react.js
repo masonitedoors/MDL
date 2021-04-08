@@ -46,8 +46,6 @@ const BulkEditPopover = React.forwardRef(
       return style[popDirection]
     }
 
-    if (formControlProps.onKeyDown) formControlProps.onKeyDown = formControlProps.onKeyDown(value)
-
     switch (formControlType) {
       case TextField:
         formControlProps = {

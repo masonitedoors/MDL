@@ -8,29 +8,30 @@ import styles from './style.module.scss'
 
 const cx = classNames.bind(styles)
 
-const Flyout = ({
-  children, onClose, heading, moreHeading, width = 477
-}) => {
-  return (
-    <>
-      <aside className={cx('aside')} style={{ width }}>
-        <div className={cx('header')}>
+const Flyout = React.forwardRef(({
+  children, onClose, heading, moreHeading, width = 477, className, style, ...rest
+}, ref) => (
+  <>
+    <aside ref={ref} className={cx('aside', className)} style={{ width, ...style }} {...rest}>
+      <div className={cx('header')}>
+        <div className={cx('header__left')}>
           <button type="button" onClick={onClose} className={cx('close')}>
             <Icon svg={mX} size={20} />
           </button>
           {heading && <h2>{heading}</h2>}
-          {moreHeading}
         </div>
+        {moreHeading}
+      </div>
 
-        {children}
-      </aside>
-      <ModalBackdrop />
-    </>
-  )
-}
+      {children}
+    </aside>
+    <ModalBackdrop />
+  </>
+))
 
 Flyout.propTypes = {
   children: PropTypes.oneOfType([PropTypes.element, PropTypes.string]).isRequired,
+  className: PropTypes.string,
   onClose: PropTypes.func.isRequired,
   heading: PropTypes.string,
   moreHeading: PropTypes.oneOfType([PropTypes.element, PropTypes.string]),

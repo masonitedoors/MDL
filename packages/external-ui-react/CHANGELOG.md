@@ -5,6 +5,41 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.33.2] - 2021-04-06
+
+## [2.33.0] - 2021-03-19
+
+### Added
+
+- `Toast` component.
+
+### Fixed
+
+- Missing top-border on `Table` when there isn't a header.
+
+## [2.32.0] - 2021-03-10
+
+### Added
+
+- `className` and `style` props to `Flyout`.
+
+### Fixed
+
+- `ModalBackdrop` outsideClick error.
+- `BulkEditPopover` not passing events and excess padding.
+
+## [2.31.0] - 2021-03-02
+
+### Added
+
+- `Flyout` can receive a forward ref.
+
+## [2.30.0] - 2021-03-01
+
+### Fixed
+
+- `Flyout` not having space between the the `heading` and `moreHeading` props.
+
 ## [2.29.1] - 2021-01-05
 
 ### Fixed

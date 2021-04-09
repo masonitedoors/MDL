@@ -19,7 +19,7 @@ const rules = [
     ],
   },
   {
-    test: /\.scss$/,
+    test: /\.s?css$/,
     loaders: [
       'style-loader',
       {

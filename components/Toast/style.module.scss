@@ -20,6 +20,9 @@
   min-width: 448px;
 
   :global(.Toastify__toast) {
+    font-family: unset;
+    border-radius: 4px;
+
     h2 {
       font-weight: normal;
     }
@@ -40,5 +43,13 @@
   :global(.Toastify__close-button) > svg {
     height: 24px;
     width: 24px;
+  }
+
+  :global(.Toastify__progress-bar--default) {
+    background: $color-limerick;
+  }
+
+  &:global(.Toastify__toast-container--top-center) {
+    top: 20%;
   }
 }

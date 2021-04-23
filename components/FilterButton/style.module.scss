@@ -1,0 +1,45 @@
+@import 'styles/index';
+
+.filter-button {
+  display: flex;
+  align-items: center;
+  border: solid 2px $color-pastelgray;
+  border-radius: 2px;
+  background: none;
+  padding: $space-xs;
+  margin-right: 13px;
+}
+
+.select-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  margin: 0 $space-xxs;
+  white-space: nowrap;
+}
+
+.select-label {
+  margin-bottom: $space-xxs;
+  font-size: 10px;
+}
+
+.select-value {
+  text-align: left;
+  font-weight: bold;
+}
+
+.dots {
+  fill: $color-limerick;
+}
+
+button.narrow {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+
+  .select-text {
+    grid-row: 2;
+    grid-column: 1 / span 2;
+    margin: $space-xxs 0 0;
+  }
+}

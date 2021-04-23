@@ -1,0 +1,14 @@
+@import 'styles/index';
+
+.scroller {
+  background-color: $color-night;
+  opacity: 0.5;
+  width: $space-l;
+  height: calc(2 * #{$space-l});
+  padding: 0;
+  border: none;
+
+  div {
+    fill: $color-limerick;
+  }
+}

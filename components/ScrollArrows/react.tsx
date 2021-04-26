@@ -15,7 +15,7 @@ const ScrollBase = ({
   className,
   ...rest
 }: { left?: boolean } & ButtonHTMLAttributes<HTMLButtonElement>) => (
-  <button className={cx(className, 'scroller')} type="button" {...rest}>
+  <button className={cx(className, 'scroll-arrow')} type="button" {...rest}>
     <Icon svg={left ? mChevronLeft : mChevronRight} title={left ? 'Left' : 'Right'} size={36} />
   </button>
 )

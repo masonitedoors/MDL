@@ -5,7 +5,12 @@ const {
 
 module.exports = {
   stories: ['../../components/**/react.stories.@(js|jsx|ts|tsx|mdx)'],
-  addons: ['@storybook/addon-essentials', '@storybook/addon-links', '@storybook/addon-knobs'],
+  addons: [
+    '@storybook/addon-essentials',
+    '@storybook/addon-links',
+    '@storybook/addon-postcss',
+    '../../packages/markup-generator-addon/dist/register',
+  ],
   webpackFinal: (config) => ({
     ...config,
     module: {

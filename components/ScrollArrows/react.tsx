@@ -28,4 +28,4 @@ export const ScrollRight = ({ onClick, ...rest }: ScrollProps) => (
   <ScrollBase onClick={() => onClick && onClick(1)} {...rest} />
 )
 
-export const ScrollDummy = () => <div>DUMMY</div>
+export const ScrollDummy2 = () => <div>DUMMY</div>

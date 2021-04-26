@@ -1,1 +1,1 @@
-export { ScrollLeft, ScrollRight } from './react'
+export { ScrollLeft, ScrollRight, ScrollDummy2 } from './react'

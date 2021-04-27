@@ -33,7 +33,7 @@ const EXCLUDED_COMPONENTS = ['Flyout', 'Welcome', 'typography']
  * @returns
  */
 function renderCssTo(dir = '', files, filenameFn = 'style') {
-  Promise.all(
+  return Promise.all(
     files.map(
       async (file) =>
         new Promise((resolve) => {

@@ -17,7 +17,7 @@ module.exports = {
           },
         },
         {
-          test: /tailwind\.css$/,
+          test: /(tailwind|prism-.+)\.css$/,
           loaders: ['style-loader', 'css-loader'],
         },
         {

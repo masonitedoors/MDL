@@ -2,7 +2,7 @@
   "name": "@masonite/markup-generator-addon",
   "version": "1.0.0",
   "description": "Masonite Design Language for React",
-  "main": "dist/register",
+  "main": "dist/preset",
   "files": [
     "dist/**/*",
     "README.md",
@@ -32,12 +32,12 @@
     "@babel/preset-env": "^7.13.15",
     "@babel/preset-react": "^7.13.13",
     "@babel/preset-typescript": "^7.13.0",
+    "@typescript-eslint/parser": "^4.22.0",
     "css-loader": "^5.2.4",
-    "esm": "^3.2.25",
+    "eslint": "^7.25.0",
     "sass": "^1.32.11",
     "sass-loader": "^10.1.1",
     "style-loader": "^2.0.0",
-    "to-string-loader": "^1.1.6",
     "ts-loader": "^8.1.0",
     "typescript": "^3.9",
     "webpack": "^4.46.0",
@@ -57,5 +57,8 @@
     "react-dom": {
       "optional": true
     }
+  },
+  "dependencies": {
+    "prismjs": "^1.23.0"
   }
 }

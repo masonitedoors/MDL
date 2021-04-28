@@ -4,6 +4,8 @@ export { default as Counter } from '../../../components/Counter/index.module.scs
 export { default as Datepicker } from '../../../components/Datepicker/style.module.scss'
 export { default as Icon } from '../../../components/Icon/style.module.scss'
 export { default as OverflowMenu } from '../../../components/OverflowMenu/style.module.scss'
+export { default as Pagination } from '../../../components/Pagination/style.module.scss'
+export { default as PaginationDots } from '../../../components/PaginationDots/style.module.scss'
 export { default as Radio } from '../../../components/Radio/style.module.scss'
 export { default as RadioGroup } from '../../../components/Radio/style.module.scss'
 export { default as StatusIndicator } from '../../../components/StatusIndicator/style.module.scss'

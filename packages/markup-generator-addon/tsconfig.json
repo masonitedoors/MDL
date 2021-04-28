@@ -10,7 +10,7 @@
     "strict": false,
     "forceConsistentCasingInFileNames": true,
     "noFallthroughCasesInSwitch": true,
-    "module": "ES6",
+    "module": "CommonJS",
     "moduleResolution": "node",
     "removeComments": false,
     "resolveJsonModule": true,
@@ -19,5 +19,5 @@
     "outDir": "dist",
     "types": ["webpack-env", "jest", "node"]
   },
-  "include": ["src", "../../components"]
+  "include": ["src"]
 }

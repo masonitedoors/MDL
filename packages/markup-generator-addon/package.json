@@ -2,7 +2,7 @@
   "name": "@masonite/markup-generator-addon",
   "version": "1.0.0",
   "description": "Masonite Design Language for React",
-  "main": "dist/preset",
+  "main": "dist/register",
   "files": [
     "dist/**/*",
     "README.md",
@@ -19,10 +19,9 @@
   "scripts": {
     "start": "webpack --watch",
     "clean": "rimraf ./dist",
-    "build:css": "webpack",
-    "build:ts": "babel ./src --out-dir ./dist --extensions \".ts,.tsx\"",
-    "build:ts:watch": "babel ./src --out-dir ./dist --extensions \".ts,.tsx\" --watch",
-    "build": "npm run clean && npm run build:css && npm run build:ts"
+    "build": "babel ./src --out-dir ./dist --extensions \".ts,.tsx\"",
+    "watch": "babel ./src --out-dir ./dist --extensions \".ts,.tsx\" --watch",
+    "build-and-clean": "npm run clean && npm run build:ts"
   },
   "author": "Tarik Hamilton",
   "devDependencies": {
@@ -33,7 +32,6 @@
     "@babel/preset-env": "^7.13.15",
     "@babel/preset-react": "^7.13.13",
     "@babel/preset-typescript": "^7.13.0",
-    "@storybook/api": "^6.3.0-alpha.13",
     "css-loader": "^5.2.4",
     "esm": "^3.2.25",
     "sass": "^1.32.11",
@@ -41,16 +39,16 @@
     "style-loader": "^2.0.0",
     "to-string-loader": "^1.1.6",
     "ts-loader": "^8.1.0",
-    "typescript": "^4.2.4",
+    "typescript": "^3.9",
     "webpack": "^4.46.0",
     "webpack-cli": "^4.6.0"
   },
   "peerDependencies": {
     "react": "^16 || ^17.0.2",
     "react-dom": "^16 || 7.0.2",
-    "@storybook/addons": "^6.3.0-alpha.13",
-    "@storybook/api": "^6.3.0-alpha.13",
-    "@storybook/components": "^6.3.0-alpha.13"
+    "@storybook/addons": "^6.1.11",
+    "@storybook/api": "^6.1.11",
+    "@storybook/components": "^6.1.11"
   },
   "peerDependenciesMeta": {
     "react": {

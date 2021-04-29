@@ -9,7 +9,7 @@ import '../../../packages/tailwindcss/tailwind.css'
 const ADDON_ID = 'HTML'
 const PANEL_ID = `${ADDON_ID}/panel`
 
-addons.register(ADDON_ID, async (api) => {
+addons.register(ADDON_ID, (api) => {
   addons.add(PANEL_ID, {
     type: types.PANEL,
     title: 'HTML/CSS',
@@ -23,6 +23,7 @@ addons.register(ADDON_ID, async (api) => {
             <MarkupPanel
               componentName={componentName}
               styleObject={styleObject}
+              storyData={api.getCurrentStoryData()}
             />
           )}
         </AddonPanel>

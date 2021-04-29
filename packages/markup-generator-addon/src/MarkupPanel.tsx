@@ -2,9 +2,15 @@ import React, { useEffect, useState } from 'react'
 import Prism from 'prismjs'
 import 'prismjs/themes/prism-tomorrow.css'
 
-export const MarkupPanel = ({ componentName, styleObject }) => {
+export const MarkupPanel = ({ componentName, storyData, styleObject }) => {
   const [html, setHtml] = useState('')
   const [css, setCss] = useState('')
+
+  /** Used to refresh the HTML data by detecting any value changes. */
+  const argsString = Object.values(storyData.args)
+    .map((x) => (typeof x === 'boolean' ? x.toString() : x))
+    .map((x) => (typeof x !== 'string' ? '' : x))
+    .join('')
 
   const getPreviewDocument = () =>
     (document.querySelector('#storybook-preview-iframe') as HTMLIFrameElement)
@@ -38,7 +44,7 @@ export const MarkupPanel = ({ componentName, styleObject }) => {
       setTimeout(() => setHtml(getHtml(styleObject)), 250)
       setCss(() => getCss(styleObject))
     }
-  }, [componentName])
+  }, [componentName, argsString])
 
   return (
     <div className="flex h-full">

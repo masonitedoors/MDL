@@ -1,21 +1,18 @@
-import { storiesOf } from '@storybook/react'
-import React, { useState } from 'react'
-import Datepicker from './react'
+import React from "react";
+import { Story, Meta } from "@storybook/react";
+import Datepicker from "./react";
 
+const Template = (args) => <Datepicker {...args} />;
 
-storiesOf('Datepicker', module)
-  .add('default', () => {
-		const [effectiveDate, setDate] = useState(null)
+export default {
+  title: "Datepicker",
+  component: Datepicker,
+} as Meta;
 
-    return (
-			<>
-				<div>
-					<Datepicker
-						selected={effectiveDate}
-						placeholderText="Effective Date"
-						onChange={setDate}
-					/>
-				</div>
-			</>
-		)
-	})
+export const Primary = Template.bind({});
+
+Primary.args = {
+  onChange: null,
+  placeholder: "Effective Date",
+  selected: "",
+};

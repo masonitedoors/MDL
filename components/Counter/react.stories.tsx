@@ -1,20 +1,16 @@
-import React, { FC } from "react";
-import { withKnobs, number, boolean } from "@storybook/addon-knobs";
+import React from "react";
+import { Story, Meta } from "@storybook/react";
 import Counter from "./react";
+
+const Template = (args) => <Counter {...args} />;
 
 export default {
   title: "Counter",
   component: Counter,
-  decorators: [
-    withKnobs,
-    (Story: FC) => (
-      <div style={{ margin: "2rem" }}>
-        <Story />
-      </div>
-    ),
-  ],
-};
-
-const Template = (args) => <Counter {...args} />;
+} as Meta;
 
 export const Primary = Template.bind({});
+
+Primary.args = {
+  value: 42,
+};

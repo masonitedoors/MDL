@@ -1,6 +1,6 @@
 import React from 'react'
 import { ToastContainer, toast } from 'react-toastify'
-import 'react-toastify/dist/ReactToastify.css'
+import '../../node_modules/react-toastify/dist/ReactToastify.css'
 import { mCheck } from '@masonite/svg-icons'
 import { Toast, toastContainerProps } from './react'
 import { React as Button } from '../Button'

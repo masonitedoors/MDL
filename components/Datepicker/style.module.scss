@@ -1,54 +1,56 @@
-@import "styles/index";
+@import 'styles/index';
 
-.mdl-container-wrapper :global(.react-datepicker) {
-	box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.15);
-	border-radius: 2px;
-	border: none;
-	background-color: $color-m-white;
-	font-family: $font-family;
-	font-size: $base-font-size;
-	
-	&__header {
-		background-color: $color-m-white;
-		border-bottom: none;
-	}
+.mdl-container-wrapper {
+  :global(.react-datepicker) {
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.15);
+    border-radius: 2px;
+    border: none;
+    background-color: $color-m-white;
+    font-family: $font-family;
+    font-size: $base-font-size;
 
-	&__current-month {
-		font-weight: normal;
-		font-size: $base-font-size;
-		margin: 2.5px 10.9px 10px 2.6px;
-		color: $color-night;
-	}
+    .react-datepicker__header {
+      background-color: $color-m-white;
+      border-bottom: none;
+    }
 
-	&__day {
-		margin: 10px 10.8px 9px 8.7px;
-		color: $color-deepgray;
-	
-		&:hover {
-		background-color: $color-gray;
-		color: $color-night;
-		border-radius: 12px;
-		font-weight: bold;
-		}
+    .react-datepicker__current-month {
+      font-weight: normal;
+      font-size: $base-font-size;
+      margin: 2.5px 10.9px 10px 2.6px;
+      color: $color-night;
+    }
 
-		&-names {
-			font-weight: bold;
-			border-top: 1px solid $color-gray;
-			border-bottom: 1px solid $color-gray;
-			margin: 0px 4.2px 0px 4.2px;
-		}
+    .react-datepicker__day {
+      margin: 10px 10.8px 9px 8.7px;
+      color: $color-deepgray;
 
-		&-name {
-			color: $color-slategray;
-			margin: 5px 10.8px 5px 8.7px;
-		}
+      &:hover {
+        background-color: $color-gray;
+        color: $color-night;
+        border-radius: 12px;
+        font-weight: bold;
+      }
 
-		&--keyboard-selected,
-		&--selected {
-		background-color: $color-limerick;
-		color: $color-night;
-		border-radius: 12px;
-		font-weight: bold;
-		}
-	}
+      &-names {
+        font-weight: bold;
+        border-top: 1px solid $color-gray;
+        border-bottom: 1px solid $color-gray;
+        margin: 0px 4.2px 0px 4.2px;
+      }
+
+      &-name {
+        color: $color-slategray;
+        margin: 5px 10.8px 5px 8.7px;
+      }
+
+      &--keyboard-selected,
+      &--selected {
+        background-color: $color-limerick;
+        color: $color-night;
+        border-radius: 12px;
+        font-weight: bold;
+      }
+    }
+  }
 }

@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "description": "Masonite Design Language CSS",
   "files": [
-    "dist/*", "index.js"
+    "dist/*",
+    "index.js"
   ],
   "keywords": [],
   "publishConfig": {

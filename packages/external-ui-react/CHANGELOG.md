@@ -5,6 +5,52 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.36.4] - 2021-04-29
+
+- Redeploy
+
+## [2.35.0] - 2021-04-23
+
+### Added
+
+- `FilterButton` component.
+- `ScrollLeft` and `ScrollLeft` components.
+
+### Updated
+
+- `Toast` styling.
+
+## [2.34.0] - 2021-04-09
+
+### Added
+
+- `Datepicker` component.
+
+### Updated
+
+- `Table`'s `formControlProps`'s `onChange` can work for all components that use it for changing input values.
+
+## [2.33.0] - 2021-03-19
+
+### Added
+
+- `Toast` component.
+
+### Fixed
+
+- Missing top-border on `Table` when there isn't a header.
+
+## [2.32.0] - 2021-03-10
+
+### Added
+
+- `className` and `style` props to `Flyout`.
+
+### Fixed
+
+- `ModalBackdrop` outsideClick error.
+- `BulkEditPopover` not passing events and excess padding.
+
 ## [2.31.0] - 2021-03-02
 
 ### Added

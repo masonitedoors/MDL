@@ -29,7 +29,7 @@ const ModalBackdrop = ({
         ref={backdropRef}
         className={cx('modal-backdrop', show && 'modal-backdrop--active', className)}
         style={style}
-        onClick={event => event.target === backdropRef.current && onOutsideClick()}
+        onClick={event => event.target === backdropRef.current && onOutsideClick && onOutsideClick()}
       >
         <CSSTransition in={entered} timeout={250} classNames="modal-backdrop__content">
           <div className={cx('modal-backdrop__content')}>{children}</div>
@@ -42,7 +42,7 @@ const ModalBackdrop = ({
 export default ModalBackdrop
 
 ModalBackdrop.propTypes = {
-  children: PropTypes.oneOfType([PropTypes.element, PropTypes.string]).isRequired,
+  children: PropTypes.oneOfType([PropTypes.element, PropTypes.string]),
   className: PropTypes.oneOfType([PropTypes.array, PropTypes.string]),
   onOutsideClick: PropTypes.func,
   show: PropTypes.bool,

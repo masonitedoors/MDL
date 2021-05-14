@@ -1,0 +1,55 @@
+@import "styles/index";
+
+.toast-header-icon {
+  float: left;
+  margin-right: $space-xs;
+}
+
+.toast-buttons {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+
+  > button {
+    margin: 0 10px;
+  }
+}
+
+.outer-toast {
+  @include element-tag-typography;
+  min-width: 448px;
+
+  :global(.Toastify__toast) {
+    font-family: unset;
+    border-radius: 4px;
+
+    h2 {
+      font-weight: normal;
+    }
+
+    p {
+      margin: 0;
+    }
+
+    :global(.Toastify__toast-body) {
+      margin: 10px 0 10px 10px;
+    }
+  }
+
+  :global(.Toastify__toast--default) {
+    color: $color-night;
+  }
+
+  :global(.Toastify__close-button) > svg {
+    height: 24px;
+    width: 24px;
+  }
+
+  :global(.Toastify__progress-bar--default) {
+    background: $color-limerick;
+  }
+
+  &:global(.Toastify__toast-container--top-center) {
+    top: 20%;
+  }
+}

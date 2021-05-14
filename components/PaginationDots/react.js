@@ -18,7 +18,7 @@ export const PaginationDots = ({ activePage, totalPages }) => (
 )
 
 export default memo(PaginationDots)
-
+ 
 PaginationDots.propTypes = {
   activePage: PropTypes.number.isRequired,
   totalPages: PropTypes.number.isRequired,

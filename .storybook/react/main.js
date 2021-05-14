@@ -1,7 +1,7 @@
 const {
   resolve,
   module: { rules },
-} = require('../../config/webpack.config.js')
+} = require('../../config/commonWebpackConfig')
 
 module.exports = {
   stories: ['../../components/**/react.stories.@(js|jsx|ts|tsx|mdx)'],

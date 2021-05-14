@@ -19,6 +19,11 @@ const EXCLUDED_COMPONENTS = ['Flyout', 'Welcome', 'typography']
   await renderCssTo('dist', typographyCss, 'typography')
   await renderCssTo('dist/components', componentCss, (file) => file.split('/').splice(-2, 1))
 
+  // Copy /styles into package and remove non-SCSS files.
+  await fs.copy('../../styles', 'dist/styles')
+  
+  glob.sync('dist/styles/**/*.@(js|json)').forEach(file => fs.removeSync(file))
+
   const allCss = glob.sync('**/*.css')
 
   const combinedFile = allCss.reduce((acc, file) => acc + fs.readFileSync(file).toString(), '')

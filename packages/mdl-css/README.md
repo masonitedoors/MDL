@@ -16,6 +16,8 @@ If you aren't using build tools and simply want the `mdl.css`, you can do so wit
 
 The `mdl.css` file with all of the styles is the default export of the package. This means you will need something to handle imports of a .css file, such as webpack with the css-loader and style-loader.
 
+Also, present is the `styles` directory, featuring all the Sass mixins and variables for MDL.
+
 ### JavaScript
 
 ```js

@@ -1,5 +1,5 @@
 import React from 'react'
-import Lottie from 'react-lottie'
+import Lottie from 'lottie-react'
 import classNames from 'classnames/bind'
 import PropTypes from 'prop-types'
 import animationData from './data.json'

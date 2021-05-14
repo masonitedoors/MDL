@@ -21,41 +21,27 @@ const Button = ({
   bold,
   ...props
 }) => {
-  const classes = cx(
-    'btn',
-    {
-      'btn--primary': variant === 'primary',
-      'btn--secondary': ['secondary', 'dark'].includes(variant),
-      'btn--light': variant === 'light',
-      'btn--default': variant === 'default',
-      'btn--uppercase': uppercase,
-      'btn--sm': size === 'small' || size === 'sm',
-      'btn--large': size === 'large',
-      'btn--disabled': disabled,
-      'btn--full-width': fullWidth,
-      'btn--bold': bold,
-      'btn--active': active,
-      'btn--large-active': size === 'large' && active,
-      'btn--small-active': (size === 'small' || size === 'sm') && active,
-    },
-    className,
-  )
+  const classes = cx('btn', {
+    'btn--primary': variant === 'primary',
+    'btn--secondary': ['secondary', 'dark'].includes(variant),
+    'btn--light': variant === 'light',
+    'btn--default': variant === 'default',
+    'btn--uppercase': uppercase,
+    'btn--sm': size === 'small' || size === 'sm',
+    'btn--large': size === 'large',
+    'btn--disabled': disabled,
+    'btn--full-width': fullWidth,
+    'btn--bold': bold,
+    'btn--active': active,
+    'btn--large-active': size === 'large' && active,
+    'btn--small-active': (size === 'small' || size === 'sm') && active,
+  }, className)
 
   return (
     <button
       type="button"
       className={classes}
-      onClick={() => {
-        const getHtml = (styleObj) =>
-          Object.entries(styleObj).reduce(
-            (html, [className, moduleClassName]) => html.replaceAll(moduleClassName, className),
-            `${document.querySelector('#root').innerHTML}`,
-          )
-
-        console.log(getHtml(s))
-
-        onClick()
-      }}
+      onClick={onClick}
       disabled={disabled}
       style={style}
       {...props}
@@ -77,7 +63,7 @@ Button.propTypes = {
   onClick: PropTypes.func,
   disabled: PropTypes.bool,
   variant: PropTypes.oneOf(['default', 'primary', 'secondary', 'light']),
-  size: PropTypes.oneOf(['', 'small', 'sm', 'large']),
+  size: PropTypes.oneOf([undefined, 'small', 'sm', 'large']),
   style: PropTypes.shape({}),
   uppercase: PropTypes.bool,
   fullWidth: PropTypes.bool,

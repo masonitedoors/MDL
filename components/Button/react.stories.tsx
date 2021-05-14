@@ -1,7 +1,7 @@
 import React from "react";
 import { Story, Meta } from "@storybook/react";
 import Button from "./react";
-import DocPage from './DocPage'
+import DocPage from "./DocPage";
 
 const Template: Story = (args: any) => <Button {...args} />;
 

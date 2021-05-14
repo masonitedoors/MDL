@@ -34,7 +34,7 @@ Tile.propTypes = {
   label: PropTypes.string.isRequired,
   imageUrl: PropTypes.string.isRequired,
   onClick: PropTypes.func,
-  uppercase: PropTypes.string,
+  uppercase: PropTypes.bool,
 }
 
 Tile.defaultProps = {

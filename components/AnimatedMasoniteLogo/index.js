@@ -7,15 +7,7 @@ import styles from './style.module.scss'
 
 const cx = classNames.bind(styles)
 
-function AnimatedMasoniteLogo({ variant }) {
-  const defaultOptions = {
-    loop: true,
-    autoplay: true,
-    animationData,
-    rendererSettings: {
-      preserveAspectRatio: 'xMidYMid slice',
-    },
-  }
+const AnimatedMasoniteLogo = ({ variant }) => {
 
   return (
     <div
@@ -24,7 +16,7 @@ function AnimatedMasoniteLogo({ variant }) {
         { 'animated-masonite-logo--dark': variant === 'dark' },
       ])}
     >
-      <Lottie options={defaultOptions} height={40} width={40} />
+      <Lottie animationData={animationData} />
     </div>
   )
 }

@@ -1,5 +1,5 @@
-import 'styles/storybook.scss'
 import '../../packages/tailwindcss/tailwind.css'
+import 'styles/storybook.scss'
 import tailwindConfig from '../../packages/tailwindcss/tailwind.config'
 import resolveConfig from 'tailwindcss/resolveConfig'
 

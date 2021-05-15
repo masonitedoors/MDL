@@ -16,13 +16,14 @@ const EXCLUDED_COMPONENTS = ['Flyout', 'Welcome', 'typography']
     .sync('**/*.module.scss', { cwd: mdlPath })
     .filter((file) => !EXCLUDED_COMPONENTS.includes(file.split('/')[2]))
 
+  await fs.copy('../../components', 'dist/components')
+  await fs.copy('../../styles', 'dist/styles')
+    
+  glob.sync('dist/components/**/*.@(md|js|json|ts|tsx)').forEach(file => fs.removeSync(file))
+  glob.sync('dist/styles/**/*.@(js|json)').forEach(file => fs.removeSync(file))
+  
   await renderCssTo('dist', typographyCss, 'typography')
   await renderCssTo('dist/components', componentCss, (file) => file.split('/').splice(-2, 1))
-
-  // Copy /styles into package and remove non-SCSS files.
-  await fs.copy('../../styles', 'dist/styles')
-  
-  glob.sync('dist/styles/**/*.@(js|json)').forEach(file => fs.removeSync(file))
 
   const allCss = glob.sync('**/*.css')
 

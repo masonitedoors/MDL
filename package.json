@@ -6,10 +6,8 @@
     "node": ">=14"
   },
   "scripts": {
-    "storybook:html": "cross-env NODE_PATH=styles:components node_modules/@storybook/html/bin/index.js -s ./vendor -p 9005 -c .storybook/html",
     "storybook:vue": "cross-env NODE_PATH=styles:components node_modules/@storybook/vue/bin/index.js -p 9006 -c .storybook/vue",
     "storybook:react": "cross-env NODE_PATH=styles:components node_modules/@storybook/react/bin/index.js -p 9007 -c .storybook/react",
-    "generate-colors-css": "node -e 'require(\"./styles/generate-style-stories\").createCssClassesFromColors()'",
     "build:storybook": "node_modules/@storybook/react/bin/build.js -c .storybook/react -o gh-pages",
     "build-package:external-ui-react": "cd packages/external-ui-react && webpack -c ../../config/webpack.config.js",
     "build-package:svg-icons": "cd packages/svg-icons && npm run build",
@@ -58,7 +56,6 @@
     "@storybook/addon-storysource": "^6.2.9",
     "@storybook/addons": "^6.2.9",
     "@storybook/cli": "^6.2.9",
-    "@storybook/html": "^6.2.9",
     "@storybook/react": "^6.2.9",
     "@storybook/theming": "^6.2.9",
     "@storybook/vue": "^6.2.9",

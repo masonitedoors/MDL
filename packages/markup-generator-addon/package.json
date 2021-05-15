@@ -57,6 +57,7 @@
     }
   },
   "dependencies": {
+    "@masonite/mdl-css": "^1.2.0",
     "@masonite/tailwindcss": "^1.0.1",
     "prismjs": "^1.23.0"
   }

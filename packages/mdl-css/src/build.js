@@ -19,7 +19,7 @@ const EXCLUDED_COMPONENTS = ['Flyout', 'Welcome', 'typography']
   await fs.copy('../../components', 'dist/components')
   await fs.copy('../../styles', 'dist/styles')
     
-  glob.sync('dist/components/**/*.@(md|js|json|ts|tsx)').forEach(file => fs.removeSync(file))
+  glob.sync('dist/components/**/*.@(md|js|json|snap|ts|tsx)').forEach(file => fs.removeSync(file))
   glob.sync('dist/styles/**/*.@(js|json)').forEach(file => fs.removeSync(file))
   
   await renderCssTo('dist', typographyCss, 'typography')

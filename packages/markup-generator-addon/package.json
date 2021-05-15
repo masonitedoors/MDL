@@ -1,6 +1,6 @@
 {
   "name": "@masonite/markup-generator-addon",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Masonite Design Language for React",
   "main": "dist/preset",
   "files": [
@@ -57,7 +57,7 @@
     }
   },
   "dependencies": {
-    "@masonite/mdl-css": "^1.2.0",
+    "@masonite/mdl-css": "^1.2.1",
     "@masonite/tailwindcss": "^1.0.1",
     "prismjs": "^1.23.0"
   }

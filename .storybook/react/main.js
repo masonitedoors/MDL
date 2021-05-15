@@ -9,7 +9,7 @@ module.exports = {
     '@storybook/addon-essentials',
     '@storybook/addon-links',
     '@storybook/addon-postcss',
-    '../../packages/markup-generator-addon/preset',
+    '@masonite/markup-generator-addon/preset',
   ],
   webpackFinal: (config) => ({
     ...config,

@@ -1,8 +1,10 @@
 const path = require('path')
-const { resolve } = require('../../config/webpack.config.js')
 
 module.exports = {
-  managerEntries: (entry = [], options) => [...entry, require.resolve('./dist/register')],
+  managerEntries: (entry = [], options) => [
+    ...entry,
+    require.resolve('./dist/register'),
+  ],
   managerWebpack: (config) => ({
     ...config,
     module: {
@@ -39,6 +41,16 @@ module.exports = {
         },
       ],
     },
-    resolve,
+    resolve: {
+      alias: {
+        lib: path.resolve(__dirname, '../lib'),
+        components: path.resolve(__dirname, '../components'),
+        images: path.resolve(__dirname, '../images'),
+        config: path.resolve(__dirname, '../config'),
+        styles: path.resolve(__dirname, '../styles'),
+        vendor: path.resolve(__dirname, '../vendor'),
+      },
+      extensions: ['.ts', '.tsx', '.scss', '.css', '.svg', '.js', '.jsx'],
+    },
   }),
 }

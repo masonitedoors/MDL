@@ -49,7 +49,7 @@
     "@babel/core": "^7.12.10",
     "@babel/plugin-proposal-class-properties": "^7.12.1",
     "@babel/preset-env": "^7.12.10",
-    "@masonite/markup-generator-addon": "^1.0.3",
+    "@masonite/markup-generator-addon": "^1.0.4",
     "@masonite/svg-icons": "^1.10.0",
     "@storybook/addon-docs": "^6.2.9",
     "@storybook/addon-essentials": "^6.2.9",

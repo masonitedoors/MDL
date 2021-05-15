@@ -1,6 +1,6 @@
 {
   "name": "@masonite/markup-generator-addon",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Masonite Design Language for React",
   "main": "dist/preset",
   "files": [

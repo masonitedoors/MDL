@@ -4,7 +4,7 @@ import { Story } from '@storybook/api'
 import { AddonPanel } from '@storybook/components'
 import * as styles from './styles'
 import MarkupPanel from './MarkupPanel'
-import '../../../packages/tailwindcss/tailwind.css'
+import '@masonite/tailwindcss/tailwind.css'
 
 const ADDON_ID = 'HTML'
 const PANEL_ID = `${ADDON_ID}/panel`

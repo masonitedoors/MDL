@@ -57,6 +57,7 @@
     }
   },
   "dependencies": {
+    "@masonite/tailwindcss": "^1.0.1",
     "prismjs": "^1.23.0"
   }
 }

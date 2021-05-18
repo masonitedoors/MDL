@@ -5,7 +5,9 @@ cache: npm
 git:
   submodules: false
 
-script: npm run build:storybook
+script:
+  - cd packages/markup-generator-addon && npm i --legacy-peer-deps && npm run build
+  - npm run build:storybook
 
 deploy:
   provider: pages
@@ -14,4 +16,4 @@ deploy:
   github-token: $GITHUB_TOKEN
   keep-history: false
   on:
-    branch: master
+    branch: html-gen

@@ -6,7 +6,7 @@ git:
   submodules: false
 
 script:
-  - cd packages/markup-generator-addon && npm i --legacy-peer-deps && npm run build
+  - cd packages/markup-generator-addon && npm i --legacy-peer-deps && npm run build && cd -
   - npm run build:storybook
 
 deploy:

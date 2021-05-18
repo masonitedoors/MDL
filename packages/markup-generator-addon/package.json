@@ -33,11 +33,8 @@
     "@babel/preset-react": "^7.13.13",
     "@babel/preset-typescript": "^7.13.0",
     "@typescript-eslint/parser": "^4.22.0",
-    "css-loader": "^5.2.4",
     "eslint": "^7.25.0",
     "sass": "^1.32.11",
-    "sass-loader": "^10.1.1",
-    "style-loader": "^2.0.0",
     "ts-loader": "^8.1.0",
     "typescript": "^3.9"
   },
@@ -46,7 +43,10 @@
     "@storybook/api": "^6.1.11",
     "@storybook/components": "^6.1.11",
     "react": "^16 || ^17.0.2",
-    "react-dom": "^16 || 7.0.2"
+    "react-dom": "^16 || 7.0.2",
+    "css-loader": "^5.2.4",
+    "sass-loader": "^10.1.1",
+    "style-loader": "^2.0.0"
   },
   "peerDependenciesMeta": {
     "react": {

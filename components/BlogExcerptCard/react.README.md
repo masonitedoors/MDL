@@ -1,0 +1,1 @@
+export default "<h1 id=\"usage\">Usage</h1>\n<p>Used for displaying a quick excerpt and link for a blog post.</p>\n<!-- PROPS -->\n\n<h1 id=\"props\">Props</h1>\n<p>title\ncontent\nimage\nlink</p>\n";

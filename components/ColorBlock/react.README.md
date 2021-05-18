@@ -1,0 +1,1 @@
+export default "<h1 id=\"usage\">Usage</h1>\n<p>Used to display a single section that displays a nicely spaced out text with a link inside a block of color and next to a large image.</p>\n<!-- PROPS -->\n<p>backgroundColor\ncolorScheme\ncopy\nheading\nimage\nlink\nlinkText\nsubHeading</p>\n";

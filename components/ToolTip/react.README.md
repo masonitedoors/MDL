@@ -1,0 +1,1 @@
+export default "<h1 id=\"usage\">Usage</h1>\n<p>Use the tooltip when you want to display additional information for a given element. At the\ntime of this writing, it has a default ? icon and will only display to the right of a tooltip. It\ncan be expanded to smart detect hit boundaries, and to display between top, left, and bottom.</p>\n<!-- PROPS -->\n";

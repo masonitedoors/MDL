@@ -1,5 +1,7 @@
+export { React as BlogExcerptCard } from 'components/BlogExcerptCard'
 export { React as Button } from 'components/Button'
 export { React as Checkbox } from 'components/Checkbox'
+export { React as ColorBlock } from 'components/ColorBlock'
 export { React as Counter } from 'components/Counter'
 export { React as FilterableSearch } from 'components/FilterableSearch'
 export { React as Icon } from 'components/Icon'

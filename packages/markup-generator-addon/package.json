@@ -1,0 +1,64 @@
+{
+  "name": "@masonite/markup-generator-addon",
+  "version": "1.0.6",
+  "description": "Masonite Design Language for React",
+  "main": "dist/preset",
+  "files": [
+    "dist/**/*",
+    "README.md",
+    "*.js"
+  ],
+  "keywords": [
+    "storybook",
+    "addons"
+  ],
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "start": "webpack --watch",
+    "clean": "rimraf ./dist",
+    "build": "babel ./src --out-dir ./dist --extensions \".ts,.tsx\"",
+    "watch": "babel ./src --out-dir ./dist --extensions \".ts,.tsx\" --watch",
+    "build-and-clean": "npm run clean && npm run build:ts"
+  },
+  "author": "Tarik Hamilton",
+  "devDependencies": {
+    "@babel/cli": "^7.13.16",
+    "@babel/core": "^7.13.16",
+    "@babel/plugin-proposal-class-properties": "^7.13.0",
+    "@babel/plugin-proposal-export-default-from": "^7.12.13",
+    "@babel/preset-env": "^7.13.15",
+    "@babel/preset-react": "^7.13.13",
+    "@babel/preset-typescript": "^7.13.0",
+    "@typescript-eslint/parser": "^4.22.0",
+    "eslint": "^7.25.0",
+    "sass": "^1.32.11",
+    "ts-loader": "^8.1.0",
+    "typescript": "^3.9"
+  },
+  "peerDependencies": {
+    "@storybook/addons": "^6.1.11",
+    "@storybook/api": "^6.1.11",
+    "@storybook/components": "^6.1.11",
+    "css-loader": "^5.2.4",
+    "react": "^16 || ^17.0.2",
+    "react-dom": "^16 || 7.0.2",
+    "sass-loader": "^10.1.1",
+    "style-loader": "^2.0.0"
+  },
+  "peerDependenciesMeta": {
+    "react": {
+      "optional": true
+    },
+    "react-dom": {
+      "optional": true
+    }
+  },
+  "dependencies": {
+    "@masonite/mdl-css": "^1.2.2",
+    "@masonite/tailwindcss": "^1.0.1",
+    "prismjs": "^1.23.0"
+  }
+}

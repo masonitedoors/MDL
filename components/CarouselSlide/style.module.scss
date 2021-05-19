@@ -11,8 +11,8 @@
     justify-content: center;
     align-items: center;
     border: none;
-    background-color: $color-m-white;
-    color: $color-m-primary-charcoal;
+    background-color: $color-white;
+    color: $color-deepgrey;
     font-family: $font-family;
     font-size: 1.25rem;
     margin-left: 0.25rem;
@@ -28,7 +28,7 @@
 
     &.active {
       font-weight: bold;
-      color: $color-m-black;
+      color: $color-night;
     }
 
     &:hover {

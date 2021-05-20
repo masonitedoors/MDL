@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BlogExcerptCard should render without crashing 1`] = `
+<DocumentFragment>
+  <div
+    class="card"
+  >
+    <div
+      class="image"
+      style="background-image: url(https://embed.widencdn.net/img/masonite/8hui9fjtwo/exact/Harring_Hotel%20Indigo_2_L2.jpeg);"
+    />
+    <div
+      class="content"
+    >
+      <h3
+        class="h3"
+      >
+        Why Stile and Rail Doors are Worth the Investment
+      </h3>
+      <p
+        class="p"
+      >
+        When you want the best quality wood doors for a hospitality or office project, stile and rail doors provide both...
+      </p>
+      <a
+        href="#"
+      >
+        Share
+      </a>
+    </div>
+  </div>
+</DocumentFragment>
+`;

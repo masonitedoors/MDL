@@ -1,0 +1,49 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Color Blocks should render without crashing 1`] = `
+<DocumentFragment>
+  <div
+    class="color-block"
+  >
+    <figure
+      class="color-block--image"
+    >
+      <a
+        class="color-block--image-link d-block"
+        href="#"
+      >
+        <img
+          alt="Color Example More Life"
+          class="color-block--image-img"
+          src="https://embed.widencdn.net/img/masonite/benaiziirh/708x429px/hero.jpeg"
+        />
+      </a>
+    </figure>
+    <div
+      class="color-block--text color-scheme-light"
+      style="background-color: rgb(148, 159, 166);"
+    >
+      <div
+        class="color-block--text-inner"
+      >
+        <h3
+          class="color-block--title"
+        >
+          More Life
+        </h3>
+        <p
+          class="color-block--copy"
+        >
+          We are constantly designing new and different ways for doors to do more. Whether it's more light, more peace and quiet, more peace of mind, more function, more technology or more style, we believe doors can do more.
+        </p>
+        <a
+          class="color-block--link"
+          href="#"
+        >
+          Get Inspired
+        </a>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;

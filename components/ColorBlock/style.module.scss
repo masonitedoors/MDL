@@ -1,0 +1,140 @@
+@import 'styles/index';
+
+.band-color-blocks {
+  padding-top: 1rem;
+
+  @media (min-width: 768px) {
+    padding-top: 0;
+  }
+}
+
+.color-block + .color-block {
+  padding-top: 1rem;
+
+  @media (min-width: 768px) {
+    padding-top: 1.6rem;
+  }
+
+  @media (min-width: 1800px) {
+    padding-top: 1.5rem;
+  }
+}
+
+.color-block {
+  @media (min-width: 768px) {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &:nth-child(even) {
+    flex-direction: row-reverse;
+  }
+}
+
+.color-block--image,
+.color-block--text {
+  @media (min-width: 768px) {
+    width: 49%;
+  }
+}
+
+.color-block--image {
+  margin: 0 0 1rem;
+
+  @media (min-width: 768px) {
+    margin-bottom: 0;
+    overflow: hidden;
+
+    .color-block--image-img {
+      height: 100%;
+      max-width: none;
+      width: auto;
+    }
+  }
+}
+
+.color-block--text {
+  font-family: $font-family;
+  padding: 2rem $space-l;
+
+  @media (min-width: 768px) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  @media (min-width: 1281px) {
+    padding-left: $space-xxl;
+    padding-right: $space-xxl;
+  }
+}
+
+.color-block--title {
+  color: $color-m-black;
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: 1.1px;
+  margin-bottom: 1.2rem;
+}
+
+.color-block--copy {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 22px;
+  margin-bottom: 0.5rem;
+
+  @media (min-width: 1281px) {
+    font-size: 16px;
+  }
+}
+
+.color-block--subtitle,
+.color-block--copy {
+  color: $color-m-black;
+}
+
+.color-block--title,
+.color-block--link,
+.color-block--copy {
+  @media (min-width: 768px) {
+    max-width: 100%;
+  }
+}
+
+.color-block--link {
+  color: $color-m-black;
+  display: inline-block;
+  font-size: 0.875rem;
+  line-height: 1.5rem;
+  margin-right: auto;
+  text-decoration: none;
+  position: relative;
+
+  margin-bottom: 0.5rem;
+  padding-top: 0.15rem;
+
+  &:hover {
+    color: $color-onyx;
+    text-decoration: none;
+
+    &::after {
+      background: $color-limerick;
+    }
+  }
+
+  &::after {
+    position: absolute;
+    content: '';
+    height: 1px;
+    bottom: 0px;
+    left: 0;
+    width: 100%;
+    background: $color-slategray;
+  }
+}
+
+.color-scheme-dark .color-block--subtitle,
+.color-scheme-dark .color-block--copy,
+.color-scheme-dark .color-block--link {
+  color: $color-m-white;
+}

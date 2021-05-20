@@ -31,7 +31,9 @@ const rules = [
       {
         loader: 'sass-loader',
         options: {
-          includePaths: [path.resolve(__dirname, './../')],
+          sassOptions: {
+            includePaths: [path.resolve(__dirname, './../')],
+          },
         },
       },
     ],

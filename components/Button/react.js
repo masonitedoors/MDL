@@ -63,7 +63,7 @@ Button.propTypes = {
   onClick: PropTypes.func,
   disabled: PropTypes.bool,
   variant: PropTypes.oneOf(['default', 'primary', 'secondary', 'light']),
-  size: PropTypes.oneOf(['small', 'sm', 'large']),
+  size: PropTypes.oneOf([undefined, 'small', 'sm', 'large']),
   style: PropTypes.shape({}),
   uppercase: PropTypes.bool,
   fullWidth: PropTypes.bool,
@@ -80,7 +80,7 @@ Button.defaultProps = {
   style: null,
   uppercase: false,
   fullWidth: false,
-  bold: false
+  bold: false,
 }
 
 export default Button

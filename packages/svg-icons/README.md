@@ -24,7 +24,7 @@ import { mBifold } from '@masonite/svg-icons'
 
 To develop, clone the `Masonitedoors/MDL` repo with `git clone --recurse-submodules -j8` to get it. Make sure MIcons was cloned to `vendors` in its root. You cannot build without it.
 
-## Deployment
+If you already have the `micons` submodule cloned, you must use `git submodule update --recursive --remote` to pull the latest updates from `micons` before building.
 
 1. Make sure you have done what is mentioned in development.
 1. Update the `CHANGELOG.md` for the version you're releasing. If there is an `[Unreleased]` block, change that to the next version following semver.

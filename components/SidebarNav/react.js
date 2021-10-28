@@ -144,7 +144,7 @@ MainMenuItem.defaultProps = {
 }
 
 export const SidebarNav = ({
-  menuItems, bottomMenuItems, logo, location, expandedCb,
+  menuItems, bottomMenuItems, logo, location, expandedCb, version = "2021"
 }) => {
   const [menuState, dispatchMenuState] = useReducer(menuReducer, menuItems.map(v => false))
   const [showingMainMenuLabels, setShowingMainMenuLabels] = useState(false)
@@ -160,7 +160,7 @@ export const SidebarNav = ({
   expandedCb(showingMainMenuLabels)
 
   return (
-    <aside className={cx('sidebar')}>
+    <aside className={cx('sidebar', `version-${version}`)}>
       <nav
         className={cx('main-menu', {
           'main-menu--expanded': showingMainMenuLabels,

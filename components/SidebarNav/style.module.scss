@@ -30,10 +30,13 @@ $submenu-width: 180px;
   z-index: 10;
   height: 100%;
   fill: $color-gray;
+
+  &.version-2021 {
+    fill: $color-night;
+  }  
 }
 
 .main-menu {
-  @include gradient-dark();
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -48,12 +51,24 @@ $submenu-width: 180px;
   transition: $main-menu-transition;
   box-sizing: border-box;
 
+  .version-2019 & {
+    @include gradient-dark();
+  }
+
+  .version-2021 & {
+    background-color: $color-limerick;
+  }
+  
   &--expanded {
     width: $main-menu-expanded-width;
     padding: 0 $space-xs 0 $space-s;
 
     .sidebar-nav-submenu--expanded {
       transform: translate3d($main-menu-expanded-width, 0, 0);
+    }
+
+    .version-2021 & li.menu-item--active {
+      margin-right: -8px;
     }
   }
 
@@ -69,19 +84,36 @@ $submenu-width: 180px;
     display: inline-flex;
     margin: 0;
 
+    .version-2021 & {
+      margin: 14px 0;
+      height: 36px;
+      transition: $main-menu-transition;
+    }
+
     &:hover {
       .menu-item-link__icon {
         fill: $color-limerick !important;
+
+        .version-2021 & {
+          fill: $color-white !important;
+        }
       }
     }
 
     &--active {
-      .menu-item-link__icon {
+      .version-2019 & .menu-item-link__icon {
         fill: $color-limerick !important;
       }
       .menu-item-link__label {
-        color: $color-limerick;
+        .version-2019 & {
+          color: $color-limerick;
+        }
         text-decoration: none;
+      }
+
+      .version-2021 & {
+        margin-right: -24px;
+        border-right: $space-xxs solid $color-night;
       }
     }
 
@@ -119,6 +151,9 @@ $submenu-width: 180px;
 
     &:hover {
       color: $color-limerick !important; // Bootstrap removes color changes for href="#"
+      .version-2021 & {
+        color: $color-white !important; // Bootstrap removes color changes for href="#"
+      }
       text-decoration: none;
     }
 
@@ -127,6 +162,9 @@ $submenu-width: 180px;
       flex-shrink: 0;
       backface-visibility: hidden;
       fill: $color-gray !important; // Bootstrap conflict
+      .version-2021 & {
+        fill: $color-night !important; // Bootstrap conflict
+      }
     }
 
     &__label {
@@ -134,6 +172,9 @@ $submenu-width: 180px;
       opacity: 1;
       margin-left: $space-xs;
       color: $color-pastelgray;
+      .version-2021 & {
+        color: $color-night;
+      }
       text-decoration: none;
 
       &--hide {
@@ -164,6 +205,9 @@ $submenu-width: 180px;
   width: $submenu-width;
   list-style: none;
   background: $color-deepgray;
+  .version-2021 & {
+    background: $color-limerick;
+  }
   transition: 200ms transform cubic-bezier(0.39, 0.575, 0.565, 1) 250ms;
   transform: translate3d(-100%, 0, 0);
 
@@ -176,6 +220,9 @@ $submenu-width: 180px;
     margin: 0 0 $space-m;
     padding: 0 $space-s;
     color: $color-pastelgray;
+    .version-2021 & {
+      color: $color-night;
+    }
     cursor: pointer;
     text-decoration: none;
 
@@ -183,10 +230,17 @@ $submenu-width: 180px;
     &--active {
       color: $color-limerick;
       border-right: 3px solid $color-limerick;
+      .version-2021 & {
+        color: $color-white;
+        border-right: $space-xxs solid $color-night;
+      }
     }
 
     &:hover {
       color: $color-snow;
+      .version-2021 & {
+        color: $color-white;
+      }
       text-decoration: none;
     }
   }
@@ -196,6 +250,9 @@ $submenu-width: 180px;
   display: block;
   cursor: pointer;
   background-color: $color-onyx;
+  .version-2021 & {
+    background-color: $color-limerick;
+  }
   padding: $space-s;
 
   &__icon {

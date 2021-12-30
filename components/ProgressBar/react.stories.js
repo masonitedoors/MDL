@@ -1,18 +1,14 @@
 import React, { useRef, useState } from 'react'
 import classNames from 'classnames/bind'
-import { storiesOf } from '@storybook/react'
-import { withKnobs, boolean } from '@storybook/addon-knobs'
 import ProgressBar from './react'
 import storyStyles from './react.stories.module.scss'
-import Readme from './react.README.md'
 
 const cx = classNames.bind(storyStyles)
 
-const Container = ({ horizontal, dynamic }) => {
+const Template = ({ dynamic, numElements, ...rest }) => {
   const ref = useRef()
-  const [numElements, setNumElements] = useState(5)
   const [elementsExpanded, setElementsExpanded] = useState({})
-  const [currentPointId, setCurrentPointId] = useState('2')
+  const { horizontal } = rest
 
   const data = [...Array(numElements).keys()].map(num => ({
     id: `${num + 1}`,
@@ -47,25 +43,9 @@ const Container = ({ horizontal, dynamic }) => {
 
   return (
     <div className={cx('progress-container', { horizontal })}>
-      <label>
-        Number of points:
-        <input
-          type="number"
-          value={numElements}
-          onChange={({ target }) => setNumElements(+target.value)}
-        />
-      </label>
-      <label>
-        Current points:
-        <input
-          type="number"
-          value={currentPointId}
-          onChange={({ target }) => setCurrentPointId(target.value)}
-        />
-      </label>
       <ProgressBar
         {...{
-          progressPoints, currentPointId, ref, horizontal,
+          progressPoints, ref, ...rest,
         }}
         recalculate={dynamic && elementsExpanded}
       />
@@ -73,8 +53,24 @@ const Container = ({ horizontal, dynamic }) => {
   )
 }
 
-storiesOf('ProgressBar', module)
-  .addParameters({ readme: { sidebar: Readme } })
-  .addDecorator(withKnobs)
-  .add('Vertical/Dynamic', () => <Container dynamic />)
-  .add('Horizontal/Static', () => <Container horizontal />)
+const idChoices = [...Array(10).keys()].map(num => `${num + 1}`)
+
+export default {
+  title: 'ProgressBar',
+  component: ProgressBar,
+  argTypes: {
+    currentPointId: {
+      options: idChoices,
+      control: { type: 'radio' },
+    },
+    progressPoints: { table: { disable: true }},
+    recalculate: { table: { disable: true }},
+  }
+}
+
+export const Primary = Template.bind({})
+Primary.args = {
+  numElements: 5,
+  currentPointId: '2',
+  dynamic: false,
+}

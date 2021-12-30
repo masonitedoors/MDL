@@ -124,8 +124,6 @@ const ProgressBar = React.forwardRef(
         && progressPointRefs.length === progressPoints.length
         && fillIndex !== fillToIndex
       ) {
-        const direction = fillToIndex > fillIndex ? 1 : -1
-
         const pointOffsetStarts = progressPointRefs.map(point =>
           (horizontal ? point.current.offsetLeft : point.current.offsetTop))
         const pointOffsetSizes = progressPointRefs.map(point =>
@@ -139,7 +137,7 @@ const ProgressBar = React.forwardRef(
           type: 'setFillLength',
           payload: {
             fillLength: `${
-              pointOffsetStarts[fillIndex + direction > 0 ? fillIndex + direction : 0]
+              pointOffsetStarts[fillToIndex]
             }px`,
           },
         })
@@ -196,6 +194,7 @@ ProgressBar.propTypes = {
   ).isRequired,
   currentPointId: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   recalculate: PropTypes.string,
+  horizontal: PropTypes.bool,
 }
 
 ProgressBar.defaultProps = {
